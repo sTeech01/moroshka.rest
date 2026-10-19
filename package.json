@@ -1,0 +1,50 @@
+{
+  "name": "moroshka-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "menu:import": "node scripts/import-myresto-menu.mjs",
+    "menu:hall": "node scripts/hall-menu/build.mjs",
+    "payload": "payload --use-swc",
+    "generate:types": "payload generate:types --use-swc",
+    "generate:importmap": "payload generate:importmap --use-swc",
+    "migrate:create": "payload migrate:create --use-swc",
+    "migrate": "payload migrate --use-swc",
+    "cms:check": "payload run scripts/check-cms.ts --use-swc"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.20",
+    "@payloadcms/db-sqlite": "^3.91.0",
+    "@payloadcms/next": "^3.91.0",
+    "@payloadcms/richtext-lexical": "^3.91.0",
+    "@payloadcms/translations": "^3.91.0",
+    "@payloadcms/ui": "^3.91.0",
+    "graphql": "^16.14.2",
+    "next": "16.4.2",
+    "payload": "^3.91.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.12.1",
+    "@swc/core": "^1.16.18",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

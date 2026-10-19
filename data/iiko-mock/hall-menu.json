@@ -1,0 +1,2041 @@
+{
+  "id": "hall",
+  "name": "Меню зала",
+  "description": "Перенесено со старого сайта moroshka.rest/menu-kitchen",
+  "itemCategories": [
+    {
+      "id": "1913cef9-7af8-54e2-a37a-702b8c6f30cf",
+      "name": "Салаты",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "8ff5a675-96d5-47ee-a4bd-cf348888b56e",
+          "sku": "03493",
+          "name": "Салат с ростбифом оленя и маринованной брусникой",
+          "description": "Микс зелени, картофель на соли, томаты черри, ростбиф из оленя, соус из диких ягод, маринованная брусника, чесночное масло, луковая зола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 230,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 570
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/salat-s-rostbifom-olenya-i-marinovannoy-brusnikoy.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "27b4b20d-cef7-48bf-b932-edcd8c718351",
+          "sku": "03495",
+          "name": "Салат с уткой и луком конфи",
+          "description": "Микс зелени, картофель на соли, филе утки, кукуруза початок, лук конфи, чесночное масло, соус крем-томат, соус из диких ягод",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 210,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 690
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/salat-s-utkoy-i-lukom-konfi.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "540f26d5-ab7f-446e-8fa4-89e3cc93db37",
+          "sku": "03494",
+          "name": "Салат с жареной говядиной и грибами",
+          "description": "Микс зелени, шиитаке, шампиньоны, кукуруза початок, вырезка из говядины, чесночное масло, устричный айоли, пармезан",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 230,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 820
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/salat-s-zharenoy-govyadinoy-i-gribami.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "9a9ebcf6-730c-4bbe-bfec-dbc9650675cf",
+          "sku": "03496",
+          "name": "Салат с морепродуктами в азиатском стиле",
+          "description": "Микс зелени, микс морепродуктов, болгарский перец, битые огурцы, киноа, соус азиатский, кинза, лайм, зеленое масло",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 240,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 780
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/salat-s-moreproduktami-v-aziatskom-stile.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "d4fb6a34-211d-4e46-afd5-23a6f044597b",
+          "sku": "03497",
+          "name": "Салат с подкопчёным лососем и морошкой",
+          "description": "Микс зелени, огурец, лосось с/с, крем-чиз, моченая морошка, соус крем-томат, чесночное масло, луковая зола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 180,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 790
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a31947e3-6177-4a01-8256-9a329904aa46",
+          "sku": "03487",
+          "name": "Салат с сыром бри и грушей",
+          "description": "Микс зелени, сыр Бри, груша конфи, пармезан, соус из диких ягод, орех грецкий",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 220,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 790
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "71943074-8ba0-4aa1-9261-7042f927d9fe",
+          "sku": "03498",
+          "name": "Салат с цыплёнком и горой зелени",
+          "description": "Микс зелени, томаты черри, яйцо перепелиное, грудка цыпленка, пармезан, сырный мусс, соус сладкий лук, масло растительное, подается с Чиабаттой",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 200,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 570
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "25c82a5c-95ea-40bc-9484-ac8c47da1931",
+          "sku": "03492",
+          "name": "Салат с муксуном слабого посола и икрой",
+          "description": "Микс зелени, фасоль молодая, картофель на соли, яйцо перепелиное, щучья икра, муксун с/с, чесночное масло, соус сладкий лук",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 230,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 780
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ec2f981b-b57d-5fb8-a1ef-33486d4cb1f6",
+      "name": "Закуски холодные",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "06bca563-ae4f-4534-a241-9c68e9441867",
+          "sku": "03477",
+          "name": "Брускетта с ростбифом из оленины",
+          "description": "Хрустящая Чиабатта, ростбиф из ямальского оленя, микс салата, битые огурцы, маринованная брусника, крем-чиз",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 170,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 470
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/brusketta-s-rostbifom-iz-oleniny.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "618c83d2-ec49-4c99-acbe-0f1cb67206f7",
+          "sku": "03478",
+          "name": "Брускетта с лососем",
+          "description": "Хрустящая Чиабатта, микс салата, лосось с/с, соус азиатский, крем-чиз, кинза",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 160,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 470
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/brusketta-s-lososem.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "64b64e7a-11e5-4293-ab2d-20d671da8af8",
+          "sku": "03475",
+          "name": "Брускетта с муксуном",
+          "description": "Хрустящая Чиабатта, микс зелени, битые огурцы, томаты черри, муксун, крем-чиз, устричный айоли, укроп, луковая зола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 170,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 470
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/brusketta-s-muksunom.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "6e535ace-c80b-418a-8da3-7e82f09d4509",
+          "sku": "03476",
+          "name": "Брускетта с сыром бри и креветкой",
+          "description": "Хрустящая Чиабатта, микс зелени, сыр бри, креветка, крем-чиз",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 180,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 470
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "530e952c-c349-4e2c-b794-e1467bd1ae4c",
+          "sku": "03483",
+          "name": "Маринованные грибы с жареным луком и сметаной",
+          "description": "Грузди, лисички, опята, лук фри, сметана копченая, укроп",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 210,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 610
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "220c7397-39c0-42c5-9483-9dbe0554c013",
+          "sku": "03513",
+          "name": "Хамон из ямальского оленя",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 120,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 830
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d8408d44-548e-4517-afb6-88766cece3dc",
+          "sku": "03210",
+          "name": "Строганина из муксуна",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 70,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 760
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d49d4d2d-0785-4744-b2d6-b481bc4d0ebf",
+          "sku": "03480",
+          "name": "Паштет из куриной печени с луковым конфитюром, халвой и орехами",
+          "description": "Печень цыпленка, лук конфи, халва, орехи грецкие, шпинат, масло оливковое, подается с Чиабаттой",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 160,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 480
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "64add9c2-40a5-45f2-87ea-b2b615cc2026",
+          "sku": "03484",
+          "name": "Рубанина из двух рыб",
+          "description": "Лосось с/с, муксун с/с, маринованная брусника, лук зеленый. подается с хрустящей Чиабаттой",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 180,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 950
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/rubanina-iz-dvuh-ryb.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d2afd5a1-8fbc-53e6-a013-11d2b5b6e5c9",
+      "name": "Закуски горячие",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "5ff00819-3eae-506f-a6af-66c513ba6236",
+          "sku": "",
+          "name": "Мини-чебуреки",
+          "description": "Сочная мякоть оленя в хрустящем тесте. Подаётся с сырным соусом",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 120,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 360
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/mini-chebureki.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "97790ad4-f9e3-5f3b-a514-932194271162",
+          "sku": "",
+          "name": "Креветки в панировке",
+          "description": "Креветки в кукурузном кляре с азиатским соусом",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 150,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 510
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5e5763f7-fddc-5e5c-aa8b-66c010b2e2ed",
+      "name": "Мини-шашлыки",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "e2837a0e-64c0-545b-a6ff-ba8918b0b50d",
+          "sku": "",
+          "name": "Мини-шашлыки: муксун, лосось, креветка",
+          "description": "Филе муксуна, филе лосося, креветка, картофель айдахо, соус ореховый с хреном",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 180,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 730
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/mini-shashlyki-muksun-losos-krevetka.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "75428bf0-adba-579b-a814-444bd1af9090",
+          "sku": "",
+          "name": "Мини-шашлыки: оленина, говядина, курица",
+          "description": "Сердце оленя, вырезка говядины, грудка цыплёнка, картофель айдахо, соус ореховый с хреном",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 180,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 670
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/mini-shashlyki-olenina-govyadina-kuritsa.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ee9757fc-3290-5690-a708-093771b49ffa",
+      "name": "Закуски на компанию",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "95d36e03-5a9e-5bf9-ae83-559fa1de78c6",
+          "sku": "",
+          "name": "Сырный набор",
+          "description": "Бри, мраморный, чечил, пармезан, мёд, орехи, виноград, мята",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 330,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/syrnyy-nabor.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "ba61d0d1-8913-5052-ad64-e38ff2f64a7e",
+          "sku": "",
+          "name": "Рыбное плато",
+          "description": "Лосось с/с, муксун с/с, селёдка с/с, картофель на соли, укроп",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 250,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/rybnoe-plato.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "07ee64fb-0358-559f-aff4-977e811430c6",
+          "sku": "",
+          "name": "Мясная тарелка",
+          "description": "Ростбиф из оленя, филе утки, бастурма из оленины, битые огурцы",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1520
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/myasnaya-tarelka.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "33861511-f25e-57ad-ae20-5eee46ab1fd6",
+          "sku": "",
+          "name": "Разносолы",
+          "description": "Томаты черри, корнишоны, капуста квашеная, острые перчики, маслины, оливки, брусника маринованная",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 400,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 660
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/raznosoly.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c5fc8cef-7f22-506f-a0f7-20f583a9130f",
+      "name": "Супы",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "c1022277-4776-564a-aa8d-f01eaf1bee87",
+          "sku": "",
+          "name": "Крем-суп из белых грибов",
+          "description": "Белые грибы, шампиньоны, шиитаке, румяная чиабатта",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 260,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/krem-sup-iz-belyh-gribov.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "f627a512-f4c7-5b2d-a2f4-4ef2b7d1abfa",
+          "sku": "",
+          "name": "Борщ с олениной",
+          "description": "Подаётся с копчёной сметаной",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 350,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 480
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/borsch-s-oleninoy.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "7cbc14be-d46b-54a8-acf5-0cf30b8deafc",
+          "sku": "",
+          "name": "Куриный бульон с маринованным яйцом",
+          "description": "Яичная лапша, филе цыплёнка, чиабатта",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 350,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 360
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/kurinyy-bulon-s-marinovannym-yaytsom.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "52c7578b-8d06-462f-9cb9-b2e561f8d4cc",
+          "sku": "03431",
+          "name": "Ямальский том ям с муксуном в темпуре",
+          "description": "Морской коктейль, томаты черри, рис арборио, муксун, кинза, грибы шиитаке",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 450,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 880
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/yamalskiy-tom-yam-s-muksunom-v-tempure.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "60c617cc-a30a-4812-a22f-33cff341d63c",
+          "sku": "03423",
+          "name": "Похлёбка из двух рыб",
+          "description": "Филе муксуна, филе лосося, картофель на соли, томаты черри, сливки. Подаётся с икрой щуки и румяной чиабаттой",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 320,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 750
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8191ad09-b588-556b-a864-e636e3de0a23",
+      "name": "Горячее",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "55e9617d-6843-4c16-b1c6-a143b7571fd1",
+          "sku": "03238",
+          "name": "Ребро ямальского оленя в перечном соусе",
+          "description": "Томленое ребро оленя, картофель на соли, томаты черри, лук зеленый, соус перечный, чесночное масло, луковая зола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 360,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 920
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/rebro-yamalskogo-olenya-v-perechnom-souse.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "a98e894e-0571-5cf9-abf6-e8bba75ec889",
+          "sku": "",
+          "name": "Мякоть оленя с пюре и грибным соусом",
+          "description": "Корейка оленя, картофельное пюре, лук фри, соус грибной, зелёное масло, ягель",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 280,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/myakot-olenya-s-pyure-i-gribnym-sousom.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "34ac98f8-1585-5e6d-a3f4-e761db350fe9",
+          "sku": "",
+          "name": "Филе муксуна с киноа и пармезаном",
+          "description": "Филе муксуна, киноа, томаты черри, фасоль молодая, шпинат, пармезан, сырный соус, зелёное масло, кинза",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/file-muksuna-s-kinoa-i-parmezanom.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "6839e8f1-b3c9-5732-ae31-84c798724b5a",
+          "sku": "",
+          "name": "Гречневая каша с олениной в сливочном соусе под сырной шапкой",
+          "description": "Греча, окорок оленины, сливки, масло с травами, мусс сырный, зелёное масло, ягель",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 740
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/grechnevaya-kasha-s-oleninoy-v-slivochnom-souse-pod-syrnoy-shapkoy.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "4f6e5682-1ee9-5aae-a3b8-1b395e571174",
+          "sku": "",
+          "name": "Жареное филе утки с тушёной капустой",
+          "description": "Филе утки, капуста, маринованная брусника, соус грибной, зелёное масло, луковая зола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 280,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 830
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "393649b3-9b9c-53c0-af48-27c788d060e6",
+          "sku": "",
+          "name": "Нежные котлетки из курицы с креветками в соусе том ям",
+          "description": "Куриное филе, креветки, сливки, шампиньоны, шиитаке, соус том ям, сливочное масло с травами и чесноком. Подаётся с гречей и кинзой",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 690
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "aa8eb4f9-699b-5f55-a15d-c59d4c913387",
+          "sku": "",
+          "name": "Вырезка говядины с мочёной морошкой",
+          "description": "Мякоть говядины, картофель на соли, мочёная морошка, чесночное масло, копчёная сметана, луковая зола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 240,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "1000e0ac-1d6c-5a1e-a301-1ef66aef7803",
+          "sku": "",
+          "name": "Говядина по-азиатски",
+          "description": "Вырезка говядины, рис арборио, перец болгарский, лук красный, фасоль молодая, яйцо куриное, лук фри, кунжут, стружка тунца",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 270,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 820
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e1cc4c78-1fa3-5251-ab0b-48b548675193",
+          "sku": "",
+          "name": "Стейк лосося в азиатском барбекю с рисом и брокколи",
+          "description": "Филе лосося, рис арборио, брокколи, томаты черри, соус азиатский, соус ореховый, кунжут, кинза",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1320
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/steyk-lososya-v-aziatskom-barbekyu-s-risom-i-brokkoli.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "4e4eda54-ec80-5dd1-a4db-a4b371881e84",
+          "sku": "",
+          "name": "Пельмени с муксуном и копчёной сметаной",
+          "description": "Подаются с маринованной брусникой, луковой золой и укропом",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 230,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 710
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/pelmeni-s-muksunom-i-kopchenoy-smetanoy.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "b65f0533-c8b2-5b4b-a333-aca30d42435c",
+          "sku": "",
+          "name": "Пельмени с олениной и ароматным топлёным маслом",
+          "description": "Масло с травами и чесноком, лук фри, укроп",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 200,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 710
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/pelmeni-s-oleninoy-i-aromatnym-toplenym-maslom.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "2d23cc40-be54-54a6-ab23-43d844462c3e",
+          "sku": "",
+          "name": "Куриная грудка в медовой глазури с овощным соте",
+          "description": "Филе цыплёнка, болгарский перец, лук красный, шампиньоны, цукини, киноа, шпинат, медово-горчичный соус, ореховый соус, сливочное масло с травами, кинза",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 260,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 690
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/kurinaya-grudka-v-medovoy-glazuri-s-ovoschnym-sote.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "13f072a1-4079-5f4e-a896-f2ed43a5cbd0",
+          "sku": "",
+          "name": "Котлеты из щуки с пюре и соусом из шпината",
+          "description": "Филе щуки, пюре картофельное, мраморный сыр, сливочное масло с травами, щучья икра, соус из шпината",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 360,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 750
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/kotlety-iz-schuki-s-pyure-i-sousom-iz-shpinata.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a30dc08f-46ab-568c-aefd-03c0a4f8dfb3",
+      "name": "Пасты неро",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "cb2878ed-03ef-5466-ac9c-18eb5181c586",
+          "sku": "",
+          "name": "Паста с куриным филе гриль",
+          "description": "Паста неро в соусе из лесных грибов, грудка куриная, сырный мусс, масло оливковое",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 780
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/pasta-s-kurinym-file-gril.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "eac26945-7581-5a83-aa55-1cd0aa2ecab5",
+          "sku": "",
+          "name": "Паста с уткой",
+          "description": "Паста неро, филе утки, брокколи, томаты черри, зелёный лук, соус азиатский, стружка тунца, кинза",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 300,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 820
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/pasta-s-utkoy.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "3b8c934d-eb5c-5829-a72b-6b38c2c39381",
+          "sku": "",
+          "name": "Паста с морепродуктами",
+          "description": "Паста неро, морской коктейль, томаты черри, пармезан, зелёный лук, кинза",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 280,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 890
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/pasta-s-moreproduktami.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "2ce8969b-67d7-56fd-a581-ce881095bd86",
+          "sku": "",
+          "name": "Паста с рваным лососем",
+          "description": "Паста неро, филе лосося, соус из шпината, сливочное масло с травами, пармезан",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 230,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 890
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/pasta-s-rvanym-lososem.webp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "705a5dc7-5ce1-5944-a60e-7f36f753ec4f",
+      "name": "Десерты",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "9df917d2-694a-4e3b-81f4-8292b4408e36",
+          "sku": "03286",
+          "name": "Ямальские ягоды с мёдом и орехами",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 150,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/yamalskie-yagody-s-medom-i-orehami.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "2d4e2d4c-f310-5f4b-acc3-1ddf38c90a44",
+          "sku": "",
+          "name": "Домашний наполеон с облепихой",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 160,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/domashniy-napoleon-s-oblepihoy.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "59d2959d-cde5-4a54-8041-04e1f05d35da",
+          "sku": "03280",
+          "name": "Медовый торт с копчёной сметаной, вареньем из шишек и кедровыми орехами",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 150,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 480
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": "/images/menu/medovyy-tort-s-kopchenoy-smetanoy-varenem-iz-shishek-i-kedrovymi-orehami.webp"
+            }
+          ]
+        },
+        {
+          "itemId": "c05ea811-5534-5137-a424-49699a21497e",
+          "sku": "",
+          "name": "Меренга с муссом из белого шоколада и мочёной морошкой",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 150,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "5788d3c9-b19d-53c5-ae36-3406c89643f7",
+          "sku": "",
+          "name": "Апельсиновый бисквит с творогом и вареньем из вишни",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 170,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7e803b57-9e5c-5726-ad19-1ac39dc90dbd",
+      "name": "Соусы",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "4c4e70b1-2115-51a4-a409-b90faac3cdfc",
+          "sku": "",
+          "name": "Мочёная морошка",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 110
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9cda4893-8c44-5486-a754-921ea3135602",
+          "sku": "",
+          "name": "Азиатский",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a54bf823-4f31-51ca-adf0-413f46e52d78",
+          "sku": "",
+          "name": "Горчица дижонская",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "0d9de5e8-544d-539f-a46d-86d84fd2561e",
+          "sku": "",
+          "name": "Копчёная сметана",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e475d943-a7db-5ce6-a013-27a193bd81f8",
+          "sku": "",
+          "name": "Кетчуп",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "38601ef3-755f-55d1-a200-4e93ad4521ba",
+          "sku": "",
+          "name": "Крем-томат",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "0cb7cd6d-7b86-5043-a117-505bd6aed7f0",
+          "sku": "",
+          "name": "Грибной",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a266c154-8f65-54f6-a544-438cf2608842",
+          "sku": "",
+          "name": "Майонез",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "be377e2c-be29-5bb1-ac84-91f5f1646104",
+          "sku": "",
+          "name": "Масло с травами",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a0363942-55b4-5011-a235-2a2550df0e6d",
+          "sku": "",
+          "name": "Ореховый",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d8564195-cadb-5952-a440-db22f94fb5f5",
+          "sku": "",
+          "name": "Орех / хрен",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b1e09757-39bf-5ffd-a407-33e05acd8e81",
+          "sku": "",
+          "name": "Сладкий лук",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "23fbfe9e-5744-52ce-a3a6-6766c59dd25e",
+          "sku": "",
+          "name": "Перечный",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a8c74b4e-a6fe-58c5-a1c3-34bf3b1fad5c",
+          "sku": "",
+          "name": "Соевый",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "edb86ce5-32ee-5fa2-a463-54bf98cf803f",
+          "sku": "",
+          "name": "Сладкий чили",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4790091e-758f-584f-af60-2c0f32baadfb",
+          "sku": "",
+          "name": "Ягодный шрирача",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "8eb30152-33e6-56a2-a8ff-b65bc0e6e845",
+          "sku": "",
+          "name": "Унаги",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "11920c60-1995-5fd5-aa67-d38fa4648b19",
+          "sku": "",
+          "name": "Шрирача классический",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "51ef9eae-0d2a-52a5-a27e-2562e4b5cd28",
+          "sku": "",
+          "name": "Устричный айоли",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 80
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fbe28e12-47dc-52d8-a09e-ec6d5afeb897",
+          "sku": "",
+          "name": "Сырный",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "г",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": 40,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

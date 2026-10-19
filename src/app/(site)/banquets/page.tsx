@@ -1,0 +1,88 @@
+import type { Metadata } from "next";
+import { BookingForm } from "@/components/booking-form";
+import { CmsContent } from "@/components/cms-content";
+import { PageHero } from "@/components/page-hero";
+import { PhotoMosaic } from "@/components/photo-mosaic";
+import { getBanquets, getHome, getSettings } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Банкеты и VIP-зал",
+  description: "Банкеты, корпоративы и дни рождения в ресторане «Морошка» в Губкинском. Отдельный VIP-зал.",
+  alternates: { canonical: "/banquets" },
+};
+
+export default async function BanquetsPage() {
+  const [data, home, settings] = await Promise.all([getBanquets(), getHome(), getSettings()]);
+  const phone = settings.banquetPhone || settings.phone;
+  // Своя галерея задаётся в админке; пока её нет — фото с главной
+  const gallery = data.gallery.length ? data.gallery : home.gallery;
+
+  return (
+    <>
+      {/* Первый экран — тот же, что на главной (PageHero). Под кнопками: залы и вместимость | телефон */}
+      <PageHero
+        image={data.heroImage ?? home.banquetImage}
+        eyebrow="VIP-зал и банкеты"
+        title={data.title}
+        subtitle={data.intro}
+        actions={[
+          { href: "#request", label: "Оставить заявку", primary: true },
+          { href: "#gallery", label: "Посмотреть зал" },
+        ]}
+        info={{
+          left: data.halls.length
+            ? data.halls.map((h) => (h.capacity ? `${h.name}  ${h.capacity}` : h.name))
+            : [home.banquetCapacity ?? "VIP-зал"],
+          right: ["Телефон банкетов", phone],
+        }}
+        phone={phone}
+      />
+
+      <div className="container-site py-16 lg:py-24">
+        {data.halls.length > 0 && (
+          <div className="grid gap-px bg-border md:grid-cols-2">
+            {data.halls.map((h) => (
+              <div key={h.name} className="bg-surface p-7 lg:p-9">
+                <h2 className="h-display text-3xl">{h.name}</h2>
+                {h.capacity && <div className="eyebrow mt-3 text-berry">{h.capacity}</div>}
+                {h.description && <p className="mt-4 leading-relaxed text-soft">{h.description}</p>}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Галерея «мозаикой» на всю ширину экрана — вне контейнера */}
+      {gallery.length > 0 && (
+        <section id="gallery" aria-labelledby="gallery-title" className="pb-16 lg:pb-24">
+          <div className="container-site mb-6 flex items-end justify-between gap-4 lg:mb-8">
+            <h2 id="gallery-title" className="h-display text-3xl lg:text-4xl">
+              Интерьер VIP-зала
+            </h2>
+            <span className="eyebrow">{gallery.length} фото</span>
+          </div>
+          <PhotoMosaic images={gallery} />
+        </section>
+      )}
+
+      <div className="container-site pb-16 lg:pb-24">
+        <div className="max-w-3xl">
+          <CmsContent data={data.content} />
+        </div>
+
+        <section id="request" className="mt-20 grid gap-10 border-t border-border pt-16 lg:grid-cols-[5fr_7fr] lg:gap-20">
+          <div>
+            <h2 className="h-display text-4xl lg:text-[56px]">Заявка на банкет</h2>
+            <p className="mt-6 text-muted">
+              Оставьте заявку или позвоните:{" "}
+              <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="font-semibold text-text hover:text-berry">
+                {phone}
+              </a>
+            </p>
+          </div>
+          <BookingForm kind="banquet" />
+        </section>
+      </div>
+    </>
+  );
+}

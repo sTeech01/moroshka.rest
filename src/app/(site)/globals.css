@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+/*
+ * Дизайн «северный лес ночью».
+ * Семантические токены (surface, text, muted, border, fill) переключаются темой:
+ * по умолчанию тёмная, .theme-paper — светлая для меню, корзины и оформления.
+ */
+:root {
+  --night: #0e1714;
+  --velvet: #1f3a31;
+  --berry: #f2a03a;
+  --berry-hover: #ffb558;
+  --snow: #efe8dc;
+  --lichen: #a9b3aa;
+  --wood: #8a5a34;
+
+  --surface: var(--night);
+  --text: var(--snow);
+  --muted: var(--lichen);
+  --soft: #c9cfc7;
+  --border: #2a3a33;
+  --fill: var(--velvet);
+  --danger: #ff8f6b;
+}
+
+.theme-paper {
+  --surface: #f3eee5;
+  --text: #0e1714;
+  --muted: #5e665f;
+  --soft: #3c443e;
+  --border: #d9d0c2;
+  --fill: #e4dccf;
+  --danger: #b4412f;
+  background: var(--surface);
+  color: var(--text);
+}
+
+@theme inline {
+  --color-night: var(--night);
+  --color-velvet: var(--velvet);
+  --color-berry: var(--berry);
+  --color-berry-hover: var(--berry-hover);
+  --color-snow: var(--snow);
+  --color-lichen: var(--lichen);
+
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-soft: var(--soft);
+  --color-border: var(--border);
+  --color-fill: var(--fill);
+  --color-danger: var(--danger);
+
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-tenor);
+}
+
+/* Переход по якорю (/#booking и т. п.) — ровно под нижний край липкой шапки (64 / 76 px) */
+html {
+  scroll-padding-top: 4rem;
+}
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 4.75rem;
+  }
+}
+
+body {
+  background: var(--surface);
+  color: var(--text);
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-8;
+  }
+  /* Заголовки — Tenor Sans без жирности */
+  .h-display {
+    @apply font-display leading-[1.05] font-normal;
+  }
+  /* Подписи разрядкой, как «РЕСТОРАН» в логотипе */
+  .eyebrow {
+    @apply text-xs tracking-[0.3em] text-muted uppercase;
+  }
+
+  /* Кнопки-таблетки. Использовать с модификатором: class="btn btn-berry" */
+  .btn {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-[15px] font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-berry {
+    @apply bg-berry text-night hover:bg-berry-hover;
+  }
+  .btn-line {
+    @apply border border-current font-semibold hover:border-berry hover:text-berry;
+  }
+  .btn-ink {
+    @apply bg-text text-surface hover:bg-berry hover:text-night;
+  }
+  .btn-sm {
+    @apply h-11 px-5 text-sm;
+  }
+
+  /* Варианты выбора: размер, прожарка, соус */
+  .pill {
+    @apply inline-flex h-11 items-center rounded-full border border-border px-[18px] text-sm transition-colors hover:border-text;
+  }
+  .pill[aria-pressed="true"] {
+    @apply border-berry bg-berry font-semibold text-night;
+  }
+
+  /* Поля форм — прямые углы, как в макете */
+  .field {
+    @apply h-13 w-full border border-border bg-transparent px-4 text-base text-text outline-none transition-colors placeholder:text-muted/70 focus:border-berry;
+  }
+  textarea.field {
+    @apply h-auto min-h-24 py-3;
+  }
+  .label {
+    @apply mb-2 block text-[13px] text-muted;
+  }
+
+  /* Компактные формы (оформление заказа): ниже поля и таблетки, мелкие подписи */
+  .field-compact {
+    @apply h-11 px-3.5 text-[15px] lg:h-10;
+  }
+  textarea.field-compact {
+    @apply h-auto min-h-16 py-2.5;
+  }
+  .label-compact {
+    @apply mb-1 block text-xs text-muted;
+  }
+  .pill-compact {
+    @apply h-10 gap-2 px-4 text-[13px] lg:h-9;
+  }
+  .form-section-title {
+    @apply mb-2.5 font-display text-lg leading-tight;
+  }
+}
+
+/*
+ * Затемнение фото на первых экранах с текстом по центру:
+ * края ~45% (интерьер виден), центр за текстом ~75% (текст читается на пёстром фото)
+ */
+.hero-shade {
+  background:
+    radial-gradient(ellipse 65% 60% at 50% 50%, rgb(14 23 20 / 0.55) 0%, rgb(14 23 20 / 0) 75%),
+    rgb(14 23 20 / 0.45);
+}
+.hero-text {
+  text-shadow: 0 2px 24px rgb(14 23 20 / 0.6);
+}
+/* Тёмный текст на оранжевой кнопке тень не нужна — она его пачкает */
+.hero-text .btn-berry {
+  text-shadow: none;
+}
+
+/* Тексты из CMS */
+.prose-moroshka {
+  @apply max-w-none space-y-4 text-[17px] leading-relaxed text-soft;
+}
+.prose-moroshka h2 {
+  @apply pt-6 font-display text-3xl text-text;
+}
+.prose-moroshka h3 {
+  @apply pt-2 text-xl font-semibold text-text;
+}
+.prose-moroshka ul {
+  @apply list-disc space-y-1 pl-6;
+}
+.prose-moroshka ol {
+  @apply list-decimal space-y-1 pl-6;
+}
+.prose-moroshka a {
+  @apply text-berry underline;
+}
+
+input[type="date"],
+input[type="time"] {
+  color-scheme: dark;
+}
+.theme-paper input[type="date"],
+.theme-paper input[type="time"] {
+  color-scheme: light;
+}
