@@ -8,7 +8,8 @@ export const Media: CollectionConfig = {
   admin: { group: "Контент", defaultColumns: ["filename", "alt", "updatedAt"] },
   access: { read: anyone, create: loggedIn, update: loggedIn, delete: loggedIn },
   upload: {
-    staticDir: "media",
+    // На Vercel (демо) — копия фото из demo/media, только чтение; см. payload.config.ts
+    staticDir: process.env.VERCEL ? "demo/media" : "media",
     mimeTypes: ["image/*"],
     // Фото с телефона бывают по 5–10 МБ: уменьшаем оригинал и переводим в WebP
     resizeOptions: { width: 2400, withoutEnlargement: true },

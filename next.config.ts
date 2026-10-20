@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     // (`spawn EPERM` на шаге «Collecting page data»). Для 68 страниц 4 процессов достаточно.
     cpus: 4,
   },
+  // Демо на Vercel: база и фото из demo/ должны попасть в серверные функции (см. payload.config.ts)
+  outputFileTracingIncludes: process.env.VERCEL ? { "/**": ["./demo/**/*"] } : undefined,
   cacheLife: {
     // Структура меню и цены из iiko
     menu: { stale: 300, revalidate: 600, expire: 86400 },

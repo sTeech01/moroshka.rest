@@ -1,6 +1,7 @@
 import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { ru } from "@payloadcms/translations/languages/ru";
+import { copyFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildConfig } from "payload";
@@ -25,6 +26,22 @@ if (!secret && process.env.NODE_ENV === "production") {
   throw new Error("PAYLOAD_SECRET не задан");
 }
 
+/**
+ * Демо на Vercel (переменную VERCEL Vercel задаёт сам): диск только для чтения,
+ * поэтому база — копия demo/payload.db во временной папке /tmp (правки живут до перезапуска),
+ * а фото читаются из demo/media. Собирается командой npm run demo:build.
+ * На своём сервере DATABASE_URL задаётся явно — эта ветка не используется.
+ */
+function databaseUrl(): string {
+  if (process.env.DATABASE_URL) return process.env.DATABASE_URL;
+  if (process.env.VERCEL) {
+    const tmp = "/tmp/payload.db";
+    if (!existsSync(tmp)) copyFileSync(path.join(process.cwd(), "demo", "payload.db"), tmp);
+    return `file:${tmp}`;
+  }
+  return "file:./data/payload.db";
+}
+
 export default buildConfig({
   // serverURL не задаём: ссылки на файлы остаются относительными (/api/media/file/...)
   secret: secret || "dev-only-secret-change-me",
@@ -39,7 +56,7 @@ export default buildConfig({
   globals: [Home, Banquets, BusinessLunch, Settings, Delivery],
   editor: lexicalEditor(),
   db: sqliteAdapter({
-    client: { url: process.env.DATABASE_URL || "file:./data/payload.db" },
+    client: { url: databaseUrl() },
     // В разработке схема синхронизируется сама (push). В продакшене при старте
     // применяются миграции из src/migrations — после изменения полей: npm run migrate:create
     prodMigrations: migrations,

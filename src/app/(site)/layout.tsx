@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   description:
     "Ресторан «Морошка» в Губкинском: авторская северная кухня, VIP-зал, банкеты и доставка еды по городу.",
   openGraph: { type: "website", locale: siteConfig.locale, siteName: "Ресторан «Морошка»", images: ["/images/home/hero.webp"] },
+  // Демо на Vercel — не индексировать (см. robots.ts)
+  ...(process.env.VERCEL ? { robots: { index: false, follow: false } } : {}),
 };
 
 export const viewport: Viewport = {
