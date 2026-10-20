@@ -4,7 +4,10 @@ import { adminOrSelf, isAdmin, isAdminField } from "../access";
 export const Users: CollectionConfig = {
   slug: "users",
   labels: { singular: "Пользователь", plural: "Пользователи" },
-  auth: true,
+  // Демо на Vercel: у каждого экземпляра сервера своя копия базы в /tmp, и сессия, созданная
+  // при входе на одном, не находится на другом — админка выкидывает на вход. Там вход держится
+  // только на подписанном токене (JWT) без записи сессии в базу. На своём сервере — как обычно.
+  auth: process.env.VERCEL ? { useSessions: false } : true,
   admin: { useAsTitle: "email", group: "Администрирование", defaultColumns: ["email", "name", "role"] },
   access: {
     read: adminOrSelf,
