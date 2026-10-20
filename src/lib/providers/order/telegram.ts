@@ -3,7 +3,11 @@ import { formatPrice } from "@/lib/format";
 import { escapeHtml, notifyStaff } from "@/lib/notify";
 import type { OrderInput, OrderSink } from "../types";
 
-const paymentLabels = { cash: "Наличными курьеру", card: "Картой курьеру", online: "Онлайн" } as const;
+// Как в форме оформления (checkout-form): при самовывозе оплата в ресторане, а не курьеру
+const paymentLabels = {
+  delivery: { cash: "Наличными курьеру", card: "Картой курьеру", online: "Онлайн" },
+  pickup: { cash: "Наличными в ресторане", card: "Картой в ресторане", online: "Онлайн" },
+} as const;
 
 function orderNumber(): string {
   const now = new Date();
@@ -41,7 +45,7 @@ function render(order: OrderInput, number: string): string {
     `👤 ${e(order.customer.name)}, ${e(order.customer.phone)}`,
     where,
     `🕒 ${when}`,
-    `💳 ${paymentLabels[order.payment]}`,
+    `💳 ${paymentLabels[order.serviceType][order.payment]}`,
     order.comment ? `💬 ${e(order.comment)}` : null,
     "",
     lines,
