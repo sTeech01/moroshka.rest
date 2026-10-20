@@ -32,8 +32,16 @@ export async function SiteFooter() {
             {settings.phone}
           </a>
           <div className="flex gap-4 pt-2">
-            {settings.vk && <a href={settings.vk} className="hover:text-berry">ВКонтакте</a>}
-            {settings.telegram && <a href={settings.telegram} className="hover:text-berry">Telegram</a>}
+            {settings.vk && (
+              <a href={settings.vk} target="_blank" rel="noopener noreferrer" className="hover:text-berry">
+                ВКонтакте
+              </a>
+            )}
+            {settings.telegram && (
+              <a href={settings.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-berry">
+                Telegram
+              </a>
+            )}
           </div>
         </div>
 

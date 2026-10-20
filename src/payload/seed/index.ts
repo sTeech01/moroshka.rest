@@ -67,6 +67,7 @@ export async function seed(payload: Payload): Promise<void> {
           { days: "Вс", time: "13:00–00:00" },
         ],
         geo: { lat: 64.436706, lng: 76.504733 },
+        vk: "https://vk.ru/moroshkarest",
         // Из карточки предприятия
         legal: "ООО «Морошка», ИНН 8911031960, ОГРН 1218900001935",
       },

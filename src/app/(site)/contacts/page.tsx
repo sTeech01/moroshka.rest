@@ -63,12 +63,12 @@ export default async function ContactsPage() {
               <Row label="Мы в соцсетях">
                 <div className="flex gap-5">
                   {s.vk && (
-                    <a href={s.vk} className="underline underline-offset-4 hover:text-berry">
+                    <a href={s.vk} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-berry">
                       ВКонтакте
                     </a>
                   )}
                   {s.telegram && (
-                    <a href={s.telegram} className="underline underline-offset-4 hover:text-berry">
+                    <a href={s.telegram} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-berry">
                       Telegram
                     </a>
                   )}
