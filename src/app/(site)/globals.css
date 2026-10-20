@@ -146,6 +146,12 @@ body {
     radial-gradient(ellipse 65% 60% at 50% 50%, rgb(14 23 20 / 0.55) 0%, rgb(14 23 20 / 0) 75%),
     rgb(14 23 20 / 0.45);
 }
+/* Для видео на главной общий слой легче — иначе гасит цвета ролика; пятно под текстом то же */
+.hero-shade-video {
+  background:
+    radial-gradient(ellipse 65% 60% at 50% 50%, rgb(14 23 20 / 0.55) 0%, rgb(14 23 20 / 0) 75%),
+    rgb(14 23 20 / 0.3);
+}
 .hero-text {
   text-shadow: 0 2px 24px rgb(14 23 20 / 0.6);
 }

@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Img } from "@/lib/content";
+import { HeroVideo } from "./hero-video";
 
 type Action = { href: string; label: string; primary?: boolean };
 
 type Props = {
   image: Img | null;
+  /** Фоновое видео вместо фото: src — ролик, poster — его первый кадр (виден, пока видео грузится или отключено) */
+  video?: { src: string; poster: string; alt: string };
   eyebrow: string;
   title: string;
   subtitle?: string | null;
@@ -20,17 +23,24 @@ type Props = {
  * (секция заходит под неё отрицательным отступом на высоту шапки), заголовок по центру,
  * внизу кнопки и строка «инфо | инфо», справа внизу — круглая кнопка звонка.
  * Используется на главной и на банкетах, чтобы они выглядели одинаково.
- * Прозрачность шапки на странице включается в HeaderShell (список OVERLAY_PATHS).
+ * Прозрачность шапки включается сама: HeaderShell реагирует на атрибут data-hero-overlay этой секции.
  */
-export function PageHero({ image, eyebrow, title, subtitle, actions, info, phone }: Props) {
+export function PageHero({ image, video, eyebrow, title, subtitle, actions, info, phone }: Props) {
   const tel = phone.replace(/[^\d+]/g, "");
 
   return (
-    <section className="relative isolate -mt-16 h-svh max-h-[1100px] min-h-[620px] overflow-hidden lg:-mt-[76px]">
-      {image && (
-        <Image src={image.url} alt={image.alt} fill priority sizes="100vw" className="-z-20 object-cover object-[65%_center]" />
+    // data-hero-overlay — по нему шапка (HeaderShell) становится прозрачной, пока страница не прокручена
+    <section data-hero-overlay className="relative isolate -mt-16 h-svh max-h-[1100px] min-h-[620px] overflow-hidden lg:-mt-[76px]">
+      {video ? (
+        <>
+          {/* Насыщенность и контраст подняты: ролик снят на телефон и под затемнением выглядит блёкло */}
+          <Image src={video.poster} alt={video.alt} fill priority sizes="100vw" className="-z-20 object-cover saturate-[1.9] contrast-[1.12]" />
+          <HeroVideo src={video.src} className="absolute inset-0 -z-20 h-full w-full object-cover saturate-[1.9] contrast-[1.12]" />
+        </>
+      ) : (
+        image && <Image src={image.url} alt={image.alt} fill priority sizes="100vw" className="-z-20 object-cover object-[65%_center]" />
       )}
-      <div className="hero-shade absolute inset-0 -z-10" />
+      <div className={`${video ? "hero-shade-video" : "hero-shade"} absolute inset-0 -z-10`} />
       {/* Низ темнее — под кнопками и строкой информации */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-2/5 bg-gradient-to-t from-night/85 to-transparent" />
       {/* Верх темнее — под прозрачной шапкой */}

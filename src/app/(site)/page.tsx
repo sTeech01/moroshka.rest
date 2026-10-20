@@ -30,8 +30,10 @@ export default async function HomePage() {
   return (
     <>
       {/* Первый экран — общий с банкетами (PageHero). Под кнопками: часы работы | адрес */}
+      {/* Фон — видео интерьера со старого сайта (19 с, по кругу). Исходник: design/video */}
       <PageHero
         image={home.heroImage}
+        video={{ src: "/video/hero.mp4", poster: "/video/hero-poster.webp", alt: "Интерьер ресторана «Морошка»: стена из мха, дерево, бар" }}
         eyebrow="Ресторан · Губкинский"
         title={home.heroTitle}
         subtitle={home.heroSubtitle}

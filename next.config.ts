@@ -4,6 +4,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    // Число параллельных процессов сборки. По умолчанию — ядра минус одно (на 16-ядерной машине 15):
+    // на Windows при запуске через `npm run build` очередной процесс упирался в отказ системы
+    // (`spawn EPERM` на шаге «Collecting page data»). Для 68 страниц 4 процессов достаточно.
+    cpus: 4,
+  },
   cacheLife: {
     // Структура меню и цены из iiko
     menu: { stale: 300, revalidate: 600, expire: 86400 },

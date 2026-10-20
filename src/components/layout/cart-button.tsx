@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { formatPrice } from "@/lib/format";
 import { cartCount, cartTotal, useCart } from "@/store/cart";
 
@@ -28,8 +29,20 @@ export function CartButton() {
   );
 }
 
-/** Плавающая кнопка корзины на телефоне. Скрыта в самой корзине и при оформлении */
+/**
+ * Плавающая кнопка корзины на телефоне. Скрыта в самой корзине и при оформлении.
+ * usePathname() — в Suspense: на /order/[id] путь известен только во время запроса (см. HeaderShell).
+ * Заглушка пустая — кнопка и так не рендерится на сервере: корзина пуста до загрузки из localStorage.
+ */
 export function FloatingCart() {
+  return (
+    <Suspense fallback={null}>
+      <FloatingCartByPath />
+    </Suspense>
+  );
+}
+
+function FloatingCartByPath() {
   const lines = useCart((s) => s.lines);
   const pathname = usePathname();
   const count = cartCount(lines);
