@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { formatPrice } from "@/lib/format";
-import { escapeHtml, sendTelegram } from "@/lib/notify/telegram";
+import { escapeHtml, notifyStaff } from "@/lib/notify";
 import type { OrderInput, OrderSink } from "../types";
 
 const paymentLabels = { cash: "Наличными курьеру", card: "Картой курьеру", online: "Онлайн" } as const;
@@ -54,11 +54,14 @@ function render(order: OrderInput, number: string): string {
     .join("\n");
 }
 
-/** Заказы уходят сообщением в Telegram-чат ресторана. Используется до подключения iiko */
+/**
+ * Заказы уходят сообщением сотрудникам ресторана: в Telegram-чат и/или беседу ВКонтакте
+ * (lib/notify). Используется до подключения iiko (ORDER_PROVIDER=telegram — значение по умолчанию)
+ */
 export const telegramOrderSink: OrderSink = {
   async createOrder(order) {
     const number = orderNumber();
-    await sendTelegram(render(order, number));
+    await notifyStaff(render(order, number));
     return { id: randomUUID(), number };
   },
   // Статусы в Telegram-режиме не отслеживаются

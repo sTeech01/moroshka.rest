@@ -1,8 +1,8 @@
-import { escapeHtml, sendTelegram } from "@/lib/notify/telegram";
+import { escapeHtml, notifyStaff } from "@/lib/notify";
 import { bookingSchema } from "@/lib/order/schema";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 
-/** Бронь стола и заявка на банкет → Telegram ресторана */
+/** Бронь стола и заявка на банкет → сотрудникам ресторана (Telegram и/или ВКонтакте) */
 export async function POST(req: Request) {
   if (!rateLimit(`booking:${clientIp(req)}`, 5)) {
     return Response.json({ error: "Слишком много попыток. Позвоните нам, пожалуйста." }, { status: 429 });
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     .join("\n");
 
   try {
-    await sendTelegram(message);
+    await notifyStaff(message);
     return Response.json({ ok: true });
   } catch (error) {
     console.error("[booking] send failed", error);

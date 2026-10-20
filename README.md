@@ -13,7 +13,7 @@ npm run dev                  # сайт: http://localhost:3000, админка: 
 
 - **Первый запуск** создаёт базу `data/payload.db` и заполняет её текущим контентом сайта (тексты, фото, настройки — см. `src/payload/seed`).
 - **Первый пользователь:** откройте `/admin` и зарегистрируйтесь. Первый пользователь автоматически становится администратором.
-- Без `TELEGRAM_BOT_TOKEN` заказы и брони в dev выводятся в консоль сервера.
+- Заказы, брони и заявки на банкет уходят сотрудникам в Telegram (`TELEGRAM_*`) и/или беседу ВКонтакте (`VK_*`) — во все заполненные каналы (`src/lib/notify`). Без них в dev выводятся в консоль сервера.
 - Проверки: `npm run typecheck`, `npm run lint`, `npm run cms:check` (CMS без Next), `npm run build`.
 
 ## CMS (Payload)
@@ -74,7 +74,7 @@ data/iiko-mock/        заглушка iiko: ответы /api/2/menu/by_id и 
 | Переменная | Сейчас | После подключения |
 |---|---|---|
 | `MENU_PROVIDER` | `mock` — читает `data/iiko-mock/*.json` | `iiko` — iikoCloud `/api/2/menu/by_id`, `/api/1/stop_lists` |
-| `ORDER_PROVIDER` | `telegram` — заказ сообщением в чат ресторана | `iiko` — `/api/1/deliveries/create` |
+| `ORDER_PROVIDER` | `telegram` — заказ сообщением сотрудникам (Telegram и/или ВКонтакте) | `iiko` — `/api/1/deliveries/create` |
 | `PAYMENT_PROVIDER` | `mock` — оплата «проходит» сразу | `yookassa` / `tbank` (реализовать в `lib/providers/payment/`) |
 | `NEXT_PUBLIC_ONLINE_PAYMENT_ENABLED` | `false` — пункт «Онлайн» скрыт | `true` |
 

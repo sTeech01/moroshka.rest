@@ -1,18 +1,13 @@
 import "server-only";
 
-/**
- * Отправляет сообщение в Telegram-чат ресторана.
- * Без TELEGRAM_BOT_TOKEN пишет в консоль: удобно для локальной разработки.
- */
+/** Telegram настроен: токен бота и чат ресторана */
+export const telegramConfigured = () => Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
+
+/** Отправляет сообщение (HTML-разметка Telegram) в чат ресторана */
 export async function sendTelegram(html: string): Promise<void> {
   const tokenValue = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-
-  if (!tokenValue || !chatId) {
-    if (process.env.NODE_ENV === "production") throw new Error("Telegram не настроен");
-    console.info("[telegram:dev]\n" + html.replace(/<[^>]+>/g, ""));
-    return;
-  }
+  if (!tokenValue || !chatId) throw new Error("Telegram не настроен");
 
   const res = await fetch(`https://api.telegram.org/bot${tokenValue}/sendMessage`, {
     method: "POST",
