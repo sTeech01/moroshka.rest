@@ -31,9 +31,8 @@ export async function seed(payload: Payload): Promise<void> {
       return doc.id;
     };
 
-    const [hero, about, kitchen, bar, vip, gallery1, gallery2] = await Promise.all([
+    const [hero, kitchen, bar, vip, gallery1, gallery2] = await Promise.all([
       image("hero.webp", "Основной зал ресторана «Морошка»"),
-      image("about.webp", "Стол под деревом в зале «Морошки»"),
       image("kitchen.webp", "Уха по-северному с икрой"),
       image("bar.webp", "Коктейли с морошкой"),
       image("vip.webp", "VIP-зал: зелёные бархатные кресла"),
@@ -97,19 +96,10 @@ export async function seed(payload: Payload): Promise<void> {
         heroTitle: "Новый взгляд на Север",
         heroSubtitle: "Авторская северная кухня, винная карта и VIP-зал. Деловой обед, ужин с друзьями или праздник — и доставка домой.",
         heroImage: hero,
-        aboutTitle: "Домашнее тепло и ресторанный сервис",
-        aboutText:
-          "Черновик. [Финальный текст о ресторане — кухня, продукты Ямала, команда.] Живой мох, дерево и бархат в интерьере — ощущение северного леса в центре города.",
-        aboutImage: about,
         kitchenText: "Рыба и дичь Ямала, супы, горячее, десерты",
         kitchenImage: kitchen,
         barText: "Авторские коктейли, настойки, винная карта",
         barImage: bar,
-        banquetTitle: "Отдельный зал для своих",
-        banquetText: "Дни рождения, корпоративы, деловые ужины. Составим банкетное меню под ваш формат и бюджет.",
-        banquetCapacity: "до … гостей — уточнить",
-        banquetImage: vip,
-        gallery: [gallery1, gallery2, hero],
       },
       context,
     });
@@ -119,6 +109,8 @@ export async function seed(payload: Payload): Promise<void> {
       data: {
         title: "Банкеты и VIP-зал",
         intro: "Черновик. Проведём день рождения, корпоратив или деловой ужин. Составим банкетное меню под ваш бюджет.",
+        heroImage: vip,
+        gallery: [gallery1, gallery2],
         halls: [
           { name: "Основной зал", capacity: "до … гостей — уточнить", description: "Черновик описания." },
           { name: "VIP-зал", capacity: "до … гостей — уточнить", description: "Отдельный зал на втором этаже. Черновик описания." },

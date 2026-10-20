@@ -32,13 +32,15 @@ const inHome = await payload.count({ collection: "promos", where: { placement: {
 await payload.delete({ collection: "promos", id: promo.id, context });
 console.log("Промо-фильтр: в меню", inMenu.totalDocs, "(ожидается ≥1), на главной без него", inHome.totalDocs);
 
-// Меню из заглушки iiko через общий маппер сайта
+// Меню доставки и меню зала из заглушки iiko через общий маппер сайта
 const { mockMenuSource } = await import("../src/lib/providers/menu/mock");
 const { mapIikoMenu } = await import("../src/lib/menu/map-iiko");
 const menu = mapIikoMenu(await mockMenuSource.getExternalMenu(), new Set(await mockMenuSource.getStopList()), mockMenuSource.organizationId);
 const dishes = menu.categories.flatMap((c) => c.dishes);
-console.log(`Меню: ${menu.categories.length} категорий, ${dishes.length} блюд, без цены отброшено: 0 ожидается`);
-for (const c of menu.categories) console.log(`  ${c.name} (/menu#${c.slug}): ${c.dishes.map((d) => `${d.name} ${d.priceFrom}₽`).join("; ")}`);
-console.log("  пример адреса блюда:", `/menu/${dishes[0]?.slug}`);
+console.log(`Доставка: ${menu.categories.length} категорий, ${dishes.length} блюд, без цены отброшено: 0 ожидается`);
+for (const c of menu.categories) console.log(`  ${c.name} (/delivery#${c.slug}): ${c.dishes.map((d) => `${d.name} ${d.priceFrom}₽`).join("; ")}`);
+console.log("  пример адреса блюда:", `/delivery/${dishes[0]?.slug}`);
+const hall = mapIikoMenu(await mockMenuSource.getHallMenu(), new Set(), mockMenuSource.organizationId);
+console.log(`Меню зала (/menu): ${hall.categories.length} разделов, ${hall.categories.flatMap((c) => c.dishes).length} блюд`);
 
 process.exit(0);

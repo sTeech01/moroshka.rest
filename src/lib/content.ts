@@ -78,19 +78,11 @@ export async function getHome() {
     heroTitle: h.heroTitle,
     heroSubtitle: h.heroSubtitle ?? null,
     heroImage: toImg(h.heroImage),
-    aboutTitle: h.aboutTitle ?? null,
-    aboutText: h.aboutText ?? null,
-    aboutImage: toImg(h.aboutImage),
     kitchenText: h.kitchenText ?? null,
     kitchenImage: toImg(h.kitchenImage),
     barText: h.barText ?? null,
     barImage: toImg(h.barImage),
     featuredDishes: h.featuredDishes ?? [],
-    banquetTitle: h.banquetTitle ?? null,
-    banquetText: h.banquetText ?? null,
-    banquetCapacity: h.banquetCapacity ?? null,
-    banquetImage: toImg(h.banquetImage),
-    gallery: imgs(h.gallery),
   };
 }
 
@@ -134,8 +126,6 @@ const toEvent = (e: Event) => ({
   cover: toImg(e.cover),
   content: e.content ?? null,
 });
-
-export type EventItem = ReturnType<typeof toEvent>;
 
 export async function getEvents() {
   "use cache";

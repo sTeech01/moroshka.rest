@@ -31,10 +31,9 @@ mkdirSync(path.join(out, "home"), { recursive: true });
 // Гравюра с ягодами (уже прозрачная)
 await sharp(path.join(src, "berries.png")).resize({ width: 2000 }).webp({ quality: 80, alphaQuality: 90 }).toFile(path.join(out, "berries.webp"));
 
-// Фото для главной
+// Фото для начального наполнения CMS (сид): главная и банкеты
 const photos = {
   "hall.jpg": ["hero.webp", 2000],
-  "tree.jpg": ["about.webp", 1200],
   "uha.jpg": ["kitchen.webp", 1400],
   "bar.jpg": ["bar.webp", 1400],
   "vip.jpg": ["vip.webp", 1600],

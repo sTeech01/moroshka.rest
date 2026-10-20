@@ -17,17 +17,6 @@ export const formatEventDate = (date: string) => {
   return time === "00:00" ? day : `${day} · ${time}`;
 };
 
-/** Событие строкой — для главной */
-export function EventRow({ event }: { event: EventPreview }) {
-  return (
-    <Link href={`/events/${event.slug}`} className="group flex flex-col gap-2.5 border-b border-border py-7 lg:pr-7">
-      <div className="text-[13px] tracking-[0.16em] text-berry uppercase">{formatEventDate(event.date)}</div>
-      <div className="h-display text-[28px] group-hover:text-berry">{event.title}</div>
-      {event.summary && <p className="text-[15px] leading-relaxed text-muted">{event.summary}</p>}
-    </Link>
-  );
-}
-
 /** Событие с обложкой — для страницы афиши */
 export function EventCard({ event }: { event: EventPreview }) {
   return (

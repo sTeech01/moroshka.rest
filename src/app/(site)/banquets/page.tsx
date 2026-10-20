@@ -3,7 +3,7 @@ import { BookingForm } from "@/components/booking-form";
 import { CmsContent } from "@/components/cms-content";
 import { PageHero } from "@/components/page-hero";
 import { PhotoMosaic } from "@/components/photo-mosaic";
-import { getBanquets, getHome, getSettings } from "@/lib/content";
+import { getBanquets, getSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Банкеты и VIP-зал",
@@ -12,16 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default async function BanquetsPage() {
-  const [data, home, settings] = await Promise.all([getBanquets(), getHome(), getSettings()]);
+  const [data, settings] = await Promise.all([getBanquets(), getSettings()]);
   const phone = settings.banquetPhone || settings.phone;
-  // Своя галерея задаётся в админке; пока её нет — фото с главной
-  const gallery = data.gallery.length ? data.gallery : home.gallery;
+  const gallery = data.gallery;
 
   return (
     <>
       {/* Первый экран — тот же, что на главной (PageHero). Под кнопками: залы и вместимость | телефон */}
       <PageHero
-        image={data.heroImage ?? home.banquetImage}
+        image={data.heroImage}
         eyebrow="VIP-зал и банкеты"
         title={data.title}
         subtitle={data.intro}
@@ -32,7 +31,7 @@ export default async function BanquetsPage() {
         info={{
           left: data.halls.length
             ? data.halls.map((h) => (h.capacity ? `${h.name}  ${h.capacity}` : h.name))
-            : [home.banquetCapacity ?? "VIP-зал"],
+            : ["VIP-зал"],
           right: ["Телефон банкетов", phone],
         }}
         phone={phone}

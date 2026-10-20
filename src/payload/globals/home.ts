@@ -16,15 +16,13 @@ export const Home: GlobalConfig = {
           fields: [
             { name: "heroTitle", label: "Заголовок", type: "text", required: true },
             { name: "heroSubtitle", label: "Подзаголовок", type: "textarea" },
-            { name: "heroImage", label: "Фото", type: "upload", relationTo: "media" },
-          ],
-        },
-        {
-          label: "О ресторане",
-          fields: [
-            { name: "aboutTitle", label: "Заголовок", type: "text" },
-            { name: "aboutText", label: "Текст", type: "textarea" },
-            { name: "aboutImage", label: "Фото", type: "upload", relationTo: "media" },
+            {
+              name: "heroImage",
+              label: "Фото",
+              type: "upload",
+              relationTo: "media",
+              admin: { description: "Сейчас на первом экране видео (public/video/hero.mp4); фото — для превью ссылок в соцсетях и на случай, если видео уберут" },
+            },
           ],
         },
         {
@@ -48,7 +46,7 @@ export const Home: GlobalConfig = {
         },
         {
           label: "Популярные блюда",
-          description: "Блюда из меню iiko для блока «Северная кухня дома». Пусто — первые 4 позиции в наличии",
+          description: "Блюда из меню доставки для блока «Северная кухня дома». Пусто — по одному блюду с фото из разных разделов",
           fields: [
             {
               name: "featuredDishes",
@@ -59,25 +57,19 @@ export const Home: GlobalConfig = {
             },
           ],
         },
-        {
-          label: "Банкеты",
-          fields: [
-            { name: "banquetTitle", label: "Заголовок", type: "text" },
-            { name: "banquetText", label: "Текст", type: "textarea" },
-            { name: "banquetCapacity", label: "Вместимость", type: "text", admin: { placeholder: "до 40 гостей" } },
-            { name: "banquetImage", label: "Главное фото", type: "upload", relationTo: "media" },
-            {
-              name: "gallery",
-              label: "Галерея (3 фото)",
-              type: "upload",
-              relationTo: "media",
-              hasMany: true,
-              maxRows: 6,
-            },
-          ],
-        },
       ],
     },
+    // Блоки «О ресторане» и «VIP-зал и банкеты» сняты с главной, у страницы «Банкеты» свои поля.
+    // Поля скрыты из админки и API, но оставлены в схеме: удаление колонок — миграция с потерей
+    // данных. Убрать вместе с миграцией, когда будет удобно
+    { name: "aboutTitle", type: "text", hidden: true },
+    { name: "aboutText", type: "textarea", hidden: true },
+    { name: "aboutImage", type: "upload", relationTo: "media", hidden: true },
+    { name: "banquetTitle", type: "text", hidden: true },
+    { name: "banquetText", type: "textarea", hidden: true },
+    { name: "banquetCapacity", type: "text", hidden: true },
+    { name: "banquetImage", type: "upload", relationTo: "media", hidden: true },
+    { name: "gallery", type: "upload", relationTo: "media", hasMany: true, hidden: true },
   ],
   hooks: { afterChange: [revalidateGlobal] },
 };
