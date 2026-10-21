@@ -1,6 +1,6 @@
 // Демо-данные для показа на Vercel: копия базы без личных данных и копия загруженных фото.
 //
-//   DEMO_PASSWORD=<пароль> npm run demo:build
+//   npm run demo:build   (пароль демо-пользователя — DEMO_PASSWORD в .env.local или в окружении)
 //
 // demo/payload.db — копия data/payload.db: вместо настоящих пользователей один demo@moroshka.rest
 //   с паролем из DEMO_PASSWORD, без сессий и настроек; миграции отмечены применёнными.
@@ -15,6 +15,10 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const root = process.cwd();
+// Пароль демо-пользователя хранится в .env.local (в git не попадает)
+try {
+  process.loadEnvFile(path.join(root, ".env.local"));
+} catch {}
 const password = process.env.DEMO_PASSWORD;
 if (!password || password.length < 10) throw new Error("Задайте DEMO_PASSWORD (не короче 10 символов)");
 
