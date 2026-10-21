@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MenuPromos } from "@/components/promo-banners";
 import { features } from "@/config/site";
 import { getDelivery, getPromos, getSettings } from "@/lib/content";
+import { orderSection } from "@/lib/delivery";
 import { formatPrice, formatWeight } from "@/lib/format";
 import { getHallMenu } from "@/lib/menu/get-menu";
 import type { Dish } from "@/lib/menu/types";
@@ -16,13 +17,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * Меню зала — витрина без корзины. Блюда, которые есть и в доставке (тот же ID в iiko),
- * получают ссылку «Можно заказать домой».
+ * Меню зала — витрина без корзины. Блюда, которые можно заказать на сайте (тот же ID в iiko
+ * в меню доставки/самовывоза), получают ссылку «Можно заказать с собой» (или «домой» при доставке).
  */
 export default async function MenuPage() {
   const [menu, delivery, promos, settings] = await Promise.all([getHallMenu(), getDelivery(), getPromos("menu"), getSettings()]);
-  // Доставка на сайте — только когда включены онлайн-заказы (features.onlineOrders) и доставка в админке
-  const ordering = features.onlineOrders && delivery.enabled;
+  // Заказ на сайте — когда включены онлайн-заказы и в админке есть доставка или самовывоз
+  const ordering = features.onlineOrders && (delivery.enabled || delivery.pickupEnabled);
+  const section = orderSection(delivery);
   const deliverySlugs = ordering ? menu.deliverySlugs : {};
 
   return (
@@ -39,14 +41,16 @@ export default async function MenuPage() {
             </Link>
             {ordering && (
               <Link href="/delivery" className="btn btn-ink btn-sm">
-                Заказать доставку →
+                {section.menuCta}
               </Link>
             )}
           </div>
         </div>
         {ordering ? (
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">
-            Часть блюд можно заказать домой — у них отметка «Можно заказать домой». Цены в зале и в доставке могут отличаться.
+            {delivery.enabled
+              ? "Часть блюд можно заказать домой — у них отметка «Можно заказать домой». Цены в зале и в доставке могут отличаться."
+              : "Часть блюд можно заказать на сайте и забрать в ресторане — у них отметка «Можно заказать с собой». Цены в зале и с собой могут отличаться."}
           </p>
         ) : (
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">
@@ -81,14 +85,14 @@ export default async function MenuPage() {
                 {withPhoto.length > 0 && (
                   <div className="mt-7 grid gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
                     {withPhoto.map((d) => (
-                      <HallDishCard key={d.id} dish={d} deliverySlug={deliverySlugs[d.id]} />
+                      <HallDishCard key={d.id} dish={d} orderLink={deliverySlugs[d.id] ? { slug: deliverySlugs[d.id], label: section.dishLink } : undefined} />
                     ))}
                   </div>
                 )}
                 {rest.length > 0 && (
                   <ul className={`grid gap-x-12 gap-y-6 lg:grid-cols-2 ${withPhoto.length ? "mt-10" : "mt-7"}`}>
                     {rest.map((d) => (
-                      <HallDishRow key={d.id} dish={d} deliverySlug={deliverySlugs[d.id]} />
+                      <HallDishRow key={d.id} dish={d} orderLink={deliverySlugs[d.id] ? { slug: deliverySlugs[d.id], label: section.dishLink } : undefined} />
                     ))}
                   </ul>
                 )}
@@ -106,16 +110,19 @@ function dishWeight(dish: Dish) {
   return formatWeight(size.weight, dish.measureUnit);
 }
 
-function DeliveryLink({ slug }: { slug?: string }) {
-  if (!slug) return null;
+/** Ссылка на блюдо в разделе заказа: «Можно заказать с собой →» (или «домой» при доставке) */
+type OrderLink = { slug: string; label: string };
+
+function DeliveryLink({ link }: { link?: OrderLink }) {
+  if (!link) return null;
   return (
-    <Link href={`/delivery/${slug}`} className="mt-2 inline-block text-sm font-semibold text-berry hover:text-berry-hover">
-      Можно заказать домой →
+    <Link href={`/delivery/${link.slug}`} className="mt-2 inline-block text-sm font-semibold text-berry hover:text-berry-hover">
+      {link.label}
     </Link>
   );
 }
 
-function HallDishCard({ dish, deliverySlug }: { dish: Dish; deliverySlug?: string }) {
+function HallDishCard({ dish, orderLink }: { dish: Dish; orderLink?: OrderLink }) {
   const weight = dishWeight(dish);
   return (
     <article className="flex flex-col gap-3">
@@ -128,13 +135,13 @@ function HallDishCard({ dish, deliverySlug }: { dish: Dish; deliverySlug?: strin
       </div>
       {weight && <div className="-mt-2 text-xs text-muted">{weight}</div>}
       {dish.description && <p className="text-sm leading-relaxed text-muted">{dish.description}</p>}
-      <DeliveryLink slug={deliverySlug} />
+      <DeliveryLink link={orderLink} />
     </article>
   );
 }
 
 /** Блюдо без фото — строка «название ……… выход / цена», как в бумажном меню */
-function HallDishRow({ dish, deliverySlug }: { dish: Dish; deliverySlug?: string }) {
+function HallDishRow({ dish, orderLink }: { dish: Dish; orderLink?: OrderLink }) {
   const weight = dishWeight(dish);
   return (
     <li>
@@ -147,7 +154,7 @@ function HallDishRow({ dish, deliverySlug }: { dish: Dish; deliverySlug?: string
         </span>
       </div>
       {dish.description && <p className="mt-1 text-sm leading-relaxed text-muted">{dish.description}</p>}
-      <DeliveryLink slug={deliverySlug} />
+      <DeliveryLink link={orderLink} />
     </li>
   );
 }

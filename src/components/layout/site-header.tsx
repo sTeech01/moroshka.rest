@@ -1,15 +1,17 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { features, navigation } from "@/config/site";
-import { getSettings } from "@/lib/content";
+import { features, getNavigation } from "@/config/site";
+import { getDelivery, getSettings } from "@/lib/content";
 import { CartButton } from "./cart-button";
 import { HeaderShell } from "./header-shell";
 import { MobileNav } from "./mobile-nav";
 
 /** Шапка тёмная на всех страницах; на главной до прокрутки — прозрачная поверх фото (HeaderShell) */
 export async function SiteHeader() {
-  const settings = await getSettings();
+  const [settings, delivery] = await Promise.all([getSettings(), getDelivery()]);
   const tel = settings.phone.replace(/[^\d+]/g, "");
+  const navigation = getNavigation(delivery);
+  const ordering = features.onlineOrders && (delivery.enabled || delivery.pickupEnabled);
 
   return (
     <HeaderShell>
@@ -41,8 +43,8 @@ export async function SiteHeader() {
           <Link href="/#booking" className="btn btn-line btn-sm hidden xl:inline-flex">
             Забронировать стол
           </Link>
-          {features.onlineOrders && <CartButton />}
-          <MobileNav phone={settings.phone} />
+          {ordering && <CartButton />}
+          <MobileNav phone={settings.phone} items={navigation} />
         </div>
       </div>
     </HeaderShell>

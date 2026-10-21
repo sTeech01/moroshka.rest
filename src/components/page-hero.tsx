@@ -10,8 +10,8 @@ type Props = {
   /** Фоновое видео вместо фото: src — ролик, poster — его первый кадр (виден, пока видео грузится или отключено) */
   video?: { src: string; poster: string; alt: string };
   eyebrow: string;
-  /** Знак над надписью — регалия ресторана (на главной: рекорд России) */
-  badge?: { label: string; href: string };
+  /** Знак над надписью — регалия ресторана (на главной: логотип Книги рекордов России + подпись) */
+  badge?: { label: string; href: string; logo: { src: string; alt: string; width: number; height: number } };
   title: string;
   subtitle?: string | null;
   actions: Action[];
@@ -51,13 +51,15 @@ export function PageHero({ image, video, eyebrow, badge, title, subtitle, action
       <div className="hero-text container-site flex h-full flex-col items-center pt-16 pb-8 text-center lg:pt-[76px] lg:pb-10">
         {/* Заголовок — по центру свободной части экрана */}
         <div className="flex flex-1 flex-col items-center justify-center py-6">
+          {/* Регалия как «Мишлен» у других: официальный логотип на светлой табличке — его цвета не трогаем */}
           {badge && (
-            <Link
-              href={badge.href}
-              className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-berry/50 bg-night/40 py-1.5 pr-4 pl-2.5 text-[12px] tracking-wide text-snow backdrop-blur-sm transition-colors hover:border-berry lg:mb-6 lg:text-[13px]"
-            >
-              <MedalIcon />
-              {badge.label}
+            <Link href={badge.href} className="group mb-6 inline-flex items-center gap-3 lg:mb-7">
+              <span className="rounded-md bg-white px-2.5 py-1.5 shadow-[0_6px_24px_rgba(0,0,0,0.35)] transition-transform group-hover:-translate-y-0.5">
+                <Image src={badge.logo.src} alt={badge.logo.alt} width={badge.logo.width} height={badge.logo.height} className="h-9 w-auto lg:h-11" priority />
+              </span>
+              <span className="text-left text-[11px] leading-snug tracking-[0.14em] text-snow uppercase transition-colors group-hover:text-berry lg:text-xs">
+                {badge.label}
+              </span>
             </Link>
           )}
           <p className="eyebrow text-berry">{eyebrow}</p>
@@ -106,15 +108,5 @@ export function PageHero({ image, video, eyebrow, badge, title, subtitle, action
         </svg>
       </a>
     </section>
-  );
-}
-
-function MedalIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--berry)" strokeWidth="1.5" aria-hidden>
-      <path d="M8 3h8l-2.5 5.5M8 3l2.5 5.5" />
-      <circle cx="12" cy="15" r="6" />
-      <path d="m12 12 .9 1.9 2.1.3-1.5 1.4.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.4 2.1-.3z" fill="var(--berry)" stroke="none" />
-    </svg>
   );
 }

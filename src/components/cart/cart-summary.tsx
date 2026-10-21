@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useDelivery } from "@/components/delivery-context";
+import { PICKUP_LEAD_MINUTES } from "@/lib/delivery";
 import { formatPrice } from "@/lib/format";
 import { cartTotal, useCart, useCartHydrated } from "@/store/cart";
 
@@ -11,10 +12,13 @@ export function MinOrderProgress({ total }: { total: number }) {
   const left = d.minOrderSum - total;
 
   if (!d.enabled) {
+    // Доставки нет (так сейчас у ресторана): заказ на сайте — забрать в ресторане
     return (
       <p className="text-[13px] text-muted">
-        {d.notice ?? "Доставка временно не работает."}
-        {d.pickupEnabled && " Доступен самовывоз."}
+        {d.pickupEnabled
+          ? `Самовывоз из ресторана: заказ обычно готов через ${PICKUP_LEAD_MINUTES} минут.`
+          : (d.notice ?? "Заказы на сайте временно не принимаются.")}
+        {d.pickupEnabled && d.notice && <span className="mt-1 block font-semibold text-text">{d.notice}</span>}
       </p>
     );
   }

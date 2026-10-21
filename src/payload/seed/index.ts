@@ -76,8 +76,9 @@ export async function seed(payload: Payload): Promise<void> {
     await payload.updateGlobal({
       slug: "delivery",
       // Время доставки (60 мин) — из myresto; мин. сумма — от заказчика; стоимость — уточнить
+      // Доставки у ресторана пока нет, только самовывоз (заказчик, 21.10.2026). Сайт показывает раздел «Самовывоз»
       data: {
-        enabled: true,
+        enabled: false,
         minOrderSum: 1000,
         price: 0,
         acceptFrom: "12:00",

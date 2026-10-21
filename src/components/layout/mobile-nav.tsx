@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { navigation } from "@/config/site";
+import type { NavItem } from "@/config/site";
 
-export function MobileNav({ phone }: { phone: string }) {
+export function MobileNav({ phone, items }: { phone: string; items: NavItem[] }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -27,7 +27,7 @@ export function MobileNav({ phone }: { phone: string }) {
           className="fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col gap-1 overflow-y-auto bg-night px-4 py-8 text-snow"
           onClick={(e) => (e.target as HTMLElement).closest("a") && setOpen(false)}
         >
-          {navigation.map((item) => (
+          {items.map((item) => (
             <Link key={item.href} href={item.href} className="h-display border-b border-border py-4 text-3xl">
               {item.label}
             </Link>

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useDelivery } from "@/components/delivery-context";
 import { features } from "@/config/site";
-import { deliveryPriceFor, type DeliverySettings } from "@/lib/delivery";
+import { deliveryPriceFor, PICKUP_LEAD_MINUTES, type DeliverySettings } from "@/lib/delivery";
 import { formatPrice } from "@/lib/format";
 import type { CheckoutPayload } from "@/lib/order/schema";
 import { cartTotal, useCart, useCartHydrated } from "@/store/cart";
@@ -22,10 +22,11 @@ function todayAt(hhmm: string, endOfWindow = false): Date {
   return d;
 }
 
-/** Слоты «ко времени» на сегодня в окне приёма заказов из админки */
-function buildSlots(d: DeliverySettings): Slot[] {
+/** Слоты «ко времени» на сегодня в окне приёма заказов из админки. Самовывоз готов быстрее доставки */
+function buildSlots(d: DeliverySettings, pickup: boolean): Slot[] {
   const step = d.slotMinutes * 60_000;
-  const earliest = Math.max(Date.now() + d.leadTimeMinutes * 60_000, todayAt(d.acceptFrom).getTime());
+  const lead = pickup ? PICKUP_LEAD_MINUTES : d.leadTimeMinutes;
+  const earliest = Math.max(Date.now() + lead * 60_000, todayAt(d.acceptFrom).getTime());
   const start = Math.ceil(earliest / step) * step;
   const end = todayAt(d.acceptUntil, true);
   const slots: Slot[] = [];
@@ -70,7 +71,7 @@ export function CheckoutForm() {
       <p>
         Корзина пуста.{" "}
         <Link href="/delivery" className="underline">
-          Вернуться в меню
+          Выбрать блюда
         </Link>
       </p>
     );
@@ -190,7 +191,7 @@ export function CheckoutForm() {
           </fieldset>
         ) : (
           <div className="border border-border bg-[#fffdf9] px-4 py-3 text-sm">
-            Самовывоз из ресторана. Заказ обычно готов через 30 минут.
+            Самовывоз из ресторана. Заказ обычно готов через {PICKUP_LEAD_MINUTES} минут.
           </div>
         )}
 
@@ -200,7 +201,7 @@ export function CheckoutForm() {
             <button type="button" onClick={() => setSlots(null)} aria-pressed={slots === null} className="pill pill-compact">
               <Icon d={icons.clock} /> Как можно скорее
             </button>
-            <button type="button" onClick={() => setSlots(buildSlots(delivery))} aria-pressed={slots !== null} className="pill pill-compact">
+            <button type="button" onClick={() => setSlots(buildSlots(delivery, !isDelivery))} aria-pressed={slots !== null} className="pill pill-compact">
               <Icon d={icons.calendar} /> Ко времени
             </button>
             {slots !== null &&
@@ -244,7 +245,7 @@ export function CheckoutForm() {
             className="field field-compact"
             rows={2}
             maxLength={500}
-            placeholder="Например, уточните удобное время, особенности подъезда и т. д."
+            placeholder={isDelivery ? "Например, уточните удобное время, особенности подъезда и т. д." : "Например, нужны приборы или особые пожелания к блюдам"}
           />
         </div>
 

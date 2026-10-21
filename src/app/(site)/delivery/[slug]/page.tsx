@@ -6,6 +6,8 @@ import { DISH_PLACEHOLDER, DishImage } from "@/components/menu/dish-image";
 import { DishOptions } from "@/components/menu/dish-options";
 import { siteConfig } from "@/config/site";
 import { formatPrice, formatWeight } from "@/lib/format";
+import { getDelivery } from "@/lib/content";
+import { orderSection } from "@/lib/delivery";
 import { getDishBySlug, getMenu } from "@/lib/menu/get-menu";
 
 export async function generateStaticParams() {
@@ -14,11 +16,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps<"/delivery/[slug]">): Promise<Metadata> {
-  const dish = await getDishBySlug((await params).slug);
+  const [dish, delivery] = await Promise.all([getDishBySlug((await params).slug), getDelivery()]);
   if (!dish) return {};
   return {
-    title: `${dish.name} — доставка в Губкинском`,
-    description: dish.description || `${dish.name} от ${formatPrice(dish.priceFrom)} с доставкой по Губкинскому.`,
+    title: `${dish.name} — ${delivery.enabled ? "доставка" : "с собой"} в Губкинском`,
+    description:
+      dish.description ||
+      `${dish.name} от ${formatPrice(dish.priceFrom)} ${delivery.enabled ? "с доставкой по Губкинскому" : "— закажите на сайте и заберите в ресторане"}.`,
     alternates: { canonical: `/delivery/${dish.slug}` },
     openGraph: { images: [dish.image ?? DISH_PLACEHOLDER] },
   };
@@ -51,8 +55,9 @@ function DishSkeleton() {
 
 async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"] }) {
   const { slug } = await params;
-  const [dish, menu] = await Promise.all([getDishBySlug(slug), getMenu()]);
+  const [dish, menu, delivery] = await Promise.all([getDishBySlug(slug), getMenu(), getDelivery()]);
   if (!dish) notFound();
+  const section = orderSection(delivery);
 
   const category = menu.categories.find((c) => c.id === dish.categoryId);
   const size = dish.sizes.find((s) => s.isDefault) ?? dish.sizes[0];
@@ -70,12 +75,12 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
   return (
     <div className="container-site pt-6 pb-16 md:py-12">
       <nav aria-label="Навигация" className="flex items-center gap-3 text-sm text-muted">
-        <Link href="/delivery" className="grid h-11 w-11 place-items-center rounded-full border border-border hover:text-text" aria-label="Назад к доставке">
+        <Link href="/delivery" className="grid h-11 w-11 place-items-center rounded-full border border-border hover:text-text" aria-label={`Назад: ${section.label}`}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
             <path d="M15 5l-7 7 7 7" />
           </svg>
         </Link>
-        <Link href="/delivery" className="hover:text-text">Доставка</Link>
+        <Link href="/delivery" className="hover:text-text">{section.label}</Link>
         {category && (
           <>
             <span aria-hidden>·</span>

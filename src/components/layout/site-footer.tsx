@@ -2,7 +2,7 @@ import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { features, navigation } from "@/config/site";
+import { features, getNavigation } from "@/config/site";
 import { getDelivery, getSettings } from "@/lib/content";
 
 export async function SiteFooter() {
@@ -61,7 +61,7 @@ export async function SiteFooter() {
 
         <nav className="flex flex-col gap-2 text-[15px]">
           <div className="eyebrow mb-1 text-lichen">Разделы</div>
-          {navigation.map((item) => (
+          {getNavigation(delivery).map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-berry">
               {item.label}
             </Link>

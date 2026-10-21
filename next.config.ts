@@ -48,10 +48,10 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    // Онлайн-заказы выключены (src/config/site.ts → features.onlineOrders): разделы заказа
-    // временно ведут в меню. Не permanent — чтобы браузеры не запомнили редирект до включения
+    // Онлайн-заказы выключены целиком (NEXT_PUBLIC_ONLINE_ORDERS_ENABLED=false, см. src/config/site.ts):
+    // разделы заказа временно ведут в меню. Не permanent — чтобы браузеры не запомнили редирект
     const ordersOff =
-      process.env.NEXT_PUBLIC_ONLINE_ORDERS_ENABLED === "true"
+      process.env.NEXT_PUBLIC_ONLINE_ORDERS_ENABLED !== "false"
         ? []
         : ["/delivery", "/delivery/:slug", "/cart", "/checkout", "/order/:id"].map((source) => ({
             source,

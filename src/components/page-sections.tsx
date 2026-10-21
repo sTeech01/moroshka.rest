@@ -28,11 +28,21 @@ function TextImage({ section }: { section: Extract<PageSection, { kind: "textIma
   );
 }
 
+/** Официальный логотип Книги рекордов России (с их сайта, векторный оригинал → WebP) */
+export const RECORD_LOGO = { src: "/images/about/kniga-rekordov-rossii.webp", alt: "Книга рекордов России", width: 720, height: 347 };
+
 /** Секция «Событие с цифрами» — на «О ресторане» и (рекорд России) на главной */
 export function Highlight({ section }: { section: Extract<PageSection, { kind: "highlight" }> }) {
+  // Секция о рекорде (ссылка на Книгу рекордов России) — с официальным логотипом над заголовком
+  const isRecord = section.link?.url.includes("knigarekordovrossii.ru") ?? false;
   return (
     <section className="border border-border bg-velvet/40 p-6 sm:p-10 lg:p-14">
       <div className="text-center">
+        {isRecord && (
+          <span className="mb-6 inline-block rounded-md bg-white px-4 py-2.5">
+            <Image src={RECORD_LOGO.src} alt={RECORD_LOGO.alt} width={RECORD_LOGO.width} height={RECORD_LOGO.height} className="h-14 w-auto lg:h-16" />
+          </span>
+        )}
         {section.eyebrow && <p className="eyebrow text-berry">{section.eyebrow}</p>}
         <h2 className="h-display mx-auto mt-4 max-w-3xl text-4xl lg:text-5xl">{section.title}</h2>
       </div>

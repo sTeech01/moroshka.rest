@@ -3,11 +3,12 @@ import Link from "next/link";
 import { BookingForm } from "@/components/booking-form";
 import { DishCardMinimal } from "@/components/menu/dish-card";
 import { PageHero } from "@/components/page-hero";
-import { Highlight } from "@/components/page-sections";
+import { Highlight, RECORD_LOGO } from "@/components/page-sections";
 import { HomePromos } from "@/components/promo-banners";
 import { YandexMap, yandexRouteUrl } from "@/components/yandex-map";
 import { features } from "@/config/site";
-import { getHome, getPage, getPromos, getSettings } from "@/lib/content";
+import { getDelivery, getHome, getPage, getPromos, getSettings } from "@/lib/content";
+import { orderSection } from "@/lib/delivery";
 import { formatPrice, formatWeight } from "@/lib/format";
 import { getHallMenu, getMenu } from "@/lib/menu/get-menu";
 import type { Dish } from "@/lib/menu/types";
@@ -16,14 +17,17 @@ import type { Dish } from "@/lib/menu/types";
 const SIGNATURE = ["рубанина", "ребро ямальского оленя", "филе муксуна", "ямальские ягоды"];
 
 export default async function HomePage() {
-  const [home, settings, menu, hall, promos, about] = await Promise.all([
+  const [home, settings, menu, hall, promos, about, delivery] = await Promise.all([
     getHome(),
     getSettings(),
     getMenu(),
     getHallMenu(),
     getPromos("home"),
     getPage("about"),
+    getDelivery(),
   ]);
+  // Заказ на сайте: доставка и/или самовывоз (настраивается в админке); сейчас — только самовывоз
+  const ordering = features.onlineOrders && (delivery.enabled || delivery.pickupEnabled);
 
   // Рекорд России — секция «Событие с цифрами» со страницы «О ресторане» (правится в админке там же)
   const record = about?.sections.find((s) => s.kind === "highlight");
@@ -41,12 +45,12 @@ export default async function HomePage() {
       <PageHero
         image={home.heroImage}
         video={{ src: "/video/hero.mp4", poster: "/video/hero-poster.webp", alt: "Интерьер ресторана «Морошка»: стена из мха, дерево, бар" }}
-        badge={record ? { label: "Рекордсмен Книги рекордов России", href: "/#record" } : undefined}
+        badge={record ? { label: "Рекорд России · 2026", href: "/#record", logo: RECORD_LOGO } : undefined}
         eyebrow="Ресторан · Губкинский"
         title={home.heroTitle}
         subtitle={home.heroSubtitle}
         actions={[
-          { href: "/menu", label: features.onlineOrders ? "Меню и доставка" : "Меню", primary: true },
+          { href: "/menu", label: features.onlineOrders && delivery.enabled ? "Меню и доставка" : "Меню", primary: true },
           { href: "#booking", label: "Забронировать стол" },
         ]}
         info={{
@@ -80,7 +84,11 @@ export default async function HomePage() {
         ))}
       </section>
 
-      {features.onlineOrders ? <DeliveryDishes menu={menu} featuredIds={home.featuredDishes} /> : <SignatureDishes hall={hall} />}
+      {ordering ? (
+        <DeliveryDishes menu={menu} featuredIds={home.featuredDishes} section={orderSection(delivery)} />
+      ) : (
+        <SignatureDishes hall={hall} />
+      )}
 
       {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
       {record?.kind === "highlight" && (
@@ -205,8 +213,16 @@ function SignatureDishes({ hall }: { hall: Awaited<ReturnType<typeof getHallMenu
   );
 }
 
-/** Популярные блюда с доставкой и кнопкой «в корзину» — когда работают онлайн-заказы */
-function DeliveryDishes({ menu, featuredIds }: { menu: Awaited<ReturnType<typeof getMenu>>; featuredIds: string[] }) {
+/** Популярные блюда для заказа на сайте (доставка или самовывоз) с кнопкой «в корзину» */
+function DeliveryDishes({
+  menu,
+  featuredIds,
+  section,
+}: {
+  menu: Awaited<ReturnType<typeof getMenu>>;
+  featuredIds: string[];
+  section: ReturnType<typeof orderSection>;
+}) {
   // Популярные блюда выбираются в админке (Главная → «Популярные блюда»).
   // Блюда из стоп-листа и удалённые из меню пропускаются. Пусто — по одному блюду с фото из разных разделов
   const dishes = menu.categories.flatMap((c) => c.dishes);
@@ -222,11 +238,11 @@ function DeliveryDishes({ menu, featuredIds }: { menu: Awaited<ReturnType<typeof
     <section className="container-site pt-20 lg:pt-30">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="eyebrow">Доставка из ресторана</p>
-          <h2 className="h-display mt-5 text-4xl lg:text-[56px]">Северная кухня дома</h2>
+          <p className="eyebrow">{section.homeEyebrow}</p>
+          <h2 className="h-display mt-5 text-4xl lg:text-[56px]">{section.homeTitle}</h2>
         </div>
         <Link href="/delivery" className="border-b border-border pb-1 text-sm tracking-wide text-soft transition-colors hover:border-berry hover:text-berry">
-          Все блюда с доставкой →
+          {section.homeLink}
         </Link>
       </div>
       <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:mt-12 lg:grid-cols-4 lg:gap-x-6">

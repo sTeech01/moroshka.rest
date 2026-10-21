@@ -4,21 +4,39 @@ import { CartSummary } from "@/components/cart/cart-summary";
 import { CmsContent } from "@/components/cms-content";
 import { DishCard } from "@/components/menu/dish-card";
 import { MenuPromos } from "@/components/promo-banners";
-import { getDelivery, getPage, getPromos } from "@/lib/content";
+import { getDelivery, getPage, getPromos, getSettings } from "@/lib/content";
+import { orderSection } from "@/lib/delivery";
 import { getMenu } from "@/lib/menu/get-menu";
 
 export async function generateMetadata(): Promise<Metadata> {
   const delivery = await getDelivery();
-  return {
-    title: "Доставка",
-    description: `Доставка блюд ресторана «Морошка» по Губкинскому от ${delivery.minOrderSum} ₽: северная кухня, супы, горячее, десерты. Самовывоз.`,
-    alternates: { canonical: "/delivery" },
-  };
+  return delivery.enabled
+    ? {
+        title: "Доставка",
+        description: `Доставка блюд ресторана «Морошка» по Губкинскому от ${delivery.minOrderSum} ₽: северная кухня, супы, горячее, десерты. Самовывоз.`,
+        alternates: { canonical: "/delivery" },
+      }
+    : {
+        title: "Самовывоз",
+        description: "Закажите блюда ресторана «Морошка» на сайте и заберите в ресторане в Губкинском: северная кухня, супы, горячее, десерты.",
+        alternates: { canonical: "/delivery" },
+      };
 }
 
-/** Заказ на доставку (меню доставки из iiko) и условия доставки из CMS (Страницы → «Доставка и оплата») */
+/**
+ * Заказ на сайте (меню доставки из iiko). Пока доставка выключена в админке — это «Самовывоз»:
+ * заказ на сайте, забрать в ресторане. Условия доставки из CMS показываются, только когда есть доставка.
+ */
 export default async function DeliveryPage() {
-  const [menu, delivery, promos, terms] = await Promise.all([getMenu(), getDelivery(), getPromos("menu"), getPage("delivery")]);
+  const [menu, delivery, promos, terms, settings] = await Promise.all([
+    getMenu(),
+    getDelivery(),
+    getPromos("menu"),
+    getPage("delivery"),
+    getSettings(),
+  ]);
+  const section = orderSection(delivery);
+  const showTerms = delivery.enabled && Boolean(terms?.content);
 
   return (
     <div className="theme-paper">
@@ -26,13 +44,14 @@ export default async function DeliveryPage() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">
-              {delivery.enabled ? `По Губкинскому от ${delivery.minOrderSum} ₽` : "Доставка временно не работает"}
-              {delivery.pickupEnabled && " · самовывоз"}
+              {delivery.enabled
+                ? `По Губкинскому от ${delivery.minOrderSum} ₽${delivery.pickupEnabled ? " · самовывоз" : ""}`
+                : `Закажите на сайте — заберите в ресторане · ${settings.address}`}
             </p>
-            <h1 className="h-display mt-4 text-5xl lg:text-7xl">Доставка</h1>
+            <h1 className="h-display mt-4 text-5xl lg:text-7xl">{section.title}</h1>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
-            {terms?.content && (
+            {showTerms && (
               <a href="#usloviya" className="text-muted hover:text-text">
                 Условия доставки
               </a>
@@ -46,7 +65,7 @@ export default async function DeliveryPage() {
         <MenuPromos promos={promos} />
 
         <nav
-          aria-label="Разделы меню доставки"
+          aria-label="Разделы меню"
           className="z-30 -mx-4 mt-8 flex flex-wrap gap-2 border-y border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:sticky lg:top-[76px]"
         >
           {menu.categories.map((c) => (
@@ -69,7 +88,7 @@ export default async function DeliveryPage() {
               </section>
             ))}
 
-            {terms?.content && (
+            {showTerms && terms?.content && (
               <section id="usloviya" className="scroll-mt-24 lg:scroll-mt-40 border-t border-border pt-12">
                 <h2 className="h-display text-4xl">{terms.title}</h2>
                 <div className="mt-6 max-w-3xl">
