@@ -9,6 +9,8 @@ export interface MenuSource {
   getExternalMenu(): Promise<IikoExternalMenu>;
   /** Меню зала — витрина без заказа. Те же itemId, что и в доставке, у общих блюд */
   getHallMenu(): Promise<IikoExternalMenu>;
+  /** Барная карта — витрина без заказа, объёмы — размеры позиций */
+  getBarMenu(): Promise<IikoExternalMenu>;
   /** ID позиций и модификаторов в стоп-листе */
   getStopList(): Promise<string[]>;
   organizationId?: string;

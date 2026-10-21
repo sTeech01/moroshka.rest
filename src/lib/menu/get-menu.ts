@@ -77,3 +77,12 @@ export async function getHallMenu(): Promise<HallMenu> {
   for (const c of delivery.categories) for (const d of c.dishes) if (d.inStock) deliverySlugs[d.id] = d.slug;
   return { ...menu, deliverySlugs };
 }
+
+/** Барная карта (раздел «Меню» → «Бар»): витрина, у позиций несколько объёмов */
+export async function getBarMenu(): Promise<Menu> {
+  "use cache";
+  cacheLife("menu");
+  cacheTag(MENU_TAG);
+  const source = getMenuSource();
+  return mapIikoMenu(await source.getBarMenu(), new Set(), source.organizationId);
+}

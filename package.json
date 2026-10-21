@@ -11,6 +11,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "menu:import": "node scripts/import-myresto-menu.mjs",
     "menu:hall": "node scripts/hall-menu/build.mjs",
+    "menu:bar": "node scripts/bar-menu/build.mjs",
     "demo:build": "node scripts/build-demo.mjs",
     "payload": "payload --use-swc",
     "generate:types": "payload generate:types --use-swc",

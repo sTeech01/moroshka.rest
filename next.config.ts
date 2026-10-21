@@ -61,7 +61,6 @@ const nextConfig: NextConfig = {
     return [
       // Старые адреса сайта на Tilda
       { source: "/menu-kitchen", destination: "/menu", permanent: true },
-      { source: "/bar-menu", destination: "/menu", permanent: true },
       // Страницы блюд для заказа переехали в раздел «Доставка»
       { source: "/menu/:slug", destination: "/delivery/:slug", permanent: true },
       // Адрес соглашения зафиксирован в его тексте — короткий вариант ведёт туда же

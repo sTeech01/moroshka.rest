@@ -1,0 +1,5797 @@
+{
+  "id": "bar",
+  "name": "Барная карта",
+  "description": "Перенесено со старого сайта moroshka.rest/bar-menu",
+  "itemCategories": [
+    {
+      "id": "129fdcdb-7195-5933-a401-f17d9ee3d2b6",
+      "name": "Белые вина",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "da86c211-4ed8-5221-ae55-6229958c5584",
+          "sku": "",
+          "name": "Хэритэйдж Шардоне сухое, Тамань",
+          "description": "Heritage Chardonnay, Tamagne",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ade5b54e-7edb-5132-a325-c196f14f140e",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "0c06ff51-1ab6-510d-ac98-70f433308f6d",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "ec6b2cd1-1ec5-5bc3-aa32-6ffd4c8dfa20",
+          "sku": "",
+          "name": "Ангелы и Демоны Каберне сухое, Шато Тамань",
+          "description": "Angels and Demons Cabernet, Chateau Tamagne",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0e2e884a-ac39-5232-a61c-93b9c38e3f38",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "7659b409-27c6-5184-a834-2e9078155756",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "ae73cd7e-8360-51df-a2d5-2b89243ae35a",
+          "sku": "",
+          "name": "Пар Ла Мер Совиньон сухое, Шато Тамань",
+          "description": "Chateau Tamagne Par la Mer Sauvignon",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "8a31969e-90fd-5ad2-a154-79cc319ca7af",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 460
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "10c5249b-a930-5284-a226-7f68e585a0d5",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2760
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "cec53a7d-409f-533e-ae9f-6c1a6893db17",
+          "sku": "",
+          "name": "Нобиломо Мальвазия полусладкое, Италия",
+          "description": "Nobilomo Malvasia Semi-Sweet",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "df0097f3-3b21-50fb-afa4-8481d517d0d2",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "9726e68b-ba55-5293-a4ce-280b45f751a0",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "2979c6da-0475-5dfe-a0fc-f601859cbaa7",
+          "sku": "",
+          "name": "Портобелло Пино Гриджио делле Венеция сухое, Италия",
+          "description": "Portobello Pinot Grigio Delle Venezie DOC",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d9767a0d-f56f-539b-aee1-421669452276",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "9c7e5ee3-1b8b-50de-a7b8-78078b75061d",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "7326d138-5fc0-5cc9-ab1d-a54b96f7bfd9",
+          "sku": "",
+          "name": "Гави дель Коммуне ди Гави сухое, Италия",
+          "description": "Gavi del Comune di Gavi",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "849fad70-5a68-5a3f-ad43-e69aaba2fbdb",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 750
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "7fd557b0-3ae1-524e-a0c5-5c26fd530c3b",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b43c08aa-c85e-58da-a98a-eca237229194",
+          "sku": "",
+          "name": "Кло дю Шарм Шардоне сухое, Франция",
+          "description": "Clos du Charme Chardonnay",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "af02b71a-7919-561c-afcf-224d6f2b5c8f",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "6752a248-3a67-5c82-aa0f-16eb029f2c70",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b356d867-ee61-5ecc-afed-cfec798a3883",
+          "sku": "",
+          "name": "Виньо Верде Павао Эсколья полусухое, Португалия",
+          "description": "Vinho Verde PAVAO Escolha",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "afe96308-a9da-5449-a423-651d4848591d",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "448a204c-7328-5680-a167-ae8e16caff90",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "54770af2-d295-53f1-a6be-2c6b762d27e3",
+          "sku": "",
+          "name": "Штигельмар Грюнер Вельтлинер Пур Бургенланд сухое",
+          "description": "Stiegelmar Grüner Veltliner Pur Burgenland",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "691df933-0aef-5467-a7e0-d0c6d791b612",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 720
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "e4670e4c-9522-5834-a56f-3cca2f1fe1ae",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4320
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "1381a60f-49de-58c0-ab78-48fa364ef499",
+          "sku": "",
+          "name": "Ривер Рут Рислинг Рейнхессен сухое, Германия",
+          "description": "River Route Riesling Rheinhessen",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "4b16fbfe-a807-523c-af07-316b5adf35d7",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "c2cb4a03-5c7a-5519-a6e8-49a8a5b03ac3",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a320f4ad-866b-512b-a29a-c00c30f06da9",
+          "sku": "",
+          "name": "Гевюрцтраминер полусладкое, Германия",
+          "description": "Gewurztraminer",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "8878073e-400a-5767-afcd-524761297073",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "8fb355b4-7148-56b3-ab3b-cb9aa28c820f",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3900
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "00befa43-1ce1-5062-a829-3ed4dab8dc2d",
+          "sku": "",
+          "name": "Торо Торо Мальборо Совиньон Блан полусухое, Новая Зеландия",
+          "description": "Toro Toro Marlborough Sauvignon Blanc",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d8427a7d-9425-52f8-a911-7123eabb5550",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 720
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "68730c3e-c417-5cb4-a008-363fa6564e6a",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4320
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "38290a0f-7f54-5935-a6f1-4514ee0952c2",
+          "sku": "",
+          "name": "Алазанская Долина полусладкое, Грузия",
+          "description": "Alazani Valley",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "f8ff8426-3efd-5ef8-a05f-a348b2cdbd4d",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "125d65f6-d98c-5d14-a4eb-150bdee82730",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "95560fab-ad0b-56fa-a10f-2c6ea70437d8",
+          "sku": "",
+          "name": "Ркацители сухое, Грузия",
+          "description": "Rkatsiteli",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "5738ed90-3fa6-5f53-a251-f5723e7c15db",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "9f45817b-a11f-5dfa-ab01-3fa78fbdfebf",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2700
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e3325b37-6f8c-52a8-a3c5-d96d411bdc9f",
+      "name": "Красные и розовые вина",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "91f1e723-ac49-5827-a9fe-2428ada1ee54",
+          "sku": "",
+          "name": "Хэритэйдж Мерло сухое, Россия, Тамань",
+          "description": "Chateau Tamagne Heritage Merlot",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "1594071a-bc39-5ae7-a707-888ffff6dd4c",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "528616d9-85de-5bb9-ad53-26d3420e5598",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "535da09f-48f6-5c22-aa87-2f981931057f",
+          "sku": "",
+          "name": "Селект Руж полусладкое, Россия, Тамань",
+          "description": "Chateau Tamagne Select Rouge",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "87a7f8e8-aac3-5ac0-a70f-de8e5a00c2e0",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 380
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "ce9b1950-4ee0-56c9-a2e6-f30ccf386c83",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2280
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "efd12275-50a2-5571-ad35-5263e90637ec",
+          "sku": "",
+          "name": "Поместье Голубицкое Мерло сухое, Россия, Тамань",
+          "description": "Golubitskoe Estate Merlot",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "31130ce2-030a-59c7-a952-1bab73c1a0e6",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "e31aea5d-1859-5369-a4c7-7a3b575e2d4b",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3900
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "7c010f7e-eb26-5397-a5e3-4a64b1396037",
+          "sku": "",
+          "name": "Пар Ла Мер Цвайгельт сухое, Россия, Шато Тамань",
+          "description": "Par la Mer Zweigelt",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ec53db07-30cf-59b9-aab9-54e1c1b12475",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 460
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "37d87fe1-b7d3-5324-ab21-350c7aa57211",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2760
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d40c9da9-e786-5f9e-a87e-a85725fb196b",
+          "sku": "",
+          "name": "Портобелло Кьянти сухое, Италия",
+          "description": "Portobello Chianti",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d6f59fa5-f0be-5f3b-a7dd-676dbe15370e",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "4c9e5b10-58be-55c3-af2b-dbb74158cb96",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3900
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "6ff68f02-14a1-5962-a72e-4b4730a9215a",
+          "sku": "",
+          "name": "Портобелло Монтепульчано д’Абруццо сухое, Италия",
+          "description": "Portobello Montepulciano d’Abruzzo",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "01ce95a0-2119-5c70-afc1-6b72ff9c2c47",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 700
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "a0479c6d-c582-5d9b-ab7e-a34e96cda016",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4ed22a6c-3cce-56f6-adee-10a087235023",
+          "sku": "",
+          "name": "Кло дю Шарм Каберне Совиньон сухое, Франция",
+          "description": "Clos du Charme Cabernet Sauvignon",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "01d131d6-8ac4-5417-af20-7b31718c64c2",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "5a4bba09-0c4e-538f-acb5-8266bedc1e00",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "8efdfa48-8d82-55e1-aebe-3e27f9073597",
+          "sku": "",
+          "name": "Рамон Бильбао Крианса сухое, Испания",
+          "description": "Ramon Bilbao Crianza",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ad58e24c-d625-52d2-a504-a0468e139014",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 920
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "6ecd324f-83fe-5b05-a70c-13decab2a89d",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 5520
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "181170ec-e933-5d55-a44c-647cb095ee32",
+          "sku": "",
+          "name": "Мэзон Кастель Пино Нуар сухое, Франция",
+          "description": "Maison Castel Pinot Noir",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "42d5c225-2b15-514c-abb2-294d75708f2e",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 760
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "2f2ac482-c271-596f-ac86-b0113c3a701e",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4560
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b670a465-a0d4-5308-a265-4dc7bfb82507",
+          "sku": "",
+          "name": "Демонс энд Энджелс Мальбек полусухое, Аргентина",
+          "description": "Demons & Angels Malbec",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "78d28ac5-ca58-5d75-a553-62cd6420129d",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 750
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "189e5b7d-5940-5066-a2fb-403d7a910a21",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a5dd38be-4fb6-594c-a5a9-f97c48c75f35",
+          "sku": "",
+          "name": "Виньо Верде Павао Розе полусухое, Португалия",
+          "description": "Vinho Verde Pavão Rosé DOC",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "83bd509a-2358-5489-a247-d2e918dc9ed7",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "ee5ad5af-5a7b-52af-ab9b-8ee5cc19a176",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "db5a4d04-3855-5b7f-abdd-563812fdf1b5",
+          "sku": "",
+          "name": "Курикано Карменер сухое, Чили",
+          "description": "Curicano Carmenere",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "94952e59-03ed-5db6-ab09-24dc8ed9788f",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 480
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "22b9fe4a-177b-55ef-a0db-dfb3f9f421f2",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2280
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "68942d03-d159-5846-afa2-6e80d20ebc6a",
+          "sku": "",
+          "name": "Курикано Розе сухое, Чили",
+          "description": "Curicano Rosé",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ffd892fa-a954-519d-a69b-890fd83d4682",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 480
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "1941eb86-31ef-5f3b-ab60-195f0ad5ec39",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2280
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9901b84c-ebec-5c25-ac1b-06ec05378efe",
+          "sku": "",
+          "name": "Алазанская Долина полусладкое, Грузия",
+          "description": "Alazani Valley",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e56fca8b-1afe-5e9c-a1c9-db068e164f44",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 420
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "f3095566-63d4-53e9-ad97-2d7b6f0ffcae",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2520
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e273686b-37cc-552d-a090-3a79031eb7ae",
+          "sku": "",
+          "name": "Киндзмараули полусладкое, Грузия",
+          "description": "Kindzmarauli",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "7e864e51-41d6-5e31-ac41-a8a2e82aa74e",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "655fe3cc-aed8-5bf3-a923-c4b8f0473f2e",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2700
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "0265b27f-3d84-57ca-a183-f94425a7f1e1",
+          "sku": "",
+          "name": "Хванчкара полусладкое, Грузия",
+          "description": "Khvanchkara",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "f4b9eebd-a40a-5ee0-a914-630bc8360c76",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "f119171a-363e-5238-a48b-f4796d133b4a",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3900
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "841488bf-96bf-57f4-a76b-2389321ac3c3",
+      "name": "Игристые вина",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "80426f94-a03b-5c1f-a389-8836425e31d5",
+          "sku": "",
+          "name": "Абрау-Дюрсо брют, Россия",
+          "description": "Abrau-Durso",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "04b35107-efa3-5307-ac34-139a2b90c220",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 440
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "0b2b28b8-577f-52e1-a0c4-679b1210b9f0",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2590
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4b57fd95-43ee-5f0c-abcd-332d3af502d8",
+          "sku": "",
+          "name": "Хэритэйдж брют, Россия, Тамань",
+          "description": "Chateau Tamagne Heritage Brut",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d67ae9a6-cf9f-5c1f-a470-783d6cf65ef2",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 430
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "4fe3cf13-418e-5c8b-a0a7-da298bfa2c01",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2580
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "72d82228-15ef-56da-a14a-3279b5b29a6a",
+          "sku": "",
+          "name": "Хэритэйдж полусладкое, Россия, Тамань",
+          "description": "Chateau Tamagne Heritage",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "911fb983-ce0f-5825-a8c3-061202559e8a",
+              "sizeCode": null,
+              "sizeName": "125 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 430
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "f4c3c4de-9ce1-52ba-a72f-921d41d98b56",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2580
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "ed28b21b-58e5-5f6e-a96d-42c10d852bb8",
+          "sku": "",
+          "name": "Мартини Асти полусладкое, Италия",
+          "description": "Martini Asti DOCG",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "c2bc1da7-0e67-5823-ae1b-c085f3c5ac3c",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 5000
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "f52675a9-99f6-5bae-a32d-a810fdb88d49",
+          "sku": "",
+          "name": "Мартини брют, Италия",
+          "description": "Martini Brut",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "f9fe0bc8-112a-559c-ad17-a60c06e57cce",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 4800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a645d26e-dc33-5942-a88a-faa2c577bf3c",
+          "sku": "",
+          "name": "Кава Нувиана брют, Испания",
+          "description": "Nuviana Brut Cava",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "49c10ec2-86b1-590d-a90a-cd790fbb81c7",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fd220b8e-4a20-5cad-a158-7f20e23efaac",
+          "sku": "",
+          "name": "Просекко Фонте брют, Италия",
+          "description": "Fonte Prosecco Brut",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "af4b43a6-e8b3-5750-ae09-e0f2619e0dd7",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 5300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "0e41b96e-19d6-5ac9-af12-387a623503d7",
+          "sku": "",
+          "name": "Мартини Просекко Розе, Италия",
+          "description": "Martini Prosecco Rosé",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e89d4c91-a16c-5278-a764-7a1b859b1851",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 5400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fa15726f-a464-5730-aea6-94763befd5c5",
+      "name": "Игристые вина (мини)",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "2d29e1bc-393d-586e-a49d-a6c74a4759a0",
+          "sku": "",
+          "name": "Абрау-Дюрсо белое полусладкое, Россия",
+          "description": "Abrau-Durso",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "4b04c22d-7656-5e77-a723-4eb655543381",
+              "sizeCode": null,
+              "sizeName": "200 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9bf893eb-1a06-5e61-a655-44a2337482a5",
+          "sku": "",
+          "name": "Абрау-Дюрсо белое брют, Россия",
+          "description": "Abrau-Durso Brut",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0fc9ed5c-5470-53b2-a112-ff8b3abe606b",
+              "sizeCode": null,
+              "sizeName": "200 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e53b6d1f-c21e-5fe3-aaee-d8a6a6190705",
+          "sku": "",
+          "name": "Мартини Асти белое сладкое, Италия",
+          "description": "Martini Asti DOCG",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0f18cf4a-5b6a-5668-a75a-5b5ba6987f72",
+              "sizeCode": null,
+              "sizeName": "187 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "aab13989-e596-5261-af5b-85e7ebdc6d40",
+          "sku": "",
+          "name": "Мартини Просекко белое сухое, Италия",
+          "description": "Martini Prosecco",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "9e907c67-1a49-57f6-a316-759f4af63d54",
+              "sizeCode": null,
+              "sizeName": "187 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 1800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9700995d-0793-5bda-a3b9-9c1ef76f1ef0",
+      "name": "Вино безалкогольное",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "9d6638f3-216f-573e-a012-05b2bdc99a67",
+          "sku": "",
+          "name": "Ви-Но Зе-Ро Шардоне, Германия",
+          "description": "Vi-No Ze-Ro Chardonnay",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e1b50cb0-1f06-51be-a1c5-23f2cbdc7ba2",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "edf8c235-0768-5dc5-ad78-2b25341a1c8e",
+          "sku": "",
+          "name": "Ви-Но Зе-Ро Каберне Совиньон, Германия",
+          "description": "Vi-No Ze-Ro Cabernet Sauvignon",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "b9377d7e-8953-547f-ace0-18e8b525cff8",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 2200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b00d7917-de15-540d-a24b-d4d320bdecaf",
+          "sku": "",
+          "name": "Кодорнью Зеро, Испания",
+          "description": "Codorníu Zero",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "fec7ef33-9157-50ce-ac63-ebaaf591eec7",
+              "sizeCode": null,
+              "sizeName": "750 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1f65c0da-6798-534d-af94-2254f7ec720c",
+      "name": "Коньяк",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "ffbe1841-57bb-5162-a3d0-d1302c13fb20",
+          "sku": "",
+          "name": "Ной 3*",
+          "description": "Noy 3*",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "67c89415-ef25-5144-a11d-48c41c26d020",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "19c726fc-b384-58f6-a1c7-0d199f303411",
+          "sku": "",
+          "name": "Ной 5*",
+          "description": "Noy 5*",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "caf82c0a-5797-5672-a0b5-2629670bef27",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fa5a1493-8f6e-53a1-aea5-1439c121cb23",
+          "sku": "",
+          "name": "Арарат 3*",
+          "description": "Ararat 3*",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "9af90a73-a7a8-5b25-a1ee-90b4393f0b8e",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fa1d1843-eb05-56d3-ac91-c92a8e3e1fea",
+          "sku": "",
+          "name": "Арарат 5*",
+          "description": "Ararat 5*",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "cb851183-a32b-5ae2-ae59-a0a75fc4be0e",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "339127c4-f63c-547f-ac6c-225d71bda219",
+          "sku": "",
+          "name": "Асканели КВ 6 лет",
+          "description": "Askaneli 6 y.o.",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "624d86ef-0599-5601-a6d1-a8251dbd755b",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d612a768-00c9-5237-a28b-9eabf47b1c91",
+          "sku": "",
+          "name": "Хеннесси VS",
+          "description": "Hennessy VS",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "fb00715e-e272-533a-a042-268ca5b24397",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "bbbae88f-f5ed-5436-addf-b885937cb24f",
+          "sku": "",
+          "name": "Хеннесси VSOP",
+          "description": "Hennessy VSOP",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "8fd3cb85-e572-56dc-a673-b7966bd5d752",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 900
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "204cfc66-7e93-50cf-a5a8-e2788d58c17f",
+          "sku": "",
+          "name": "Хеннесси XO",
+          "description": "Hennessy XO",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ed6574be-9ba7-5f1e-a727-5a647692716f",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 3200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "54d2d458-6c2c-5983-a6e0-7da05e92e86e",
+          "sku": "",
+          "name": "Рулле VS",
+          "description": "Roullet VS",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "f9e04f3c-359e-5211-a928-942ff97e8641",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "3f7dc13c-f071-5a3b-ab81-d8f3753a7b7e",
+          "sku": "",
+          "name": "Рулле VSOP",
+          "description": "Roullet VSOP",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d1b92da1-1b51-5dbc-a675-291547fa4dc5",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 750
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ad0be73a-de84-54cd-a8a2-10ca93943c2e",
+      "name": "Виски",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "defdc5e1-4c19-5f94-ab0b-163f6baccae5",
+          "sku": "",
+          "name": "Окентошен 12 лет",
+          "description": "Auchentoshan",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ebf2587c-bc2d-5110-a8d6-82084b40dc71",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 700
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "631a32b4-9766-510c-a8b6-c1f6d04ef293",
+          "sku": "",
+          "name": "Гленфиддик 12 лет",
+          "description": "Glenfiddich",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "7952b5bb-a875-5535-aefa-457c1dac03f9",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 900
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fa7212c7-0cbc-5ba8-a744-126fc56d5ed9",
+          "sku": "",
+          "name": "Чивас Ригал 12 лет",
+          "description": "Chivas Regal",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0328cb5b-a6ff-5add-a509-2b7e917b1955",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 700
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "26046ad2-4fd9-5823-ab45-1fde19f3ed03",
+          "sku": "",
+          "name": "Джонни Уокер Блэк Лейбл",
+          "description": "Johnnie Walker Black Label",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "cb146edc-957a-57f3-aeb1-058c6bd6fa83",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "daf8c920-7959-54b0-a183-dd03a2f7c7ca",
+          "sku": "",
+          "name": "Баллантайнс Файнест",
+          "description": "Ballantine's Finest",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e0137831-b536-5fae-a8e4-7e87a09359bf",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "95d5128d-9ac0-596b-a7a3-8a3c3e38afbb",
+          "sku": "",
+          "name": "Катти Сарк",
+          "description": "Cutty Sark",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "b65c2a21-6cd2-5247-ab31-f58df2cf17df",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "24048e09-8496-575b-aa94-f2f224a9eee6",
+          "sku": "",
+          "name": "Джемесон",
+          "description": "Jameson",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "621ce263-ea39-58b2-acd0-fe75faaa5a6b",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "607ef7fa-916a-510e-af4f-c5a84e3c6fcc",
+          "sku": "",
+          "name": "Бушмиллс Ориджинал",
+          "description": "Bushmills Original",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0f601087-77e7-5721-ae91-ff688980839f",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "04f1b1dd-2c21-5a51-a636-f8d5380f06d4",
+          "sku": "",
+          "name": "Вильям Лоусонс",
+          "description": "William Lawson's",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "61e425ec-9a24-52fa-abc1-99a4490dfa85",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a03b60d5-9ed7-59a2-aacc-95c8242dc2de",
+          "sku": "",
+          "name": "Дьюарс Уайт Лейбл",
+          "description": "Dewar's White Label",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "1af501f4-d4ef-5c85-ac27-026b9944c2c8",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "710f5e92-e877-5a26-aba7-4f330b130c3e",
+          "sku": "",
+          "name": "Джим Бим",
+          "description": "Jim Beam",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "00e01969-f72d-5b69-a2d6-bd4b5ae42061",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cca4d200-05c3-5b88-a656-82af0dafab71",
+      "name": "Водка",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "f72c0e05-33eb-5545-ab43-637dbc3efb98",
+          "sku": "",
+          "name": "Грей Гуз",
+          "description": "Grey Goose",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d1b38ca6-b69d-56fd-ac8e-42f0e2bfeaae",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "2361a606-2ef5-5ad9-a45f-699370f72ab2",
+          "sku": "",
+          "name": "Белуга",
+          "description": "Beluga",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "5c50bb87-a15b-5403-aed4-3f3e18946bba",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fdd7c786-770f-541d-acf6-8ddb91174ca5",
+          "sku": "",
+          "name": "Гастроном купаж №4",
+          "description": "Gastronom Blend",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "358547f3-a759-53f0-a65f-f7d884d4b27c",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "082a5055-5c71-5b8a-a692-1db9def32d86",
+          "sku": "",
+          "name": "Царская оригинальная",
+          "description": "Tsarskaya Original",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "9882a4fc-c7c6-537c-a039-e20fba2c5834",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "07502de1-212c-5cfa-aed8-f73a930b45e6",
+          "sku": "",
+          "name": "Царская золотая",
+          "description": "Tsarskaya Gold",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ceb0ad41-b584-5fae-a16e-2a1609211dbe",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "46a2742d-aa14-5ff4-a495-988870995aa6",
+          "sku": "",
+          "name": "Балчуг XXI век без метанола",
+          "description": "Balchug XXI century",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "cc96783f-b6dd-5c9b-a370-059ab30b43c1",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9f1fcdfb-995d-5805-aff2-8a045cbce514",
+          "sku": "",
+          "name": "Чистые росы, органик",
+          "description": "Pure Dew Organic",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "bf64bb2a-45bb-5110-a008-715d45768a1c",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "608b0ee9-273d-5c2f-a92b-e94ca0d2ebec",
+      "name": "Ром",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "c512ab99-974e-5bf0-a6fe-08dc5e1f15a8",
+          "sku": "",
+          "name": "Барсело Аньехо",
+          "description": "Barceló Añejo",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "de7d38f8-5a40-511c-a815-0dec11c6f018",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b36f8518-c0d2-5eb5-a728-aa6e77255b0b",
+          "sku": "",
+          "name": "Вьехо де Кальдас Робле Бланко",
+          "description": "Viejo de Caldas Roble Blanco",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "eb86982c-4723-57b2-ae6c-b51ccdc5f9c1",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "6a230217-6e96-579f-a0f7-1129a734156a",
+          "sku": "",
+          "name": "Гавана Клаб Аньехо 3",
+          "description": "Havana Club Añejo 3",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d4df431b-34c8-50dc-ac31-f702e597f6e9",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b6ea4060-c606-5bfd-a883-48b2592aef2f",
+          "sku": "",
+          "name": "Оакхарт Ориджинал",
+          "description": "Oakheart",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "7561ff22-26d3-5809-a0a8-3dccb6d9e296",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "27af67c0-48b4-592f-aec8-90377afb42d5",
+      "name": "Пиво",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "aa9763a0-70bd-5386-a878-68cdb8ce7ddb",
+          "sku": "",
+          "name": "Хофброй Дункель, Германия",
+          "description": "Hofbräu Dunkel, тёмное 5,5%",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0fd33f59-7437-53c4-a0e6-9a5524b235b8",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "272e39e8-314b-5577-aca2-6f8b0830b481",
+          "sku": "",
+          "name": "Хофброй Мюнхен Вайс, Германия",
+          "description": "Hofbräu Münchner Weisse, светлое нефильтрованное 5,1%",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "cda851f2-4098-57ce-a065-f6a5c66e898c",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "43768ddf-ae49-5682-a81e-fe29d3662a04",
+          "sku": "",
+          "name": "Хофброй Оригинал, Германия",
+          "description": "Hofbräu Original, светлое 5,1%",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "5d30c77a-3708-5baa-a603-1de6cdb68310",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "8296e2be-a1bf-569b-a296-177e3b82ec74",
+          "sku": "",
+          "name": "Бакалар безалкогольное, Чехия",
+          "description": "Bakalář",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "5227bf43-38aa-5c3a-ad64-534c02940ab5",
+              "sizeCode": null,
+              "sizeName": "350 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "7d26ba84-995c-51aa-a6ca-4b780058b394",
+          "sku": "",
+          "name": "Бакалар, Чехия",
+          "description": "Bakalář, светлое 4,9%",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "4e92367a-d2f3-58d9-abbd-c954f736db00",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "cdd4b717-e004-5d86-ae36-d31f7359f9c2",
+          "sku": "",
+          "name": "Черновар, Чехия",
+          "description": "Chernovar, светлое 4,9%",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "009f1f44-670f-5c85-a273-3b7fdf350d94",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "69058dcc-d6ca-5129-addb-c0a69c6f6148",
+      "name": "Вермут",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "4e308cf8-3a41-58f8-ad52-224c770b4cf8",
+          "sku": "",
+          "name": "Мартини Бьянко, Италия",
+          "description": "Martini Bianco",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d8e9ddc2-76ce-5106-ac3b-532cef9c51a3",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4869e1f2-6b94-5ee8-a8a0-8940cf368623",
+          "sku": "",
+          "name": "Мартини Фиеро, Италия",
+          "description": "Martini Fiero",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "1e7b2427-3ff6-5835-a1eb-a05e74c5f847",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "94854ce0-b3b7-5ad8-ac5f-fc3e12f5fc0c",
+          "sku": "",
+          "name": "Мартини Россо, Италия",
+          "description": "Martini Rosso",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "de72b7dd-bd36-5037-a6f5-5866e187bd4b",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "51df926d-d76b-5843-ab0f-0279ef10cb4e",
+      "name": "Джин",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "0575e9ba-e557-5930-aaaf-baac2148f8d2",
+          "sku": "",
+          "name": "Бомбей Сапфир",
+          "description": "Bombay Sapphire",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e5078c75-e08e-5aa8-ae9e-176799a006d8",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "dfe53f59-2b37-5595-a218-aa6e0b1e5e84",
+          "sku": "",
+          "name": "Хендрикс",
+          "description": "Hendrick's",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d178f8d3-281e-5d24-a963-af051157a035",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "898cad0f-a621-5caa-a8b2-42877d880e6f",
+          "sku": "",
+          "name": "Босфорд",
+          "description": "Bosford",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "c3477614-f1ee-5838-a698-7fc99816ddf4",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4d5d96ea-654b-593a-a857-4ba4f5e80348",
+          "sku": "",
+          "name": "Барристер",
+          "description": "Barrister",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "6340cf13-7c81-5e2a-ac08-89f291af87f4",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "35de5353-4d2b-560c-a4cc-47294de5c423",
+      "name": "Ликёр",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "370a5761-6f55-5ec0-a214-28709bb667bb",
+          "sku": "",
+          "name": "Лимончелло",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "58e539de-1641-5591-a670-4546aa20f507",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "edd3a6e8-62a2-51a1-ad76-e3889df17e24",
+          "sku": "",
+          "name": "Бейлис",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "60772601-5b9a-5ebd-ac50-d8ff816444a2",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "ad1e9d6c-863e-5723-a4b2-2f952565ad75",
+          "sku": "",
+          "name": "Гастроном купаж №9 десертный",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "ceb6809a-26ef-520f-adc9-83c1c1b2c779",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "19ba70e5-6cae-5a46-a61c-80c0873bddef",
+          "sku": "",
+          "name": "Ягермейстер",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e2887344-3506-529a-a264-d67184527eed",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "61039c04-c47c-59a2-a1e0-7c4d9ef48a74",
+          "sku": "",
+          "name": "Мартини Ризерва Speciale",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "2b372a53-7a30-5d59-a302-f7c04c383b24",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d5864429-9d8f-582c-ae4d-ae46af420f2a",
+          "sku": "",
+          "name": "Самбука",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "201b75b5-1b9a-5c95-af69-696f5d1c6506",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e084a313-4a46-5432-a3ef-2f55f92d4f4e",
+          "sku": "",
+          "name": "Абсент",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "aea4a683-0d44-58d2-a3ff-1eb148a91de5",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d5623329-fb61-5110-ad01-188ee03d9ffd",
+          "sku": "",
+          "name": "Апероль",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "1a096ab1-aba6-5132-ae95-add2782d647a",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25ccf25a-1631-5703-a2be-a6d646c510f0",
+      "name": "Текила",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "69d00c71-7118-5f57-acbe-ae116d0e2609",
+          "sku": "",
+          "name": "Хэд оф Альфредо Гарсия",
+          "description": "Head of Alfredo Garcia",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "f77fa07c-f503-5656-a4ca-3140339a3d65",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a1873586-ff86-5d91-ad9a-cbf5ae0a3c6d",
+          "sku": "",
+          "name": "Ранчо Алегре Бланко",
+          "description": "Rancho Alegre Blanco",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "3ef9e6bb-3c93-5a64-a7cf-e134bdce4edc",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fb5de860-7001-5603-a3e9-8bc8c65bc446",
+          "sku": "",
+          "name": "Ольмека Сильвер",
+          "description": "Olmeca Silver",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "1528682f-77a7-5e9c-a21e-e5ad60009dac",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "2e90f364-4888-53c2-a000-e862cf33b50b",
+          "sku": "",
+          "name": "Ольмека Голд",
+          "description": "Olmeca Gold",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "329a4918-4584-5a4e-a621-c5ab5793d0bc",
+              "sizeCode": null,
+              "sizeName": "50 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d1d36125-6f6c-5430-adb3-6e61f729fd6e",
+      "name": "Настойки",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "d5befe63-1fbd-5c45-a6ed-660e3bd00ab1",
+          "sku": "",
+          "name": "Морошка на травах",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d64bd3cc-b829-51b0-a138-81a1ef308ae0",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "39a1d992-b8a0-55cd-a14a-c84a51b2c5c8",
+          "sku": "",
+          "name": "Печёные яблоки",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "5bc1f4ad-b9d0-50da-a224-df11a4a4d3b7",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "a34ae96f-0e69-5d3a-a72f-e5922615894f",
+          "sku": "",
+          "name": "Кедровая",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "b58aa4f8-a0c2-5b1d-abcf-2d765059aee3",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "2c72e152-4e20-56f9-a08f-936198147f55",
+          "sku": "",
+          "name": "Томат / халапеньо",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "41cfe9d6-06a6-5791-a1dc-07b9d1ad7e5e",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fdbd2e5d-0216-518f-aa6c-c788157849dc",
+          "sku": "",
+          "name": "Дикоросы / ваниль / чили",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "9223b5c5-9f5a-544b-a3d0-6ead4f71602e",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "28175bb6-d3dc-5ff0-a497-c29266385fdc",
+          "sku": "",
+          "name": "Облепиха / имбирь / мёд",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "b3381743-0e41-59bf-a093-83efade4659d",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9d5e0efe-3756-57ed-a2a1-d750ae4dcd3d",
+          "sku": "",
+          "name": "Вишня / корица",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "a2308a13-ee7d-5ebc-a404-492b8d2147fa",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9cd1f915-0df6-52f8-aa14-4b7225f48e50",
+          "sku": "",
+          "name": "Цитрусы",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "2a4e3d5f-fd23-5f00-af87-340e7c97de68",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "6c54a3bb-2d0b-505f-ad11-f48fe1f28712",
+          "sku": "",
+          "name": "Малина / тимьян",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "7fe5c0fd-212c-55b3-a50f-5d1fecf08829",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fb23ecee-bea1-5b41-a5f9-4a8635336014",
+          "sku": "",
+          "name": "Виски на морошке",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "3586b9a6-eb6f-595f-ad6d-6c1d08766a41",
+              "sizeCode": null,
+              "sizeName": "40 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "86747466-48bd-5c35-a025-fb62cc5d9bbe",
+      "name": "Коктейли классические",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "a3719bbd-7e8a-5e7c-a130-115293c6da19",
+          "sku": "",
+          "name": "Негрони",
+          "description": "джин, биттер, вермут",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "aab3e298-bd67-540e-ac7f-7209465c2eb7",
+          "sku": "",
+          "name": "Апероль-шприц",
+          "description": "ликёр, игристое, содовая",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4bfc31d2-71ef-5973-a5d4-88d9e5c7ee06",
+          "sku": "",
+          "name": "Беллини",
+          "description": "игристое, персиковое пюре",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "33848a87-92cc-5285-a5df-ed11445bca35",
+          "sku": "",
+          "name": "Гранатовый май-тай",
+          "description": "ром, трипл сек, гренадин, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "22514734-1a6d-53fe-a367-e47b3cf7f068",
+          "sku": "",
+          "name": "Пина колада",
+          "description": "ром, кокосовый ликёр, сливки, ананасовый сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "d03ec3bc-0989-5fc7-aa50-9d099275ea7d",
+          "sku": "",
+          "name": "Лонг Айленд",
+          "description": "ром, трипл сек, текила, джин, кола",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 700
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "c6fa0e03-6129-5df2-a20e-8365b37fa62a",
+          "sku": "",
+          "name": "Фиеро мартини",
+          "description": "мартини фиеро, лимонный сок, тоник",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e0b89b5d-e6d0-50b9-af62-cdb77bc6b0be",
+          "sku": "",
+          "name": "Дайкири",
+          "description": "ром, сок лайма",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "435d4fd6-717b-5127-a2c4-1b0d2eb6aaf6",
+          "sku": "",
+          "name": "Текила санрайз",
+          "description": "текила, апельсиновый сок, гренадин",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "0729cdc0-1f4c-5ea8-a79a-759ba4fec32d",
+          "sku": "",
+          "name": "Голубая лагуна",
+          "description": "водка, ликёр блю кюрасао, спрайт",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "02749925-9174-5e9f-a494-3a0f6a7bf3ef",
+          "sku": "",
+          "name": "Б-53",
+          "description": "кофейный ликёр, сливочный ликёр, абсент",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "c56b5bc2-f478-5eef-a423-d639d449f833",
+          "sku": "",
+          "name": "Б-52",
+          "description": "кофейный ликёр, сливочный ликёр, трипл сек",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "df3f7abf-eb93-52b7-aa25-1815c4c86db3",
+          "sku": "",
+          "name": "Мартини рояль",
+          "description": "мартини бьянко, игристое, мятный ликёр, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 650
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0279c68b-ab79-58de-a05a-8e49cdcf7863",
+      "name": "Коктейли «Лавка шамана»",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "feb7d5e0-2e9c-5202-a9b9-ba324dede922",
+          "sku": "",
+          "name": "Ревень",
+          "description": "ром, сироп роза-ревень, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "5a58fca3-7ecf-54e4-a26e-892083833391",
+          "sku": "",
+          "name": "Черешня",
+          "description": "джин, сироп черешня, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "589e86da-6131-5276-a738-6e2b11942912",
+          "sku": "",
+          "name": "Wildberries",
+          "description": "джин, сироп малина, сироп роза-ревень, сок грейпфрут",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "09a19bc1-16d7-5116-a618-bbb228d8cffa",
+          "sku": "",
+          "name": "Азиатская лавка",
+          "description": "ром, лимонный сок, сироп шисо-земляника",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "7c4a83ac-fb4a-53f5-a2a1-f385eccdb754",
+          "sku": "",
+          "name": "Васильки",
+          "description": "джин, сироп васильки, игристое",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 500
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "7f3d51ee-7006-55d4-a382-c4d1d730b37d",
+          "sku": "",
+          "name": "Искушение",
+          "description": "мартини россо, водка, вино красное, сироп роза-ревень, гренадин, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8193883b-ca87-563d-a45a-651d5992a2bb",
+      "name": "Коктейли «Ямальское настроение»",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "e52b913d-27e2-5e03-a587-6a01f67d3105",
+          "sku": "",
+          "name": "Ягода Ямала",
+          "description": "настойка морошка, джин, тоник",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b2502eb9-e687-5111-a5ee-40754572e731",
+          "sku": "",
+          "name": "Вечер в лесу",
+          "description": "настойка кедровая, ром, лимонный сок, варенье из шишек",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "5b560781-dbb4-5de6-a7fc-13b0f49603f3",
+          "sku": "",
+          "name": "Царь-ягода",
+          "description": "сироп морошка, настойка малина, джин, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "46539938-c45f-51c4-afd3-c09bf1246439",
+          "sku": "",
+          "name": "Сияние Севера",
+          "description": "сироп юдзу, сироп морошка, трипл сек, лимонный сок, игристое",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "246b565c-9dd0-5195-acd5-5f2e573a151b",
+      "name": "Авторские коктейли",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "e9e54792-ece7-5441-a521-ced458cdf3e9",
+          "sku": "",
+          "name": "НН",
+          "description": "арбузная водка, ежевичный ликёр, лимонный сок, тоник",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e9322d1b-5c13-537c-a264-5c5c5a7fb7d2",
+          "sku": "",
+          "name": "В яблочко",
+          "description": "сироп имбирь, яблочный ликёр, виски, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b37c51d2-fa82-55b2-a066-2081c0faebef",
+          "sku": "",
+          "name": "Бассейн",
+          "description": "ром, водка, ликёр блю кюрасао, сок ананас",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "090f5279-b3f6-5033-a520-61d834fd273c",
+          "sku": "",
+          "name": "Слёзы ангела",
+          "description": "самбука, сливочный ликёр, гренадин",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "9cba047f-ccfb-50d4-ac5c-7358d28d7856",
+          "sku": "",
+          "name": "Джони Ди",
+          "description": "мартини россо, виски, карамельный сироп",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "e3b790f3-1558-5806-ad92-e24aa20e168e",
+          "sku": "",
+          "name": "Яблочный мартини",
+          "description": "джин, мартини россо, ликёр зелёное яблоко",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "44198b1b-6830-5ba3-ab55-207cf439bd7c",
+          "sku": "",
+          "name": "Рассвет",
+          "description": "мартини бьянко, игристое, сок грейпфрут, морс, лимонный сок",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7f380090-6bd5-59ae-a9e3-8cb869cce52a",
+      "name": "Чай классический",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "6b7d58b1-adf0-5089-ac0b-efa3478dc168",
+          "sku": "",
+          "name": "Чёрный чай «Империал»",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d82b4e45-c8dc-5bd5-a826-2260224a14fd",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "86e469f6-f414-555e-a0fe-02f6471ecc96",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "4e2c4a82-2a6b-57a6-af75-1c0a4432aab7",
+          "sku": "",
+          "name": "Пуэр «Дворцовый»",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "8d62bb84-5d65-5a93-ae9c-c898e75a4c58",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "97eed328-fe6f-5ca9-ae9d-1d570534e539",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "87601cf3-34b0-5e7a-a9bb-dede5f4fb03e",
+          "sku": "",
+          "name": "Ганпаудер",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "713f59fe-19e0-5295-af89-64ff3c5a9745",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "e6408224-f1aa-5cf9-aabe-0358a4966505",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "c11654ac-8493-55fc-ad6d-1f0743213856",
+          "sku": "",
+          "name": "Те Гуань Инь",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "2fce0217-da05-57c0-a385-a38a67544dfa",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "5f1b2b0b-46ac-5a47-a7b9-44f028d4edc3",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "418c4700-a7c0-515f-a9af-2867413c04be",
+          "sku": "",
+          "name": "Молочный улун",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "a80aff56-edca-5b2a-a9e9-68e3323a9b24",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 400
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "a720d00c-82ad-5ccf-a958-8f6f05f152fd",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f6a1d717-817e-5e31-a5fb-3cdbb70a98a8",
+      "name": "Чай авторский",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "33616041-5640-5dd6-ab66-54d3a391c416",
+          "sku": "",
+          "name": "Морошка",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "bfe695fb-6041-5540-a9c7-ac3e5f83c77a",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "360a5d5a-8600-5d90-a813-788b65b5a939",
+          "sku": "",
+          "name": "Груша / облепиха",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "cf4412b9-7a9e-5a31-a742-7e5ca6e44de9",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "2fc36261-822d-5ddf-a039-3184516161d6",
+          "sku": "",
+          "name": "Малина / корица / мята",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "8b2a36d9-3c04-5f6d-a5bf-d098eaf9bef2",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "6c8b1c09-ca3d-5622-ad51-e69defbe6c2c",
+          "sku": "",
+          "name": "Облепиха / имбирь / мёд / апельсин",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "5d402c08-4c7f-50cb-af61-4565f7f6160c",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "175feafe-2f03-5bbb-a3a9-2e0c9838ec8d",
+          "sku": "",
+          "name": "Чёрная смородина / личи / лайм / цитрус",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "a8bc876e-b51e-56c8-a83c-bdab6b713d01",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 800
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04c5b869-025b-575c-abf1-2793af3c2890",
+      "name": "Чай для настроения",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "54999391-00cb-5cfc-a4c8-cf4dde09e5e8",
+          "sku": "",
+          "name": "Зелёный с можжевельником",
+          "description": "китайский зелёный чай, листья земляники, чёрной смородины, бессмертник, ягода можжевельника, натуральные масла",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "e63d4df6-9a8e-556d-af09-ecad1242ffc7",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "3c2af84b-4542-5ff8-a621-28752ac34771",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "20ea2073-41e1-55d8-a115-c83a131f37f1",
+          "sku": "",
+          "name": "Барбарисовый",
+          "description": "цейлонский индийский чёрный чай, ягоды барбариса и клубники, лепестки розы и календулы, кусочки ананаса и папайи",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "7e9b187c-5ac6-57fb-aca8-318396097e23",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "8d8c0bba-74e9-5fba-a39b-cc71b1b06d91",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "651e0402-a45b-5a46-a193-8dff7c7baa8a",
+          "sku": "",
+          "name": "Гречишный",
+          "description": "татарская гречиха",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "fe4d3ace-30b4-588c-aae4-30d19cc78e66",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "732dda7c-a658-5643-aaa9-0318cabb0c85",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "2309cb7a-b876-5ded-a20a-8dc02cc7cf6c",
+          "sku": "",
+          "name": "Дерзкий фрукт",
+          "description": "гибискус, изюм, кусочки яблока, ананас, папайя, брусника, кусочки малины, ягоды бузины",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "24e5fd63-4e86-502a-ad55-324d76e65c34",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "9f6c2eab-09d4-518c-a142-d4b8d24e9bcd",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "f3e33956-c144-560a-a55f-56bf6d88d249",
+          "sku": "",
+          "name": "Дыня-карамель",
+          "description": "китайский зелёный чай, кусочки дыни, календула",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "c405c231-6e71-591b-abc3-5b18e93c6a1a",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "72f4ae51-9eab-5a49-a9ed-a12562a00a48",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "3daac61a-6fbd-5b64-a1e0-7b04af27d486",
+          "sku": "",
+          "name": "Липовый",
+          "description": "китайский зелёный чай, лимонная трава, листья липы, цедра лимона, цветки ромашки, вербена",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d2af6fa8-757f-5e6b-a1d1-1f5054f552c9",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "5f34baaf-d7fb-538d-ac0f-6cd0a5151cbb",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "b70c17cd-0e61-568d-a3ae-cce1de3133dd",
+          "sku": "",
+          "name": "Фруктовая мелодия",
+          "description": "цейлонский индийский чёрный чай, гибискус, манго, абрикос, кусочки малины, яблоко, изюм, шиповник, красная смородина",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "0b64a2c4-17f8-532a-a7ea-1b2a0a539394",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "2f9e2233-1ed3-5a46-a67b-b3fd574f28f9",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "fd5d376e-cf98-5872-aee4-1631a61abe77",
+          "sku": "",
+          "name": "Мятный каркаде",
+          "description": "гибискус, кусочки яблока, листочки мяты, мелисса, чёрная смородина, семена фенхеля, вереск",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "c974df3d-c233-5c58-af13-56c4c2d5dc89",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "69b6a1e1-7f66-515b-a4db-73eb2b24bbe1",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "af031dfb-4122-5708-a6fa-19937b6bef54",
+          "sku": "",
+          "name": "Гибискус с ягодами",
+          "description": "гибискус, ягоды можжевельника, листья ежевики, плоды шиповника, цедра апельсина, семена фенхеля",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d3868346-9efb-5c32-a1bd-a60a5f1b4cab",
+              "sizeCode": null,
+              "sizeName": "500 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 450
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            },
+            {
+              "sizeId": "33f2bef8-cd19-5b7b-a946-3a109bee2dea",
+              "sizeCode": null,
+              "sizeName": "800 мл",
+              "isDefault": false,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 600
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "464a6aad-5bb4-54c1-aac3-aeef6cc47912",
+      "name": "Добавки к чаю",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "f184d182-a29d-5a81-a7b4-70519d8ec320",
+          "sku": "",
+          "name": "Чабрец",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 50
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "dd6e5f10-4aa6-5133-a362-6ea337d4a2f8",
+          "sku": "",
+          "name": "Ромашка",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 50
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "1aa6b694-ab39-5bec-a363-0de1acdaf558",
+          "sku": "",
+          "name": "Мята",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 50
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "32527c39-ad56-5bc8-a77c-93d0f31dd81a",
+          "sku": "",
+          "name": "Лепестки лаванды",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 50
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "df184e26-1d9b-5552-aab5-a47e055e2511",
+          "sku": "",
+          "name": "Мёд",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 100
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c8e946d8-15f1-5d89-a6ff-3edf2f9490e2",
+      "name": "Кофе и кофейные напитки",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "a712d0a1-b577-50cc-a11b-2df51fd9877f",
+          "sku": "",
+          "name": "Эспрессо",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 200
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "22e33470-ac7f-591d-a471-6cdc6e33bdec",
+          "sku": "",
+          "name": "Доппио",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "5a2ce51a-b687-51d0-abdb-870020db12f0",
+          "sku": "",
+          "name": "Американо",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "c2cadf79-9e18-50fa-a0b8-ddc0af64034b",
+          "sku": "",
+          "name": "Капучино",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "dde65f2e-e1c6-5e9c-abc1-206b5ce750e3",
+          "sku": "",
+          "name": "Латте",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "217b62bf-d7c2-5fde-ae2a-28ec60add0ea",
+          "sku": "",
+          "name": "Раф",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": null,
+              "sizeCode": null,
+              "sizeName": null,
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "772e1dd3-e8d9-5517-a176-d5ffff219270",
+          "sku": "",
+          "name": "Сироп в ассортименте",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "38b750bc-a271-5da3-a4a3-69fab8e9bdd9",
+              "sizeCode": null,
+              "sizeName": "30 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 50
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8d9d05fd-e876-57c4-a50d-bcba3b4ce478",
+      "name": "Прохладительные напитки",
+      "description": "",
+      "isHidden": false,
+      "buttonImageUrl": null,
+      "items": [
+        {
+          "itemId": "37cba899-de11-52a2-ae8b-957a0030816a",
+          "sku": "",
+          "name": "Морс ягодный",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "7fe83eeb-45ef-5933-a4a1-a77c0707abe1",
+              "sizeCode": null,
+              "sizeName": "1000 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 550
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "ebeda4c1-9cb4-5fb4-ad85-fe18c978014f",
+          "sku": "",
+          "name": "Морс ягодный",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "6e5ee07e-54d8-5291-a62d-433b51cebb80",
+              "sizeCode": null,
+              "sizeName": "300 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 150
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "c453e77d-394f-5840-a41b-e0d309be2e23",
+          "sku": "",
+          "name": "Сок в ассортименте",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "3fd0dffe-4c64-56a6-acdf-81ee9f42a476",
+              "sizeCode": null,
+              "sizeName": "200 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 150
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "ff9f5d55-c04d-5eb3-a2f3-a9497a7371f2",
+          "sku": "",
+          "name": "Северное сияние",
+          "description": "минеральная вода газ / негаз",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "be292a5e-ca3d-5efe-a86f-fe0a23bed65b",
+              "sizeCode": null,
+              "sizeName": "330 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 280
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "41bc1184-67f2-5b6e-a95e-dbc410ac24ca",
+          "sku": "",
+          "name": "Боржоми",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "145e682d-f9c0-5635-a636-420a1933fca8",
+              "sizeCode": null,
+              "sizeName": "330 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 300
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "5ef51f83-25f1-54ea-a60d-7280f286c437",
+          "sku": "",
+          "name": "Кока-кола / Фанта / Спрайт",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "d5e7c86d-b60b-5203-a955-b526d93517c1",
+              "sizeCode": null,
+              "sizeName": "330 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 250
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        },
+        {
+          "itemId": "3b58c78c-c4a8-5943-a1f4-d942fbfad1bd",
+          "sku": "",
+          "name": "Адреналин Раш",
+          "description": "",
+          "type": "DISH",
+          "orderItemType": "Product",
+          "measureUnit": "мл",
+          "isHidden": false,
+          "itemSizes": [
+            {
+              "sizeId": "f4f32a10-5eaa-5310-aeb2-8c4c06e56f8a",
+              "sizeCode": null,
+              "sizeName": "250 мл",
+              "isDefault": true,
+              "portionWeightGrams": null,
+              "prices": [
+                {
+                  "organizationId": "e10b3abe-7d88-4340-8ae2-70c7560c0c13",
+                  "price": 350
+                }
+              ],
+              "itemModifierGroups": [],
+              "buttonImageUrl": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

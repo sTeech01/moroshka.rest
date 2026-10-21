@@ -21,6 +21,10 @@ export const iikoMenuSource: MenuSource = {
     process.env.IIKO_HALL_MENU_ID
       ? externalMenu(process.env.IIKO_HALL_MENU_ID, process.env.IIKO_HALL_PRICE_CATEGORY_ID)
       : mockMenuSource.getHallMenu(),
+  getBarMenu: () =>
+    process.env.IIKO_BAR_MENU_ID
+      ? externalMenu(process.env.IIKO_BAR_MENU_ID, process.env.IIKO_HALL_PRICE_CATEGORY_ID)
+      : mockMenuSource.getBarMenu(),
   async getStopList() {
     const res = await iikoPost<IikoStopListResponse>("/api/1/stop_lists", {
       organizationIds: [requireEnv("IIKO_ORGANIZATION_ID")],

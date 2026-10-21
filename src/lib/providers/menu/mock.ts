@@ -19,6 +19,8 @@ export const mockMenuSource: MenuSource = {
   getExternalMenu: () => readJson<IikoExternalMenu>("menu.json"),
   // Меню зала перенесено со старого сайта (npm run menu:hall)
   getHallMenu: () => readJson<IikoExternalMenu>("hall-menu.json"),
+  // Барная карта перенесена со старого сайта (npm run menu:bar)
+  getBarMenu: () => readJson<IikoExternalMenu>("bar-menu.json"),
   async getStopList() {
     const res = await readJson<IikoStopListResponse>("stop-list.json");
     return res.terminalGroupStopLists.flatMap((o) =>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { MenuTabs } from "@/components/menu-tabs";
 import { MenuPromos } from "@/components/promo-banners";
 import { features } from "@/config/site";
 import { getDelivery, getPromos, getSettings } from "@/lib/content";
@@ -34,6 +35,7 @@ export default async function MenuPage() {
           <div>
             <p className="eyebrow">Кухня ресторана</p>
             <h1 className="h-display mt-4 text-5xl lg:text-7xl">Меню</h1>
+            <MenuTabs active="kitchen" />
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/#booking" className="btn btn-line btn-sm">

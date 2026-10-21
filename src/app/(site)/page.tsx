@@ -66,10 +66,10 @@ export default async function HomePage() {
       {/* Кухня и бар */}
       <section className="container-site mt-20 grid grid-cols-2 gap-2.5 lg:mt-30 lg:gap-4">
         {[
-          { title: "Кухня", text: home.kitchenText, image: home.kitchenImage },
-          { title: "Бар", text: home.barText, image: home.barImage },
+          { title: "Кухня", text: home.kitchenText, image: home.kitchenImage, href: "/menu" },
+          { title: "Бар", text: home.barText, image: home.barImage, href: "/bar-menu" },
         ].map((tile) => (
-          <Link key={tile.title} href="/menu" className="group relative block h-52 overflow-hidden lg:h-[520px]">
+          <Link key={tile.title} href={tile.href} className="group relative block h-52 overflow-hidden lg:h-[520px]">
             {tile.image && (
               <Image src={tile.image.url} alt="" fill sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             )}
