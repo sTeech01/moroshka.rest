@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { getSettings } from "@/lib/content";
+import { isDemo } from "@/lib/notify";
 
 export const metadata: Metadata = { title: "Заказ принят", robots: { index: false } };
 
@@ -20,6 +21,11 @@ async function OrderInfo({ searchParams }: { searchParams: PageProps<"/order/[id
         </p>
       )}
       {paid === "1" && <p className="mt-2 font-semibold">Оплата прошла успешно</p>}
+      {isDemo() && (
+        <p className="mx-auto mt-6 max-w-md border border-border px-4 py-3 text-sm text-muted">
+          Это демо-версия сайта: заказ никуда не отправлен, звонка не будет.
+        </p>
+      )}
       <p className="mt-6 leading-relaxed text-muted">
         Администратор свяжется с вами для подтверждения. Если есть вопросы — звоните{" "}
         <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="font-semibold text-text hover:text-berry">

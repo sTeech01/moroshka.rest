@@ -4,6 +4,9 @@ import { sendVk, vkConfigured } from "./vk";
 
 export { escapeHtml } from "./telegram";
 
+/** Демо на Vercel без каналов уведомлений: заявки принимаются, но никуда не уходят */
+export const isDemo = () => Boolean(process.env.VERCEL) && !telegramConfigured() && !vkConfigured();
+
 /** HTML-разметка Telegram → обычный текст для ВК и консоли */
 function toPlainText(html: string): string {
   return html
@@ -17,7 +20,8 @@ function toPlainText(html: string): string {
  * Уведомление сотрудникам ресторана (заказ, бронь, заявка на банкет).
  * Уходит во все настроенные каналы: Telegram (TELEGRAM_*) и беседу ВКонтакте (VK_*).
  * Считается отправленным, если дошло хотя бы до одного; ошибки каналов пишутся в лог.
- * Без настроенных каналов в разработке печатается в консоль, в продакшене — ошибка.
+ * Без настроенных каналов: в разработке и на демо (Vercel) — только в лог, заявка «принимается»;
+ * на боевом сервере — ошибка, чтобы клиент не увидел «Заказ принят» при заказе, который никуда не ушёл.
  */
 export async function notifyStaff(html: string): Promise<void> {
   const channels: { name: string; send: () => Promise<void> }[] = [];
@@ -25,8 +29,10 @@ export async function notifyStaff(html: string): Promise<void> {
   if (vkConfigured()) channels.push({ name: "vk", send: () => sendVk(toPlainText(html)) });
 
   if (channels.length === 0) {
-    if (process.env.NODE_ENV === "production") throw new Error("Не настроен ни один канал уведомлений (Telegram или ВКонтакте)");
-    console.info("[notify:dev]\n" + toPlainText(html));
+    if (process.env.NODE_ENV === "production" && !isDemo()) {
+      throw new Error("Не настроен ни один канал уведомлений (Telegram или ВКонтакте)");
+    }
+    console.info(`[notify:${isDemo() ? "demo" : "dev"}] не отправлено — каналы не настроены\n` + toPlainText(html));
     return;
   }
 

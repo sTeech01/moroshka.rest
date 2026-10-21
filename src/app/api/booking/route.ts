@@ -1,4 +1,4 @@
-import { escapeHtml, notifyStaff } from "@/lib/notify";
+import { escapeHtml, isDemo, notifyStaff } from "@/lib/notify";
 import { bookingSchema } from "@/lib/order/schema";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 
@@ -34,7 +34,8 @@ export async function POST(req: Request) {
 
   try {
     await notifyStaff(message);
-    return Response.json({ ok: true });
+    // demo — заявка никуда не ушла (демо на Vercel без каналов уведомлений), форма об этом скажет
+    return Response.json({ ok: true, demo: isDemo() });
   } catch (error) {
     console.error("[booking] send failed", error);
     return Response.json({ error: "Не удалось отправить заявку. Позвоните нам, пожалуйста." }, { status: 502 });

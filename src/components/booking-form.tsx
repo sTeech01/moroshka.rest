@@ -9,16 +9,21 @@ const todayLocal = () => {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 };
 
-/** Бронь стола или заявка на банкет → /api/booking → Telegram */
+/** Бронь стола или заявка на банкет → /api/booking → сотрудникам (Telegram и/или ВКонтакте) */
 export function BookingForm({ kind }: { kind: "table" | "banquet" }) {
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [demo, setDemo] = useState(false);
 
   if (state === "done") {
     return (
       <div className="border border-border p-10 text-center">
         <p className="h-display text-3xl">Заявка отправлена</p>
-        <p className="mt-2 text-muted">Мы перезвоним, чтобы подтвердить {kind === "table" ? "бронь" : "детали"}.</p>
+        <p className="mt-2 text-muted">
+          {demo
+            ? "Это демо-версия сайта: заявка никуда не отправлена, звонка не будет."
+            : `Мы перезвоним, чтобы подтвердить ${kind === "table" ? "бронь" : "детали"}.`}
+        </p>
       </div>
     );
   }
@@ -48,7 +53,10 @@ export function BookingForm({ kind }: { kind: "table" | "banquet" }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }).catch(() => null);
-    if (res?.ok) return setState("done");
+    if (res?.ok) {
+      setDemo(Boolean((await res.json().catch(() => null))?.demo));
+      return setState("done");
+    }
     setError((await res?.json().catch(() => null))?.error ?? "Не удалось отправить заявку");
     setState("idle");
   }
