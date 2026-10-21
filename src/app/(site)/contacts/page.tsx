@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { YandexMap, yandexRouteUrl } from "@/components/yandex-map";
+import { features } from "@/config/site";
 import { getDelivery, getSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -20,11 +22,8 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 export default async function ContactsPage() {
   const [s, delivery] = await Promise.all([getSettings(), getDelivery()]);
   const tel = s.phone.replace(/[^\d+]/g, "");
-  const hasGeo = Boolean(s.geo.lat && s.geo.lng);
-  const point = `${s.geo.lng}%2C${s.geo.lat}`;
-  const mapSrc = hasGeo ? `https://yandex.ru/map-widget/v1/?ll=${point}&z=16&pt=${point}%2Cpm2orm` : null;
-  // Маршрут в Яндекс Картах: от текущего местоположения до ресторана
-  const routeUrl = hasGeo ? `https://yandex.ru/maps/?rtext=~${s.geo.lat}%2C${s.geo.lng}&rtt=auto` : null;
+  const geo = s.geo.lat && s.geo.lng ? { lat: s.geo.lat, lng: s.geo.lng } : null;
+  const routeUrl = geo ? yandexRouteUrl(geo.lat, geo.lng) : null;
 
   return (
     // Компактно: заголовок, карточка и карта помещаются в один экран ноутбука
@@ -49,7 +48,7 @@ export default async function ContactsPage() {
                 </div>
               ))}
             </Row>
-            {delivery.enabled && (
+            {features.onlineOrders && delivery.enabled && (
               <Row label="Доставка">
                 <div className="flex justify-between gap-4">
                   <span className="text-soft">Приём заказов</span>
@@ -94,21 +93,8 @@ export default async function ContactsPage() {
           </div>
         </div>
 
-        {mapSrc && (
-          // Высоту на десктопе задаёт карточка контактов — карта тянется вровень с ней
-          <div className="relative min-h-[320px] overflow-hidden border border-border">
-            {/*
-              Тёмная карта: invert + hue-rotate(180°) меняет светлое на тёмное, но сохраняет оттенки
-              (оранжевая метка, зелень). Ослабить/убрать — поправить или удалить класс фильтра.
-            */}
-            <iframe
-              src={mapSrc}
-              title="Ресторан «Морошка» на карте"
-              className="absolute inset-0 h-full w-full border-0 [filter:invert(0.9)_hue-rotate(180deg)_saturate(0.7)_brightness(0.95)]"
-              loading="lazy"
-            />
-          </div>
-        )}
+        {/* Высоту на десктопе задаёт карточка контактов — карта тянется вровень с ней */}
+        {geo && <YandexMap lat={geo.lat} lng={geo.lng} className="min-h-[320px]" />}
       </div>
     </div>
   );

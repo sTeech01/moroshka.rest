@@ -5,6 +5,9 @@ import { getOrderSink, getPaymentGateway } from "@/lib/providers";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
+  if (!features.onlineOrders) {
+    return Response.json({ error: "Онлайн-заказы пока не принимаются. Позвоните нам, пожалуйста." }, { status: 403 });
+  }
   if (!rateLimit(`order:${clientIp(req)}`, 5)) {
     return Response.json({ error: "Слишком много попыток. Позвоните нам, пожалуйста." }, { status: 429 });
   }

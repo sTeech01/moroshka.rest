@@ -28,7 +28,8 @@ function TextImage({ section }: { section: Extract<PageSection, { kind: "textIma
   );
 }
 
-function Highlight({ section }: { section: Extract<PageSection, { kind: "highlight" }> }) {
+/** Секция «Событие с цифрами» — на «О ресторане» и (рекорд России) на главной */
+export function Highlight({ section }: { section: Extract<PageSection, { kind: "highlight" }> }) {
   return (
     <section className="border border-border bg-velvet/40 p-6 sm:p-10 lg:p-14">
       <div className="text-center">

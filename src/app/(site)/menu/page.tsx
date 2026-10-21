@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MenuPromos } from "@/components/promo-banners";
-import { getDelivery, getPromos } from "@/lib/content";
+import { features } from "@/config/site";
+import { getDelivery, getPromos, getSettings } from "@/lib/content";
 import { formatPrice, formatWeight } from "@/lib/format";
 import { getHallMenu } from "@/lib/menu/get-menu";
 import type { Dish } from "@/lib/menu/types";
@@ -19,7 +20,10 @@ export const metadata: Metadata = {
  * получают ссылку «Можно заказать домой».
  */
 export default async function MenuPage() {
-  const [menu, delivery, promos] = await Promise.all([getHallMenu(), getDelivery(), getPromos("menu")]);
+  const [menu, delivery, promos, settings] = await Promise.all([getHallMenu(), getDelivery(), getPromos("menu"), getSettings()]);
+  // Доставка на сайте — только когда включены онлайн-заказы (features.onlineOrders) и доставка в админке
+  const ordering = features.onlineOrders && delivery.enabled;
+  const deliverySlugs = ordering ? menu.deliverySlugs : {};
 
   return (
     <div className="theme-paper">
@@ -33,16 +37,24 @@ export default async function MenuPage() {
             <Link href="/#booking" className="btn btn-line btn-sm">
               Забронировать стол
             </Link>
-            {delivery.enabled && (
+            {ordering && (
               <Link href="/delivery" className="btn btn-ink btn-sm">
                 Заказать доставку →
               </Link>
             )}
           </div>
         </div>
-        {delivery.enabled && (
+        {ordering ? (
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">
             Часть блюд можно заказать домой — у них отметка «Можно заказать домой». Цены в зале и в доставке могут отличаться.
+          </p>
+        ) : (
+          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">
+            Блюда можно взять с собой — закажите по телефону{" "}
+            <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="font-semibold whitespace-nowrap text-text hover:text-berry">
+              {settings.phone}
+            </a>{" "}
+            и заберите в ресторане.
           </p>
         )}
 
@@ -69,14 +81,14 @@ export default async function MenuPage() {
                 {withPhoto.length > 0 && (
                   <div className="mt-7 grid gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
                     {withPhoto.map((d) => (
-                      <HallDishCard key={d.id} dish={d} deliverySlug={menu.deliverySlugs[d.id]} />
+                      <HallDishCard key={d.id} dish={d} deliverySlug={deliverySlugs[d.id]} />
                     ))}
                   </div>
                 )}
                 {rest.length > 0 && (
                   <ul className={`grid gap-x-12 gap-y-6 lg:grid-cols-2 ${withPhoto.length ? "mt-10" : "mt-7"}`}>
                     {rest.map((d) => (
-                      <HallDishRow key={d.id} dish={d} deliverySlug={menu.deliverySlugs[d.id]} />
+                      <HallDishRow key={d.id} dish={d} deliverySlug={deliverySlugs[d.id]} />
                     ))}
                   </ul>
                 )}

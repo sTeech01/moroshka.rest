@@ -2,7 +2,7 @@ import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { navigation } from "@/config/site";
+import { features, navigation } from "@/config/site";
 import { getDelivery, getSettings } from "@/lib/content";
 
 export async function SiteFooter() {
@@ -52,7 +52,7 @@ export async function SiteFooter() {
               {h.days}: {h.time}
             </p>
           ))}
-          {delivery.enabled && (
+          {features.onlineOrders && delivery.enabled && (
             <p className="text-lichen">
               Доставка: {delivery.acceptFrom}–{delivery.acceptUntil}
             </p>

@@ -13,6 +13,12 @@ export const deliveryConfig = {
 } as const;
 
 export const features = {
+  /**
+   * Онлайн-заказы: раздел «Доставка», корзина, оформление, кнопки «в корзину».
+   * Пока выключены — у ресторана нет доставки, только самовывоз по телефону (решение заказчика 21.10.2026).
+   * Весь код на месте: включить — NEXT_PUBLIC_ONLINE_ORDERS_ENABLED=true и пересобрать сайт.
+   */
+  onlineOrders: process.env.NEXT_PUBLIC_ONLINE_ORDERS_ENABLED === "true",
   onlinePayment: process.env.NEXT_PUBLIC_ONLINE_PAYMENT_ENABLED === "true",
 } as const;
 
@@ -21,6 +27,6 @@ export const navigation = [
   { href: "/banquets", label: "Банкеты" },
   { href: "/events", label: "Афиша" },
   { href: "/about", label: "О ресторане" },
-  { href: "/delivery", label: "Доставка" },
+  ...(features.onlineOrders ? [{ href: "/delivery", label: "Доставка" }] : []),
   { href: "/contacts", label: "Контакты" },
-] as const;
+];

@@ -6,7 +6,7 @@ import { FloatingCart } from "@/components/layout/cart-button";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { RestaurantJsonLd } from "@/components/restaurant-json-ld";
-import { siteConfig } from "@/config/site";
+import { features, siteConfig } from "@/config/site";
 import { getDelivery } from "@/lib/content";
 import "./globals.css";
 
@@ -50,9 +50,9 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
-          <FloatingCart />
+          {features.onlineOrders && <FloatingCart />}
         </DeliveryProvider>
-        <CartHydrator />
+        {features.onlineOrders && <CartHydrator />}
         <RestaurantJsonLd />
       </body>
     </html>

@@ -34,6 +34,8 @@ const nextConfig: NextConfig = {
   images: {
     localPatterns: [
       { pathname: "/images/**" },
+      // Кадр-заставка видео первого экрана (public/video/hero-poster.webp)
+      { pathname: "/video/**" },
       // Файлы, загруженные в админке Payload
       { pathname: "/api/media/file/**" },
     ],
@@ -45,15 +47,26 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.syrve.online" },
     ],
   },
-  // Старые адреса сайта на Tilda
   async redirects() {
+    // Онлайн-заказы выключены (src/config/site.ts → features.onlineOrders): разделы заказа
+    // временно ведут в меню. Не permanent — чтобы браузеры не запомнили редирект до включения
+    const ordersOff =
+      process.env.NEXT_PUBLIC_ONLINE_ORDERS_ENABLED === "true"
+        ? []
+        : ["/delivery", "/delivery/:slug", "/cart", "/checkout", "/order/:id"].map((source) => ({
+            source,
+            destination: "/menu",
+            permanent: false,
+          }));
     return [
+      // Старые адреса сайта на Tilda
       { source: "/menu-kitchen", destination: "/menu", permanent: true },
       { source: "/bar-menu", destination: "/menu", permanent: true },
       // Страницы блюд для заказа переехали в раздел «Доставка»
       { source: "/menu/:slug", destination: "/delivery/:slug", permanent: true },
       // Адрес соглашения зафиксирован в его тексте — короткий вариант ведёт туда же
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      ...ordersOff,
     ];
   },
 };

@@ -617,15 +617,18 @@ export interface Home {
   id: number;
   heroTitle: string;
   heroSubtitle?: string | null;
+  /**
+   * Сейчас на первом экране видео (public/video/hero.mp4); фото — для превью ссылок в соцсетях и на случай, если видео уберут
+   */
   heroImage?: (number | null) | Media;
-  aboutTitle?: string | null;
-  aboutText?: string | null;
-  aboutImage?: (number | null) | Media;
   kitchenText?: string | null;
   barText?: string | null;
   kitchenImage?: (number | null) | Media;
   barImage?: (number | null) | Media;
   featuredDishes?: string[] | null;
+  aboutTitle?: string | null;
+  aboutText?: string | null;
+  aboutImage?: (number | null) | Media;
   banquetTitle?: string | null;
   banquetText?: string | null;
   banquetCapacity?: string | null;
@@ -787,14 +790,14 @@ export interface HomeSelect<T extends boolean = true> {
   heroTitle?: T;
   heroSubtitle?: T;
   heroImage?: T;
-  aboutTitle?: T;
-  aboutText?: T;
-  aboutImage?: T;
   kitchenText?: T;
   barText?: T;
   kitchenImage?: T;
   barImage?: T;
   featuredDishes?: T;
+  aboutTitle?: T;
+  aboutText?: T;
+  aboutImage?: T;
   banquetTitle?: T;
   banquetText?: T;
   banquetCapacity?: T;
