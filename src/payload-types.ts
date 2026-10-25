@@ -680,7 +680,7 @@ export interface Banquet {
   createdAt?: string | null;
 }
 /**
- * Страница /business-lunch. Состав и цены меняются здесь
+ * Страница /business-lunch и окно с меню дня при входе на сайт. Состав и цены меняются здесь
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "business-lunch".
@@ -688,12 +688,22 @@ export interface Banquet {
 export interface BusinessLunch {
   id: number;
   /**
-   * Снимите — страница отдаст 404 (промо-баннеры выключите в «Промо и акции»)
+   * Снимите — страница отдаст 404 и окно не появится (промо-баннеры выключите в «Промо и акции»)
    */
   enabled?: boolean | null;
   title: string;
   schedule: string;
   intro?: string | null;
+  note?: string | null;
+  image?: (number | null) | Media;
+  /**
+   * Гость видит его один раз в день, если на сегодня есть меню
+   */
+  popupEnabled?: boolean | null;
+  /**
+   * По времени Губкинского. Пусто — весь день
+   */
+  popupUntil?: string | null;
   /**
    * Салаты, супы, горячее… Название раздела можно не указывать
    */
@@ -711,8 +721,139 @@ export interface BusinessLunch {
         id?: string | null;
       }[]
     | null;
-  note?: string | null;
-  image?: (number | null) | Media;
+  mon?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  tue?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  wed?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  thu?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  fri?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  sat?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  sun?: {
+    /**
+     * Название раздела можно не указывать
+     */
+    groups?:
+      | {
+          title?: string | null;
+          items?:
+            | {
+                name: string;
+                weight?: string | null;
+                price: number;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -838,6 +979,10 @@ export interface BusinessLunchSelect<T extends boolean = true> {
   title?: T;
   schedule?: T;
   intro?: T;
+  note?: T;
+  image?: T;
+  popupEnabled?: T;
+  popupUntil?: T;
   groups?:
     | T
     | {
@@ -852,8 +997,132 @@ export interface BusinessLunchSelect<T extends boolean = true> {
             };
         id?: T;
       };
-  note?: T;
-  image?: T;
+  mon?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  tue?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  wed?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  thu?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  fri?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  sat?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  sun?:
+    | T
+    | {
+        groups?:
+          | T
+          | {
+              title?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    weight?: T;
+                    price?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

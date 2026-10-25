@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { cacheLife, cacheTag } from "next/cache";
 import { getPayload } from "payload";
 import { deliveryConfig } from "@/config/site";
+import { buildLunchWeek, LUNCH_DAYS, type LunchGroup } from "@/lib/business-lunch";
 import type { DeliverySettings } from "@/lib/delivery";
 import type { Event, Media, Page } from "@/payload-types";
 import { CONTENT_TAG } from "@/payload/revalidate";
@@ -100,23 +101,33 @@ export async function getBanquets() {
   };
 }
 
+type LunchGroupsDoc = { title?: string | null; items?: { name: string; weight?: string | null; price: number }[] | null }[] | null | undefined;
+
+const toLunchGroups = (groups: LunchGroupsDoc): LunchGroup[] =>
+  (groups ?? []).map((g) => ({
+    title: g.title ?? null,
+    items: (g.items ?? []).map((i) => ({ name: i.name, weight: i.weight ?? null, price: i.price })),
+  }));
+
 export async function getBusinessLunch() {
   "use cache";
   cached();
   const b = await (await payload()).findGlobal({ slug: "business-lunch", depth: 1 });
+  const days = Object.fromEntries(LUNCH_DAYS.map((d) => [d.key, toLunchGroups(b[d.key]?.groups)]));
   return {
     enabled: b.enabled ?? true,
     title: b.title,
     schedule: b.schedule,
     intro: b.intro ?? null,
-    groups: (b.groups ?? []).map((g) => ({
-      title: g.title ?? null,
-      items: (g.items ?? []).map((i) => ({ name: i.name, weight: i.weight ?? null, price: i.price })),
-    })),
+    week: buildLunchWeek(toLunchGroups(b.groups), days),
     note: b.note ?? null,
     image: toImg(b.image),
+    popupEnabled: b.popupEnabled ?? true,
+    popupUntil: b.popupUntil || null,
   };
 }
+
+export type BusinessLunchData = Awaited<ReturnType<typeof getBusinessLunch>>;
 
 const toEvent = (e: Event) => ({
   slug: e.slug ?? String(e.id),

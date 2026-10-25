@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Tenor_Sans } from "next/font/google";
+import { LunchPopup } from "@/components/business-lunch/lunch-popup";
 import { CartHydrator } from "@/components/cart/cart-hydrator";
 import { DeliveryProvider } from "@/components/delivery-context";
 import { FloatingCart } from "@/components/layout/cart-button";
@@ -7,7 +8,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { RestaurantJsonLd } from "@/components/restaurant-json-ld";
 import { features, siteConfig } from "@/config/site";
-import { getDelivery } from "@/lib/content";
+import { getBusinessLunch, getDelivery } from "@/lib/content";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -41,7 +42,7 @@ export const viewport: Viewport = {
 
 // Корневой layout сайта. У админки Payload свой — в app/(payload)
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
-  const delivery = await getDelivery();
+  const [delivery, lunch] = await Promise.all([getDelivery(), getBusinessLunch()]);
 
   return (
     <html lang="ru" className={`${manrope.variable} ${tenor.variable} h-full antialiased`}>
@@ -53,6 +54,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
           {features.onlineOrders && <FloatingCart />}
         </DeliveryProvider>
         {features.onlineOrders && <CartHydrator />}
+        <LunchPopup lunch={lunch} />
         <RestaurantJsonLd />
       </body>
     </html>

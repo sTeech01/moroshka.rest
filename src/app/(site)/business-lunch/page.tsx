@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatPrice } from "@/lib/format";
+import { LunchWeekMenu } from "@/components/business-lunch/lunch-week";
 import { getBusinessLunch, getSettings } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,26 +36,8 @@ export default async function BusinessLunchPage() {
             {lunch.intro && <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-soft">{lunch.intro}</p>}
           </div>
 
-          {/* Позиции как в карточке ресторана: название ……… выход / цена */}
-          <div className="mt-10 space-y-8">
-            {lunch.groups.map((g, gi) => (
-              <section key={gi} className="border-t border-border pt-6">
-                {g.title && <h2 className="eyebrow mb-4 text-center">{g.title}</h2>}
-                <ul className="space-y-3">
-                  {g.items.map((item) => (
-                    <li key={item.name} className="flex items-baseline gap-2 text-[17px]">
-                      <span>{item.name}</span>
-                      <span className="mb-1 min-w-6 flex-1 border-b border-dotted border-muted/50" aria-hidden />
-                      <span className="shrink-0 whitespace-nowrap">
-                        {item.weight && <span className="text-muted">{item.weight} / </span>}
-                        <span className="font-semibold">{formatPrice(item.price)}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
+          {/* Меню по дням: сегодняшний день выбирается в браузере */}
+          <LunchWeekMenu week={lunch.week} />
 
           {lunch.note && <p className="mt-10 text-center text-sm text-muted italic">* {lunch.note}</p>}
 
