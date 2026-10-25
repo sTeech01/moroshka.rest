@@ -15,9 +15,10 @@ export async function SiteHeader() {
 
   return (
     <HeaderShell>
-      <div className="container-site flex h-16 items-center gap-10 lg:h-[76px]">
+      {/* На телефоне отступы и логотип меньше: с номером телефона шапка иначе шире экрана 360–390 px */}
+      <div className="container-site flex h-16 items-center gap-4 sm:gap-10 lg:h-[76px]">
         <Link href="/" aria-label="На главную" className="shrink-0">
-          <Logo width={136} priority className="w-28 sm:w-[136px]" />
+          <Logo width={136} priority className="w-24 min-[400px]:w-28 sm:w-[136px]" />
         </Link>
 
         <nav className="hidden items-center gap-7 text-sm lg:flex">
@@ -28,7 +29,7 @@ export async function SiteHeader() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-2 min-[400px]:gap-3">
           {/* Номер виден сразу на всех экранах (просьба заказчика): нажал — позвонил */}
           <a
             href={`tel:${tel}`}

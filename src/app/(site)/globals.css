@@ -156,46 +156,120 @@ body {
 
 /*
  * Окно «Бизнес-ланч сегодня» (components/business-lunch/lunch-popup.tsx).
- * Размер с учётом выреза экрана, глубина — едва заметный хвойный свет сверху,
- * короткое появление (без него при «уменьшить движение»).
+ * Состояние — data-state на <dialog>: "open" (появление) и "closing" (уход; окно
+ * закрывается скриптом только после анимации). Внутри — каскад: элементы
+ * .lunch-rise проявляются с задержкой --d. Анимируются только opacity и transform;
+ * размытие фона статичное, плавно проявляется вместе с затемнением.
+ * На телефоне окно — панель снизу во всю ширину, на компьютере — по центру.
  */
 .lunch-dialog {
-  width: min(880px, calc(100% - 1.5rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
-  max-height: min(88dvh, calc(100dvh - 1.5rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
+  --lunch-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --lunch-from: translateY(20px) scale(0.97);
+  width: min(960px, calc(100% - 2rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  max-height: min(88dvh, 860px, calc(100dvh - 2rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
   background:
-    radial-gradient(120% 70% at 50% 0%, rgb(31 58 49 / 0.5) 0%, rgb(31 58 49 / 0) 60%),
+    radial-gradient(60% 50% at 0% 100%, rgb(242 160 58 / 0.05) 0%, rgb(242 160 58 / 0) 70%),
+    radial-gradient(90% 60% at 100% 100%, rgb(31 58 49 / 0.45) 0%, rgb(31 58 49 / 0) 70%),
     var(--night);
   box-shadow:
-    0 40px 120px -24px rgb(0 0 0 / 0.75),
-    inset 0 1px 0 rgb(239 232 220 / 0.06);
+    0 50px 140px -30px rgb(0 0 0 / 0.8),
+    0 0 0 1px rgb(239 232 220 / 0.07);
 }
-.lunch-dialog::backdrop {
-  background: rgb(6 10 9 / 0.72);
-  backdrop-filter: blur(3px);
-}
-.lunch-dialog[open] {
-  animation: lunch-in 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.lunch-dialog[open]::backdrop {
-  animation: lunch-fade 240ms ease-out;
-}
-@keyframes lunch-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.985);
+@media (max-width: 639px) {
+  .lunch-dialog {
+    --lunch-from: translateY(56px);
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0;
+    max-height: calc(100dvh - 0.75rem - env(safe-area-inset-top));
+    border-radius: 22px 22px 0 0;
   }
 }
-@keyframes lunch-fade {
+.lunch-dialog::backdrop {
+  background: rgb(5 9 8 / 0.74);
+  backdrop-filter: blur(4px);
+}
+
+.lunch-dialog[data-state="open"] {
+  animation: lunch-panel-in 500ms var(--lunch-ease) both;
+}
+.lunch-dialog[data-state="open"]::backdrop {
+  animation: lunch-fade-in 420ms ease-out both;
+}
+.lunch-dialog[data-state="closing"] {
+  animation: lunch-panel-out 260ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+.lunch-dialog[data-state="closing"]::backdrop {
+  animation: lunch-fade-out 260ms ease-in both;
+}
+.lunch-dialog[data-state="open"] .lunch-rise {
+  animation: lunch-rise 420ms var(--lunch-ease) both;
+  animation-delay: var(--d, 0ms);
+}
+/* Фото в шапке медленно «наезжает» — как первый кадр фильма */
+.lunch-dialog[data-state="open"] .lunch-photo {
+  animation: lunch-photo-in 800ms var(--lunch-ease) both;
+}
+@keyframes lunch-panel-in {
   from {
     opacity: 0;
+    transform: var(--lunch-from);
+  }
+}
+@keyframes lunch-panel-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+}
+@keyframes lunch-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes lunch-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes lunch-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes lunch-photo-in {
+  from {
+    opacity: 0;
+    transform: scale(1.07);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lunch-dialog[open],
-  .lunch-dialog[open]::backdrop {
-    animation: none;
+  .lunch-dialog,
+  .lunch-dialog::backdrop,
+  .lunch-dialog * {
+    animation: none !important;
   }
 }
+
+/* Фото шапки уходит в хвойный фон: на компьютере — влево, на телефоне — вниз.
+   Маска растворяет левый край фото, чтобы не было видно его границы */
+@media (min-width: 640px) {
+  .lunch-photo {
+    mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
+  }
+}
+.lunch-photo-shade {
+  background:
+    linear-gradient(90deg, var(--night) 30%, rgb(14 23 20 / 0.82) 52%, rgb(14 23 20 / 0.2) 100%),
+    linear-gradient(0deg, var(--night) 0%, rgb(14 23 20 / 0) 45%);
+}
+@media (max-width: 639px) {
+  .lunch-photo-shade {
+    background: linear-gradient(180deg, rgb(14 23 20 / 0.3) 0%, rgb(14 23 20 / 0.82) 55%, var(--night) 100%);
+  }
+}
+
 /* Тонкая полоса прокрутки в цвет текста вместо системной */
 .lunch-scroll {
   scrollbar-width: thin;
