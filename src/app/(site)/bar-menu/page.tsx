@@ -32,7 +32,7 @@ export default async function BarMenuPage() {
 
         <nav
           aria-label="Разделы барной карты"
-          className="z-30 mt-8 flex flex-wrap gap-2 rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px]"
+          className="chip-rail z-30 mt-8 flex gap-2 overflow-x-auto rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px] lg:flex-wrap lg:overflow-visible"
         >
           {menu.categories.map((c) => (
             <a key={c.id} href={`#${c.slug}`} className="pill pill-compact shrink-0">
@@ -72,11 +72,11 @@ function BarSection({ category }: { category: Category }) {
       <ul className="mt-6 flex flex-col gap-5">
         {category.dishes.map((d) => (
           <li key={d.id}>
-            {/* Несколько объёмов на узком экране переносятся под название, выровненные вправо */}
-            <div className="flex flex-wrap items-baseline gap-x-2 text-[17px]">
-              <h3 className="font-semibold">{d.name}</h3>
-              <span className="mb-1 min-w-6 flex-1 border-b-2 border-dotted border-muted/25" aria-hidden />
-              <span className="ml-auto text-right">
+            {/* Телефон: название, под ним цены справа — одинаково для всех строк. С 640 px — «название …… цены» */}
+            <div className="flex flex-wrap items-baseline gap-x-2 text-[17px] sm:flex-nowrap">
+              <h3 className="basis-full font-semibold sm:basis-auto">{d.name}</h3>
+              <span className="mb-1 hidden min-w-6 flex-1 border-b-2 border-dotted border-muted/25 sm:block" aria-hidden />
+              <span className="ml-auto text-right sm:shrink-0">
                 {volumes ? (
                   <span className="font-bold whitespace-nowrap">{d.sizes.map((s) => formatPrice(s.price)).join(" / ")}</span>
                 ) : (

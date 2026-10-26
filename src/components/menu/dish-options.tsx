@@ -111,7 +111,7 @@ export function DishOptions({ dish }: { dish: Dish }) {
       ))}
 
       {/* На телефоне панель прилипает к низу экрана, как в макете */}
-      <div className="sticky bottom-0 -mx-4 rounded-t-card bg-surface px-4 pt-3 pb-5 shadow-[0_-18px_40px_-24px_rgb(0_0_0/0.35)] md:static md:mx-0 md:rounded-none md:p-0 md:shadow-none">
+      <div className="sticky bottom-0 -mx-4 rounded-t-card bg-surface/90 px-4 pt-3 pb-5 backdrop-blur-md shadow-[0_-18px_40px_-24px_rgb(0_0_0/0.35)] md:static md:mx-0 md:rounded-none md:p-0 md:shadow-none">
         <p className="min-h-5 text-[13px] text-berry" aria-live="polite">
           {tried && !priced.ok ? priced.error : ""}
         </p>

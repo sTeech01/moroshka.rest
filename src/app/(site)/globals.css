@@ -123,14 +123,20 @@ body::before {
   background-size: 220px, auto, auto, auto;
 }
 
-/* Спокойный ритм текста: заголовки без «висящих» слов, абзацы без одиноких слов в конце */
+/*
+ * Спокойный ритм текста: заголовки без «висящих» слов, абзацы без одиноких слов в конце.
+ * Именно text-wrap-style, а не сокращение text-wrap: оно сбросило бы white-space: nowrap
+ * у родителя (строка «часы | адрес» под кнопками первого экрана рвалась посередине).
+ * Длинное слово в заголовке (в документах) переносится, а не вылезает за экран.
+ */
 h1,
 h2,
 h3 {
-  text-wrap: balance;
+  text-wrap-style: balance;
+  overflow-wrap: break-word;
 }
 p {
-  text-wrap: pretty;
+  text-wrap-style: pretty;
 }
 
 /* Видимый фокус клавиатуры — янтарный контур с зазором, мягко скруглённый */
@@ -249,9 +255,25 @@ p {
 .shape-leaf-alt {
   border-radius: var(--radius-soft) var(--radius-panel) var(--radius-soft) var(--radius-panel);
 }
-/* Края декоративной полосы с ягодами растворяются, а не обрезаются */
+/* Края декоративной полосы с ягодами растворяются — по бокам и снизу, без ровного среза */
 .fade-x {
-  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image:
+    linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%),
+    linear-gradient(180deg, #000 45%, transparent 100%);
+  mask-composite: intersect;
+}
+/* Разделы меню: на телефоне — одна строка с горизонтальной прокруткой, а не стена кнопок */
+.chip-rail {
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, #000 85%, transparent 100%);
+}
+.chip-rail::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .chip-rail {
+    mask-image: none;
+  }
 }
 
 /* На светлых страницах скруглённый верх подвала ложится на «бумагу», а не на тёмный фон */

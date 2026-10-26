@@ -18,7 +18,7 @@ export async function CmsPage({ slug }: { slug: Slug }) {
 
   return (
     <article className={`container-site py-12 lg:py-16 ${wide ? "max-w-6xl" : "max-w-3xl"}`}>
-      <h1 className="h-display text-5xl lg:text-6xl">{page.title}</h1>
+      <h1 className="h-display text-[2rem] hyphens-auto sm:text-5xl lg:text-6xl">{page.title}</h1>
       {page.content && (
         <div className="mt-10 max-w-3xl">
           <CmsContent data={page.content} />

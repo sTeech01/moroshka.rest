@@ -81,14 +81,15 @@ export function PageHero({ image, video, eyebrow, badge, title, subtitle, action
 
         {/* Под кнопками: инфо | инфо */}
         {info && (
-          <div className="mt-6 flex items-center gap-4 text-sm tracking-[0.12em] uppercase sm:gap-6">
-            <div className="space-y-0.5 text-right whitespace-nowrap">
+          // Телефон: колонки друг под другом по центру (длинные подписи залов не влезают в пол-экрана)
+          <div className="mt-6 flex flex-col items-center gap-2 text-sm tracking-[0.12em] uppercase sm:flex-row sm:gap-6">
+            <div className="space-y-0.5 text-center sm:text-right sm:whitespace-nowrap">
               {info.left.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}
             </div>
-            <span className="h-2 w-2 shrink-0 rounded-full bg-berry/80" aria-hidden />
-            <div className="space-y-0.5 text-left whitespace-nowrap">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-berry/80 sm:h-2 sm:w-2" aria-hidden />
+            <div className="space-y-0.5 text-center sm:text-left sm:whitespace-nowrap">
               {info.right.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}

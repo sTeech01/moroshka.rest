@@ -68,7 +68,7 @@ export default async function MenuPage() {
 
         <nav
           aria-label="Разделы меню"
-          className="z-30 mt-8 flex flex-wrap gap-2 rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px]"
+          className="chip-rail z-30 mt-8 flex gap-2 overflow-x-auto rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px] lg:flex-wrap lg:overflow-visible"
         >
           {menu.categories.map((c) => (
             <a key={c.id} href={`#${c.slug}`} className="pill pill-compact shrink-0">

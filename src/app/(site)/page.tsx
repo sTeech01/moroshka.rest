@@ -64,7 +64,7 @@ export default async function HomePage() {
       <HomePromos promos={promos} />
 
       {/* Кухня и бар */}
-      <section className="container-site mt-16 grid grid-cols-2 gap-3 lg:mt-24 lg:gap-6">
+      <section className="container-site mt-4 grid grid-cols-2 gap-3 lg:mt-6 lg:gap-6">
         {[
           { title: "Кухня", text: home.kitchenText, image: home.kitchenImage, href: "/menu" },
           { title: "Бар", text: home.barText, image: home.barImage, href: "/bar-menu" },

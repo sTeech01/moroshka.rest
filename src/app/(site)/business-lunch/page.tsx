@@ -32,7 +32,7 @@ export default async function BusinessLunchPage() {
         <div className="surface-moss rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:px-12">
           <div className="text-center">
             <p className="eyebrow text-berry">{lunch.schedule}</p>
-            <h1 className="h-display mt-4 text-5xl lg:text-6xl">{lunch.title}</h1>
+            <h1 className="h-display mt-4 text-[2.5rem] sm:text-5xl lg:text-6xl">{lunch.title}</h1>
             {lunch.intro && <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-soft">{lunch.intro}</p>}
           </div>
 

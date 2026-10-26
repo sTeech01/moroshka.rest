@@ -68,12 +68,13 @@ export function CheckoutForm() {
   if (!hydrated) return <div className="skeleton h-96 rounded-card" />;
   if (lines.length === 0) {
     return (
-      <p>
-        Корзина пуста.{" "}
-        <Link href="/delivery" className="underline">
+      <div className="card-soft px-6 py-14 text-center">
+        <p className="h-display text-3xl">Корзина пуста</p>
+        <p className="mt-2 text-muted">Добавьте блюда, чтобы оформить заказ</p>
+        <Link href="/delivery" className="btn btn-berry mt-8">
           Выбрать блюда
         </Link>
-      </p>
+      </div>
     );
   }
 

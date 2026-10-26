@@ -21,7 +21,7 @@ export function LunchWeekMenu({ week }: { week: LunchWeek }) {
   return (
     <div className="mt-10">
       {days.length > 1 && (
-        <div role="tablist" aria-label="День недели" className="mb-8 flex flex-wrap justify-center gap-2">
+        <div role="tablist" aria-label="День недели" className="mb-8 flex flex-wrap justify-center gap-1.5 sm:gap-2">
           {days.map((d) => (
             <button
               key={d.key}
@@ -29,12 +29,18 @@ export function LunchWeekMenu({ week }: { week: LunchWeek }) {
               role="tab"
               aria-selected={d.key === active}
               onClick={() => setActive(d.key)}
-              className={`rounded-full px-4 py-2 text-sm ring-1 ring-inset transition-[background-color,color,box-shadow] duration-200 ${
+              className={`rounded-full px-3.5 py-2 text-sm ring-1 sm:px-4 ring-inset transition-[background-color,color,box-shadow] duration-200 ${
                 d.key === active ? "bg-berry text-night ring-berry" : "bg-card ring-border hover:ring-berry"
               }`}
             >
               {d.short}
-              {d.key === today && <span className="ml-1.5 text-xs opacity-80">сегодня</span>}
+              {/* «сегодня» есть в подзаголовке ниже; на телефоне в кнопке — только точка, чтобы дни уместились в строку */}
+              {d.key === today && (
+                <>
+                  <span className="ml-1.5 hidden text-xs opacity-80 sm:inline">сегодня</span>
+                  <span className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-current align-middle sm:hidden" aria-hidden />
+                </>
+              )}
             </button>
           ))}
         </div>

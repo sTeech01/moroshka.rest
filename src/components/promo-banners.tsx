@@ -28,7 +28,7 @@ export function HomePromos({ promos }: { promos: PromoItem[] }) {
   const [feature, ...rest] = promos;
 
   return (
-    <section data-promos aria-label="Предложения ресторана" className="relative isolate mt-8 overflow-hidden py-16 lg:mt-12 lg:py-28">
+    <section data-promos aria-label="Предложения ресторана" className="relative isolate mt-8 overflow-hidden pt-16 pb-12 lg:mt-12 lg:pt-28 lg:pb-20">
       {/* Фон: тёмная ботаническая картина с веткой морошки справа */}
       <div aria-hidden className="promo-stage-bg absolute inset-0 -z-10" />
 

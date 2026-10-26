@@ -13,7 +13,7 @@ export async function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="surface-stone rounded-t-panel pb-24 text-snow md:pb-0">
+    <footer className="surface-stone rounded-t-panel text-snow">
       <Image
         src="/images/berries.webp"
         alt=""
@@ -69,7 +69,7 @@ export async function SiteFooter() {
         </nav>
       </div>
 
-      <div className="bg-night/30">
+      <div className="bg-night/30 pb-24 md:pb-0">
         <div className="container-site flex flex-col gap-3 py-6 text-[13px] text-lichen lg:flex-row lg:justify-between">
           <span>
             © {year} Ресторан «Морошка». {settings.legal}

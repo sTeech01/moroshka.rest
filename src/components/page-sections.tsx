@@ -50,7 +50,7 @@ export function Highlight({ section }: { section: Extract<PageSection, { kind: "
       {section.stats.length > 0 && (
         <dl className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-flow-col sm:auto-cols-fr">
           {section.stats.map((st) => (
-            <div key={st.value} className="rounded-card bg-night/35 px-4 py-6 text-center">
+            <div key={st.value} className="rounded-card bg-night/35 px-4 py-4 text-center sm:py-6">
               <dt className="sr-only">{st.label ?? st.value}</dt>
               <dd>
                 <span className="h-display block text-4xl text-berry lg:text-5xl">{st.value}</span>

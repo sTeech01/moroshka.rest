@@ -90,7 +90,7 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
       </nav>
 
       <div className="mt-6 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-14">
-        <div className="-mx-4 sm:mx-0">
+        <div>
           <DishImage src={dish.image} alt={dish.name} sizes="(min-width: 768px) 50vw, 100vw" priority />
         </div>
         <div>
