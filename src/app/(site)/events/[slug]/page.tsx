@@ -30,9 +30,9 @@ export default function EventPage({ params }: PageProps<"/events/[slug]">) {
     <Suspense
       fallback={
         <div className="container-site max-w-3xl space-y-4 py-12 lg:py-16" aria-busy>
-          <div className="h-5 w-40 animate-pulse bg-fill" />
-          <div className="h-14 w-3/4 animate-pulse bg-fill" />
-          <div className="aspect-video animate-pulse bg-fill" />
+          <div className="skeleton h-5 w-40" />
+          <div className="skeleton h-14 w-3/4" />
+          <div className="skeleton aspect-video rounded-panel" />
         </div>
       }
     >
@@ -53,7 +53,7 @@ async function EventContent({ params }: { params: PageProps<"/events/[slug]">["p
       <div className="mt-8 text-[13px] tracking-[0.16em] text-berry uppercase">{formatEventDate(event.date)}</div>
       <h1 className="h-display mt-3 text-5xl lg:text-6xl">{event.title}</h1>
       {event.cover && (
-        <div className="relative mt-10 aspect-video overflow-hidden">
+        <div className="shape-leaf relative mt-10 aspect-video overflow-hidden">
           <Image src={event.cover.url} alt={event.cover.alt} fill priority sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
         </div>
       )}

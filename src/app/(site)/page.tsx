@@ -61,24 +61,29 @@ export default async function HomePage() {
         phone={settings.phone}
       />
 
-      <HomePromos promos={promos} geo={settings.geo} />
+      <HomePromos promos={promos} />
 
       {/* Кухня и бар */}
-      <section className="container-site mt-20 grid grid-cols-2 gap-2.5 lg:mt-30 lg:gap-4">
+      <section className="container-site mt-16 grid grid-cols-2 gap-3 lg:mt-24 lg:gap-6">
         {[
           { title: "Кухня", text: home.kitchenText, image: home.kitchenImage, href: "/menu" },
           { title: "Бар", text: home.barText, image: home.barImage, href: "/bar-menu" },
-        ].map((tile) => (
-          <Link key={tile.title} href={tile.href} className="group relative block h-52 overflow-hidden lg:h-[520px]">
+        ].map((tile, i) => (
+          // Плитки-«листья»: скругления зеркальны, вторая чуть ниже — без жёсткой сетки
+          <Link
+            key={tile.title}
+            href={tile.href}
+            className={`group relative block h-52 overflow-hidden shadow-(--shadow-soft) lg:h-[520px] ${i ? "shape-leaf-alt lg:mt-12" : "shape-leaf"}`}
+          >
             {tile.image && (
               <Image src={tile.image.url} alt="" fill sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             )}
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-night/80 p-4 lg:p-8">
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-night/90 via-night/55 to-transparent p-4 pt-14 lg:p-8 lg:pt-28">
               <div>
                 <div className="h-display text-[22px] lg:text-[40px]">{tile.title}</div>
                 {tile.text && <div className="mt-1.5 hidden text-soft lg:block">{tile.text}</div>}
               </div>
-              <span className="hidden text-3xl text-berry lg:block" aria-hidden>→</span>
+              <span className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-snow/10 text-xl text-berry backdrop-blur-sm transition-[background-color,transform] duration-300 group-hover:translate-x-1 group-hover:bg-snow/15 lg:grid" aria-hidden>→</span>
             </div>
           </Link>
         ))}
@@ -103,35 +108,37 @@ export default async function HomePage() {
         aria-hidden
         width={2000}
         height={262}
-        className="mt-20 h-20 w-full object-cover object-top opacity-30 lg:mt-30 lg:h-30"
+        className="fade-x mt-20 h-20 w-full object-cover object-top opacity-30 lg:mt-30 lg:h-30"
       />
 
       {/* Бронь */}
       {/* Компактно: по ссылке «Забронировать стол» (/#booking) заголовок и вся форма с кнопкой — в одном экране */}
-      <section id="booking" className="container-site grid gap-10 py-14 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:py-16">
-        <div>
-          <p className="eyebrow">Бронь</p>
-          <h2 className="h-display mt-4 text-4xl lg:text-5xl">Забронировать стол</h2>
-          <div className="mt-6 space-y-1 text-[17px]">
-            {settings.hours.map((h) => (
-              <p key={h.days}>
-                {h.days}: {h.time}
-              </p>
-            ))}
+      <div className="container-site py-10 lg:py-14">
+        <section id="booking" className="surface-stone grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
+          <div>
+            <p className="eyebrow">Бронь</p>
+            <h2 className="h-display mt-4 text-4xl lg:text-5xl">Забронировать стол</h2>
+            <div className="mt-6 space-y-1 text-[17px]">
+              {settings.hours.map((h) => (
+                <p key={h.days}>
+                  {h.days}: {h.time}
+                </p>
+              ))}
+            </div>
+            <p className="mt-6 text-muted">
+              Или позвоните:{" "}
+              <a href={`tel:${tel}`} className="font-semibold text-text hover:text-berry">
+                {settings.phone}
+              </a>
+            </p>
           </div>
-          <p className="mt-6 text-muted">
-            Или позвоните:{" "}
-            <a href={`tel:${tel}`} className="font-semibold text-text hover:text-berry">
-              {settings.phone}
-            </a>
-          </p>
-        </div>
-        <BookingForm kind="table" />
-      </section>
+          <BookingForm kind="table" />
+        </section>
+      </div>
 
       {/* Как нас найти — Яндекс Карта */}
       {geo && (
-        <section className="container-site grid gap-6 pb-20 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-10 lg:pb-30">
+        <section className="container-site grid gap-8 pt-6 pb-20 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12 lg:pt-10 lg:pb-30">
           <div className="flex flex-col justify-center">
             <p className="eyebrow">Как нас найти</p>
             <h2 className="h-display mt-4 text-4xl lg:text-5xl">{settings.address}</h2>
@@ -151,7 +158,7 @@ export default async function HomePage() {
               </a>
             </div>
           </div>
-          <YandexMap lat={geo.lat} lng={geo.lng} className="h-[320px] lg:h-[440px]" />
+          <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt h-[320px] lg:h-[440px]" />
         </section>
       )}
     </>
@@ -181,7 +188,7 @@ function SignatureDishes({ hall }: { hall: Awaited<ReturnType<typeof getHallMenu
           <p className="eyebrow">Кухня Ямала</p>
           <h2 className="h-display mt-5 text-4xl lg:text-[56px]">Север на тарелке</h2>
         </div>
-        <Link href="/menu" className="border-b border-border pb-1 text-sm tracking-wide text-soft transition-colors hover:border-berry hover:text-berry">
+        <Link href="/menu" className="text-sm font-semibold tracking-wide text-berry transition-colors hover:text-berry-hover">
           Всё меню →
         </Link>
       </div>
@@ -191,7 +198,7 @@ function SignatureDishes({ hall }: { hall: Awaited<ReturnType<typeof getHallMenu
           const weight = formatWeight(size.weight, dish.measureUnit);
           return (
             <Link key={dish.id} href={`/menu#${category}`} className="group block">
-              <div className="relative aspect-[4/3] overflow-hidden bg-fill">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-fill">
                 <Image
                   src={dish.image!}
                   alt={dish.name}
@@ -241,7 +248,7 @@ function DeliveryDishes({
           <p className="eyebrow">{section.homeEyebrow}</p>
           <h2 className="h-display mt-5 text-4xl lg:text-[56px]">{section.homeTitle}</h2>
         </div>
-        <Link href="/delivery" className="border-b border-border pb-1 text-sm tracking-wide text-soft transition-colors hover:border-berry hover:text-berry">
+        <Link href="/delivery" className="text-sm font-semibold tracking-wide text-berry transition-colors hover:text-berry-hover">
           {section.homeLink}
         </Link>
       </div>

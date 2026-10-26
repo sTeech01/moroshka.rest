@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
 /*
- * Дизайн «северный лес ночью».
- * Семантические токены (surface, text, muted, border, fill) переключаются темой:
- * по умолчанию тёмная, .theme-paper — светлая для меню, корзины и оформления.
+ * Дизайн «Северный мох»: хвойный лес после дождя, мох, влажный камень, древесина, янтарь
+ * и полупрозрачная смола (как в столешницах из эпоксидки). Вместо рамок и линий — поверхности,
+ * мягкие тени, воздух и фактура; скругления по размеру элемента (--radius-*).
+ * Семантические токены (surface, text, muted, border, fill, card…) переключаются темой:
+ * по умолчанию тёмная, .theme-paper — светлая «натуральная бумага» для меню, корзины и оформления.
  */
 :root {
   --night: #0e1714;
   --velvet: #1f3a31;
+  --moss: #1b2c23;
+  --olive: #2b3224;
+  --stone: #18201d;
   --berry: #f2a03a;
-  --berry-hover: #ffb558;
+  --berry-hover: #f6b360;
   --snow: #efe8dc;
   --lichen: #a9b3aa;
   --wood: #8a5a34;
@@ -18,9 +23,20 @@
   --text: var(--snow);
   --muted: var(--lichen);
   --soft: #c9cfc7;
-  --border: #2a3a33;
+  --border: #26352e;
   --fill: var(--velvet);
   --danger: #ff8f6b;
+  /* Приподнятая поверхность (карточки, панели) и поля форм */
+  --card: rgb(239 232 220 / 0.045);
+  --field-bg: rgb(239 232 220 / 0.05);
+  --field-line: rgb(239 232 220 / 0.1);
+  --shadow-soft: 0 28px 70px -38px rgb(0 0 0 / 0.75);
+
+  /* Зерно «печатной бумаги»: шум из встроенного SVG (плитка 220 px), светлые крапинки */
+  --grain-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .91 0 0 0 0 .86 .085 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* То же для светлой бумаги — тёмные крапинки */
+  --grain-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .22 0 0 0 0 .16 .075 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .theme-paper {
@@ -28,16 +44,29 @@
   --text: #0e1714;
   --muted: #5e665f;
   --soft: #3c443e;
-  --border: #d9d0c2;
-  --fill: #e4dccf;
+  --border: #ddd4c6;
+  --fill: #e6dfd2;
   --danger: #b4412f;
-  background: var(--surface);
+  --card: #fbf8f2;
+  --field-bg: #fbf8f2;
+  --field-line: #ddd4c6;
+  --shadow-soft: 0 22px 50px -34px rgb(52 46 30 / 0.45);
+  /* Тёплая бумага: мягкие пятна мха и янтаря по краям + зерно */
+  background:
+    var(--grain-dark),
+    radial-gradient(60rem 36rem at 100% 0%, rgb(169 179 140 / 0.22) 0%, rgb(169 179 140 / 0) 70%),
+    radial-gradient(50rem 30rem at 0% 40rem, rgb(242 160 58 / 0.07) 0%, rgb(242 160 58 / 0) 70%),
+    var(--surface);
+  background-size: 220px, auto, auto, auto;
   color: var(--text);
 }
 
 @theme inline {
   --color-night: var(--night);
   --color-velvet: var(--velvet);
+  --color-moss: var(--moss);
+  --color-olive: var(--olive);
+  --color-stone: var(--stone);
   --color-berry: var(--berry);
   --color-berry-hover: var(--berry-hover);
   --color-snow: var(--snow);
@@ -49,7 +78,13 @@
   --color-soft: var(--soft);
   --color-border: var(--border);
   --color-fill: var(--fill);
+  --color-card: var(--card);
   --color-danger: var(--danger);
+
+  /* Скругления по размеру: поля и кнопки → карточки → большие панели и фото */
+  --radius-soft: 14px;
+  --radius-card: 22px;
+  --radius-panel: 34px;
 
   --font-sans: var(--font-manrope);
   --font-display: var(--font-tenor);
@@ -69,29 +104,64 @@ body {
   background: var(--surface);
   color: var(--text);
 }
+/*
+ * Фактура всего тёмного сайта: размытые пятна мха и тёплого света + зерно. Отдельный
+ * фиксированный слой за контентом — без blur-фильтров и без перерисовки при прокрутке.
+ * Светлые разделы (.theme-paper) перекрывают его своим фоном.
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    var(--grain-light),
+    radial-gradient(48vw 40vh at 8% 18%, rgb(42 66 52 / 0.42) 0%, rgb(42 66 52 / 0) 70%),
+    radial-gradient(44vw 42vh at 96% 62%, rgb(54 62 38 / 0.36) 0%, rgb(54 62 38 / 0) 72%),
+    radial-gradient(30vw 26vh at 70% 4%, rgb(242 160 58 / 0.045) 0%, rgb(242 160 58 / 0) 70%);
+  background-size: 220px, auto, auto, auto;
+}
+
+/* Спокойный ритм текста: заголовки без «висящих» слов, абзацы без одиноких слов в конце */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Видимый фокус клавиатуры — янтарный контур с зазором, мягко скруглённый */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--berry);
+  outline-offset: 3px;
+}
 
 @layer components {
   .container-site {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-8;
   }
-  /* Заголовки — Tenor Sans без жирности */
+  /* Заголовки — Tenor Sans без жирности, чуть свободнее по высоте строки */
   .h-display {
-    @apply font-display leading-[1.05] font-normal;
+    @apply font-display leading-[1.1] font-normal tracking-[-0.005em];
   }
   /* Подписи разрядкой, как «РЕСТОРАН» в логотипе */
   .eyebrow {
-    @apply text-xs tracking-[0.3em] text-muted uppercase;
+    @apply text-xs tracking-[0.24em] text-muted uppercase;
   }
 
-  /* Кнопки-таблетки. Использовать с модификатором: class="btn btn-berry" */
+  /* Кнопки — умеренно скруглённые «камешки». Использовать с модификатором: class="btn btn-berry" */
   .btn {
-    @apply inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-[15px] font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-soft px-7 text-[15px] font-bold transition-[background-color,color,border-color,box-shadow,transform] duration-300 ease-(--ease-soft) active:translate-y-px disabled:cursor-not-allowed disabled:opacity-55 disabled:active:translate-y-0;
   }
   .btn-berry {
-    @apply bg-berry text-night hover:bg-berry-hover;
+    @apply bg-berry text-night shadow-[0_10px_28px_-14px_rgb(242_160_58/0.65)] hover:bg-berry-hover hover:shadow-[0_14px_34px_-14px_rgb(242_160_58/0.75)];
   }
+  /* Второстепенная: полупрозрачная «смола» вместо жёсткого контура */
   .btn-line {
-    @apply border border-current font-semibold hover:border-berry hover:text-berry;
+    @apply bg-current/[0.06] font-semibold ring-1 ring-current/25 ring-inset hover:bg-current/[0.1] hover:text-berry hover:ring-berry/60;
   }
   .btn-ink {
     @apply bg-text text-surface hover:bg-berry hover:text-night;
@@ -100,17 +170,17 @@ body {
     @apply h-11 px-5 text-sm;
   }
 
-  /* Варианты выбора: размер, прожарка, соус */
+  /* Варианты выбора: размер, прожарка, соус, разделы меню */
   .pill {
-    @apply inline-flex h-11 items-center rounded-full border border-border px-[18px] text-sm transition-colors hover:border-text;
+    @apply inline-flex h-11 items-center rounded-full bg-card px-[18px] text-sm ring-1 ring-border ring-inset transition-[background-color,color,box-shadow] duration-200 hover:ring-text/40;
   }
   .pill[aria-pressed="true"] {
-    @apply border-berry bg-berry font-semibold text-night;
+    @apply bg-berry font-semibold text-night ring-berry;
   }
 
-  /* Поля форм — прямые углы, как в макете */
+  /* Поля форм: мягкая заливка и тонкая линия, при фокусе — янтарная */
   .field {
-    @apply h-13 w-full border border-border bg-transparent px-4 text-base text-text outline-none transition-colors placeholder:text-muted/70 focus:border-berry;
+    @apply h-13 w-full rounded-soft border border-(--field-line) bg-(--field-bg) px-4 text-base text-text outline-none transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-muted/70 focus:border-berry focus:shadow-[0_0_0_4px_rgb(242_160_58/0.14)] focus-visible:outline-none aria-invalid:border-danger;
   }
   textarea.field {
     @apply h-auto min-h-24 py-3;
@@ -121,7 +191,7 @@ body {
 
   /* Компактные формы (оформление заказа): ниже поля и таблетки, мелкие подписи */
   .field-compact {
-    @apply h-11 px-3.5 text-[15px] lg:h-10;
+    @apply h-11 rounded-[12px] px-3.5 text-[15px] lg:h-10;
   }
   textarea.field-compact {
     @apply h-auto min-h-16 py-2.5;
@@ -134,6 +204,83 @@ body {
   }
   .form-section-title {
     @apply mb-2.5 font-display text-lg leading-tight;
+  }
+
+  /* Приподнятая карточка темы: на тёмном — полупрозрачная «смола», на бумаге — светлый лист */
+  .card-soft {
+    @apply rounded-card bg-card shadow-(--shadow-soft);
+  }
+  /* Скелетон загрузки — скруглён как то, что придёт на его место */
+  .skeleton {
+    @apply animate-pulse rounded-soft bg-fill;
+  }
+}
+
+/*
+ * Поверхности секций — чтобы страницы не были одинаковыми:
+ * мох (зелёная глубина), камень (тёмный влажный), смола (полупрозрачный слой поверх фото/фона).
+ */
+.surface-moss {
+  background:
+    var(--grain-light),
+    radial-gradient(70% 90% at 0% 0%, rgb(74 104 76 / 0.32) 0%, rgb(74 104 76 / 0) 65%),
+    radial-gradient(60% 70% at 100% 100%, rgb(242 160 58 / 0.08) 0%, rgb(242 160 58 / 0) 70%),
+    linear-gradient(160deg, #1d3027 0%, #16251e 55%, #13201a 100%);
+  background-size: 220px, auto, auto, auto;
+}
+.surface-stone {
+  background:
+    var(--grain-light),
+    radial-gradient(80% 70% at 15% 0%, rgb(169 179 170 / 0.09) 0%, rgb(169 179 170 / 0) 60%),
+    radial-gradient(60% 80% at 100% 100%, rgb(31 58 49 / 0.55) 0%, rgb(31 58 49 / 0) 70%),
+    linear-gradient(180deg, #19221f 0%, #141c19 100%);
+  background-size: 220px, auto, auto, auto;
+}
+.surface-resin {
+  background: linear-gradient(155deg, rgb(52 84 70 / 0.42) 0%, rgb(20 34 28 / 0.62) 55%, rgb(14 23 20 / 0.72) 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(239 232 220 / 0.07),
+    0 30px 80px -40px rgb(0 0 0 / 0.8);
+}
+/* Асимметричное «лист»-скругление для крупных фото и панелей */
+.shape-leaf {
+  border-radius: var(--radius-panel) var(--radius-soft) var(--radius-panel) var(--radius-soft);
+}
+.shape-leaf-alt {
+  border-radius: var(--radius-soft) var(--radius-panel) var(--radius-soft) var(--radius-panel);
+}
+/* Края декоративной полосы с ягодами растворяются, а не обрезаются */
+.fade-x {
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+
+/* На светлых страницах скруглённый верх подвала ложится на «бумагу», а не на тёмный фон */
+body:has(main .theme-paper) {
+  background: #f3eee5;
+}
+body:has(main .theme-paper)::before {
+  display: none;
+}
+
+/* Мобильное меню проявляется мягко, без рывка */
+.mobile-nav-panel {
+  animation: soft-rise 320ms var(--ease-soft) both;
+}
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -182,7 +329,7 @@ body {
     max-width: 100%;
     margin: auto 0 0;
     max-height: calc(100dvh - 0.75rem - env(safe-area-inset-top));
-    border-radius: 22px 22px 0 0;
+    border-radius: var(--radius-panel) var(--radius-panel) 0 0;
   }
 }
 .lunch-dialog::backdrop {
@@ -284,68 +431,42 @@ body {
 }
 
 /*
- * Секция предложений на главной (components/promo-banners.tsx, HomePromos) — несколько планов:
- * хвойная основа со световыми пятнами → зерно «печатной бумаги» → ветка морошки (гравюра) →
- * поверхности карточек → фото и текст. Сверху и снизу основа уходит в цвет сайта — без шва с соседями.
+ * Секция предложений на главной (components/promo-banners.tsx, HomePromos) — тёмный ботанический фон
+ * с морошкой (public/images/home/promo-bg*.webp) → поверхности карточек → фото и текст.
+ * Сверху и снизу фон уходит в цвет сайта — без шва с соседними секциями.
  */
 .promo-stage-bg {
   background:
-    radial-gradient(40% 55% at 16% 32%, rgb(31 58 49 / 0.7) 0%, rgb(31 58 49 / 0) 70%),
-    radial-gradient(36% 48% at 90% 70%, rgb(62 70 40 / 0.42) 0%, rgb(62 70 40 / 0) 72%),
-    radial-gradient(22% 28% at 74% 20%, rgb(242 160 58 / 0.05) 0%, rgb(242 160 58 / 0) 70%),
-    linear-gradient(180deg, var(--night) 0%, #111d18 22%, #13201a 60%, #111c17 82%, var(--night) 100%);
-}
-/* Зерно: шум из встроенного SVG, плитка 240 px — без внешних файлов и без анимации */
-.promo-stage-grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .91 0 0 0 0 .86 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 240px;
-  opacity: 0.06;
-  mix-blend-mode: overlay;
-  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
-}
-/* Одна ветка морошки из фирменной гравюры (кадр с крупными ягодами), края растворяются */
-.promo-stage-berry {
-  background: url("/images/berries.webp") no-repeat;
-  background-size: auto 100%;
-  background-position: 45% 0;
-  opacity: 0.075;
-  transform: rotate(-9deg);
-  mask-image: radial-gradient(closest-side, #000 45%, transparent 100%);
-}
-/* Главная карточка: поверхность чуть светлее хвойного фона */
-.promo-surface-feature {
-  background:
-    radial-gradient(70% 90% at 0% 0%, rgb(239 232 220 / 0.035) 0%, rgb(239 232 220 / 0) 60%),
-    linear-gradient(150deg, #182b24 0%, #14231d 55%, #12201b 100%);
-  box-shadow:
-    0 0 0 1px rgb(239 232 220 / 0.08),
-    0 30px 80px -40px rgb(0 0 0 / 0.7);
-}
-/* Остальные карточки: приглушённый оливковый с тёплым свечением и внутренней рамкой */
-.promo-surface-olive {
-  background:
-    radial-gradient(60% 55% at 100% 0%, rgb(242 160 58 / 0.1) 0%, rgb(242 160 58 / 0) 70%),
-    linear-gradient(165deg, #252c1f 0%, #1d241b 55%, #18201a 100%);
-  box-shadow:
-    0 0 0 1px rgb(169 179 170 / 0.13),
-    0 30px 70px -40px rgb(0 0 0 / 0.75);
-}
-.promo-surface-olive::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgb(239 232 220 / 0.06);
-  pointer-events: none;
+    linear-gradient(180deg, var(--night) 0%, rgb(14 23 20 / 0) 14%, rgb(14 23 20 / 0) 86%, var(--night) 100%),
+    url("/images/home/promo-bg.webp") right center / cover no-repeat,
+    #111c17;
 }
 @media (max-width: 767px) {
-  .promo-stage-grain {
-    opacity: 0.04;
-  }
-  .promo-stage-berry {
-    opacity: 0.06;
+  .promo-stage-bg {
+    background:
+      linear-gradient(180deg, var(--night) 0%, rgb(14 23 20 / 0) 8%, rgb(14 23 20 / 0) 92%, var(--night) 100%),
+      url("/images/home/promo-bg-mobile.webp") right top / cover no-repeat,
+      #111c17;
   }
 }
-
+/* Главная карточка: полупрозрачный хвойный слой поверх фона — как смола над мхом */
+.promo-surface-feature {
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgb(239 232 220 / 0.05) 0%, rgb(239 232 220 / 0) 60%),
+    linear-gradient(150deg, rgb(28 48 39 / 0.9) 0%, rgb(20 35 29 / 0.92) 55%, rgb(18 32 27 / 0.94) 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(239 232 220 / 0.07),
+    0 40px 90px -44px rgb(0 0 0 / 0.85);
+}
+/* Остальные карточки: приглушённый оливковый с тёплым янтарным свечением */
+.promo-surface-olive {
+  background:
+    radial-gradient(60% 55% at 100% 0%, rgb(242 160 58 / 0.12) 0%, rgb(242 160 58 / 0) 70%),
+    linear-gradient(165deg, rgb(41 48 32 / 0.92) 0%, rgb(31 38 28 / 0.94) 55%, rgb(25 33 27 / 0.95) 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(239 232 220 / 0.07),
+    0 34px 80px -44px rgb(0 0 0 / 0.85);
+}
 /* Тексты из CMS */
 .prose-moroshka {
   @apply max-w-none space-y-4 text-[17px] leading-relaxed text-soft;

@@ -39,9 +39,9 @@ export default async function BanquetsPage() {
 
       <div className="container-site py-16 lg:py-24">
         {data.halls.length > 0 && (
-          <div className="grid gap-px bg-border md:grid-cols-2">
-            {data.halls.map((h) => (
-              <div key={h.name} className="bg-surface p-7 lg:p-9">
+          <div className="grid gap-4 md:grid-cols-2 lg:gap-6">
+            {data.halls.map((h, i) => (
+              <div key={h.name} className={`surface-moss p-7 shadow-(--shadow-soft) lg:p-10 ${i % 2 ? "shape-leaf-alt md:mt-10" : "shape-leaf"}`}>
                 <h2 className="h-display text-3xl">{h.name}</h2>
                 {h.capacity && <div className="eyebrow mt-3 text-berry">{h.capacity}</div>}
                 {h.description && <p className="mt-4 leading-relaxed text-soft">{h.description}</p>}
@@ -69,7 +69,7 @@ export default async function BanquetsPage() {
           <CmsContent data={data.content} />
         </div>
 
-        <section id="request" className="mt-20 grid gap-10 border-t border-border pt-16 lg:grid-cols-[5fr_7fr] lg:gap-20">
+        <section id="request" className="surface-stone mt-20 grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
           <div>
             <h2 className="h-display text-4xl lg:text-[56px]">Заявка на банкет</h2>
             <p className="mt-6 text-muted">

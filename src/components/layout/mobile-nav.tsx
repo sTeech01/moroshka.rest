@@ -12,7 +12,7 @@ export function MobileNav({ phone, items }: { phone: string; items: NavItem[] })
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="grid h-11 w-11 place-items-center rounded-full border border-border"
+        className="grid h-11 w-11 place-items-center rounded-full bg-snow/[0.06] ring-1 ring-snow/15 ring-inset transition-colors hover:bg-snow/10"
         aria-expanded={open}
         aria-label={open ? "Закрыть меню" : "Открыть меню"}
       >
@@ -24,15 +24,15 @@ export function MobileNav({ phone, items }: { phone: string; items: NavItem[] })
       {open && (
         // Клик по любой ссылке закрывает меню
         <nav
-          className="fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col gap-1 overflow-y-auto bg-night px-4 py-8 text-snow"
+          className="surface-moss mobile-nav-panel fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col gap-1 overflow-y-auto px-4 py-8 text-snow"
           onClick={(e) => (e.target as HTMLElement).closest("a") && setOpen(false)}
         >
           {items.map((item) => (
-            <Link key={item.href} href={item.href} className="h-display border-b border-border py-4 text-3xl">
+            <Link key={item.href} href={item.href} className="h-display rounded-soft px-3 py-3.5 text-3xl transition-colors hover:bg-snow/[0.05] hover:text-berry">
               {item.label}
             </Link>
           ))}
-          <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="mt-8 text-lg font-semibold">
+          <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="mt-8 px-3 text-lg font-semibold">
             {phone}
           </a>
           <Link href="/#booking" className="btn btn-berry mt-4">

@@ -18,13 +18,13 @@ export function DishImage({
   aspect?: string;
 }) {
   return (
-    <div className={`relative overflow-hidden bg-fill ${aspect}`}>
+    <div className={`relative overflow-hidden rounded-card bg-fill ${aspect}`}>
       <Image
         src={src ?? DISH_PLACEHOLDER}
         alt={src ? alt : `${alt} — фото скоро появится`}
         fill
         sizes={sizes}
-        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        className="object-cover transition-transform duration-700 ease-(--ease-soft) group-hover:scale-[1.03]"
         priority={priority}
       />
     </div>

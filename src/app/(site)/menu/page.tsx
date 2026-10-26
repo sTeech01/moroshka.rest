@@ -68,7 +68,7 @@ export default async function MenuPage() {
 
         <nav
           aria-label="Разделы меню"
-          className="z-30 -mx-4 mt-8 flex flex-wrap gap-2 border-y border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:sticky lg:top-[76px]"
+          className="z-30 mt-8 flex flex-wrap gap-2 rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px]"
         >
           {menu.categories.map((c) => (
             <a key={c.id} href={`#${c.slug}`} className="pill pill-compact shrink-0">
@@ -128,7 +128,7 @@ function HallDishCard({ dish, orderLink }: { dish: Dish; orderLink?: OrderLink }
   const weight = dishWeight(dish);
   return (
     <article className="flex flex-col gap-3">
-      <div className="relative aspect-[4/3] overflow-hidden bg-fill">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-fill">
         <Image src={dish.image!} alt={dish.name} fill sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
       </div>
       <div className="flex items-baseline justify-between gap-4">
@@ -149,7 +149,7 @@ function HallDishRow({ dish, orderLink }: { dish: Dish; orderLink?: OrderLink })
     <li>
       <div className="flex items-baseline gap-2 text-[17px]">
         <h3 className="font-semibold">{dish.name}</h3>
-        <span className="mb-1 min-w-6 flex-1 border-b border-dotted border-muted/50" aria-hidden />
+        <span className="mb-1 min-w-6 flex-1 border-b-2 border-dotted border-muted/25" aria-hidden />
         <span className="shrink-0 whitespace-nowrap">
           {weight && <span className="text-muted">{weight} / </span>}
           <span className="font-bold">{formatPrice(dish.priceFrom)}</span>

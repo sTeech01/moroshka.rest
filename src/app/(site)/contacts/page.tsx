@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="px-6 py-3.5">
+    <div className="px-6 py-3">
       <div className="eyebrow text-[11px] tracking-[0.24em]">{label}</div>
       <div className="mt-1 text-base leading-relaxed">{children}</div>
     </div>
@@ -32,8 +32,8 @@ export default async function ContactsPage() {
 
       {/* Две колонки одной высоты: карточка контактов и карта */}
       <div className="mt-6 grid items-stretch gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-        <div className="flex flex-col border border-border">
-          <div className="divide-y divide-border">
+        <div className="surface-moss shape-leaf flex flex-col py-3 shadow-(--shadow-soft)">
+          <div>
             <Row label="Адрес">{s.address}</Row>
             <Row label="Телефон">
               <a href={`tel:${tel}`} className="font-semibold hover:text-berry">
@@ -77,7 +77,7 @@ export default async function ContactsPage() {
           </div>
 
           {/* Действия прижаты к низу карточки — низ совпадает с низом карты */}
-          <div className="mt-auto grid gap-3 border-t border-border px-6 py-4 sm:grid-cols-2">
+          <div className="mt-auto grid gap-3 px-6 pt-4 pb-3 sm:grid-cols-2">
             <a href={`tel:${tel}`} className="btn btn-berry btn-sm">
               Позвонить
             </a>
@@ -94,7 +94,7 @@ export default async function ContactsPage() {
         </div>
 
         {/* Высоту на десктопе задаёт карточка контактов — карта тянется вровень с ней */}
-        {geo && <YandexMap lat={geo.lat} lng={geo.lng} className="min-h-[320px]" />}
+        {geo && <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt min-h-[320px]" />}
       </div>
     </div>
   );

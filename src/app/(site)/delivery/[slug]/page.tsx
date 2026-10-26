@@ -40,13 +40,13 @@ export default function DishPage({ params }: PageProps<"/delivery/[slug]">) {
 function DishSkeleton() {
   return (
     <div className="container-site pt-6 pb-16 md:py-12" aria-busy>
-      <div className="h-11 w-40 animate-pulse bg-fill" />
+      <div className="skeleton h-11 w-40" />
       <div className="mt-6 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-14">
-        <div className="aspect-[4/3] animate-pulse bg-fill" />
+        <div className="skeleton aspect-[4/3] rounded-card" />
         <div className="space-y-4">
-          <div className="h-12 w-3/4 animate-pulse bg-fill" />
-          <div className="h-5 w-1/2 animate-pulse bg-fill" />
-          <div className="h-8 w-24 animate-pulse bg-fill" />
+          <div className="skeleton h-12 w-3/4" />
+          <div className="skeleton h-5 w-1/2" />
+          <div className="skeleton h-8 w-24" />
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
   return (
     <div className="container-site pt-6 pb-16 md:py-12">
       <nav aria-label="Навигация" className="flex items-center gap-3 text-sm text-muted">
-        <Link href="/delivery" className="grid h-11 w-11 place-items-center rounded-full border border-border hover:text-text" aria-label={`Назад: ${section.label}`}>
+        <Link href="/delivery" className="grid h-11 w-11 place-items-center rounded-full bg-card ring-1 ring-border ring-inset transition-colors hover:text-text" aria-label={`Назад: ${section.label}`}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
             <path d="M15 5l-7 7 7 7" />
           </svg>

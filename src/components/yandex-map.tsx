@@ -6,7 +6,7 @@
 export function YandexMap({ lat, lng, className = "" }: { lat: number; lng: number; className?: string }) {
   const point = `${lng}%2C${lat}`;
   return (
-    <div className={`relative overflow-hidden border border-border ${className}`}>
+    <div className={`relative overflow-hidden rounded-card shadow-(--shadow-soft) ${className}`}>
       <iframe
         src={`https://yandex.ru/map-widget/v1/?ll=${point}&z=16&pt=${point}%2Cpm2orm`}
         title="Ресторан «Морошка» на карте"

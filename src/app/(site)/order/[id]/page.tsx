@@ -22,7 +22,7 @@ async function OrderInfo({ searchParams }: { searchParams: PageProps<"/order/[id
       )}
       {paid === "1" && <p className="mt-2 font-semibold">Оплата прошла успешно</p>}
       {isDemo() && (
-        <p className="mx-auto mt-6 max-w-md border border-border px-4 py-3 text-sm text-muted">
+        <p className="mx-auto mt-6 max-w-md rounded-soft bg-fill/60 px-4 py-3 text-sm text-muted">
           Это демо-версия сайта: заказ никуда не отправлен, звонка не будет.
         </p>
       )}
@@ -42,7 +42,7 @@ export default function OrderPage({ searchParams }: PageProps<"/order/[id]">) {
   return (
     <div className="theme-paper">
       <div className="container-site max-w-2xl py-20 text-center lg:py-28">
-        <Suspense fallback={<div className="mx-auto h-40 animate-pulse bg-fill" />}>
+        <Suspense fallback={<div className="skeleton mx-auto h-40 rounded-card" />}>
           <OrderInfo searchParams={searchParams} />
         </Suspense>
         <Link href="/delivery" className="btn btn-line mt-10">

@@ -66,7 +66,7 @@ export default async function DeliveryPage() {
 
         <nav
           aria-label="Разделы меню"
-          className="z-30 -mx-4 mt-8 flex flex-wrap gap-2 border-y border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:sticky lg:top-[76px]"
+          className="z-30 mt-8 flex flex-wrap gap-2 rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px]"
         >
           {menu.categories.map((c) => (
             <a key={c.id} href={`#${c.slug}`} className="pill pill-compact shrink-0">
@@ -89,7 +89,7 @@ export default async function DeliveryPage() {
             ))}
 
             {showTerms && terms?.content && (
-              <section id="usloviya" className="scroll-mt-24 lg:scroll-mt-40 border-t border-border pt-12">
+              <section id="usloviya" className="card-soft scroll-mt-24 p-7 lg:scroll-mt-40 lg:p-10">
                 <h2 className="h-display text-4xl">{terms.title}</h2>
                 <div className="mt-6 max-w-3xl">
                   <CmsContent data={terms.content} />

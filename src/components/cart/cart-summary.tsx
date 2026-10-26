@@ -27,8 +27,8 @@ export function MinOrderProgress({ total }: { total: number }) {
 
   return (
     <div className="space-y-2">
-      <div className="h-1 bg-fill">
-        <div className="h-1 bg-berry transition-[width]" style={{ width: `${Math.min(100, (total / Math.max(d.minOrderSum, 1)) * 100)}%` }} />
+      <div className="h-1.5 overflow-hidden rounded-full bg-fill">
+        <div className="h-1.5 rounded-full bg-berry transition-[width] duration-500" style={{ width: `${Math.min(100, (total / Math.max(d.minOrderSum, 1)) * 100)}%` }} />
       </div>
       <p className="text-[13px] text-muted">
         {left > 0
@@ -52,10 +52,10 @@ export function CartSummary() {
   const total = cartTotal(lines);
 
   return (
-    <aside className="sticky top-40 flex max-h-[calc(100dvh-11rem)] flex-col gap-4 border border-border bg-[#fffdf9] p-7">
+    <aside className="card-soft sticky top-40 flex max-h-[calc(100dvh-11rem)] flex-col gap-4 p-7">
       <h2 className="h-display text-[28px]">Корзина</h2>
       {!hydrated ? (
-        <div className="h-16 animate-pulse bg-fill" />
+        <div className="skeleton h-16" />
       ) : lines.length === 0 ? (
         <p className="text-[15px] text-muted">Добавьте блюда из меню</p>
       ) : (
@@ -71,7 +71,7 @@ export function CartSummary() {
           ))}
         </ul>
       )}
-      <div className="flex justify-between border-t border-border pt-4 text-lg font-bold">
+      <div className="flex justify-between pt-2 text-lg font-bold">
         <span>Итого</span>
         <span>{formatPrice(total)}</span>
       </div>

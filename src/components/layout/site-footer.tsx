@@ -13,16 +13,16 @@ export async function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-night pb-24 text-snow md:pb-0">
+    <footer className="surface-stone rounded-t-panel pb-24 text-snow md:pb-0">
       <Image
         src="/images/berries.webp"
         alt=""
         aria-hidden
         width={2000}
         height={262}
-        className="h-24 w-full object-cover object-top opacity-30"
+        className="fade-x h-24 w-full rounded-t-panel object-cover object-top opacity-30"
       />
-      <div className="container-site grid gap-10 border-t border-[#2a3a33] py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <Logo width={180} />
 
         <div className="space-y-2 text-[15px]">
@@ -69,7 +69,7 @@ export async function SiteFooter() {
         </nav>
       </div>
 
-      <div className="border-t border-[#2a3a33]">
+      <div className="bg-night/30">
         <div className="container-site flex flex-col gap-3 py-6 text-[13px] text-lichen lg:flex-row lg:justify-between">
           <span>
             © {year} Ресторан «Морошка». {settings.legal}
@@ -83,7 +83,7 @@ export async function SiteFooter() {
               href="https://max.ru/u/f9LHodD0cOLzkiVx1TmN_TiEhBPCeRO5ZJDFZjgiE11NqLDOAMmzLZoS42g"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-snow lg:border-l lg:border-[#2a3a33] lg:pl-5"
+              className="hover:text-snow"
             >
               Разработка сайтов
             </a>

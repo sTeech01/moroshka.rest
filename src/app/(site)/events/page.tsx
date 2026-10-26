@@ -17,7 +17,7 @@ export default async function EventsPage() {
       {events.length === 0 ? (
         <p className="mt-6 text-muted">Скоро здесь появятся новые события. Следите за нами в соцсетях.</p>
       ) : (
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-x-8 gap-y-12 md:grid-cols-3">
           {events.map((e) => (
             <EventCard key={e.slug} event={e} />
           ))}

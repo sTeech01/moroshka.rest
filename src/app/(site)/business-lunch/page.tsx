@@ -20,16 +20,16 @@ export default async function BusinessLunchPage() {
   const tel = settings.phone.replace(/[^\d+]/g, "");
 
   return (
-    <div className="container-site py-12 lg:py-16">
+    <div className="container-site py-12 lg:py-20">
       {/* По центру экрана: колонка меню ~768px; с фото — фото слева, меню справа */}
       <div className={`mx-auto grid gap-10 ${lunch.image ? "max-w-6xl lg:grid-cols-[5fr_7fr] lg:gap-16" : "max-w-3xl"}`}>
         {lunch.image && (
-          <div className="relative hidden min-h-[520px] lg:block">
+          <div className="shape-leaf relative hidden min-h-[520px] overflow-hidden shadow-(--shadow-soft) lg:block">
             <Image src={lunch.image.url} alt={lunch.image.alt} fill sizes="40vw" className="object-cover" />
           </div>
         )}
 
-        <div>
+        <div className="surface-moss rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:px-12">
           <div className="text-center">
             <p className="eyebrow text-berry">{lunch.schedule}</p>
             <h1 className="h-display mt-4 text-5xl lg:text-6xl">{lunch.title}</h1>

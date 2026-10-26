@@ -78,7 +78,7 @@ export function DishCardMinimal({ dish }: { dish: Dish }) {
           <Link
             href={`/delivery/${dish.slug}`}
             aria-label={`Выбрать: ${dish.name}`}
-            className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-border text-soft transition-colors hover:border-berry hover:text-berry"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-card text-soft ring-1 ring-border ring-inset transition-[color,box-shadow] duration-200 hover:text-berry hover:ring-berry"
           >
             <PlusIcon />
           </Link>

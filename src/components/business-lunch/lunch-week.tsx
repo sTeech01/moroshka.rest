@@ -29,8 +29,8 @@ export function LunchWeekMenu({ week }: { week: LunchWeek }) {
               role="tab"
               aria-selected={d.key === active}
               onClick={() => setActive(d.key)}
-              className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-                d.key === active ? "border-berry bg-berry text-night" : "border-border hover:border-berry"
+              className={`rounded-full px-4 py-2 text-sm ring-1 ring-inset transition-[background-color,color,box-shadow] duration-200 ${
+                d.key === active ? "bg-berry text-night ring-berry" : "bg-card ring-border hover:ring-berry"
               }`}
             >
               {d.short}

@@ -17,7 +17,7 @@ export function BookingForm({ kind }: { kind: "table" | "banquet" }) {
 
   if (state === "done") {
     return (
-      <div className="border border-border p-10 text-center">
+      <div className="rounded-card bg-night/35 p-10 text-center">
         <p className="h-display text-3xl">Заявка отправлена</p>
         <p className="mt-2 text-muted">
           {demo

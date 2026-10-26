@@ -120,7 +120,7 @@ export function LunchPopup({ lunch }: { lunch: BusinessLunchData }) {
       onClick={(e) => e.target === e.currentTarget && requestClose()}
       aria-labelledby="lunch-popup-title"
       aria-describedby="lunch-popup-intro"
-      className="lunch-dialog m-auto flex-col overflow-hidden rounded-[22px] p-0 text-snow open:flex"
+      className="lunch-dialog m-auto flex-col overflow-hidden rounded-[28px] p-0 text-snow open:flex"
     >
       {/* Шапка-кадр: текст слева, фото уходит в хвойный фон */}
       <header className="relative isolate shrink-0 overflow-hidden">

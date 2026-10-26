@@ -32,7 +32,7 @@ export default async function BarMenuPage() {
 
         <nav
           aria-label="Разделы барной карты"
-          className="z-30 -mx-4 mt-8 flex flex-wrap gap-2 border-y border-border bg-surface/95 px-4 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:sticky lg:top-[76px]"
+          className="z-30 mt-8 flex flex-wrap gap-2 rounded-card bg-surface/90 p-2.5 shadow-(--shadow-soft) backdrop-blur-md lg:sticky lg:top-[88px]"
         >
           {menu.categories.map((c) => (
             <a key={c.id} href={`#${c.slug}`} className="pill pill-compact shrink-0">
@@ -41,7 +41,7 @@ export default async function BarMenuPage() {
           ))}
         </nav>
 
-        <div className="mt-12 grid gap-x-16 gap-y-16 lg:grid-cols-2">
+        <div className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-x-16 gap-y-20 lg:grid-cols-2">
           {menu.categories.map((c) => (
             <BarSection key={c.id} category={c} />
           ))}
@@ -65,22 +65,23 @@ function BarSection({ category }: { category: Category }) {
   const volumes = sharedVolumes(category);
   return (
     <section id={category.slug} className="scroll-mt-24 lg:scroll-mt-40">
-      <div className="flex items-baseline justify-between gap-4 border-b border-border pb-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h2 className="h-display text-3xl lg:text-4xl">{category.name}</h2>
         {volumes && <span className="shrink-0 text-sm whitespace-nowrap text-muted">{volumes.join(" / ")}</span>}
       </div>
       <ul className="mt-6 flex flex-col gap-5">
         {category.dishes.map((d) => (
           <li key={d.id}>
-            <div className="flex items-baseline gap-2 text-[17px]">
+            {/* Несколько объёмов на узком экране переносятся под название, выровненные вправо */}
+            <div className="flex flex-wrap items-baseline gap-x-2 text-[17px]">
               <h3 className="font-semibold">{d.name}</h3>
-              <span className="mb-1 min-w-6 flex-1 border-b border-dotted border-muted/50" aria-hidden />
-              <span className="shrink-0 text-right whitespace-nowrap">
+              <span className="mb-1 min-w-6 flex-1 border-b-2 border-dotted border-muted/25" aria-hidden />
+              <span className="ml-auto text-right">
                 {volumes ? (
-                  <span className="font-bold">{d.sizes.map((s) => formatPrice(s.price)).join(" / ")}</span>
+                  <span className="font-bold whitespace-nowrap">{d.sizes.map((s) => formatPrice(s.price)).join(" / ")}</span>
                 ) : (
                   d.sizes.map((s, i) => (
-                    <span key={s.id ?? i}>
+                    <span key={s.id ?? i} className="whitespace-nowrap">
                       {i > 0 && <span className="text-muted"> · </span>}
                       {s.name && <span className="text-muted">{s.name} / </span>}
                       <span className="font-bold">{formatPrice(s.price)}</span>

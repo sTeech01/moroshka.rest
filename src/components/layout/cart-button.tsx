@@ -20,11 +20,12 @@ export function CartButton() {
   return (
     <Link
       href="/cart"
-      className="inline-flex h-11 min-w-11 items-center justify-center gap-2 rounded-full bg-berry px-3 text-sm font-bold text-night hover:bg-berry-hover"
+      className="inline-flex h-11 min-w-11 items-center justify-center gap-2 rounded-soft bg-berry px-3 text-sm font-bold text-night transition-colors duration-300 hover:bg-berry-hover"
       aria-label={count ? `Корзина: ${count} шт. на ${formatPrice(cartTotal(lines))}` : "Корзина"}
     >
       <BagIcon />
-      {count > 0 && <span className="pr-1">{formatPrice(cartTotal(lines))}</span>}
+      {/* На телефоне сумма — в плавающей панели снизу: в шапке рядом с телефоном ей не хватает места */}
+      {count > 0 && <span className="hidden pr-1 sm:inline">{formatPrice(cartTotal(lines))}</span>}
     </Link>
   );
 }
@@ -51,7 +52,7 @@ function FloatingCartByPath() {
   return (
     <Link
       href="/cart"
-      className="btn btn-berry fixed inset-x-4 bottom-4 z-40 h-14 justify-between shadow-[0_8px_30px_rgba(0,0,0,0.35)] md:hidden"
+      className="btn btn-berry fixed inset-x-4 bottom-4 z-40 h-14 justify-between rounded-card shadow-[0_14px_40px_-10px_rgba(0,0,0,0.5)] md:hidden"
     >
       <span>Корзина · {count}</span>
       <span>{formatPrice(cartTotal(lines))}</span>

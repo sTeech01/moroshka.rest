@@ -65,7 +65,7 @@ export function CheckoutForm() {
   const belowMin = serviceType === "delivery" && total < delivery.minOrderSum;
   const isDelivery = serviceType === "delivery";
 
-  if (!hydrated) return <div className="h-96 animate-pulse bg-fill" />;
+  if (!hydrated) return <div className="skeleton h-96 rounded-card" />;
   if (lines.length === 0) {
     return (
       <p>
@@ -190,7 +190,7 @@ export function CheckoutForm() {
             </div>
           </fieldset>
         ) : (
-          <div className="border border-border bg-[#fffdf9] px-4 py-3 text-sm">
+          <div className="rounded-soft bg-fill/60 px-4 py-3 text-sm">
             Самовывоз из ресторана. Заказ обычно готов через {PICKUP_LEAD_MINUTES} минут.
           </div>
         )}
@@ -267,7 +267,7 @@ export function CheckoutForm() {
         </label>
       </div>
 
-      <aside className="space-y-3 border border-border bg-[#fffdf9] p-6 lg:sticky lg:top-28">
+      <aside className="card-soft space-y-3 p-6 lg:sticky lg:top-28">
         <h2 className="h-display text-2xl">Ваш заказ</h2>
         <div className="flex justify-between text-sm">
           <span>Товары</span>
@@ -279,7 +279,7 @@ export function CheckoutForm() {
             <span>{deliveryPrice ? formatPrice(deliveryPrice) : "Бесплатно"}</span>
           </div>
         )}
-        <div className="flex items-baseline justify-between border-t border-border pt-3">
+        <div className="flex items-baseline justify-between pt-2">
           <span className="h-display text-xl">Итого</span>
           <span className="text-xl font-bold">{formatPrice(total + deliveryPrice)}</span>
         </div>

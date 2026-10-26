@@ -20,7 +20,7 @@ function TextImage({ section }: { section: Extract<PageSection, { kind: "textIma
         <CmsContent data={section.content} />
       </div>
       {section.image && (
-        <div className={`relative aspect-[4/5] overflow-hidden ${imageLeft ? "lg:order-1" : ""}`}>
+        <div className={`relative aspect-[4/5] overflow-hidden shadow-(--shadow-soft) ${imageLeft ? "shape-leaf-alt lg:order-1" : "shape-leaf"}`}>
           <Image src={section.image.url} alt={section.image.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
       )}
@@ -36,10 +36,10 @@ export function Highlight({ section }: { section: Extract<PageSection, { kind: "
   // Секция о рекорде (ссылка на Книгу рекордов России) — с официальным логотипом над заголовком
   const isRecord = section.link?.url.includes("knigarekordovrossii.ru") ?? false;
   return (
-    <section className="border border-border bg-velvet/40 p-6 sm:p-10 lg:p-14">
+    <section className="surface-moss rounded-panel p-6 shadow-(--shadow-soft) sm:p-10 lg:p-14">
       <div className="text-center">
         {isRecord && (
-          <span className="mb-6 inline-block rounded-md bg-white px-4 py-2.5">
+          <span className="mb-6 inline-block rounded-[12px] bg-white px-4 py-2.5">
             <Image src={RECORD_LOGO.src} alt={RECORD_LOGO.alt} width={RECORD_LOGO.width} height={RECORD_LOGO.height} className="h-14 w-auto lg:h-16" />
           </span>
         )}
@@ -48,9 +48,9 @@ export function Highlight({ section }: { section: Extract<PageSection, { kind: "
       </div>
 
       {section.stats.length > 0 && (
-        <dl className="mx-auto mt-10 grid max-w-4xl gap-px bg-border sm:grid-flow-col sm:auto-cols-fr">
+        <dl className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-flow-col sm:auto-cols-fr">
           {section.stats.map((st) => (
-            <div key={st.value} className="bg-surface px-4 py-6 text-center">
+            <div key={st.value} className="rounded-card bg-night/35 px-4 py-6 text-center">
               <dt className="sr-only">{st.label ?? st.value}</dt>
               <dd>
                 <span className="h-display block text-4xl text-berry lg:text-5xl">{st.value}</span>
@@ -73,7 +73,7 @@ export function Highlight({ section }: { section: Extract<PageSection, { kind: "
         {section.images.length > 0 && (
           <div className="grid grid-cols-2 gap-3">
             {section.images.map((img) => (
-              <div key={img.url} className="relative aspect-[3/4] overflow-hidden">
+              <div key={img.url} className="relative aspect-[3/4] overflow-hidden rounded-card">
                 <Image src={img.url} alt={img.alt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
               </div>
             ))}

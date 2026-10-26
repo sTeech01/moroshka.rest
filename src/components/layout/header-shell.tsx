@@ -14,10 +14,14 @@ const atTop = () => window.scrollY < 24;
 // только во время запроса и без <Suspense> ломает пререндер (CLIENT_HOOK_DYNAMIC), а с Suspense
 // в HTML попадает заглушка шапки, которая мелькает на главной перед прозрачной.
 const OVERLAY = [
-  "[body:has([data-hero-overlay])_&]:border-transparent",
-  "[body:has([data-hero-overlay])_&]:bg-transparent",
-  "[body:has([data-hero-overlay])_&]:backdrop-blur-none",
+  "[body:has([data-hero-overlay])_&]:shadow-none",
+  "[body:has([data-hero-overlay])_&]:before:opacity-0",
 ].join(" ");
+
+// Подложка с размытием — на псевдоэлементе, а не на самой шапке: backdrop-filter у шапки
+// сделал бы её контейнером для position: fixed, и мобильное меню (fixed) не растянулось бы на экран
+const GLASS =
+  "before:absolute before:inset-0 before:-z-10 before:bg-night/90 before:backdrop-blur-md before:transition-opacity before:duration-500";
 
 /**
  * Обёртка шапки. На страницах с PageHero, пока страница не прокручена, шапка прозрачная
@@ -29,7 +33,7 @@ export function HeaderShell({ children }: { children: React.ReactNode }) {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b border-[#2a3a33] bg-night/95 text-snow backdrop-blur transition-colors duration-300 ${
+      className={`sticky top-0 z-40 isolate text-snow shadow-[0_18px_40px_-28px_rgb(0_0_0/0.8)] transition-shadow duration-500 ${GLASS} ${
         top ? OVERLAY : ""
       }`}
     >

@@ -111,12 +111,12 @@ export function DishOptions({ dish }: { dish: Dish }) {
       ))}
 
       {/* На телефоне панель прилипает к низу экрана, как в макете */}
-      <div className="sticky bottom-0 -mx-4 border-t border-border bg-surface px-4 pt-3 pb-5 md:static md:mx-0 md:border-0 md:p-0">
+      <div className="sticky bottom-0 -mx-4 rounded-t-card bg-surface px-4 pt-3 pb-5 shadow-[0_-18px_40px_-24px_rgb(0_0_0/0.35)] md:static md:mx-0 md:rounded-none md:p-0 md:shadow-none">
         <p className="min-h-5 text-[13px] text-berry" aria-live="polite">
           {tried && !priced.ok ? priced.error : ""}
         </p>
         <div className="mt-1 flex gap-2.5">
-          <div className="flex h-14 items-center rounded-full border border-border">
+          <div className="flex h-14 items-center rounded-soft bg-card ring-1 ring-border ring-inset">
             <button type="button" className="h-14 w-12 text-xl font-bold" onClick={() => { touch(); setQuantity((q) => Math.max(1, q - 1)); }} aria-label="Меньше">
               −
             </button>

@@ -30,7 +30,7 @@ export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dis
   if (variant === "icon") {
     if (hydrated && quantity > 0) {
       return (
-        <div className="flex h-9 items-center rounded-full border border-berry text-berry">
+        <div className="flex h-9 items-center rounded-full bg-berry/10 text-berry ring-1 ring-berry/60 ring-inset">
           <button type="button" className="h-9 w-8 text-base" onClick={() => setQuantity(key, quantity - 1)} aria-label={`Убрать: ${dish.name}`}>
             −
           </button>
@@ -46,7 +46,7 @@ export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dis
         type="button"
         onClick={addToCart}
         aria-label={`В корзину: ${dish.name}`}
-        className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-border text-soft transition-colors hover:border-berry hover:text-berry"
+        className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-card text-soft ring-1 ring-border ring-inset transition-[color,box-shadow] duration-200 hover:text-berry hover:ring-berry"
       >
         <PlusIcon />
       </button>
@@ -55,7 +55,7 @@ export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dis
 
   if (hydrated && quantity > 0) {
     return (
-      <div className="flex h-11 items-center rounded-full bg-berry text-night">
+      <div className="flex h-11 items-center rounded-soft bg-berry text-night">
         <button type="button" className="h-11 w-11 text-lg font-bold" onClick={() => setQuantity(key, quantity - 1)} aria-label={`Убрать: ${dish.name}`}>
           −
         </button>

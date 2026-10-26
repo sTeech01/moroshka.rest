@@ -87,7 +87,7 @@ export function PageHero({ image, video, eyebrow, badge, title, subtitle, action
                 <p key={i}>{line}</p>
               ))}
             </div>
-            <span className="h-10 w-px shrink-0 bg-snow/50" aria-hidden />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-berry/80" aria-hidden />
             <div className="space-y-0.5 text-left whitespace-nowrap">
               {info.right.map((line, i) => (
                 <p key={i}>{line}</p>
@@ -101,7 +101,7 @@ export function PageHero({ image, video, eyebrow, badge, title, subtitle, action
       <a
         href={`tel:${tel}`}
         aria-label={`Позвонить: ${phone}`}
-        className="absolute right-6 bottom-8 hidden h-16 w-16 place-items-center rounded-full border-2 border-snow text-snow transition-colors hover:border-berry hover:bg-berry hover:text-night lg:grid xl:right-10 xl:bottom-10"
+        className="absolute right-6 bottom-8 hidden h-16 w-16 place-items-center rounded-full bg-snow/10 text-snow ring-1 ring-snow/30 backdrop-blur-sm transition-[background-color,color,box-shadow] duration-300 hover:bg-berry hover:text-night hover:ring-berry lg:grid xl:right-10 xl:bottom-10"
       >
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
           <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />

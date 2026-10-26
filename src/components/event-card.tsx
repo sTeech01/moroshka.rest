@@ -21,7 +21,7 @@ export const formatEventDate = (date: string) => {
 export function EventCard({ event }: { event: EventPreview }) {
   return (
     <Link href={`/events/${event.slug}`} className="group block">
-      <div className="relative aspect-[4/3] overflow-hidden bg-velvet">
+      <div className="shape-leaf relative aspect-[4/3] overflow-hidden bg-velvet">
         {event.cover && (
           <Image
             src={event.cover.url}
