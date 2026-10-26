@@ -283,6 +283,69 @@ body {
   background: rgb(239 232 220 / 0.14);
 }
 
+/*
+ * Секция предложений на главной (components/promo-banners.tsx, HomePromos) — несколько планов:
+ * хвойная основа со световыми пятнами → зерно «печатной бумаги» → ветка морошки (гравюра) →
+ * поверхности карточек → фото и текст. Сверху и снизу основа уходит в цвет сайта — без шва с соседями.
+ */
+.promo-stage-bg {
+  background:
+    radial-gradient(40% 55% at 16% 32%, rgb(31 58 49 / 0.7) 0%, rgb(31 58 49 / 0) 70%),
+    radial-gradient(36% 48% at 90% 70%, rgb(62 70 40 / 0.42) 0%, rgb(62 70 40 / 0) 72%),
+    radial-gradient(22% 28% at 74% 20%, rgb(242 160 58 / 0.05) 0%, rgb(242 160 58 / 0) 70%),
+    linear-gradient(180deg, var(--night) 0%, #111d18 22%, #13201a 60%, #111c17 82%, var(--night) 100%);
+}
+/* Зерно: шум из встроенного SVG, плитка 240 px — без внешних файлов и без анимации */
+.promo-stage-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .91 0 0 0 0 .86 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+/* Одна ветка морошки из фирменной гравюры (кадр с крупными ягодами), края растворяются */
+.promo-stage-berry {
+  background: url("/images/berries.webp") no-repeat;
+  background-size: auto 100%;
+  background-position: 45% 0;
+  opacity: 0.075;
+  transform: rotate(-9deg);
+  mask-image: radial-gradient(closest-side, #000 45%, transparent 100%);
+}
+/* Главная карточка: поверхность чуть светлее хвойного фона */
+.promo-surface-feature {
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgb(239 232 220 / 0.035) 0%, rgb(239 232 220 / 0) 60%),
+    linear-gradient(150deg, #182b24 0%, #14231d 55%, #12201b 100%);
+  box-shadow:
+    0 0 0 1px rgb(239 232 220 / 0.08),
+    0 30px 80px -40px rgb(0 0 0 / 0.7);
+}
+/* Остальные карточки: приглушённый оливковый с тёплым свечением и внутренней рамкой */
+.promo-surface-olive {
+  background:
+    radial-gradient(60% 55% at 100% 0%, rgb(242 160 58 / 0.1) 0%, rgb(242 160 58 / 0) 70%),
+    linear-gradient(165deg, #252c1f 0%, #1d241b 55%, #18201a 100%);
+  box-shadow:
+    0 0 0 1px rgb(169 179 170 / 0.13),
+    0 30px 70px -40px rgb(0 0 0 / 0.75);
+}
+.promo-surface-olive::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgb(239 232 220 / 0.06);
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .promo-stage-grain {
+    opacity: 0.04;
+  }
+  .promo-stage-berry {
+    opacity: 0.06;
+  }
+}
+
 /* Тексты из CMS */
 .prose-moroshka {
   @apply max-w-none space-y-4 text-[17px] leading-relaxed text-soft;

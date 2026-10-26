@@ -61,7 +61,7 @@ export default async function HomePage() {
         phone={settings.phone}
       />
 
-      <HomePromos promos={promos} />
+      <HomePromos promos={promos} geo={settings.geo} />
 
       {/* Кухня и бар */}
       <section className="container-site mt-20 grid grid-cols-2 gap-2.5 lg:mt-30 lg:gap-4">
