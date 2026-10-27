@@ -461,6 +461,22 @@ body:has(main .theme-paper)::before {
     url("/images/home/promo-bg.webp") 70% center / cover no-repeat,
     #111c17;
 }
+/* Вторая сцена (рекорд, бронь, карта): стена ресторана из мха и камня, заранее размыта и затемнена */
+.stage-bg-moss {
+  background:
+    radial-gradient(70% 80% at 50% 50%, rgb(14 23 20 / 0.35) 0%, rgb(14 23 20 / 0.7) 100%),
+    linear-gradient(180deg, rgb(14 23 20 / 0.45) 0%, rgb(14 23 20 / 0.3) 50%, rgb(14 23 20 / 0.55) 100%),
+    url("/images/home/stage-moss.webp") center / cover no-repeat,
+    #13201a;
+}
+@media (max-width: 767px) {
+  .stage-bg-moss {
+    background:
+      linear-gradient(180deg, rgb(14 23 20 / 0.6) 0%, rgb(14 23 20 / 0.45) 50%, rgb(14 23 20 / 0.7) 100%),
+      url("/images/home/stage-moss-mobile.webp") center / cover no-repeat,
+      #13201a;
+  }
+}
 @media (max-width: 767px) {
   .stage-bg {
     background:
@@ -482,9 +498,20 @@ body:has(main .theme-paper)::before {
     height: 170svh;
     padding-block: 0;
   }
-  /* Следующий блок наезжает на 50svh: поднимается, пока гаснет предыдущий, — без пустого экрана */
-  .stage-scene + .stage-scene {
+  /* Следующий блок наезжает на 50svh: поднимается, пока гаснет предыдущий, — без пустого экрана.
+     После высокого блока (stage-tall, он не закреплён) — без нахлёста, иначе наедет на его текст */
+  .stage-scene:not(.stage-tall) + .stage-scene {
     margin-top: -50svh;
+  }
+  /* Блок выше экрана (stage-tall ставит StageFit) не закрепляется — проезжает целиком, ничего не обрезано */
+  .stage-scene.stage-tall {
+    height: auto;
+    padding-block: 4rem;
+  }
+  .stage-tall .stage-reveal {
+    position: static;
+    min-height: 0;
+    padding-block: 0;
   }
   /* Последний блок короче: после него сразу следующий раздел, без экрана пустого фона */
   .stage-scene.stage-last {
@@ -522,7 +549,8 @@ body:has(main .theme-paper)::before {
         animation-name: stage-swap;
         animation-range: cover 0% cover 100%;
       }
-      /* Последний блок не гаснет, а уезжает вверх вместе с фоном сцены */
+      /* Последний и высокий блоки не гаснут, а уезжают вверх вместе с фоном сцены */
+      .stage-scene.stage-tall .stage-reveal,
       .stage-scene.stage-last .stage-reveal {
         animation-name: stage-in;
         animation-range: entry 0% entry 60%;

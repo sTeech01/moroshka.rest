@@ -109,63 +109,72 @@ export default async function HomePage() {
         </StageScene>
       </ScrollStage>
 
-      {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
-      {record?.kind === "highlight" && (
-        <div id="record" className="container-site scroll-mt-24 pt-14 lg:scroll-mt-28 lg:pt-20">
-          <Highlight section={record} />
-        </div>
-      )}
+      {/* Вторая сцена — на фоне стены ресторана из мха и камня: рекорд → бронь → как нас найти */}
+      <ScrollStage bg="moss">
+        {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
+        {record?.kind === "highlight" && (
+          <StageScene id="record">
+            <div className="container-site">
+              <Highlight section={record} layout="split" />
+            </div>
+          </StageScene>
+        )}
 
-      {/* Бронь */}
-      {/* Компактно: по ссылке «Забронировать стол» (/#booking) заголовок и вся форма с кнопкой — в одном экране */}
-      <div className="container-site pt-14 lg:pt-20">
-        <section id="booking" className="surface-stone grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
-          <div>
-            <p className="eyebrow">Бронь</p>
-            <h2 className="h-display mt-4 text-4xl lg:text-5xl">Забронировать стол</h2>
-            <div className="mt-6 space-y-1 text-[17px]">
-              {settings.hours.map((h) => (
-                <p key={h.days}>
-                  {h.days}: {h.time}
+        {/* Бронь */}
+        {/* Компактно: по ссылке «Забронировать стол» (/#booking) заголовок и вся форма с кнопкой — в одном экране */}
+        <StageScene id="booking">
+          <div className="container-site">
+            <section aria-label="Бронь стола" className="surface-stone grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
+              <div>
+                <p className="eyebrow">Бронь</p>
+                <h2 className="h-display mt-4 text-4xl lg:text-5xl">Забронировать стол</h2>
+                <div className="mt-6 space-y-1 text-[17px]">
+                  {settings.hours.map((h) => (
+                    <p key={h.days}>
+                      {h.days}: {h.time}
+                    </p>
+                  ))}
+                </div>
+                <p className="mt-6 text-muted">
+                  Или позвоните:{" "}
+                  <a href={`tel:${tel}`} className="font-semibold text-text hover:text-berry">
+                    {settings.phone}
+                  </a>
                 </p>
-              ))}
-            </div>
-            <p className="mt-6 text-muted">
-              Или позвоните:{" "}
-              <a href={`tel:${tel}`} className="font-semibold text-text hover:text-berry">
-                {settings.phone}
-              </a>
-            </p>
+              </div>
+              <BookingForm kind="table" />
+            </section>
           </div>
-          <BookingForm kind="table" />
-        </section>
-      </div>
+        </StageScene>
 
-      {/* Как нас найти — Яндекс Карта */}
-      {geo && (
-        <section className="container-site grid items-center gap-6 pt-14 pb-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12 lg:pt-20 lg:pb-20">
-          <div className="flex flex-col justify-center">
-            <p className="eyebrow">Как нас найти</p>
-            <h2 className="h-display mt-3 text-3xl lg:text-4xl">{settings.address}</h2>
-            <div className="mt-4 space-y-1 text-[17px] text-soft">
-              {settings.hours.map((h) => (
-                <p key={h.days}>
-                  {h.days}: {h.time}
-                </p>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href={yandexRouteUrl(geo.lat, geo.lng)} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm">
-                Построить маршрут
-              </a>
-              <a href={`tel:${tel}`} className="btn btn-line btn-sm">
-                {settings.phone}
-              </a>
-            </div>
-          </div>
-          <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt h-[280px] sm:h-[320px] lg:h-[340px]" />
-        </section>
-      )}
+        {/* Как нас найти — Яндекс Карта */}
+        {geo && (
+          <StageScene className="stage-last">
+            <section aria-label="Как нас найти" className="container-site grid items-center gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
+              <div className="flex flex-col justify-center">
+                <p className="eyebrow">Как нас найти</p>
+                <h2 className="h-display mt-3 text-3xl lg:text-4xl">{settings.address}</h2>
+                <div className="mt-4 space-y-1 text-[17px] text-soft">
+                  {settings.hours.map((h) => (
+                    <p key={h.days}>
+                      {h.days}: {h.time}
+                    </p>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href={yandexRouteUrl(geo.lat, geo.lng)} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm">
+                    Построить маршрут
+                  </a>
+                  <a href={`tel:${tel}`} className="btn btn-line btn-sm">
+                    {settings.phone}
+                  </a>
+                </div>
+              </div>
+              <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt h-[280px] sm:h-[320px] lg:h-[340px]" />
+            </section>
+          </StageScene>
+        )}
+      </ScrollStage>
     </>
   );
 }
