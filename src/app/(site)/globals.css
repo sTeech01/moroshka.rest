@@ -117,9 +117,9 @@ body::before {
   pointer-events: none;
   background:
     var(--grain-light),
-    radial-gradient(48vw 40vh at 8% 18%, rgb(42 66 52 / 0.42) 0%, rgb(42 66 52 / 0) 70%),
-    radial-gradient(44vw 42vh at 96% 62%, rgb(54 62 38 / 0.36) 0%, rgb(54 62 38 / 0) 72%),
-    radial-gradient(30vw 26vh at 70% 4%, rgb(242 160 58 / 0.045) 0%, rgb(242 160 58 / 0) 70%);
+    radial-gradient(48vw 40vh at 8% 18%, rgb(42 66 52 / 0.24) 0%, rgb(42 66 52 / 0) 70%),
+    radial-gradient(44vw 42vh at 96% 62%, rgb(54 62 38 / 0.2) 0%, rgb(54 62 38 / 0) 72%),
+    radial-gradient(30vw 26vh at 70% 4%, rgb(242 160 58 / 0.03) 0%, rgb(242 160 58 / 0) 70%);
   background-size: 220px, auto, auto, auto;
 }
 
@@ -128,11 +128,15 @@ body::before {
  * Именно text-wrap-style, а не сокращение text-wrap: оно сбросило бы white-space: nowrap
  * у родителя (строка «часы | адрес» под кнопками первого экрана рвалась посередине).
  * Длинное слово в заголовке (в документах) переносится, а не вылезает за экран.
+ * Балансировка — только крупных заголовков: у названий блюд (h3 в карточках) она рвала строки на обрывки.
  */
+h1,
+h2 {
+  text-wrap-style: balance;
+}
 h1,
 h2,
 h3 {
-  text-wrap-style: balance;
   overflow-wrap: break-word;
 }
 p {
@@ -254,13 +258,6 @@ p {
 }
 .shape-leaf-alt {
   border-radius: var(--radius-soft) var(--radius-panel) var(--radius-soft) var(--radius-panel);
-}
-/* Края декоративной полосы с ягодами растворяются — по бокам и снизу, без ровного среза */
-.fade-x {
-  mask-image:
-    linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%),
-    linear-gradient(180deg, #000 45%, transparent 100%);
-  mask-composite: intersect;
 }
 /* Разделы меню: на телефоне — одна строка с горизонтальной прокруткой, а не стена кнопок */
 .chip-rail {
@@ -455,20 +452,17 @@ body:has(main .theme-paper)::before {
 /*
  * Секция предложений на главной (components/promo-banners.tsx, HomePromos) — тёмный ботанический фон
  * с морошкой (public/images/home/promo-bg*.webp) → поверхности карточек → фото и текст.
- * Сверху и снизу фон уходит в цвет сайта — без шва с соседними секциями.
+ * Сверху и снизу фон растворяется маской (а не заливается цветом --night): под ним фактура
+ * страницы, и сплошная заливка давала видимые полосы-швы над и под блоком.
  */
 .promo-stage-bg {
-  background:
-    linear-gradient(180deg, var(--night) 0%, rgb(14 23 20 / 0) 14%, rgb(14 23 20 / 0) 86%, var(--night) 100%),
-    url("/images/home/promo-bg.webp") right center / cover no-repeat,
-    #111c17;
+  background: url("/images/home/promo-bg.webp") right center / cover no-repeat;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
 }
 @media (max-width: 767px) {
   .promo-stage-bg {
-    background:
-      linear-gradient(180deg, var(--night) 0%, rgb(14 23 20 / 0) 8%, rgb(14 23 20 / 0) 92%, var(--night) 100%),
-      url("/images/home/promo-bg-mobile.webp") right top / cover no-repeat,
-      #111c17;
+    background: url("/images/home/promo-bg-mobile.webp") right top / cover no-repeat;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   }
 }
 /* Главная карточка: полупрозрачный хвойный слой поверх фона — как смола над мхом */

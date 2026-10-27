@@ -64,21 +64,21 @@ export default async function HomePage() {
       <HomePromos promos={promos} />
 
       {/* Кухня и бар */}
-      <section className="container-site mt-4 grid grid-cols-2 gap-3 lg:mt-6 lg:gap-6">
+      <section className="container-site grid grid-cols-2 gap-3 lg:gap-6">
         {[
           { title: "Кухня", text: home.kitchenText, image: home.kitchenImage, href: "/menu" },
           { title: "Бар", text: home.barText, image: home.barImage, href: "/bar-menu" },
         ].map((tile, i) => (
-          // Плитки-«листья»: скругления зеркальны, вторая чуть ниже — без жёсткой сетки
+          // Плитки-«листья»: скругления зеркальны, вторая чуть ниже. Высота — по ширине (4:3 на компьютере), а не фиксированные 520 px
           <Link
             key={tile.title}
             href={tile.href}
-            className={`group relative block h-52 overflow-hidden shadow-(--shadow-soft) lg:h-[520px] ${i ? "shape-leaf-alt lg:mt-12" : "shape-leaf"}`}
+            className={`group relative block aspect-[4/5] overflow-hidden shadow-(--shadow-soft) sm:aspect-[4/3] lg:aspect-[16/11] ${i ? "shape-leaf-alt lg:mt-8" : "shape-leaf"}`}
           >
             {tile.image && (
               <Image src={tile.image.url} alt="" fill sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             )}
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-night/90 via-night/55 to-transparent p-4 pt-14 lg:p-8 lg:pt-28">
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-night/90 via-night/55 to-transparent p-4 pt-14 lg:p-8 lg:pt-24">
               <div>
                 <div className="h-display text-[22px] lg:text-[40px]">{tile.title}</div>
                 {tile.text && <div className="mt-1.5 hidden text-soft lg:block">{tile.text}</div>}
@@ -97,23 +97,14 @@ export default async function HomePage() {
 
       {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
       {record?.kind === "highlight" && (
-        <div id="record" className="container-site scroll-mt-24 pt-20 lg:scroll-mt-28 lg:pt-30">
+        <div id="record" className="container-site scroll-mt-24 pt-14 lg:scroll-mt-28 lg:pt-20">
           <Highlight section={record} />
         </div>
       )}
 
-      <Image
-        src="/images/berries.webp"
-        alt=""
-        aria-hidden
-        width={2000}
-        height={262}
-        className="fade-x mt-20 h-20 w-full object-cover object-top opacity-30 lg:mt-30 lg:h-30"
-      />
-
       {/* Бронь */}
       {/* Компактно: по ссылке «Забронировать стол» (/#booking) заголовок и вся форма с кнопкой — в одном экране */}
-      <div className="container-site py-10 lg:py-14">
+      <div className="container-site pt-14 lg:pt-20">
         <section id="booking" className="surface-stone grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
           <div>
             <p className="eyebrow">Бронь</p>
@@ -138,18 +129,18 @@ export default async function HomePage() {
 
       {/* Как нас найти — Яндекс Карта */}
       {geo && (
-        <section className="container-site grid gap-8 pt-6 pb-20 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12 lg:pt-10 lg:pb-30">
+        <section className="container-site grid items-center gap-6 pt-14 pb-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12 lg:pt-20 lg:pb-20">
           <div className="flex flex-col justify-center">
             <p className="eyebrow">Как нас найти</p>
-            <h2 className="h-display mt-4 text-4xl lg:text-5xl">{settings.address}</h2>
-            <div className="mt-6 space-y-1 text-[17px] text-soft">
+            <h2 className="h-display mt-3 text-3xl lg:text-4xl">{settings.address}</h2>
+            <div className="mt-4 space-y-1 text-[17px] text-soft">
               {settings.hours.map((h) => (
                 <p key={h.days}>
                   {h.days}: {h.time}
                 </p>
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <a href={yandexRouteUrl(geo.lat, geo.lng)} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm">
                 Построить маршрут
               </a>
@@ -158,7 +149,7 @@ export default async function HomePage() {
               </a>
             </div>
           </div>
-          <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt h-[320px] lg:h-[440px]" />
+          <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt h-[280px] sm:h-[320px] lg:h-[340px]" />
         </section>
       )}
     </>
@@ -182,7 +173,7 @@ function SignatureDishes({ hall }: { hall: Awaited<ReturnType<typeof getHallMenu
           .slice(0, 4);
 
   return (
-    <section className="container-site pt-20 lg:pt-30">
+    <section className="container-site pt-14 lg:pt-20">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow">Кухня Ямала</p>
@@ -192,7 +183,7 @@ function SignatureDishes({ hall }: { hall: Awaited<ReturnType<typeof getHallMenu
           Всё меню →
         </Link>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:mt-12 lg:grid-cols-4 lg:gap-x-6">
+      <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:mt-10 lg:grid-cols-4 lg:gap-x-6">
         {picked.map(({ dish, category }) => {
           const size = dish.sizes.find((s) => s.isDefault) ?? dish.sizes[0];
           const weight = formatWeight(size.weight, dish.measureUnit);
@@ -242,7 +233,7 @@ function DeliveryDishes({
   const featured = picked.length > 0 ? picked : fallback;
 
   return (
-    <section className="container-site pt-20 lg:pt-30">
+    <section className="container-site pt-14 lg:pt-20">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow">{section.homeEyebrow}</p>
@@ -252,7 +243,7 @@ function DeliveryDishes({
           {section.homeLink}
         </Link>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:mt-12 lg:grid-cols-4 lg:gap-x-6">
+      <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:mt-10 lg:grid-cols-4 lg:gap-x-6">
         {featured.map((d) => (
           <DishCardMinimal key={d.id} dish={d} />
         ))}

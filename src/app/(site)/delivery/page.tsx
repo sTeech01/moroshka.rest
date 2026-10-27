@@ -40,7 +40,7 @@ export default async function DeliveryPage() {
 
   return (
     <div className="theme-paper">
-      <div className="container-site pt-12 pb-24 lg:pt-16">
+      <div className="container-site pt-10 pb-16 lg:pt-14 lg:pb-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">
@@ -76,7 +76,7 @@ export default async function DeliveryPage() {
         </nav>
 
         <div className="mt-12 grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-12 lg:gap-14">
             {menu.categories.map((c) => (
               <section key={c.id} id={c.slug} className="scroll-mt-24 lg:scroll-mt-40">
                 <h2 className="h-display text-4xl">{c.name}</h2>

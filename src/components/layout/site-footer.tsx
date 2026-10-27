@@ -1,5 +1,4 @@
 import { cacheLife } from "next/cache";
-import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { features, getNavigation } from "@/config/site";
@@ -14,24 +13,18 @@ export async function SiteFooter() {
 
   return (
     <footer className="surface-stone rounded-t-panel text-snow">
-      <Image
-        src="/images/berries.webp"
-        alt=""
-        aria-hidden
-        width={2000}
-        height={262}
-        className="fade-x h-24 w-full rounded-t-panel object-cover object-top opacity-30"
-      />
-      <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <Logo width={180} />
+      <div className="container-site grid grid-cols-2 gap-x-6 gap-y-8 pt-10 pb-8 lg:grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,1fr))] lg:gap-x-10 lg:pt-12 lg:pb-10">
+        <div className="col-span-2 lg:col-span-1">
+          <Logo width={160} />
+        </div>
 
-        <div className="space-y-2 text-[15px]">
-          <div className="eyebrow mb-3 text-lichen">Контакты</div>
+        <div className="space-y-1.5 text-[15px]">
+          <div className="eyebrow mb-2.5 text-lichen">Контакты</div>
           <p>{settings.address}</p>
           <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="block font-semibold hover:text-berry">
             {settings.phone}
           </a>
-          <div className="flex gap-4 pt-2">
+          <div className="flex gap-4 pt-1">
             {settings.vk && (
               <a href={settings.vk} target="_blank" rel="noopener noreferrer" className="hover:text-berry">
                 ВКонтакте
@@ -45,8 +38,8 @@ export async function SiteFooter() {
           </div>
         </div>
 
-        <div className="space-y-2 text-[15px]">
-          <div className="eyebrow mb-3 text-lichen">Часы работы</div>
+        <div className="space-y-1.5 text-[15px]">
+          <div className="eyebrow mb-2.5 text-lichen">Часы работы</div>
           {settings.hours.map((h) => (
             <p key={h.days}>
               {h.days}: {h.time}
@@ -59,8 +52,9 @@ export async function SiteFooter() {
           )}
         </div>
 
-        <nav className="flex flex-col gap-2 text-[15px]">
-          <div className="eyebrow mb-1 text-lichen">Разделы</div>
+        {/* Телефон: разделы строкой с переносами на всю ширину, а не столбиком из шести строк */}
+        <nav className="col-span-2 flex flex-wrap gap-x-5 gap-y-1.5 text-[15px] lg:col-span-1 lg:flex-col lg:gap-1.5">
+          <div className="eyebrow mb-1 w-full text-lichen lg:mb-1">Разделы</div>
           {getNavigation(delivery).map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-berry">
               {item.label}
@@ -70,7 +64,7 @@ export async function SiteFooter() {
       </div>
 
       <div className="bg-night/30 pb-24 md:pb-0">
-        <div className="container-site flex flex-col gap-3 py-6 text-[13px] text-lichen lg:flex-row lg:justify-between">
+        <div className="container-site flex flex-col gap-3 py-5 text-[13px] text-lichen lg:flex-row lg:justify-between">
           <span>
             © {year} Ресторан «Морошка». {settings.legal}
           </span>

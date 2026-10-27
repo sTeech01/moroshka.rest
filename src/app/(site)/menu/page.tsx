@@ -30,7 +30,7 @@ export default async function MenuPage() {
 
   return (
     <div className="theme-paper">
-      <div className="container-site pt-12 pb-24 lg:pt-16">
+      <div className="container-site pt-10 pb-16 lg:pt-14 lg:pb-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">Кухня ресторана</p>
@@ -77,7 +77,7 @@ export default async function MenuPage() {
           ))}
         </nav>
 
-        <div className="mt-12 flex flex-col gap-16">
+        <div className="mt-10 flex flex-col gap-12 lg:gap-14">
           {menu.categories.map((c) => {
             const withPhoto = c.dishes.filter((d) => d.image);
             const rest = c.dishes.filter((d) => !d.image);
@@ -85,7 +85,7 @@ export default async function MenuPage() {
               <section key={c.id} id={c.slug} className="scroll-mt-24 lg:scroll-mt-40">
                 <h2 className="h-display text-4xl">{c.name}</h2>
                 {withPhoto.length > 0 && (
-                  <div className="mt-7 grid gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
+                  <div className="mt-6 grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {withPhoto.map((d) => (
                       <HallDishCard key={d.id} dish={d} orderLink={deliverySlugs[d.id] ? { slug: deliverySlugs[d.id], label: section.dishLink } : undefined} />
                     ))}
@@ -129,7 +129,7 @@ function HallDishCard({ dish, orderLink }: { dish: Dish; orderLink?: OrderLink }
   return (
     <article className="flex flex-col gap-3">
       <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-fill">
-        <Image src={dish.image!} alt={dish.name} fill sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+        <Image src={dish.image!} alt={dish.name} fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
       </div>
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="text-[17px] font-semibold">{dish.name}</h3>

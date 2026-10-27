@@ -6,7 +6,7 @@ import { CmsContent } from "./cms-content";
 export function PageSections({ sections }: { sections: PageSection[] }) {
   if (sections.length === 0) return null;
   return (
-    <div className="space-y-20 lg:space-y-28">
+    <div className="space-y-14 lg:space-y-20">
       {sections.map((s) => (s.kind === "textImage" ? <TextImage key={s.id} section={s} /> : <Highlight key={s.id} section={s} />))}
     </div>
   );

@@ -18,7 +18,7 @@ export default async function BarMenuPage() {
 
   return (
     <div className="theme-paper">
-      <div className="container-site pt-12 pb-24 lg:pt-16">
+      <div className="container-site pt-10 pb-16 lg:pt-14 lg:pb-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">Бар ресторана</p>
@@ -47,7 +47,7 @@ export default async function BarMenuPage() {
           ))}
         </div>
 
-        <p className="mt-16 text-sm text-muted">Чрезмерное употребление алкоголя вредит вашему здоровью. Алкоголь продаётся лицам старше 18 лет.</p>
+        <p className="mt-12 text-sm text-muted">Чрезмерное употребление алкоголя вредит вашему здоровью. Алкоголь продаётся лицам старше 18 лет.</p>
       </div>
     </div>
   );

@@ -37,11 +37,11 @@ export default async function BanquetsPage() {
         phone={phone}
       />
 
-      <div className="container-site py-16 lg:py-24">
+      <div className="container-site py-12 lg:py-16">
         {data.halls.length > 0 && (
           <div className="grid gap-4 md:grid-cols-2 lg:gap-6">
             {data.halls.map((h, i) => (
-              <div key={h.name} className={`surface-moss p-7 shadow-(--shadow-soft) lg:p-10 ${i % 2 ? "shape-leaf-alt md:mt-10" : "shape-leaf"}`}>
+              <div key={h.name} className={`surface-moss p-7 shadow-(--shadow-soft) lg:p-10 ${i % 2 ? "shape-leaf-alt" : "shape-leaf"}`}>
                 <h2 className="h-display text-3xl">{h.name}</h2>
                 {h.capacity && <div className="eyebrow mt-3 text-berry">{h.capacity}</div>}
                 {h.description && <p className="mt-4 leading-relaxed text-soft">{h.description}</p>}
@@ -53,7 +53,7 @@ export default async function BanquetsPage() {
 
       {/* Галерея «мозаикой» на всю ширину экрана — вне контейнера */}
       {gallery.length > 0 && (
-        <section id="gallery" aria-labelledby="gallery-title" className="pb-16 lg:pb-24">
+        <section id="gallery" aria-labelledby="gallery-title" className="pb-14 lg:pb-20">
           <div className="container-site mb-6 flex items-end justify-between gap-4 lg:mb-8">
             <h2 id="gallery-title" className="h-display text-3xl lg:text-4xl">
               Интерьер VIP-зала
@@ -64,12 +64,12 @@ export default async function BanquetsPage() {
         </section>
       )}
 
-      <div className="container-site pb-16 lg:pb-24">
+      <div className="container-site pb-14 lg:pb-20">
         <div className="max-w-3xl">
           <CmsContent data={data.content} />
         </div>
 
-        <section id="request" className="surface-stone mt-20 grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
+        <section id="request" className="surface-stone mt-12 grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
           <div>
             <h2 className="h-display text-4xl lg:text-[56px]">Заявка на банкет</h2>
             <p className="mt-6 text-muted">

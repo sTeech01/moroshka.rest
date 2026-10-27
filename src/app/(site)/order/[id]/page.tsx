@@ -41,7 +41,7 @@ async function OrderInfo({ searchParams }: { searchParams: PageProps<"/order/[id
 export default function OrderPage({ searchParams }: PageProps<"/order/[id]">) {
   return (
     <div className="theme-paper">
-      <div className="container-site max-w-2xl py-20 text-center lg:py-28">
+      <div className="container-site max-w-2xl py-14 text-center lg:py-20">
         <Suspense fallback={<div className="skeleton mx-auto h-40 rounded-card" />}>
           <OrderInfo searchParams={searchParams} />
         </Suspense>
