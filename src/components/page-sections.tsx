@@ -57,10 +57,10 @@ export function Highlight({ section, layout = "stack" }: { section: Extract<Page
       {section.stats.length > 0 && (
         <dl className={`mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-flow-col sm:auto-cols-fr ${split ? "xl:col-start-1 xl:mx-0 xl:mt-7 xl:gap-2.5" : ""}`}>
           {section.stats.map((st) => (
-            <div key={st.value} className={`rounded-card bg-night/35 px-4 py-4 text-center sm:py-6 ${split ? "xl:px-3 xl:py-4" : ""}`}>
+            <div key={st.value} className={`rounded-card bg-night/35 px-4 py-4 text-center sm:py-6 ${split ? "xl:px-2 xl:py-4" : ""}`}>
               <dt className="sr-only">{st.label ?? st.value}</dt>
               <dd>
-                <span className={`h-display block text-4xl text-berry lg:text-5xl ${split ? "xl:text-[2rem]" : ""}`}>{st.value}</span>
+                <span className={`h-display block text-4xl text-berry lg:text-5xl ${split ? "xl:text-[1.6rem]" : ""}`}>{st.value}</span>
                 {st.label && <span className={`mt-2 block text-sm text-muted ${split ? "xl:mt-1 xl:text-xs" : ""}`}>{st.label}</span>}
               </dd>
             </div>
