@@ -19,7 +19,7 @@ function PromoLink({ promo, className }: { promo: PromoItem; className: string }
 const index = (i: number) => String(i + 1).padStart(2, "0");
 
 /**
- * Предложения на главной — редакционная композиция на тёмном ботаническом фоне (стили .promo-* в globals.css).
+ * Предложения на главной — редакционная композиция; фон даёт сцена (ScrollStage), стили .promo-* в globals.css.
  * Первое промо — главная карточка с фото, выступающим за её край; остальные — оливковые карточки
  * справа, смещённые вниз. Формы мягкие и асимметричные («лист»), без рамок.
  */
@@ -28,26 +28,21 @@ export function HomePromos({ promos }: { promos: PromoItem[] }) {
   const [feature, ...rest] = promos;
 
   return (
-    <section data-promos aria-label="Предложения ресторана" className="relative isolate overflow-hidden py-14 lg:py-20">
-      {/* Фон: тёмная ботаническая картина с веткой морошки справа */}
-      <div aria-hidden className="promo-stage-bg absolute inset-0 -z-10" />
+    <div data-promos className="container-site relative">
+      <p className="mb-8 text-[11px] font-semibold tracking-[0.26em] text-berry uppercase lg:mb-12">Сейчас в «Морошке»</p>
 
-      <div className="container-site relative">
-        <p className="mb-8 text-[11px] font-semibold tracking-[0.26em] text-berry uppercase lg:mb-12">Сейчас в «Морошке»</p>
+      <div className={`relative grid gap-6 ${rest.length ? "xl:grid-cols-12 xl:items-start xl:gap-8" : ""}`}>
+        <FeaturePromo promo={feature} wide={!rest.length} />
 
-        <div className={`relative grid gap-6 ${rest.length ? "xl:grid-cols-12 xl:items-start xl:gap-8" : ""}`}>
-          <FeaturePromo promo={feature} wide={!rest.length} />
-
-          {rest.length > 0 && (
-            <div className="relative flex flex-col gap-6 md:ml-auto md:w-[68%] xl:col-span-4 xl:ml-0 xl:w-auto xl:pt-28">
-              {rest.map((p, i) => (
-                <SidePromo key={p.id} promo={p} n={i + 1} />
-              ))}
-            </div>
-          )}
-        </div>
+        {rest.length > 0 && (
+          <div className="relative flex flex-col gap-6 md:ml-auto md:w-[68%] xl:col-span-4 xl:ml-0 xl:w-auto xl:pt-28">
+            {rest.map((p, i) => (
+              <SidePromo key={p.id} promo={p} n={i + 1} />
+            ))}
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -450,21 +450,109 @@ body:has(main .theme-paper)::before {
 }
 
 /*
- * Секция предложений на главной (components/promo-banners.tsx, HomePromos) — тёмный ботанический фон
- * с морошкой (public/images/home/promo-bg*.webp) → поверхности карточек → фото и текст.
- * Сверху и снизу фон растворяется маской (а не заливается цветом --night): под ним фактура
- * страницы, и сплошная заливка давала видимые полосы-швы над и под блоком.
+ * Сцена на главной (components/scroll-stage.tsx): тёмный ботанический фон с морошкой закреплён
+ * на весь экран (sticky, кадрируется по краям), поверх него по прокрутке сменяются блоки.
+ * Затемнение поверх картины — чтобы текст блюд и карточки читались на любом её участке.
  */
-.promo-stage-bg {
-  background: url("/images/home/promo-bg.webp") right center / cover no-repeat;
-  mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+.stage-bg {
+  background:
+    linear-gradient(90deg, rgb(14 23 20 / 0.55) 0%, rgb(14 23 20 / 0.2) 55%, rgb(14 23 20 / 0.1) 100%),
+    linear-gradient(180deg, rgb(14 23 20 / 0.35) 0%, rgb(14 23 20 / 0.15) 40%, rgb(14 23 20 / 0.45) 100%),
+    url("/images/home/promo-bg.webp") 70% center / cover no-repeat,
+    #111c17;
 }
 @media (max-width: 767px) {
-  .promo-stage-bg {
-    background: url("/images/home/promo-bg-mobile.webp") right top / cover no-repeat;
-    mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  .stage-bg {
+    background:
+      linear-gradient(180deg, rgb(14 23 20 / 0.5) 0%, rgb(14 23 20 / 0.35) 50%, rgb(14 23 20 / 0.6) 100%),
+      url("/images/home/promo-bg-mobile.webp") right top / cover no-repeat,
+      #111c17;
   }
 }
+/*
+ * Раскладка сцены. Телефон и невысокие экраны: блоки идут друг за другом (блок бывает выше экрана).
+ * Компьютер (от 1280 px и от 720 px высоты — тут блоки помещаются в экран): на каждый блок — 1,7 экрана прокрутки; его контент
+ * прилипает под шапкой (76 px) и стоит по центру, пока блок прокручивается.
+ */
+.stage-scene {
+  padding-block: 3.5rem;
+}
+@media (min-width: 1280px) and (min-height: 720px) {
+  .stage-scene {
+    height: 170svh;
+    padding-block: 0;
+  }
+  /* Следующий блок наезжает на 50svh: поднимается, пока гаснет предыдущий, — без пустого экрана */
+  .stage-scene + .stage-scene {
+    margin-top: -50svh;
+  }
+  /* Последний блок короче: после него сразу следующий раздел, без экрана пустого фона */
+  .stage-scene.stage-last {
+    height: 140svh;
+  }
+  .stage-reveal {
+    position: sticky;
+    top: 4.75rem;
+    display: flex;
+    min-height: calc(100svh - 4.75rem);
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 2rem;
+  }
+}
+/*
+ * Смена блоков, привязанная к прокрутке (animation-timeline), ось — сам блок сцены (view-timeline).
+ * Телефон: блок только мягко проявляется — гасить его при уходе нельзя, его ещё читают.
+ * Компьютер: диапазон cover блока в 170svh = 270svh прокрутки; контент прилипает на 37–63 %.
+ * Проявляется снизу (0–24 %), стоит, гаснет и уходит вверх (50–62 %) — до того, как начнёт
+ * проявляться следующий. Без поддержки в браузере контент просто прилипает и сменяется прокруткой.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .stage-scene {
+      view-timeline-name: --stage-scene;
+    }
+    .stage-reveal {
+      animation: stage-in linear both;
+      animation-timeline: --stage-scene;
+      animation-range: entry 0% entry 70%;
+    }
+    @media (min-width: 1280px) and (min-height: 720px) {
+      .stage-reveal {
+        animation-name: stage-swap;
+        animation-range: cover 0% cover 100%;
+      }
+      /* Последний блок не гаснет, а уезжает вверх вместе с фоном сцены */
+      .stage-scene.stage-last .stage-reveal {
+        animation-name: stage-in;
+        animation-range: entry 0% entry 60%;
+      }
+    }
+  }
+}
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+}
+@keyframes stage-swap {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  24%,
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+  62%,
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.98);
+  }
+}
+
 /* Главная карточка: полупрозрачный хвойный слой поверх фона — как смола над мхом */
 .promo-surface-feature {
   background:

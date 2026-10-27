@@ -5,6 +5,7 @@ import { DishCardMinimal } from "@/components/menu/dish-card";
 import { PageHero } from "@/components/page-hero";
 import { Highlight, RECORD_LOGO } from "@/components/page-sections";
 import { HomePromos } from "@/components/promo-banners";
+import { ScrollStage, StageScene } from "@/components/scroll-stage";
 import { YandexMap, yandexRouteUrl } from "@/components/yandex-map";
 import { features } from "@/config/site";
 import { getDelivery, getHome, getPage, getPromos, getSettings } from "@/lib/content";
@@ -61,39 +62,52 @@ export default async function HomePage() {
         phone={settings.phone}
       />
 
-      <HomePromos promos={promos} />
+      {/* Сцена: фон с морошкой закреплён на весь экран, по прокрутке сменяются предложения → кухня и бар → блюда */}
+      <ScrollStage>
+        {promos.length > 0 && (
+          <StageScene label="Предложения ресторана">
+            <HomePromos promos={promos} />
+          </StageScene>
+        )}
 
-      {/* Кухня и бар */}
-      <section className="container-site grid grid-cols-2 gap-3 lg:gap-6">
-        {[
-          { title: "Кухня", text: home.kitchenText, image: home.kitchenImage, href: "/menu" },
-          { title: "Бар", text: home.barText, image: home.barImage, href: "/bar-menu" },
-        ].map((tile, i) => (
-          // Плитки-«листья»: скругления зеркальны, вторая чуть ниже. Высота — по ширине (4:3 на компьютере), а не фиксированные 520 px
-          <Link
-            key={tile.title}
-            href={tile.href}
-            className={`group relative block aspect-[4/5] overflow-hidden shadow-(--shadow-soft) sm:aspect-[4/3] lg:aspect-[16/11] ${i ? "shape-leaf-alt lg:mt-8" : "shape-leaf"}`}
-          >
-            {tile.image && (
-              <Image src={tile.image.url} alt="" fill sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-            )}
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-night/90 via-night/55 to-transparent p-4 pt-14 lg:p-8 lg:pt-24">
-              <div>
-                <div className="h-display text-[22px] lg:text-[40px]">{tile.title}</div>
-                {tile.text && <div className="mt-1.5 hidden text-soft lg:block">{tile.text}</div>}
-              </div>
-              <span className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-snow/10 text-xl text-berry backdrop-blur-sm transition-[background-color,transform] duration-300 group-hover:translate-x-1 group-hover:bg-snow/15 lg:grid" aria-hidden>→</span>
+        <StageScene label="Кухня и бар">
+          <div className="container-site">
+            <p className="eyebrow mb-6 text-berry lg:mb-8">Кухня и бар</p>
+            <div className="grid grid-cols-2 gap-3 lg:gap-6">
+              {[
+                { title: "Кухня", text: home.kitchenText, image: home.kitchenImage, href: "/menu" },
+                { title: "Бар", text: home.barText, image: home.barImage, href: "/bar-menu" },
+              ].map((tile, i) => (
+                // Плитки-«листья»: скругления зеркальны, вторая чуть ниже. Высота — по ширине (4:3 на компьютере), а не фиксированные 520 px
+                <Link
+                  key={tile.title}
+                  href={tile.href}
+                  className={`group relative block aspect-[4/5] overflow-hidden shadow-(--shadow-soft) sm:aspect-[4/3] lg:aspect-[16/11] ${i ? "shape-leaf-alt lg:mt-8" : "shape-leaf"}`}
+                >
+                  {tile.image && (
+                    <Image src={tile.image.url} alt="" fill sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                  )}
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-night/90 via-night/55 to-transparent p-4 pt-14 lg:p-8 lg:pt-24">
+                    <div>
+                      <div className="h-display text-[22px] lg:text-[40px]">{tile.title}</div>
+                      {tile.text && <div className="mt-1.5 hidden text-soft lg:block">{tile.text}</div>}
+                    </div>
+                    <span className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-snow/10 text-xl text-berry backdrop-blur-sm transition-[background-color,transform] duration-300 group-hover:translate-x-1 group-hover:bg-snow/15 lg:grid" aria-hidden>→</span>
+                  </div>
+                </Link>
+              ))}
             </div>
-          </Link>
-        ))}
-      </section>
+          </div>
+        </StageScene>
 
-      {ordering ? (
-        <DeliveryDishes menu={menu} featuredIds={home.featuredDishes} section={orderSection(delivery)} />
-      ) : (
-        <SignatureDishes hall={hall} />
-      )}
+        <StageScene className="stage-last">
+          {ordering ? (
+            <DeliveryDishes menu={menu} featuredIds={home.featuredDishes} section={orderSection(delivery)} />
+          ) : (
+            <SignatureDishes hall={hall} />
+          )}
+        </StageScene>
+      </ScrollStage>
 
       {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
       {record?.kind === "highlight" && (
@@ -173,7 +187,7 @@ function SignatureDishes({ hall }: { hall: Awaited<ReturnType<typeof getHallMenu
           .slice(0, 4);
 
   return (
-    <section className="container-site pt-14 lg:pt-20">
+    <section className="container-site">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow">Кухня Ямала</p>
@@ -233,7 +247,7 @@ function DeliveryDishes({
   const featured = picked.length > 0 ? picked : fallback;
 
   return (
-    <section className="container-site pt-14 lg:pt-20">
+    <section className="container-site">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow">{section.homeEyebrow}</p>
