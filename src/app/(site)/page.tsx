@@ -6,7 +6,7 @@ import { PageHero } from "@/components/page-hero";
 import { Highlight, RECORD_LOGO } from "@/components/page-sections";
 import { HomePromos } from "@/components/promo-banners";
 import { ScrollStage, StageScene } from "@/components/scroll-stage";
-import { YandexMap, yandexRouteUrl } from "@/components/yandex-map";
+import { YandexMap } from "@/components/yandex-map";
 import { features } from "@/config/site";
 import { getDelivery, getHome, getPage, getPromos, getSettings } from "@/lib/content";
 import { orderSection } from "@/lib/delivery";
@@ -147,30 +147,45 @@ export default async function HomePage() {
           </div>
         </StageScene>
 
-        {/* Как нас найти — Яндекс Карта */}
+        {/* Контакты — по референсу заказчика: слева крупный светлый заголовок, адрес, телефон,
+            часы работы и реквизиты; справа большая светлая монохромная карта */}
         {geo && (
           <StageScene className="stage-last">
-            <section aria-label="Как нас найти" className="container-site grid items-center gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
-              <div className="flex flex-col justify-center">
-                <p className="eyebrow">Как нас найти</p>
-                <h2 className="h-display mt-3 text-3xl lg:text-4xl">{settings.address}</h2>
-                <div className="mt-4 space-y-1 text-[17px] text-soft">
+            <section aria-label="Контакты" className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <h2 className="h-display text-[2.75rem] text-snow/85 uppercase lg:text-[3.25rem]">Контакты</h2>
+                <div className="mt-7 space-y-1 text-[19px] leading-snug lg:mt-9 lg:text-[22px]">
+                  <p>{settings.address}</p>
+                  <p>Ресторан «Морошка»</p>
+                  <p>
+                    <a href={`tel:${tel}`} className="transition-colors hover:text-berry">
+                      {settings.phone}
+                    </a>
+                  </p>
+                  {settings.email && (
+                    <p>
+                      <a href={`mailto:${settings.email}`} className="transition-colors hover:text-berry">
+                        {settings.email}
+                      </a>
+                    </p>
+                  )}
+                </div>
+                <p className="mt-7 text-[17px] text-lichen uppercase lg:mt-8 lg:text-xl">Время работы:</p>
+                <div className="mt-1 space-y-1 text-[17px] text-soft lg:text-[21px]">
                   {settings.hours.map((h) => (
                     <p key={h.days}>
-                      {h.days}: {h.time}
+                      {h.days} : {h.time.replace(/s*[–-]s*/, " — ")}
                     </p>
                   ))}
                 </div>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a href={yandexRouteUrl(geo.lat, geo.lng)} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm">
-                    Построить маршрут
-                  </a>
-                  <a href={`tel:${tel}`} className="btn btn-line btn-sm">
-                    {settings.phone}
-                  </a>
-                </div>
+                {settings.legal && <p className="mt-7 max-w-md text-[15px] leading-relaxed text-lichen/80 lg:mt-9 lg:text-base">{settings.legal}</p>}
               </div>
-              <YandexMap lat={geo.lat} lng={geo.lng} className="shape-leaf-alt h-[280px] sm:h-[320px] lg:h-[340px]" />
+              <YandexMap
+                lat={geo.lat}
+                lng={geo.lng}
+                tone="mono"
+                className="aspect-[700/625] w-full rounded-lg! lg:aspect-auto lg:h-[min(625px,calc(100svh-11rem))]"
+              />
             </section>
           </StageScene>
         )}

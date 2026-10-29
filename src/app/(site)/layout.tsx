@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Tenor_Sans } from "next/font/google";
+import { Jost } from "next/font/google";
 import { LunchPopup } from "@/components/business-lunch/lunch-popup";
 import { CartHydrator } from "@/components/cart/cart-hydrator";
 import { DeliveryProvider } from "@/components/delivery-context";
@@ -11,16 +11,11 @@ import { features, siteConfig } from "@/config/site";
 import { getBusinessLunch, getDelivery } from "@/lib/content";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+// Шрифт всего сайта — Jost: свободная геометрическая гарнитура по мотивам Futura (Futura PT — в референсе
+// заказчика; она платная и в Google Fonts её нет). Переменная — все начертания от 100 до 900 одним файлом
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin", "cyrillic"],
-});
-
-// Заголовки: широкий спокойный гротеск, перекликается с буквами логотипа
-const tenor = Tenor_Sans({
-  variable: "--font-tenor",
-  subsets: ["latin", "cyrillic"],
-  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -45,7 +40,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   const [delivery, lunch] = await Promise.all([getDelivery(), getBusinessLunch()]);
 
   return (
-    <html lang="ru" className={`${manrope.variable} ${tenor.variable} h-full antialiased`}>
+    <html lang="ru" className={`${jost.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <DeliveryProvider value={delivery}>
           <SiteHeader />

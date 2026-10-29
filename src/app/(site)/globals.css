@@ -86,8 +86,8 @@
   --radius-card: 22px;
   --radius-panel: 34px;
 
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-tenor);
+  --font-sans: var(--font-jost);
+  --font-display: var(--font-jost);
 }
 
 /* Переход по якорю (/#booking и т. п.) — ровно под нижний край липкой шапки (64 / 76 px) */
@@ -153,9 +153,9 @@ p {
   .container-site {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-8;
   }
-  /* Заголовки — Tenor Sans без жирности, чуть свободнее по высоте строки */
+  /* Заголовки — светлое начертание Jost (как Futura PT Light в референсе), чуть свободнее по высоте строки */
   .h-display {
-    @apply font-display leading-[1.1] font-normal tracking-[-0.005em];
+    @apply font-display leading-[1.1] font-light;
   }
   /* Подписи разрядкой, как «РЕСТОРАН» в логотипе */
   .eyebrow {
