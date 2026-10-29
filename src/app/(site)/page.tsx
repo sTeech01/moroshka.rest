@@ -120,31 +120,39 @@ export default async function HomePage() {
           </StageScene>
         )}
 
-        {/* Бронь */}
-        {/* Компактно: по ссылке «Забронировать стол» (/#booking) заголовок и вся форма с кнопкой — в одном экране */}
+        {/* Бронь — по референсу заказчика: слева текст прямо на фоне сцены, справа форма
+            в компактной «стеклянной» карточке (поля не растягиваются на пол-экрана) */}
         <StageScene id="booking">
-          <div className="container-site">
-            <section aria-label="Бронь стола" className="surface-stone grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14">
-              <div>
-                <p className="eyebrow">Бронь</p>
-                <h2 className="h-display mt-4 text-4xl lg:text-5xl">Забронировать стол</h2>
-                <div className="mt-6 space-y-1 text-[17px]">
-                  {settings.hours.map((h) => (
-                    <p key={h.days}>
-                      {h.days}: {h.time}
-                    </p>
-                  ))}
-                </div>
-                <p className="mt-6 text-muted">
-                  Или позвоните:{" "}
-                  <a href={`tel:${tel}`} className="font-semibold text-text hover:text-berry">
-                    {settings.phone}
-                  </a>
-                </p>
+          <section
+            aria-label="Бронь стола"
+            className="container-site grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,560px)] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_600px] xl:gap-20"
+          >
+            <div>
+              <p className="eyebrow text-berry">Бронь</p>
+              <h2 className="h-display mt-5 text-[2.75rem] leading-[1.02] sm:text-6xl lg:text-[2.75rem] xl:text-[4.25rem]">
+                Забронировать
+                <br />
+                стол
+              </h2>
+              <span aria-hidden className="mt-7 block h-px w-10 bg-berry/80" />
+              <div className="mt-6 text-[17px] leading-[1.45] font-light text-soft lg:text-lg">
+                {settings.hours.map((h) => (
+                  <p key={h.days}>
+                    {h.days}: {h.time}
+                  </p>
+                ))}
               </div>
+              <p className="mt-5 text-[17px] font-light text-soft lg:text-lg">
+                Или позвоните:{" "}
+                <a href={`tel:${tel}`} className="ml-1 font-medium whitespace-nowrap text-snow transition-colors hover:text-berry">
+                  {settings.phone}
+                </a>
+              </p>
+            </div>
+            <div className="booking-glass rounded-[28px] p-5 sm:p-8">
               <BookingForm kind="table" />
-            </section>
-          </div>
+            </div>
+          </section>
         </StageScene>
 
         {/* Контакты — по референсу заказчика: слева крупный светлый заголовок, адрес, телефон,

@@ -581,6 +581,65 @@ body:has(main .theme-paper)::before {
   }
 }
 
+/*
+ * Форма брони на главной — «стекло» поверх фона сцены: полупрозрачная хвоя, лёгкое размытие
+ * того, что под ней, тонкая светлая кромка. Размытие — только под карточкой (~600×450 px).
+ */
+.booking-glass {
+  background: linear-gradient(160deg, rgb(34 50 41 / 0.62) 0%, rgb(16 26 22 / 0.7) 100%);
+  border: 1px solid rgb(239 232 220 / 0.14);
+  box-shadow:
+    inset 0 1px 0 rgb(239 232 220 / 0.06),
+    0 40px 90px -40px rgb(0 0 0 / 0.8);
+  backdrop-filter: blur(14px) saturate(1.1);
+}
+.booking-glass .field {
+  border-color: rgb(239 232 220 / 0.16);
+  background: rgb(239 232 220 / 0.04);
+}
+.booking-glass .field:focus {
+  border-color: var(--berry);
+}
+.booking-glass .field-compact:not(textarea) {
+  height: 3rem;
+}
+.booking-glass .label-compact {
+  margin-bottom: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--soft);
+}
+/* Согласие: полупрозрачный квадрат с янтарной галочкой вместо белого системного */
+.booking-glass input[type="checkbox"] {
+  appearance: none;
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0;
+  border: 1px solid rgb(239 232 220 / 0.3);
+  border-radius: 5px;
+  background: rgb(239 232 220 / 0.05) center / 0.75rem no-repeat;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+.booking-glass input[type="checkbox"]:hover {
+  border-color: rgb(239 232 220 / 0.55);
+}
+.booking-glass input[type="checkbox"]:checked {
+  border-color: var(--berry);
+  background-color: var(--berry);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27 fill=%27none%27 stroke=%27%230e1714%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M2.5 6.2 5 8.5l4.5-5%27/%3E%3C/svg%3E");
+}
+.booking-glass label:has(> input[type="checkbox"]) {
+  align-items: center;
+}
+
+/* Список гостей на тёмном фоне: варианты в выпадающем списке — тёмные, как поля */
+.booking-glass select option {
+  background: var(--night);
+}
+
 /* Главная карточка: полупрозрачный хвойный слой поверх фона — как смола над мхом */
 .promo-surface-feature {
   background:

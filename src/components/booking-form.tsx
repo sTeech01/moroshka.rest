@@ -95,7 +95,23 @@ export function BookingForm({ kind }: { kind: "table" | "banquet" }) {
       )}
       <label className="sm:col-span-2">
         <span className="label-compact">Гостей</span>
-        <input name="guests" type="number" className="field field-compact" required min={1} max={kind === "table" ? 30 : 300} defaultValue={2} />
+        {kind === "table" ? (
+          // Стол — список 1–30 (как в референсе), банкет — число до 300
+          <span className="relative block">
+            <select name="guests" className="field field-compact appearance-none pr-9" required defaultValue={2}>
+              {Array.from({ length: 30 }, (_, i) => i + 1).map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="pointer-events-none absolute top-1/2 right-3.5 -translate-y-1/2 text-muted" aria-hidden>
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </span>
+        ) : (
+          <input name="guests" type="number" className="field field-compact" required min={1} max={300} defaultValue={2} />
+        )}
       </label>
       <label className="sm:col-span-6">
         <span className="label-compact">Комментарий</span>
@@ -116,8 +132,13 @@ export function BookingForm({ kind }: { kind: "table" | "banquet" }) {
             </Link>
           </span>
         </label>
-        <button type="submit" className="btn btn-berry btn-sm shrink-0 px-7" disabled={state === "sending"}>
+        <button type="submit" className="group btn btn-berry btn-sm shrink-0 px-7" disabled={state === "sending"}>
           {state === "sending" ? "Отправляем…" : kind === "table" ? "Забронировать стол" : "Отправить заявку"}
+          {state !== "sending" && (
+            <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+              →
+            </span>
+          )}
         </button>
       </div>
     </form>
