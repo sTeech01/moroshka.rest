@@ -3,7 +3,8 @@ import Link from "next/link";
 import { BookingForm } from "@/components/booking-form";
 import { DishCardMinimal } from "@/components/menu/dish-card";
 import { PageHero } from "@/components/page-hero";
-import { Highlight, RECORD_LOGO } from "@/components/page-sections";
+import { RECORD_LOGO } from "@/components/page-sections";
+import { RecordShowcase } from "@/components/record-showcase";
 import { HomePromos } from "@/components/promo-banners";
 import { ScrollStage, StageScene } from "@/components/scroll-stage";
 import { YandexMap } from "@/components/yandex-map";
@@ -114,9 +115,7 @@ export default async function HomePage() {
         {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
         {record?.kind === "highlight" && (
           <StageScene id="record">
-            <div className="container-site">
-              <Highlight section={record} layout="split" />
-            </div>
+            <RecordShowcase section={record} />
           </StageScene>
         )}
 

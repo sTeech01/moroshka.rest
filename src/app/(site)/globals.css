@@ -640,6 +640,21 @@ body:has(main .theme-paper)::before {
   background: var(--night);
 }
 
+/* Плитки цифр рекорда на главной — маленькое «стекло», как карточка справа */
+.record-stat {
+  background: linear-gradient(160deg, rgb(34 50 41 / 0.55) 0%, rgb(16 26 22 / 0.65) 100%);
+  border: 1px solid rgb(239 232 220 / 0.12);
+  box-shadow: inset 0 1px 0 rgb(239 232 220 / 0.05);
+  backdrop-filter: blur(10px);
+}
+/* Окно просмотра фото (components/photo-lightbox.tsx) — мягко проявляется */
+.lightbox[open] {
+  animation: lunch-fade-in 240ms ease-out both;
+}
+.lightbox[open]::backdrop {
+  animation: lunch-fade-in 240ms ease-out both;
+}
+
 /* Главная карточка: полупрозрачный хвойный слой поверх фона — как смола над мхом */
 .promo-surface-feature {
   background:
