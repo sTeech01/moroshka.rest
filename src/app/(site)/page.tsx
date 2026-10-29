@@ -10,7 +10,7 @@ import { YandexMap } from "@/components/yandex-map";
 import { features } from "@/config/site";
 import { getDelivery, getHome, getPage, getPromos, getSettings } from "@/lib/content";
 import { orderSection } from "@/lib/delivery";
-import { formatPrice, formatWeight } from "@/lib/format";
+import { formatPrice, formatTimeRange, formatWeekdaysFull, formatWeight } from "@/lib/format";
 import { getHallMenu, getMenu } from "@/lib/menu/get-menu";
 import type { Dish } from "@/lib/menu/types";
 
@@ -148,13 +148,13 @@ export default async function HomePage() {
         </StageScene>
 
         {/* Контакты — по референсу заказчика: слева крупный светлый заголовок, адрес, телефон,
-            часы работы и реквизиты; справа большая светлая монохромная карта */}
+            часы работы и реквизиты; справа большая карта в тёмной теме сайта */}
         {geo && (
           <StageScene className="stage-last">
             <section aria-label="Контакты" className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
                 <h2 className="h-display text-[2.75rem] text-snow/85 uppercase lg:text-[3.25rem]">Контакты</h2>
-                <div className="mt-7 space-y-1 text-[19px] leading-snug lg:mt-9 lg:text-[22px]">
+                <div className="mt-6 text-[19px] leading-[1.35] font-light lg:mt-8 lg:text-[22px]">
                   <p>{settings.address}</p>
                   <p>Ресторан «Морошка»</p>
                   <p>
@@ -170,20 +170,19 @@ export default async function HomePage() {
                     </p>
                   )}
                 </div>
-                <p className="mt-7 text-[17px] text-lichen uppercase lg:mt-8 lg:text-xl">Время работы:</p>
-                <div className="mt-1 space-y-1 text-[17px] text-soft lg:text-[21px]">
+                <p className="mt-6 text-[17px] font-light text-lichen uppercase lg:mt-7 lg:text-xl">Время работы:</p>
+                <div className="mt-1 text-[17px] leading-[1.35] font-light text-soft lg:text-[21px]">
                   {settings.hours.map((h) => (
                     <p key={h.days}>
-                      {h.days} : {h.time.replace(/s*[–-]s*/, " — ")}
+                      {formatWeekdaysFull(h.days)} : {formatTimeRange(h.time)}
                     </p>
                   ))}
                 </div>
-                {settings.legal && <p className="mt-7 max-w-md text-[15px] leading-relaxed text-lichen/80 lg:mt-9 lg:text-base">{settings.legal}</p>}
+                {settings.legal && <p className="mt-6 max-w-md text-[15px] leading-snug font-light text-lichen/80 lg:mt-8 lg:text-base">{settings.legal}</p>}
               </div>
               <YandexMap
                 lat={geo.lat}
                 lng={geo.lng}
-                tone="mono"
                 className="aspect-[700/625] w-full rounded-lg! lg:aspect-auto lg:h-[min(625px,calc(100svh-11rem))]"
               />
             </section>
