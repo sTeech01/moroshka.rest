@@ -88,26 +88,30 @@ export function RecordShowcase({ section }: { section: Extract<PageSection, { ki
         )}
       </div>
 
-      <div className="booking-glass record-card rounded-[28px] p-6 sm:p-8 xl:px-9 xl:py-8">
-        <div className="[&_.prose-moroshka]:space-y-2.5 [&_.prose-moroshka]:text-[15px] [&_.prose-moroshka]:leading-[1.5] [&_.prose-moroshka]:text-snow/90">
-          <CmsContent data={section.content} />
-        </div>
-        {section.images.length > 0 && (
-          <div className="mt-5">
-            {/* Кадр превью: у портрета (1-е фото) — выше, чтобы не срезать лицо; у диплома (2-е) — ниже */}
+      {/* Внутри карточки: слева текст и ссылка, справа столбик фото 3:4 (на телефоне фото — под текстом, в ряд) */}
+      <div className="booking-glass record-card rounded-[28px] px-6 py-8 sm:px-8 sm:py-10 xl:px-10 xl:py-12">
+        <div className="record-layout grid gap-6 sm:grid-cols-[minmax(0,1fr)_170px] sm:gap-7 xl:grid-cols-[minmax(0,1fr)_180px]">
+          <div className="flex flex-col items-start">
+            <div className="[&_.prose-moroshka]:space-y-2.5 [&_.prose-moroshka]:text-[15px] [&_.prose-moroshka]:leading-[1.5] [&_.prose-moroshka]:text-snow/90">
+              <CmsContent data={section.content} />
+            </div>
+            {section.link && (
+              <a href={section.link.url} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm mt-6">
+                {section.link.label} <span aria-hidden>↗</span>
+              </a>
+            )}
+          </div>
+          {section.images.length > 0 && (
+            // Кадр превью: у портрета (1-е фото) — выше, чтобы не срезать лицо; у диплома (2-е) — ниже
             <PhotoLightbox
               images={section.images}
-              thumbClassName="aspect-[16/9] [@media(min-width:1280px)_and_(max-height:900px)]:aspect-[16/7]"
+              gridClassName="grid grid-cols-2 content-center gap-3 sm:grid-cols-1"
+              thumbClassName="aspect-[3/4]"
               imageClassName={["object-[50%_22%]", "object-[50%_75%]"]}
-              sizes="(min-width: 1024px) 320px, 50vw"
+              sizes="(min-width: 640px) 180px, 50vw"
             />
-          </div>
-        )}
-        {section.link && (
-          <a href={section.link.url} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm mt-5">
-            {section.link.label} <span aria-hidden>↗</span>
-          </a>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

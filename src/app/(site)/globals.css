@@ -652,18 +652,12 @@ body:has(main .theme-paper)::before {
  * и закреплялся в сцене, как остальные (иначе он выше окна и просто проезжает)
  */
 @media (min-width: 1280px) and (max-height: 900px) {
-  .record-card {
-    padding: 1.5rem 2rem;
-  }
   .record-card .prose-moroshka {
     font-size: 14px;
     line-height: 1.45;
   }
   .record-card .prose-moroshka > * + * {
     margin-top: 0.5rem;
-  }
-  .record-card > * + * {
-    margin-top: 1rem;
   }
   .record-intro h2 {
     margin-top: 0.75rem;

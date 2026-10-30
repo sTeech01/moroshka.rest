@@ -11,11 +11,14 @@ import type { Img } from "@/lib/content";
  */
 export function PhotoLightbox({
   images,
+  gridClassName = "grid grid-cols-2 gap-3",
   thumbClassName = "",
   imageClassName = [],
   sizes,
 }: {
   images: Img[];
+  /** Сетка миниатюр — по умолчанию две в ряд */
+  gridClassName?: string;
   thumbClassName?: string;
   /** Классы картинок превью по порядку — например, точка кадрирования каждого фото (object-[50%_20%]) */
   imageClassName?: string[];
@@ -36,7 +39,7 @@ export function PhotoLightbox({
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3">
+      <div className={gridClassName}>
         {images.map((img, i) => (
           <button
             key={img.url}
