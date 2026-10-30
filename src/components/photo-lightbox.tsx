@@ -9,7 +9,18 @@ import type { Img } from "@/lib/content";
  * Окно — нативный <dialog> (фокус внутри, Esc закрывает); листать — стрелками на экране
  * и клавишами ←/→; закрыть — крестиком, Esc или кликом мимо фото. Прокрутка страницы на время окна заблокирована.
  */
-export function PhotoLightbox({ images, thumbClassName = "", sizes }: { images: Img[]; thumbClassName?: string; sizes: string }) {
+export function PhotoLightbox({
+  images,
+  thumbClassName = "",
+  imageClassName = "",
+  sizes,
+}: {
+  images: Img[];
+  thumbClassName?: string;
+  /** Классы картинки превью — например, точка кадрирования (object-[50%_20%]) */
+  imageClassName?: string;
+  sizes: string;
+}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState<number | null>(null);
 
@@ -34,7 +45,7 @@ export function PhotoLightbox({ images, thumbClassName = "", sizes }: { images: 
             aria-label={`Открыть фото: ${img.alt || `фото ${i + 1}`}`}
             className={`group relative block cursor-zoom-in overflow-hidden rounded-[16px] ${thumbClassName}`}
           >
-            <Image src={img.url} alt={img.alt} fill sizes={sizes} className="object-cover transition-transform duration-700 ease-(--ease-soft) group-hover:scale-[1.04]" />
+            <Image src={img.url} alt={img.alt} fill sizes={sizes} className={`object-cover transition-transform duration-700 ease-(--ease-soft) group-hover:scale-[1.04] ${imageClassName}`} />
           </button>
         ))}
       </div>

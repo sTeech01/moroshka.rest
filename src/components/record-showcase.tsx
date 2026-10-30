@@ -40,10 +40,10 @@ const STAT_ICONS: React.ReactNode[] = [
 function StatIcon({ n }: { n: number }) {
   const icon = STAT_ICONS[n];
   if (!icon) {
-    return <span className="grid h-8 w-8 place-items-center rounded-full ring-1 ring-berry/50 text-sm text-berry tabular-nums">{n + 1}</span>;
+    return <span className="grid h-10 w-10 place-items-center sm:h-12 sm:w-12 rounded-full ring-1 ring-berry/50 text-sm text-berry tabular-nums">{n + 1}</span>;
   }
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-berry" aria-hidden>
+    <svg viewBox="0 0 32 32" className="h-10 w-10 text-berry sm:h-12 sm:w-12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       {icon}
     </svg>
   );
@@ -58,7 +58,7 @@ export function RecordShowcase({ section }: { section: Extract<PageSection, { ki
   return (
     <section
       aria-label={section.title}
-      className="container-site grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,540px)] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_580px] xl:gap-16"
+      className="container-site grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,600px)] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_680px] xl:gap-12"
     >
       <div>
         <span className="inline-block rounded-[14px] bg-white px-4 py-2.5 shadow-[0_10px_30px_-12px_rgb(0_0_0/0.5)]">
@@ -88,17 +88,18 @@ export function RecordShowcase({ section }: { section: Extract<PageSection, { ki
         )}
       </div>
 
-      <div className="booking-glass rounded-[28px] p-6 sm:p-8">
-        <div className="[&_.prose-moroshka]:space-y-3 [&_.prose-moroshka]:text-[15px] [&_.prose-moroshka]:leading-[1.55] [&_.prose-moroshka]:text-snow/90">
+      <div className="booking-glass rounded-[28px] p-6 sm:p-8 xl:px-9 xl:py-8">
+        <div className="[&_.prose-moroshka]:space-y-2.5 [&_.prose-moroshka]:text-[15px] [&_.prose-moroshka]:leading-[1.5] [&_.prose-moroshka]:text-snow/90">
           <CmsContent data={section.content} />
         </div>
         {section.images.length > 0 && (
-          <div className="mt-6">
-            <PhotoLightbox images={section.images} thumbClassName="aspect-[16/10]" sizes="(min-width: 1024px) 280px, 50vw" />
+          <div className="mt-5">
+            {/* Кадр превью сдвинут вверх — у портретов не срезаются лица */}
+            <PhotoLightbox images={section.images} thumbClassName="aspect-[16/9]" imageClassName="object-[50%_22%]" sizes="(min-width: 1024px) 320px, 50vw" />
           </div>
         )}
         {section.link && (
-          <a href={section.link.url} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm mt-6">
+          <a href={section.link.url} target="_blank" rel="noopener noreferrer" className="btn btn-berry btn-sm mt-5">
             {section.link.label} <span aria-hidden>↗</span>
           </a>
         )}
