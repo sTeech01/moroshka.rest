@@ -60,7 +60,7 @@ export function RecordShowcase({ section }: { section: Extract<PageSection, { ki
       aria-label={section.title}
       className="container-site grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,600px)] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_680px] xl:gap-12"
     >
-      <div>
+      <div className="record-intro">
         <span className="inline-block rounded-[14px] bg-white px-4 py-2.5 shadow-[0_10px_30px_-12px_rgb(0_0_0/0.5)]">
           <Image src={RECORD_LOGO.src} alt={RECORD_LOGO.alt} width={RECORD_LOGO.width} height={RECORD_LOGO.height} className="h-12 w-auto lg:h-14" />
         </span>
@@ -88,14 +88,19 @@ export function RecordShowcase({ section }: { section: Extract<PageSection, { ki
         )}
       </div>
 
-      <div className="booking-glass rounded-[28px] p-6 sm:p-8 xl:px-9 xl:py-8">
+      <div className="booking-glass record-card rounded-[28px] p-6 sm:p-8 xl:px-9 xl:py-8">
         <div className="[&_.prose-moroshka]:space-y-2.5 [&_.prose-moroshka]:text-[15px] [&_.prose-moroshka]:leading-[1.5] [&_.prose-moroshka]:text-snow/90">
           <CmsContent data={section.content} />
         </div>
         {section.images.length > 0 && (
           <div className="mt-5">
-            {/* Кадр превью сдвинут вверх — у портретов не срезаются лица */}
-            <PhotoLightbox images={section.images} thumbClassName="aspect-[16/9]" imageClassName="object-[50%_22%]" sizes="(min-width: 1024px) 320px, 50vw" />
+            {/* Кадр превью: у портрета (1-е фото) — выше, чтобы не срезать лицо; у диплома (2-е) — ниже */}
+            <PhotoLightbox
+              images={section.images}
+              thumbClassName="aspect-[16/9] [@media(min-width:1280px)_and_(max-height:900px)]:aspect-[16/7]"
+              imageClassName={["object-[50%_22%]", "object-[50%_75%]"]}
+              sizes="(min-width: 1024px) 320px, 50vw"
+            />
           </div>
         )}
         {section.link && (

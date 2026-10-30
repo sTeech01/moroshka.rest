@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /** Высота липкой шапки на компьютере и вертикальные отступы закреплённого блока (.stage-reveal) */
 const HEADER = 76;
-const PADDING = 64;
+const PADDING = 32;
 
 /**
  * Помечает блоки сцены, которые не помещаются в экран, классом stage-tall: такой блок

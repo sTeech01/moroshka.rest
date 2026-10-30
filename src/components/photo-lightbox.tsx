@@ -12,13 +12,13 @@ import type { Img } from "@/lib/content";
 export function PhotoLightbox({
   images,
   thumbClassName = "",
-  imageClassName = "",
+  imageClassName = [],
   sizes,
 }: {
   images: Img[];
   thumbClassName?: string;
-  /** Классы картинки превью — например, точка кадрирования (object-[50%_20%]) */
-  imageClassName?: string;
+  /** Классы картинок превью по порядку — например, точка кадрирования каждого фото (object-[50%_20%]) */
+  imageClassName?: string[];
   sizes: string;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -45,7 +45,7 @@ export function PhotoLightbox({
             aria-label={`Открыть фото: ${img.alt || `фото ${i + 1}`}`}
             className={`group relative block cursor-zoom-in overflow-hidden rounded-[16px] ${thumbClassName}`}
           >
-            <Image src={img.url} alt={img.alt} fill sizes={sizes} className={`object-cover transition-transform duration-700 ease-(--ease-soft) group-hover:scale-[1.04] ${imageClassName}`} />
+            <Image src={img.url} alt={img.alt} fill sizes={sizes} className={`object-cover transition-transform duration-700 ease-(--ease-soft) group-hover:scale-[1.04] ${imageClassName[i] ?? ""}`} />
           </button>
         ))}
       </div>
