@@ -14,10 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Бизнес-ланч — по референсу заказчика: фон всей страницы — «Лесная уха с морошкой»
- * (суп на мху сверху справа, морошка по углам); слева сверху — расписание,
- * заголовок и дни недели; ниже — полупрозрачная тёмно-зелёная карточка меню с золотистой
- * ботаникой по углам, сноска и кнопки. Шапка над фото прозрачная, пока страница не прокручена.
+ * Бизнес-ланч: фон — «Лесная уха с морошкой»; сверху заголовок с расписанием и дни недели,
+ * ниже карточка с меню дня в две колонки — помещается в экран без прокрутки.
+ * Шапка над фото прозрачная, пока страница не прокручена.
  */
 export default async function BusinessLunchPage() {
   const [lunch, settings] = await Promise.all([getBusinessLunch(), getSettings()]);
@@ -25,32 +24,27 @@ export default async function BusinessLunchPage() {
   const tel = settings.phone.replace(/[^\d+]/g, "");
 
   return (
-    <div data-hero-overlay className="lunch-page -mt-16 pt-[78vw] pb-20 text-snow md:pt-40 lg:-mt-[76px] lg:pt-[210px] lg:pb-32">
+    <div data-hero-overlay className="lunch-page -mt-16 pt-[58vw] pb-16 text-snow sm:pt-28 lg:-mt-[76px] lg:pt-[116px] lg:pb-20">
       <LunchWeekMenu
         week={lunch.week}
         head={
-          <div className="max-w-xl">
-            <p className="eyebrow text-berry">{lunch.schedule}</p>
-            <h1 className="h-display mt-4 text-[3rem] leading-none sm:text-6xl lg:text-[6.5rem]">{lunch.title}</h1>
-            {lunch.intro && <p className="mt-5 max-w-md text-[17px] leading-relaxed text-snow/80 lg:text-lg">{lunch.intro}</p>}
+          <div className="[text-shadow:0_2px_18px_rgb(0_0_0/0.7)]">
+            <h1 className="h-display text-4xl lg:text-5xl">{lunch.title}</h1>
+            <p className="mt-2 text-[17px] text-snow/80">{lunch.schedule}</p>
           </div>
         }
         footer={
-          <>
-            {lunch.note && <p className="mt-10 text-center text-sm text-lichen italic">* {lunch.note}</p>}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Link href="/#booking" className="btn btn-berry gap-3 sm:min-w-60">
+          <div className="mt-8 flex flex-col gap-4 border-t border-snow/10 pt-6 lg:flex-row lg:items-center lg:justify-between">
+            {lunch.note && <p className="text-sm text-lichen">{lunch.note}</p>}
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link href="/#booking" className="btn btn-berry">
                 Забронировать стол
-                <span aria-hidden>→</span>
               </Link>
-              <a href={`tel:${tel}`} className="btn gap-2.5 text-snow ring-1 ring-berry/60 ring-inset hover:bg-berry/10 sm:min-w-60">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
-                </svg>
+              <a href={`tel:${tel}`} className="btn gap-2.5 text-snow ring-1 ring-snow/25 ring-inset hover:ring-berry/70">
                 {settings.phone}
               </a>
             </div>
-          </>
+          </div>
         }
       />
     </div>

@@ -7,7 +7,7 @@ import { LunchGroups } from "./lunch-groups";
 const noSubscribe = () => () => {};
 
 /**
- * Меню по дням на странице /business-lunch: дни недели — под заголовком страницы (head),
+ * Меню по дням на странице /business-lunch: дни недели — справа от заголовка страницы (head),
  * меню выбранного дня — в карточке, под ним — сноска и кнопки (footer). Страница кэшируется,
  * поэтому «сегодня» выбирается уже в браузере, по времени Губкинского; на сервере — первый день с меню.
  */
@@ -19,10 +19,10 @@ export function LunchWeekMenu({ week, head, footer }: { week: LunchWeek; head: R
 
   return (
     <>
-      <div className="container-site">
+      <div className="container-site flex flex-wrap items-end justify-between gap-x-10 gap-y-5">
         {head}
         {active && days.length > 1 && (
-          <div role="tablist" aria-label="День недели" className="mt-8 flex flex-wrap gap-2 lg:mt-10">
+          <div role="tablist" aria-label="День недели" className="flex flex-wrap gap-2">
             {days.map((d) => (
               <button
                 key={d.key}
@@ -45,9 +45,9 @@ export function LunchWeekMenu({ week, head, footer }: { week: LunchWeek; head: R
         )}
       </div>
 
-      <div className="container-site mt-10 lg:mt-12">
-        <div className="lunch-card rounded-[28px] px-5 py-10 sm:px-12 sm:py-12 lg:px-20 lg:py-16">
-          <div className="mx-auto max-w-[880px]">
+      <div className="container-site mt-6 lg:mt-7">
+        <div className="lunch-card rounded-[24px] px-5 py-7 sm:px-10 sm:py-9 lg:px-14 lg:py-10">
+          <div>
             {active ? (
               <LunchGroups groups={week[active]} />
             ) : (

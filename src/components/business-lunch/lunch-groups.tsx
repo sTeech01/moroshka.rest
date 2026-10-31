@@ -2,24 +2,18 @@ import { formatPrice } from "@/lib/format";
 import type { LunchGroup } from "@/lib/business-lunch";
 
 /**
- * Позиции на странице /business-lunch, как в бумажном меню: заголовок группы между тонкими
- * золотистыми линиями, строка «название ……… выход / цена» (с 640 px; на телефоне выход — под названием).
+ * Позиции на странице /business-lunch: на компьютере в две колонки, чтобы меню дня помещалось
+ * в экран без прокрутки. Строка — «название ……… выход / цена» (с 640 px; на телефоне выход под названием).
  */
 export function LunchGroups({ groups }: { groups: LunchGroup[] }) {
   return (
-    <div className="space-y-9 sm:space-y-10">
+    <div className="gap-x-16 lg:columns-2">
       {groups.map((g, gi) => (
-        <section key={gi}>
-          {g.title && (
-            <h2 className="mb-5 flex items-center justify-center gap-4 text-[13px] tracking-[0.3em] text-berry/90 uppercase">
-              <span aria-hidden className="h-px w-10 bg-linear-to-r from-transparent to-berry/50 sm:w-16" />
-              {g.title}
-              <span aria-hidden className="h-px w-10 bg-linear-to-l from-transparent to-berry/50 sm:w-16" />
-            </h2>
-          )}
-          <ul className="space-y-3">
+        <section key={gi} className="mb-7 break-inside-avoid last:mb-0 lg:mb-8">
+          {g.title && <h2 className="mb-3 text-[15px] font-semibold text-berry">{g.title}</h2>}
+          <ul className="space-y-2.5">
             {g.items.map((item, ii) => (
-              <li key={ii} className="flex items-baseline gap-x-2 text-[16px] sm:text-[17px]">
+              <li key={ii} className="flex items-baseline gap-x-2 text-[16px]">
                 <span className="min-w-0 text-snow">
                   {item.name}
                   {item.weight && <span className="block text-sm text-lichen sm:hidden">{item.weight}</span>}
