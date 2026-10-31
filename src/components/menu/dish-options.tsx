@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { priceSelection, type ModifierChoice } from "@/lib/cart/pricing";
 import { formatPrice } from "@/lib/format";
@@ -111,11 +112,13 @@ export function DishOptions({ dish }: { dish: Dish }) {
       ))}
 
       {/* На телефоне панель прилипает к низу экрана, как в макете */}
-      <div className="sticky bottom-0 -mx-4 rounded-t-card bg-surface/90 px-4 pt-3 pb-5 backdrop-blur-md shadow-[0_-18px_40px_-24px_rgb(0_0_0/0.35)] md:static md:mx-0 md:rounded-none md:p-0 md:shadow-none">
-        <p className="min-h-5 text-[13px] text-berry" aria-live="polite">
-          {tried && !priced.ok ? priced.error : ""}
-        </p>
-        <div className="mt-1 flex gap-2.5">
+      <div className="sticky bottom-0 -mx-4 rounded-t-card bg-surface/90 px-4 pt-3 pb-5 backdrop-blur-md shadow-[0_-18px_40px_-24px_rgb(0_0_0/0.35)] md:static md:mx-0 md:rounded-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none">
+        {tried && !priced.ok && (
+          <p className="mb-2 text-[13px] text-danger" aria-live="polite">
+            {priced.error}
+          </p>
+        )}
+        <div className="flex gap-2.5">
           <div className="flex h-14 items-center rounded-soft bg-card ring-1 ring-border ring-inset">
             <button type="button" className="h-14 w-12 text-xl font-bold" onClick={() => { touch(); setQuantity((q) => Math.max(1, q - 1)); }} aria-label="Меньше">
               −
@@ -130,9 +133,19 @@ export function DishOptions({ dish }: { dish: Dish }) {
             onClick={submit}
             className={`btn h-14 flex-1 ${priced.ok ? "btn-berry" : "bg-fill text-muted"}`}
           >
-            {added ? "Добавлено в корзину" : `В корзину · ${formatPrice((priced.ok ? priced.unitPrice : size.price) * quantity)}`}
+            {added ? "Добавлено в корзину ✓" : `В корзину · ${formatPrice((priced.ok ? priced.unitPrice : size.price) * quantity)}`}
           </button>
         </div>
+        {added && (
+          <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm font-semibold">
+            <Link href="/cart" className="text-berry hover:text-berry-hover">
+              Перейти в корзину →
+            </Link>
+            <Link href="/menu" className="text-muted hover:text-text">
+              Продолжить выбор
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

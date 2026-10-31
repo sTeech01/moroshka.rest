@@ -34,7 +34,9 @@ export function CartButton() {
 }
 
 /**
- * Плавающая кнопка корзины на телефоне. Скрыта в самой корзине и при оформлении.
+ * Плавающая кнопка корзины на телефоне, а в меню ресторана — и на компьютере (справа внизу):
+ * блюда кладут в корзину прямо из меню, и путь к оформлению должен быть под рукой.
+ * Скрыта в самой корзине и при оформлении.
  * usePathname() — в Suspense: на /order/[id] путь известен только во время запроса (см. HeaderShell).
  * Заглушка пустая — кнопка и так не рендерится на сервере: корзина пуста до загрузки из localStorage.
  */
@@ -51,14 +53,23 @@ function FloatingCartByPath() {
   const pathname = usePathname();
   const count = cartCount(lines);
   if (count === 0 || pathname === "/cart" || pathname === "/checkout") return null;
+  const desktop = pathname === "/menu";
 
   return (
     <Link
       href="/cart"
-      className="btn btn-berry fixed inset-x-4 bottom-4 z-40 h-14 justify-between rounded-card shadow-[0_14px_40px_-10px_rgba(0,0,0,0.5)] md:hidden"
+      className={`btn btn-berry fixed inset-x-4 bottom-4 z-40 h-14 justify-between rounded-card shadow-[0_14px_40px_-10px_rgba(0,0,0,0.5)] ${
+        desktop ? "md:inset-x-auto md:right-8 md:bottom-8 md:gap-10 md:px-6" : "md:hidden"
+      }`}
     >
-      <span>Корзина · {count}</span>
-      <span>{formatPrice(cartTotal(lines))}</span>
+      <span className="inline-flex items-center gap-2.5">
+        <BagIcon />
+        Корзина · {count}
+      </span>
+      <span>
+        {formatPrice(cartTotal(lines))}
+        {desktop && <span className="max-md:hidden"> · Оформить →</span>}
+      </span>
     </Link>
   );
 }

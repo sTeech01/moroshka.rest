@@ -59,11 +59,11 @@ export async function getMenuFresh(): Promise<Menu> {
 }
 
 export type HallMenu = Menu & {
-  /** itemId → slug блюда в доставке: «Можно заказать домой» */
-  deliverySlugs: Record<string, string>;
+  /** itemId → то же блюдо в меню заказа на сайте (доставка/самовывоз): его можно положить в корзину */
+  orderable: Record<string, Dish>;
 };
 
-/** Меню зала (раздел «Меню»): витрина без корзины, стоп-лист не применяется */
+/** Меню зала (раздел «Меню»): блюда, которые есть в меню заказа и не в стоп-листе, можно положить в корзину */
 export async function getHallMenu(): Promise<HallMenu> {
   "use cache";
   cacheLife("stopList");
@@ -73,9 +73,9 @@ export async function getHallMenu(): Promise<HallMenu> {
   const [raw, delivery] = await Promise.all([getHallRaw(), getMenu()]);
   const menu = mapIikoMenu(raw, new Set(), source.organizationId);
 
-  const deliverySlugs: Record<string, string> = {};
-  for (const c of delivery.categories) for (const d of c.dishes) if (d.inStock) deliverySlugs[d.id] = d.slug;
-  return { ...menu, deliverySlugs };
+  const orderable: Record<string, Dish> = {};
+  for (const c of delivery.categories) for (const d of c.dishes) if (d.inStock) orderable[d.id] = d;
+  return { ...menu, orderable };
 }
 
 /** Барная карта (раздел «Меню» → «Бар»): витрина, у позиций несколько объёмов */

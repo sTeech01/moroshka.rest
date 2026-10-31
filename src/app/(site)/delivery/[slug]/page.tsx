@@ -3,11 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { DISH_PLACEHOLDER, DishImage } from "@/components/menu/dish-image";
+import { BackButton } from "@/components/menu/back-button";
 import { DishOptions } from "@/components/menu/dish-options";
 import { siteConfig } from "@/config/site";
 import { formatPrice, formatWeight } from "@/lib/format";
-import { getDelivery } from "@/lib/content";
-import { orderSection } from "@/lib/delivery";
+import { getDelivery, getSettings } from "@/lib/content";
+import { orderSection, PICKUP_LEAD_MINUTES } from "@/lib/delivery";
 import { getDishBySlug, getMenu } from "@/lib/menu/get-menu";
 
 export async function generateStaticParams() {
@@ -28,12 +29,15 @@ export async function generateMetadata({ params }: PageProps<"/delivery/[slug]">
   };
 }
 
-// Каркас страницы показывается сразу при переходе, данные блюда подставляются следом
+// Каркас страницы показывается сразу при переходе, данные блюда подставляются следом.
+// Страница светлая, как меню, из которого на неё приходят
 export default function DishPage({ params }: PageProps<"/delivery/[slug]">) {
   return (
-    <Suspense fallback={<DishSkeleton />}>
-      <Dish params={params} />
-    </Suspense>
+    <div className="theme-paper">
+      <Suspense fallback={<DishSkeleton />}>
+        <Dish params={params} />
+      </Suspense>
+    </div>
   );
 }
 
@@ -55,7 +59,7 @@ function DishSkeleton() {
 
 async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"] }) {
   const { slug } = await params;
-  const [dish, menu, delivery] = await Promise.all([getDishBySlug(slug), getMenu(), getDelivery()]);
+  const [dish, menu, delivery, settings] = await Promise.all([getDishBySlug(slug), getMenu(), getDelivery(), getSettings()]);
   if (!dish) notFound();
   const section = orderSection(delivery);
 
@@ -73,13 +77,11 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
   };
 
   return (
-    <div className="container-site pt-6 pb-16 md:py-12">
+    <div className="container-site pt-6 pb-16 md:pt-10 md:pb-20">
       <nav aria-label="Навигация" className="flex items-center gap-3 text-sm text-muted">
-        <Link href="/delivery" className="grid h-11 w-11 place-items-center rounded-full bg-card ring-1 ring-border ring-inset transition-colors hover:text-text" aria-label={`Назад: ${section.label}`}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-            <path d="M15 5l-7 7 7 7" />
-          </svg>
-        </Link>
+        <BackButton fallback="/menu" />
+        <Link href="/menu" className="hover:text-text">Меню</Link>
+        <span aria-hidden>·</span>
         <Link href="/delivery" className="hover:text-text">{section.label}</Link>
         {category && (
           <>
@@ -89,21 +91,43 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
         )}
       </nav>
 
-      <div className="mt-6 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-14">
-        <div>
+      <div className="mt-6 grid items-start gap-8 md:mt-8 md:grid-cols-2 md:gap-14">
+        <div className="md:sticky md:top-28">
           <DishImage src={dish.image} alt={dish.name} sizes="(min-width: 768px) 50vw, 100vw" priority />
         </div>
-        <div>
-          <h1 className="h-display text-4xl md:text-5xl">{dish.name}</h1>
-          {weight && <div className="mt-3 text-sm text-muted">{weight}</div>}
-          {dish.description && <p className="mt-3 text-[15px] leading-relaxed text-soft md:text-[17px]">{dish.description}</p>}
-          <div className="mt-5 text-2xl font-bold">
-            {dish.sizes.length > 1 ? "от " : ""}
-            {formatPrice(dish.priceFrom)}
+        <div className="md:pt-2">
+          {category && <p className="eyebrow">{category.name}</p>}
+          <h1 className="h-display mt-3 text-4xl md:text-5xl">{dish.name}</h1>
+          <div className="mt-5 flex items-baseline gap-4">
+            <span className="text-2xl font-bold">
+              {dish.sizes.length > 1 ? "от " : ""}
+              {formatPrice(dish.priceFrom)}
+            </span>
+            {weight && <span className="text-sm text-muted">{weight}</span>}
           </div>
-          <div className="mt-8">
+          {dish.description && (
+            <div className="mt-6 border-t border-border pt-5">
+              <h2 className="text-xs tracking-[0.2em] text-muted uppercase">Состав</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-soft md:text-[17px]">{dish.description}</p>
+            </div>
+          )}
+          <div className="mt-7">
             <DishOptions dish={dish} />
           </div>
+          {!delivery.enabled && (
+            <div className="mt-6 flex gap-3.5 rounded-card bg-card p-5 text-sm leading-relaxed ring-1 ring-border ring-inset">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="mt-0.5 shrink-0 text-berry" aria-hidden>
+                <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
+                <circle cx="12" cy="9.5" r="2.5" />
+              </svg>
+              <p>
+                <span className="font-semibold">Самовывоз из ресторана</span>
+                <span className="block text-muted">
+                  {settings.address}. Заказ обычно готов через {PICKUP_LEAD_MINUTES} минут — время можно выбрать при оформлении.
+                </span>
+              </p>
+            </div>
+          )}
         </div>
       </div>
 

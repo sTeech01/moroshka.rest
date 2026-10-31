@@ -25,8 +25,6 @@ export function orderSection(d: Pick<DeliverySettings, "enabled" | "pickupEnable
     return {
       label: "Доставка",
       title: "Доставка",
-      menuCta: "Заказать доставку →",
-      dishLink: "Можно заказать домой →",
       homeEyebrow: "Доставка из ресторана",
       homeTitle: "Северная кухня дома",
       homeLink: "Все блюда с доставкой →",
@@ -35,8 +33,6 @@ export function orderSection(d: Pick<DeliverySettings, "enabled" | "pickupEnable
   return {
     label: "Самовывоз",
     title: "Самовывоз",
-    menuCta: "Заказать с собой →",
-    dishLink: "Можно заказать с собой →",
     homeEyebrow: "Закажите на сайте — заберите в ресторане",
     homeTitle: "Северная кухня с собой",
     homeLink: "Все блюда с собой →",

@@ -274,10 +274,13 @@ p {
 }
 
 /* На светлых страницах скруглённый верх подвала ложится на «бумагу», а не на тёмный фон */
-body:has(main .theme-paper) {
+/* main > …:not([style*="display: none"]) — только видимая страница: Next держит прошлую страницу
+   в DOM скрытой (display: none !important), и без этого её светлый фон или прозрачная шапка
+   «протекают» на следующую страницу после перехода по ссылке */
+body:has(main > .theme-paper:not([style*="display: none"])) {
   background: #f3eee5;
 }
-body:has(main .theme-paper)::before {
+body:has(main > .theme-paper:not([style*="display: none"]))::before {
   display: none;
 }
 
@@ -816,10 +819,10 @@ body:has(main .theme-paper)::before {
   backdrop-filter: blur(12px);
   transition: opacity 0.5s;
 }
-body:has([data-hero-overlay]) .site-header[data-top] .header-bar {
+body:has(main > [data-hero-overlay]:not([style*="display: none"]), main > :not([style*="display: none"]) [data-hero-overlay]) .site-header[data-top] .header-bar {
   box-shadow: none;
 }
-body:has([data-hero-overlay]) .site-header[data-top] .header-bar::before {
+body:has(main > [data-hero-overlay]:not([style*="display: none"]), main > :not([style*="display: none"]) [data-hero-overlay]) .site-header[data-top] .header-bar::before {
   opacity: 0;
 }
 /* Остальные карточки: приглушённый оливковый с тёплым янтарным свечением */

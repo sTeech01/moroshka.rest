@@ -6,9 +6,10 @@ import { useCart, useCartHydrated } from "@/store/cart";
 
 /**
  * «В корзину» для блюда без обязательного выбора; после добавления — счётчик.
- * variant="icon" — тонкий круглый «+» и тонкий счётчик (минималистичные карточки на главной).
+ * variant="icon" — тонкий круглый «+» и тонкий счётчик (минималистичные карточки на главной);
+ * variant="solid" — заметный оранжевый круглый «+» и оранжевый счётчик (меню ресторана).
  */
-export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dish; tone?: "ink" | "berry"; variant?: "button" | "icon" }) {
+export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dish; tone?: "ink" | "berry"; variant?: "button" | "icon" | "solid" }) {
   const hydrated = useCartHydrated();
   const size = dish.sizes.find((s) => s.isDefault) ?? dish.sizes[0];
   const key = lineKey(dish.id, size.id, []);
@@ -26,6 +27,32 @@ export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dis
       modifiers: [],
       unitPrice: size.price,
     });
+
+  if (variant === "solid") {
+    if (hydrated && quantity > 0) {
+      return (
+        <div className="flex h-10 shrink-0 items-center rounded-full bg-berry font-bold text-night">
+          <button type="button" className="h-10 w-9 text-lg" onClick={() => setQuantity(key, quantity - 1)} aria-label={`Убрать: ${dish.name}`}>
+            −
+          </button>
+          <span className="min-w-4 text-center text-sm" aria-live="polite">{quantity}</span>
+          <button type="button" className="h-10 w-9 text-lg" onClick={() => setQuantity(key, quantity + 1)} aria-label={`Добавить ещё: ${dish.name}`}>
+            +
+          </button>
+        </div>
+      );
+    }
+    return (
+      <button
+        type="button"
+        onClick={addToCart}
+        aria-label={`В корзину: ${dish.name}`}
+        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-berry text-night transition-[background-color,transform] duration-200 hover:bg-berry-hover active:scale-90"
+      >
+        <PlusIcon strokeWidth={2} />
+      </button>
+    );
+  }
 
   if (variant === "icon") {
     if (hydrated && quantity > 0) {
@@ -78,9 +105,9 @@ export function QuickAdd({ dish, tone = "ink", variant = "button" }: { dish: Dis
   );
 }
 
-export function PlusIcon() {
+export function PlusIcon({ strokeWidth = 1.25 }: { strokeWidth?: number }) {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth={strokeWidth} aria-hidden>
       <path d="M7 1v12M1 7h12" />
     </svg>
   );
