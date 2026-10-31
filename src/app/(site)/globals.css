@@ -742,6 +742,13 @@ body:has(main .theme-paper)::before {
     font-size: 2rem;
   }
 }
+/* Карточка меню бизнес-ланча: тёмно-зелёный фон с золотистой морошкой по углам */
+.lunch-surface {
+  background:
+    radial-gradient(70% 60% at 50% 50%, rgb(10 18 13 / 0.35) 0%, rgb(10 18 13 / 0.25) 100%),
+    url("/images/business-lunch-bg.webp") center / cover no-repeat,
+    #0f1a12;
+}
 /* Заявка на банкет: тёмно-зелёный ботанический фон с золотым сиянием и морошкой справа */
 .banquet-request {
   background:

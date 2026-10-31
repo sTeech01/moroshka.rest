@@ -245,7 +245,7 @@ function DeliveryDishes({
     <section className="container-site">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="eyebrow">{section.homeEyebrow}</p>
+          <p className="eyebrow text-berry">{section.homeEyebrow}</p>
           <h2 className="h-display mt-5 text-4xl lg:text-[56px]">{section.homeTitle}</h2>
         </div>
         <Link href="/delivery" className="text-sm font-semibold tracking-wide text-berry transition-colors hover:text-berry-hover">
