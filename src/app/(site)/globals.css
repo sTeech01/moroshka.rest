@@ -787,6 +787,20 @@ body:has(main > .theme-paper:not([style*="display: none"]))::before {
     url("/images/business-lunch-bg.webp") center / cover no-repeat;
   opacity: 0.88;
 }
+/* Банкеты под первым экраном (карусель и заявка): фото VIP-зала, заранее размыто и притемнено,
+   как фон зала на главной. На компьютере фон стоит на месте при прокрутке */
+.stage-bg-vip {
+  background:
+    radial-gradient(75% 70% at 50% 45%, rgb(14 23 20 / 0.35) 0%, rgb(14 23 20 / 0.75) 100%),
+    linear-gradient(180deg, rgb(14 23 20 / 0.7) 0%, rgb(14 23 20 / 0.35) 18%, rgb(14 23 20 / 0.35) 80%, rgb(14 23 20 / 0.75) 100%),
+    url("/images/banquets-vip-blur.webp") center / cover no-repeat,
+    #13201a;
+}
+@media (min-width: 1024px) {
+  .stage-bg-vip {
+    background-attachment: scroll, scroll, fixed, scroll;
+  }
+}
 /* Заявка на банкет: тёмно-зелёный ботанический фон с золотым сиянием и морошкой справа */
 .banquet-request {
   background:
