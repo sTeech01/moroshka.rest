@@ -64,7 +64,7 @@ export default async function HomePage() {
       />
 
       {/* Сцена: фон с морошкой закреплён на весь экран, по прокрутке сменяются предложения → кухня и бар → блюда */}
-      <ScrollStage>
+      <ScrollStage bg="hall">
         {promos.length > 0 && (
           <StageScene label="Предложения ресторана">
             <HomePromos promos={promos} />
