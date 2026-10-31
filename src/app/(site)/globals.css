@@ -742,6 +742,54 @@ body:has(main .theme-paper)::before {
     font-size: 2rem;
   }
 }
+/* Заявка на банкет: тёмно-зелёный ботанический фон с золотым сиянием и морошкой справа */
+.banquet-request {
+  background:
+    url("/images/banquet-request-bg.webp") center / cover no-repeat,
+    #101912;
+}
+/*
+ * Карусель фото (components/gallery-carousel.tsx): ширина кадра — переменная --slide,
+ * поля по краям — такие, чтобы первый и последний кадр вставали по центру
+ */
+.carousel-track {
+  --slide: 80vw;
+  padding-inline: calc((100% - var(--slide)) / 2);
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 640px) {
+  .carousel-track {
+    --slide: 60vw;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-track {
+    --slide: min(52vw, 760px);
+  }
+}
+/* Центральный кадр — крупно и ярко, соседние уменьшены и притушены; кадр «проезжает» через центр */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .carousel-slide {
+      animation: carousel-focus linear both;
+      animation-timeline: view(inline);
+    }
+  }
+}
+@keyframes carousel-focus {
+  0%,
+  100% {
+    transform: scale(0.84);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /* Карточка бизнес-ланча: фото супа справа, слева затемнено под текст */
 .promo-surface-lunch {
   background:
