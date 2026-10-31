@@ -749,45 +749,31 @@ body:has(main .theme-paper)::before {
     #101912;
 }
 /*
- * Карусель фото (components/gallery-carousel.tsx): ширина кадра — переменная --slide,
- * поля по краям — такие, чтобы первый и последний кадр вставали по центру
+ * Карусель фото «веером» (components/gallery-carousel.tsx): ширина кадра — переменная --slide;
+ * кадры заходят друг под друга на 16 % ширины (OVERLAP в компоненте), поля по краям —
+ * такие, чтобы первый и последний кадр вставали по центру. Масштаб и затемнение задаёт скрипт.
  */
 .carousel-track {
-  --slide: 80vw;
-  padding-inline: calc((100% - var(--slide)) / 2);
+  --slide: 64vw;
+  padding-inline: calc((100% - var(--slide)) / 2 + var(--slide) * 0.16);
   scrollbar-width: none;
 }
 .carousel-track::-webkit-scrollbar {
   display: none;
 }
+/* Пока тянем мышью — без прилипания к кадрам, иначе кадр «отскакивает» под курсором */
+.carousel-track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
 @media (min-width: 640px) {
   .carousel-track {
-    --slide: 60vw;
+    --slide: 46vw;
   }
 }
 @media (min-width: 1024px) {
   .carousel-track {
-    --slide: min(52vw, 760px);
-  }
-}
-/* Центральный кадр — крупно и ярко, соседние уменьшены и притушены; кадр «проезжает» через центр */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .carousel-slide {
-      animation: carousel-focus linear both;
-      animation-timeline: view(inline);
-    }
-  }
-}
-@keyframes carousel-focus {
-  0%,
-  100% {
-    transform: scale(0.84);
-    opacity: 0.45;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 1;
+    --slide: min(35vw, 510px);
   }
 }
 /* Карточка бизнес-ланча: фото супа справа, слева затемнено под текст */
@@ -861,6 +847,16 @@ body:has([data-hero-overlay]) .site-header[data-top] .header-bar::before {
 input[type="date"],
 input[type="time"] {
   color-scheme: dark;
+}
+/* Число гостей и др.: без стрелочек-счётчика — число вводится с клавиатуры */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .theme-paper input[type="date"],
 .theme-paper input[type="time"] {
