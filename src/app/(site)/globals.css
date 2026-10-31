@@ -746,20 +746,21 @@ body:has(main > .theme-paper:not([style*="display: none"]))::before {
   }
 }
 /* Карточка меню бизнес-ланча: тёмно-зелёный фон с золотистой морошкой по углам */
-/* Бизнес-ланч: фон всей страницы — «Лесная уха с морошкой» (design/img): суп на мху сверху справа,
+/* Бизнес-ланч: фон всей страницы — «Лесная уха с морошкой» (design/img), заранее чуть размыт и притемнён,
+   как фон зала на главной: суп на мху сверху справа,
    морошка по углам, тёмный лес в середине. Слева сверху лёгкое затемнение под заголовок */
 .lunch-page {
   /* Телефон: фото в полторы ширины экрана, прижато вправо — миска сверху, заголовок под ней; ниже фото уходит в цвет леса */
   background:
     linear-gradient(180deg, rgb(15 29 21 / 0) 0%, rgb(15 29 21 / 0) 20%, rgb(15 29 21 / 0.55) 30%, rgb(15 29 21 / 0.7) 50%, #0f1d15 100%) top / 100% 225vw no-repeat,
-    url("/images/business-lunch-page.webp") right top / 150% auto no-repeat,
+    url("/images/business-lunch-page-blur.webp") right top / 150% auto no-repeat,
     #0f1d15;
 }
 @media (min-width: 768px) {
   .lunch-page {
     background:
       radial-gradient(45% 30% at 10% 10%, rgb(10 18 13 / 0.75) 0%, rgb(10 18 13 / 0) 100%),
-      url("/images/business-lunch-page.webp") center top / cover no-repeat,
+      url("/images/business-lunch-page-blur.webp") center top / cover no-repeat,
       #0f1d15;
   }
 }
