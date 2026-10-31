@@ -92,7 +92,7 @@ export function RecordShowcase({ section }: { section: Extract<PageSection, { ki
       <div className="booking-glass record-card rounded-[28px] px-6 py-8 sm:px-8 sm:py-10 xl:px-10 xl:py-12">
         <div className="record-layout grid gap-6 sm:grid-cols-[minmax(0,1fr)_170px] sm:gap-7 xl:grid-cols-[minmax(0,1fr)_180px]">
           <div className="flex flex-col items-start">
-            <div className="[&_.prose-moroshka]:space-y-2.5 [&_.prose-moroshka]:text-[15px] [&_.prose-moroshka]:leading-[1.5] [&_.prose-moroshka]:text-snow/90">
+            <div className="[&_.prose-moroshka]:space-y-2.5 [&_.prose-moroshka]:text-[16px] [&_.prose-moroshka]:leading-[1.5] [&_.prose-moroshka]:text-snow/90">
               <CmsContent data={section.content} />
             </div>
             {section.link && (

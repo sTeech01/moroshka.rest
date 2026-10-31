@@ -653,7 +653,7 @@ body:has(main .theme-paper)::before {
  */
 @media (min-width: 1280px) and (max-height: 900px) {
   .record-card .prose-moroshka {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.45;
   }
   .record-card .prose-moroshka > * + * {
