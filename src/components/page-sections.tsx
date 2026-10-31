@@ -34,9 +34,10 @@ export const RECORD_LOGO = { src: "/images/about/kniga-rekordov-rossii.webp", al
 /** Секция «Событие с цифрами» — на «О ресторане» (на главной рекорд показывает RecordShowcase) */
 export function Highlight({ section }: { section: Extract<PageSection, { kind: "highlight" }> }) {
   // Секция о рекорде (ссылка на Книгу рекордов России) — с официальным логотипом над заголовком
+  // и фоном «Фон для предложения №1» (тёмная зелень, золотая гравюра морошки в правом нижнем углу)
   const isRecord = section.link?.url.includes("knigarekordovrossii.ru") ?? false;
   return (
-    <section className="surface-moss rounded-panel p-6 shadow-(--shadow-soft) sm:p-10 lg:p-14">
+    <section className={`${isRecord ? "record-surface" : "surface-moss"} rounded-panel p-6 shadow-(--shadow-soft) sm:p-10 lg:p-14`}>
       <div className="text-center">
         {isRecord && (
           <span className="mb-6 inline-block rounded-[12px] bg-white px-4 py-2.5">

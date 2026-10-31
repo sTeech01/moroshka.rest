@@ -710,6 +710,25 @@ body:has(main > .theme-paper:not([style*="display: none"]))::before {
     border-radius: 0 var(--radius-soft) var(--radius-panel) 0;
   }
 }
+/* Рекорд на странице «О ресторане»: фон «Фон для предложения №1» — гравюра морошки в правом нижнем углу */
+.record-surface {
+  background:
+    linear-gradient(180deg, rgb(14 22 16 / 0.25) 0%, rgb(14 22 16 / 0) 40%),
+    url("/images/about/record-bg.webp") right bottom / cover no-repeat,
+    rgb(25 31 19);
+  box-shadow:
+    inset 0 1px 0 rgb(239 232 220 / 0.07),
+    0 40px 90px -44px rgb(0 0 0 / 0.85);
+}
+/* Телефон: блок узкий и высокий — картинка по ширине внизу, иначе золотое пятно ложится под заголовок */
+@media (max-width: 767px) {
+  .record-surface {
+    background:
+      linear-gradient(180deg, rgb(25 31 19) 0%, rgb(25 31 19) calc(100% - 96vw), rgb(25 31 19 / 0) calc(100% - 60vw)),
+      url("/images/about/record-bg.webp") right bottom / 100% auto no-repeat,
+      rgb(25 31 19);
+  }
+}
 /* Карточки на странице события (например, новые меню): тот же фон с золотой гравюрой, гравюра — в правом нижнем углу */
 .event-feature {
   background:
