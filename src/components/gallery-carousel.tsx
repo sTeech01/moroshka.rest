@@ -13,8 +13,9 @@ const OVERLAP = 0.16;
 /**
  * Карусель фото «веером»: центральный кадр крупно и впереди, соседние — меньше, темнее
  * и как бы за ним (заходят под него). Стартует с середины — фото и слева, и справа.
- * Листать — перетаскиванием зажатой кнопкой мыши, пальцем, клавишами ←/→. Колесо мыши
- * карусель не листает — прокручивает страницу (по просьбе заказчика).
+ * Листать — только перетаскиванием (зажатой кнопкой мыши или пальцем) и клавишами ←/→.
+ * Прокрутка (колесо, тачпад, Shift+колесо) карусель не листает — по просьбе заказчика: у дорожки
+ * overflow: hidden, кадры двигает только скрипт.
  * Нажатие на фото открывает его во весь экран. Внизу — номер кадра и золотая полоса прогресса.
  */
 export function GalleryCarousel({ images, title }: { images: Img[]; title: string }) {
@@ -22,7 +23,7 @@ export function GalleryCarousel({ images, title }: { images: Img[]; title: strin
   const [current, setCurrent] = useState(0);
   const { open, dialog } = useLightbox(images);
   // Перетаскивание мышью: откуда начали и сдвинули ли (тогда клик по фото — не открытие)
-  const drag = useRef({ active: false, x: 0, left: 0, moved: false });
+  const drag = useRef({ active: false, x: 0, left: 0, moved: false, start: 0 });
 
   const slides = useCallback(() => [...(trackRef.current?.querySelectorAll<HTMLElement>("[data-slide]") ?? [])], []);
 
@@ -71,6 +72,17 @@ export function GalleryCarousel({ images, title }: { images: Img[]; title: strin
     };
   }, [goTo, slides, images.length]);
 
+  // Отпустили: встаём на ближайший кадр; короткий рывок (> 40 px) — на соседний
+  const endDrag = (clientX: number) => {
+    const d = drag.current;
+    if (!d.active) return;
+    d.active = false;
+    trackRef.current?.classList.remove("is-dragging");
+    if (!d.moved) return;
+    const dx = clientX - d.x;
+    goTo(current === d.start && Math.abs(dx) > 40 ? d.start - Math.sign(dx) : current);
+  };
+
   return (
     <div>
       <h2 id="gallery-title" className="h-display container-site text-3xl lg:text-4xl">
@@ -88,30 +100,24 @@ export function GalleryCarousel({ images, title }: { images: Img[]; title: strin
           if (e.key === "ArrowLeft") (e.preventDefault(), goTo(current - 1));
         }}
         onPointerDown={(e) => {
-          if (e.pointerType !== "mouse" || e.button !== 0) return;
-          drag.current = { active: true, x: e.clientX, left: trackRef.current!.scrollLeft, moved: false };
+          if (e.button !== 0) return;
+          drag.current = { active: true, x: e.clientX, left: trackRef.current!.scrollLeft, moved: false, start: current };
           trackRef.current!.classList.add("is-dragging");
         }}
         onPointerMove={(e) => {
           const d = drag.current;
           if (!d.active) return;
           const dx = e.clientX - d.x;
-          if (Math.abs(dx) > 5) d.moved = true;
-          trackRef.current!.scrollLeft = d.left - dx;
+          if (!d.moved && Math.abs(dx) > 6) {
+            d.moved = true;
+            // Дальше движение — наше, даже если указатель уйдёт с карусели
+            trackRef.current!.setPointerCapture(e.pointerId);
+          }
+          if (d.moved) trackRef.current!.scrollLeft = d.left - dx;
         }}
-        onPointerUp={() => {
-          if (!drag.current.active) return;
-          drag.current.active = false;
-          trackRef.current!.classList.remove("is-dragging");
-          if (drag.current.moved) goTo(current);
-        }}
-        onPointerLeave={() => {
-          if (!drag.current.active) return;
-          drag.current.active = false;
-          trackRef.current!.classList.remove("is-dragging");
-          goTo(current);
-        }}
-        className="carousel-track relative flex cursor-grab snap-x snap-mandatory overflow-x-auto py-10 outline-none select-none lg:py-12"
+        onPointerUp={(e) => endDrag(e.clientX)}
+        onPointerCancel={(e) => endDrag(e.clientX)}
+        className="carousel-track relative flex cursor-grab touch-pan-y overflow-hidden py-10 outline-none select-none lg:py-12"
       >
         {images.map((img, i) => (
           <button
@@ -122,7 +128,7 @@ export function GalleryCarousel({ images, title }: { images: Img[]; title: strin
             onDragStart={(e) => e.preventDefault()}
             aria-label={`Открыть фото ${i + 1} из ${images.length}: ${img.alt || title}`}
             style={{ marginInline: `calc(var(--slide) * -${OVERLAP})` }}
-            className="carousel-slide group relative aspect-[4/3] w-(--slide) shrink-0 snap-center overflow-hidden rounded-[22px] bg-velvet shadow-[0_30px_70px_-30px_rgb(0_0_0/0.95)] transition-[transform,filter] duration-200 ease-out"
+            className="carousel-slide group relative aspect-[4/3] w-(--slide) shrink-0 overflow-hidden rounded-[22px] bg-velvet shadow-[0_30px_70px_-30px_rgb(0_0_0/0.95)] transition-[transform,filter] duration-200 ease-out"
           >
             <Image src={img.url} alt={img.alt} fill draggable={false} sizes="(min-width: 1024px) 510px, 64vw" className="object-cover" />
             {/* Значок «увеличить» — у центрального кадра при наведении */}

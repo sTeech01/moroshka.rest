@@ -761,10 +761,9 @@ body:has(main .theme-paper)::before {
 .carousel-track::-webkit-scrollbar {
   display: none;
 }
-/* Пока тянем мышью — без прилипания к кадрам, иначе кадр «отскакивает» под курсором */
+/* Пока тянем — «сжатая рука» */
 .carousel-track.is-dragging {
   cursor: grabbing;
-  scroll-snap-type: none;
 }
 @media (min-width: 640px) {
   .carousel-track {
