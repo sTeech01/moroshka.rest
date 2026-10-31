@@ -13,8 +13,8 @@ const OVERLAP = 0.16;
 /**
  * Карусель фото «веером»: центральный кадр крупно и впереди, соседние — меньше, темнее
  * и как бы за ним (заходят под него). Стартует с середины — фото и слева, и справа.
- * Листать — колесом мыши (по кадру за жест; на краях колесо снова прокручивает страницу),
- * перетаскиванием зажатой кнопкой мыши, пальцем, тачпадом, клавишами ←/→.
+ * Листать — перетаскиванием зажатой кнопкой мыши, пальцем, клавишами ←/→. Колесо мыши
+ * карусель не листает — прокручивает страницу (по просьбе заказчика).
  * Нажатие на фото открывает его во весь экран. Внизу — номер кадра и золотая полоса прогресса.
  */
 export function GalleryCarousel({ images, title }: { images: Img[]; title: string }) {
@@ -23,7 +23,6 @@ export function GalleryCarousel({ images, title }: { images: Img[]; title: strin
   const { open, dialog } = useLightbox(images);
   // Перетаскивание мышью: откуда начали и сдвинули ли (тогда клик по фото — не открытие)
   const drag = useRef({ active: false, x: 0, left: 0, moved: false });
-  const wheelLock = useRef(0);
 
   const slides = useCallback(() => [...(trackRef.current?.querySelectorAll<HTMLElement>("[data-slide]") ?? [])], []);
 
@@ -65,26 +64,9 @@ export function GalleryCarousel({ images, title }: { images: Img[]; title: strin
     layout();
     track.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-
-    // Колесо: кадр за жест; на первом/последнем кадре колесо прокручивает страницу дальше
-    const onWheel = (e: WheelEvent) => {
-      const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-      if (Math.abs(delta) < 4) return;
-      const list = slides();
-      const mid = track.scrollLeft + track.clientWidth / 2;
-      const now = list.reduce((b, s, i) => (Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid) < Math.abs(list[b].offsetLeft + list[b].offsetWidth / 2 - mid) ? i : b), 0);
-      const next = now + Math.sign(delta);
-      if (next < 0 || next >= list.length) return;
-      e.preventDefault();
-      if (Date.now() < wheelLock.current) return;
-      wheelLock.current = Date.now() + 450;
-      goTo(next);
-    };
-    track.addEventListener("wheel", onWheel, { passive: false });
     return () => {
       cancelAnimationFrame(frame);
       track.removeEventListener("scroll", onScroll);
-      track.removeEventListener("wheel", onWheel);
       window.removeEventListener("resize", onScroll);
     };
   }, [goTo, slides, images.length]);

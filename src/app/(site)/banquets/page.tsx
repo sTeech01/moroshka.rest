@@ -39,7 +39,7 @@ export default async function BanquetsPage() {
 
       {/* Галерея — карусель на всю ширину экрана, фото открываются во весь экран */}
       {gallery.length > 0 && (
-        <section id="gallery" aria-labelledby="gallery-title" className="py-12 lg:py-20">
+        <section id="gallery" aria-labelledby="gallery-title" className="flex scroll-mt-16 flex-col justify-center py-12 lg:min-h-[calc(100svh-76px)] lg:scroll-mt-[76px] lg:py-8">
           <GalleryCarousel images={gallery} title="Интерьер VIP-зала" />
         </section>
       )}
