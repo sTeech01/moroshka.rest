@@ -69,7 +69,7 @@ function FeaturePromo({ promo, wide }: { promo: PromoItem; wide: boolean }) {
     >
       {promo.image && (
         <div className="shape-leaf relative aspect-[4/3] overflow-hidden md:aspect-auto md:min-h-[420px] xl:-my-6 xl:-ml-6">
-          <Image src={promo.image.url} alt={promo.image.alt} fill sizes="(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_72%] xl:object-top" />
+          <Image src={promo.image.url} alt={promo.image.alt} fill sizes="(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_72%] xl:object-[50%_88%]" />
           {/* Лёгкая виньетка — фото не спорит с рамкой карточки */}
           <div aria-hidden className="absolute inset-0 shadow-[inset_0_0_80px_rgb(14_23_20/0.35)]" />
         </div>
