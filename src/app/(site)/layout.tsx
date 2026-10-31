@@ -6,6 +6,7 @@ import { DeliveryProvider } from "@/components/delivery-context";
 import { FloatingCart } from "@/components/layout/cart-button";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { LazyBackgrounds } from "@/components/lazy-backgrounds";
 import { RestaurantJsonLd } from "@/components/restaurant-json-ld";
 import { features, siteConfig } from "@/config/site";
 import { getBusinessLunch, getDelivery } from "@/lib/content";
@@ -40,8 +41,10 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   const [delivery, lunch] = await Promise.all([getDelivery(), getBusinessLunch()]);
 
   return (
-    <html lang="ru" className={`${jost.variable} h-full antialiased`}>
+    // suppressHydrationWarning: атрибут data-lazy-bg ставит скрипт LazyBackgrounds до гидратации
+    <html lang="ru" className={`${jost.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="flex min-h-full flex-col font-sans">
+        <LazyBackgrounds />
         <DeliveryProvider value={delivery}>
           <SiteHeader />
           <main className="flex-1">{children}</main>

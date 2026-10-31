@@ -112,7 +112,7 @@ async function EventContent({ params }: { params: PageProps<"/events/[slug]">["p
       {story.features.length > 0 && (
         <section aria-label="Подробнее" className={`container-site mt-10 grid gap-5 lg:mt-14 lg:gap-6 ${story.features.length > 1 ? "md:grid-cols-2" : ""}`}>
           {story.features.map((f, i) => (
-            <div key={f.title} className={`event-feature ${i % 2 ? "shape-leaf-alt" : "shape-leaf"} relative flex min-h-[280px] flex-col p-7 sm:p-10 lg:min-h-[320px]`}>
+            <div key={f.title} data-bg className={`event-feature ${i % 2 ? "shape-leaf-alt" : "shape-leaf"} relative flex min-h-[280px] flex-col p-7 sm:p-10 lg:min-h-[320px]`}>
               <span className="font-display text-sm text-berry tabular-nums">{String(i + 1).padStart(2, "0")}</span>
               <h2 className="h-display mt-auto pt-10 sm:max-w-[78%] text-[2rem] text-snow lg:text-[2.5rem]">{f.title}</h2>
               <p className="mt-4 max-w-[85%] text-[17px] sm:max-w-[68%] leading-relaxed text-soft">{f.text}</p>

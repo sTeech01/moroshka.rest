@@ -13,7 +13,7 @@ export function ScrollStage({ children, bg = "berries" }: { children: React.Reac
       {/* Слой на всю высоту сцены, в нём фон высотой в экран «прилипает» к окну и кончается ровно с концом сцены
           (с отрицательным отступом sticky-фон вылезал бы за сцену на целый экран и закрывал следующий раздел) */}
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className={`sticky top-0 h-svh ${bg === "hall" ? "stage-bg-hall" : "stage-bg"}`} />
+        <div data-bg className={`sticky top-0 h-svh ${bg === "hall" ? "stage-bg-hall" : "stage-bg"}`} />
       </div>
       {/* Верх и низ сцены растворяются в цвет сайта — без шва с соседними разделами и сценами */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-[5] h-32 bg-gradient-to-b from-night to-transparent" />

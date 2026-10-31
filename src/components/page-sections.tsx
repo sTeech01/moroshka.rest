@@ -28,8 +28,12 @@ function TextImage({ section }: { section: Extract<PageSection, { kind: "textIma
   );
 }
 
-/** Официальный логотип Книги рекордов России (с их сайта, векторный оригинал → WebP) */
-export const RECORD_LOGO = { src: "/images/about/kniga-rekordov-rossii.webp", alt: "Книга рекордов России", width: 720, height: 347 };
+/**
+ * Официальный логотип Книги рекордов России (с их сайта, векторный оригинал → WebP, 720×347).
+ * width/height — размер показа (до 64 px в высоту), а не исходника: по ним Next выбирает, какой ширины
+ * картинку отдать, — иначе для значка высотой 36 px грузилась копия шириной 1920
+ */
+export const RECORD_LOGO = { src: "/images/about/kniga-rekordov-rossii.webp", alt: "Книга рекордов России", width: 150, height: 72 };
 
 /** Секция «Событие с цифрами» — на «О ресторане» (на главной рекорд показывает RecordShowcase) */
 export function Highlight({ section }: { section: Extract<PageSection, { kind: "highlight" }> }) {
@@ -37,7 +41,7 @@ export function Highlight({ section }: { section: Extract<PageSection, { kind: "
   // и фоном «Фон для предложения №1» (тёмная зелень, золотая гравюра морошки в правом нижнем углу)
   const isRecord = section.link?.url.includes("knigarekordovrossii.ru") ?? false;
   return (
-    <section className={`${isRecord ? "record-surface" : "surface-moss"} rounded-panel p-6 shadow-(--shadow-soft) sm:p-10 lg:p-14`}>
+    <section data-bg className={`${isRecord ? "record-surface" : "surface-moss"} rounded-panel p-6 shadow-(--shadow-soft) sm:p-10 lg:p-14`}>
       <div className="text-center">
         {isRecord && (
           <span className="mb-6 inline-block rounded-[12px] bg-white px-4 py-2.5">

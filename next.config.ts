@@ -32,6 +32,13 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
+    // AVIF на 20–30% легче WebP при том же качестве; браузеры без AVIF получают WebP
+    formats: ["image/avif", "image/webp"],
+    // Готовые уменьшенные копии хранятся месяц (по умолчанию — 4 часа, и первый посетитель после
+    // этого снова ждёт пережатия). Заменённое фото получает новый адрес, так что устаревшее не покажется
+    minimumCacheTTL: 2678400,
+    // Ширины для телефонов (карточки в две колонки ≈ 180–200 px, экраны с плотностью 2–3)
+    deviceSizes: [384, 480, 640, 750, 828, 1080, 1200, 1920, 2560],
     localPatterns: [
       { pathname: "/images/**" },
       // Кадр-заставка видео первого экрана (public/video/hero-poster.webp)
@@ -46,6 +53,15 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.iiko.it" },
       { protocol: "https", hostname: "**.syrve.online" },
     ],
+  },
+  // Фото, фоны и видео из public/ — кэш в браузере на неделю, потом ещё месяц показываем
+  // сохранённое и тихо проверяем обновление. При замене картинки ей даём новое имя файла
+  async headers() {
+    const cache = [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=2592000" }];
+    return [
+      { source: "/images/:path*", headers: cache },
+      { source: "/video/:path*", headers: cache },
+    ];
   },
   async redirects() {
     // Онлайн-заказы выключены целиком (NEXT_PUBLIC_ONLINE_ORDERS_ENABLED=false, см. src/config/site.ts):

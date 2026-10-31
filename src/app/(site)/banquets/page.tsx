@@ -41,7 +41,7 @@ export default async function BanquetsPage() {
       />
 
       {/* Под первым экраном — общий фон: размытое фото VIP-зала (.stage-bg-vip) */}
-      <div className="stage-bg-vip">
+      <div data-bg className="stage-bg-vip">
         {/* Галерея — карусель на всю ширину экрана, фото открываются во весь экран */}
         {gallery.length > 0 && (
           <section
@@ -62,6 +62,7 @@ export default async function BanquetsPage() {
 
           <section
             id="request"
+            data-bg
             className="banquet-request grid gap-10 rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:px-14 lg:py-14"
           >
             <div>

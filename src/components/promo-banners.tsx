@@ -65,6 +65,7 @@ export function HomePromos({ promos }: { promos: PromoItem[] }) {
 function FeaturePromo({ promo, wide }: { promo: PromoItem; wide: boolean }) {
   return (
     <article
+      data-bg
       className={`promo-surface-feature shape-leaf relative grid ${promo.image ? "md:grid-cols-[minmax(0,1fr)_minmax(min-content,1fr)]" : ""} ${wide ? "" : "xl:col-span-8"}`}
     >
       {promo.image && (
@@ -74,7 +75,7 @@ function FeaturePromo({ promo, wide }: { promo: PromoItem; wide: boolean }) {
           <div aria-hidden className="absolute inset-0 shadow-[inset_0_0_80px_rgb(14_23_20/0.35)]" />
         </div>
       )}
-      <div className="promo-feature-text flex flex-col justify-center gap-4 p-7 sm:p-9 lg:p-11">
+      <div data-bg className="promo-feature-text flex flex-col justify-center gap-4 p-7 sm:p-9 lg:p-11">
         <p className="flex items-baseline gap-3 text-[11px] font-semibold tracking-[0.24em] text-berry uppercase">
           <span className="font-display text-[13px] tracking-normal tabular-nums">{index(0)}</span>
           Предложение
@@ -95,7 +96,7 @@ function FeaturePromo({ promo, wide }: { promo: PromoItem; wide: boolean }) {
 function SidePromo({ promo, n }: { promo: PromoItem; n: number }) {
   const lunch = isLunch(promo);
   return (
-    <article className={`${lunch ? "promo-surface-lunch" : "promo-surface-olive"} shape-leaf-alt relative flex flex-col overflow-hidden`}>
+    <article data-bg className={`${lunch ? "promo-surface-lunch" : "promo-surface-olive"} shape-leaf-alt relative flex flex-col overflow-hidden`}>
       {promo.image && !lunch && (
         <div className="relative aspect-[16/10]">
           <Image src={promo.image.url} alt={promo.image.alt} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover" />
