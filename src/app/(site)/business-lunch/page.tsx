@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LunchWeekMenu } from "@/components/business-lunch/lunch-week";
@@ -14,44 +13,46 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+/**
+ * Бизнес-ланч — по референсу заказчика: фон всей страницы — «Лесная уха с морошкой»
+ * (суп на мху сверху справа, морошка по углам); слева сверху — расписание,
+ * заголовок и дни недели; ниже — полупрозрачная тёмно-зелёная карточка меню с золотистой
+ * ботаникой по углам, сноска и кнопки. Шапка над фото прозрачная, пока страница не прокручена.
+ */
 export default async function BusinessLunchPage() {
   const [lunch, settings] = await Promise.all([getBusinessLunch(), getSettings()]);
   if (!lunch.enabled) notFound();
   const tel = settings.phone.replace(/[^\d+]/g, "");
 
   return (
-    <div className="container-site py-12 lg:py-20">
-      {/* По центру экрана: колонка меню ~768px; с фото — фото слева, меню справа */}
-      <div className={`mx-auto grid gap-10 ${lunch.image ? "max-w-6xl lg:grid-cols-[5fr_7fr] lg:gap-16" : "max-w-3xl"}`}>
-        {lunch.image && (
-          <div className="shape-leaf relative hidden min-h-[520px] overflow-hidden shadow-(--shadow-soft) lg:block">
-            <Image src={lunch.image.url} alt={lunch.image.alt} fill sizes="40vw" className="object-cover" />
-          </div>
-        )}
-
-        {/* Фон — тёмно-зелёный с золотистой морошкой по углам (design/img/Роскошный зелёный фон…) */}
-        <div className="lunch-surface rounded-panel px-5 py-10 shadow-(--shadow-soft) sm:px-10 lg:px-12">
-          <div className="text-center">
+    <div data-hero-overlay className="lunch-page -mt-16 pt-[78vw] pb-20 text-snow md:pt-40 lg:-mt-[76px] lg:pt-[210px] lg:pb-32">
+      <LunchWeekMenu
+        week={lunch.week}
+        head={
+          <div className="max-w-xl">
             <p className="eyebrow text-berry">{lunch.schedule}</p>
-            <h1 className="h-display mt-4 text-[2.5rem] sm:text-5xl lg:text-6xl">{lunch.title}</h1>
-            {lunch.intro && <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-soft">{lunch.intro}</p>}
+            <h1 className="h-display mt-4 text-[3rem] leading-none sm:text-6xl lg:text-[6.5rem]">{lunch.title}</h1>
+            {lunch.intro && <p className="mt-5 max-w-md text-[17px] leading-relaxed text-snow/80 lg:text-lg">{lunch.intro}</p>}
           </div>
-
-          {/* Меню по дням: сегодняшний день выбирается в браузере */}
-          <LunchWeekMenu week={lunch.week} />
-
-          {lunch.note && <p className="mt-10 text-center text-sm text-muted italic">* {lunch.note}</p>}
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Link href="/#booking" className="btn btn-berry">
-              Забронировать стол
-            </Link>
-            <a href={`tel:${tel}`} className="btn btn-line">
-              {settings.phone}
-            </a>
-          </div>
-        </div>
-      </div>
+        }
+        footer={
+          <>
+            {lunch.note && <p className="mt-10 text-center text-sm text-lichen italic">* {lunch.note}</p>}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
+              <Link href="/#booking" className="btn btn-berry gap-3 sm:min-w-60">
+                Забронировать стол
+                <span aria-hidden>→</span>
+              </Link>
+              <a href={`tel:${tel}`} className="btn gap-2.5 text-snow ring-1 ring-berry/60 ring-inset hover:bg-berry/10 sm:min-w-60">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
+                </svg>
+                {settings.phone}
+              </a>
+            </div>
+          </>
+        }
+      />
     </div>
   );
 }
