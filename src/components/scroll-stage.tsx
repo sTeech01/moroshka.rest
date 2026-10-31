@@ -3,17 +3,17 @@ import { StageFit } from "./stage-fit";
 /**
  * «Сцена» на главной: фон закреплён на весь экран (sticky), а поверх него при прокрутке
  * сменяются блоки — каждый проявляется снизу и уходит вверх.
- * Фоны: «berries» — тёмный ботанический с морошкой, «moss» — стена ресторана из мха и камня.
+ * Фоны: «berries» — тёмный ботанический с морошкой, «hall» — зал ресторана.
  * Анимация — чистый CSS, привязанный к прокрутке (animation-timeline), стили .stage-* в globals.css.
  * Без поддержки в браузере или при «уменьшении движения» блоки просто видны, фон всё так же закреплён.
  */
-export function ScrollStage({ children, bg = "berries" }: { children: React.ReactNode; bg?: "berries" | "moss" }) {
+export function ScrollStage({ children, bg = "berries" }: { children: React.ReactNode; bg?: "berries" | "hall" }) {
   return (
     <div className="relative isolate">
       {/* Слой на всю высоту сцены, в нём фон высотой в экран «прилипает» к окну и кончается ровно с концом сцены
           (с отрицательным отступом sticky-фон вылезал бы за сцену на целый экран и закрывал следующий раздел) */}
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className={`sticky top-0 h-svh ${bg === "moss" ? "stage-bg-moss" : "stage-bg"}`} />
+        <div className={`sticky top-0 h-svh ${bg === "hall" ? "stage-bg-hall" : "stage-bg"}`} />
       </div>
       {/* Верх и низ сцены растворяются в цвет сайта — без шва с соседними разделами и сценами */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-[5] h-32 bg-gradient-to-b from-night to-transparent" />

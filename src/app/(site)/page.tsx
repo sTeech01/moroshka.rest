@@ -111,7 +111,7 @@ export default async function HomePage() {
       </ScrollStage>
 
       {/* Вторая сцена — на фоне стены ресторана из мха и камня: рекорд → бронь → как нас найти */}
-      <ScrollStage bg="moss">
+      <ScrollStage bg="hall">
         {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
         {record?.kind === "highlight" && (
           <StageScene id="record">

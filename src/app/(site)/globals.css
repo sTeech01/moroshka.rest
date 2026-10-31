@@ -461,19 +461,19 @@ body:has(main .theme-paper)::before {
     url("/images/home/promo-bg.webp") 70% center / cover no-repeat,
     #111c17;
 }
-/* Вторая сцена (рекорд, бронь, карта): стена ресторана из мха и камня, заранее размыта и затемнена */
-.stage-bg-moss {
+/* Вторая сцена (рекорд, бронь, карта): фото зала ресторана, заранее размыто и затемнено */
+.stage-bg-hall {
   background:
     radial-gradient(70% 80% at 50% 50%, rgb(14 23 20 / 0.35) 0%, rgb(14 23 20 / 0.7) 100%),
     linear-gradient(180deg, rgb(14 23 20 / 0.45) 0%, rgb(14 23 20 / 0.3) 50%, rgb(14 23 20 / 0.55) 100%),
-    url("/images/home/stage-moss.webp") center / cover no-repeat,
+    url("/images/home/stage-hall.webp") center / cover no-repeat,
     #13201a;
 }
 @media (max-width: 767px) {
-  .stage-bg-moss {
+  .stage-bg-hall {
     background:
       linear-gradient(180deg, rgb(14 23 20 / 0.6) 0%, rgb(14 23 20 / 0.45) 50%, rgb(14 23 20 / 0.7) 100%),
-      url("/images/home/stage-moss-mobile.webp") center / cover no-repeat,
+      url("/images/home/stage-hall-mobile.webp") center / cover no-repeat,
       #13201a;
   }
 }
