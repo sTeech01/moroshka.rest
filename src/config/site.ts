@@ -32,7 +32,6 @@ export function getNavigation(delivery: { enabled: boolean; pickupEnabled: boole
     { href: "/menu", label: "Меню" },
     ...(ordering ? [{ href: "/delivery", label: delivery.enabled ? "Доставка" : "Самовывоз" }] : []),
     { href: "/banquets", label: "Банкеты" },
-    { href: "/events", label: "Афиша" },
     { href: "/about", label: "О ресторане" },
     { href: "/contacts", label: "Контакты" },
   ];

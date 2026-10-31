@@ -145,26 +145,6 @@ export async function getEvents() {
   return docs.map(toEvent);
 }
 
-/** Начало сегодняшнего дня по времени Губкинского (UTC+5), в ISO UTC */
-function startOfLocalDayIso() {
-  const OFFSET = 5 * 3600 * 1000;
-  const local = new Date(Date.now() + OFFSET);
-  local.setUTCHours(0, 0, 0, 0);
-  return new Date(local.getTime() - OFFSET).toISOString();
-}
-
-/**
- * Предстоящие события: сегодняшние показываются до конца дня, а не пропадают в момент начала.
- * Текущее время читается внутри кэша — точность до часа.
- */
-export async function getUpcomingEvents(limit?: number) {
-  "use cache";
-  cached();
-  const from = startOfLocalDayIso();
-  const upcoming = (await getEvents()).filter((e) => e.date >= from);
-  return limit ? upcoming.slice(0, limit) : upcoming;
-}
-
 export async function getEvent(slug: string) {
   "use cache";
   cached();

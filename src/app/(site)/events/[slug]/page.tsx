@@ -78,8 +78,8 @@ async function EventContent({ params }: { params: PageProps<"/events/[slug]">["p
       {/* Первый экран: текст слева, обложка справа во весь рост (обложки — вертикальные афиши блюд) */}
       <header className="container-site grid items-center gap-10 pt-8 pb-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-16 lg:pt-14 lg:pb-20">
         <div>
-          <Link href="/events" className="text-sm text-muted hover:text-berry">
-            ← Афиша
+          <Link href="/" className="text-sm text-muted hover:text-berry">
+            ← На главную
           </Link>
           <p className="mt-8 flex items-center gap-3 text-xs tracking-[0.24em] text-berry uppercase lg:mt-12">
             <span aria-hidden className="h-3.5 w-px bg-berry/80" />
