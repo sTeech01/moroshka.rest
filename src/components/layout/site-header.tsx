@@ -15,13 +15,14 @@ export async function SiteHeader() {
 
   return (
     <HeaderShell>
-      {/* На телефоне отступы и логотип меньше: с номером телефона шапка иначе шире экрана 360–390 px */}
-      <div className="container-site flex h-16 items-center gap-4 sm:gap-10 lg:h-[76px]">
+      {/* На телефоне отступы и логотип меньше: с номером телефона шапка иначе шире экрана 360–390 px.
+          На компьютере шапка — плавающая панель шириной с контент, нижние углы скруглены (по референсу) */}
+      <div className="header-bar relative isolate flex h-16 items-center gap-4 px-4 sm:gap-10 sm:px-8 lg:mx-auto lg:gap-8 lg:px-7 xl:gap-10 xl:px-10 lg:h-[76px] lg:w-[calc(100%-4rem)] lg:max-w-[76rem] lg:rounded-b-[26px]">
         <Link href="/" aria-label="На главную" className="shrink-0">
           <Logo width={136} priority className="w-24 min-[400px]:w-28 sm:w-[136px]" />
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm lg:flex">
+        <nav className="hidden items-center gap-5 text-sm whitespace-nowrap lg:flex xl:gap-7">
           {navigation.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-berry">
               {item.label}
@@ -41,7 +42,7 @@ export async function SiteHeader() {
             </svg>
             {settings.phone}
           </a>
-          <Link href="/#booking" className="btn btn-line btn-sm hidden xl:inline-flex">
+          <Link href="/#booking" className="btn btn-berry btn-sm hidden xl:inline-flex">
             Забронировать стол
           </Link>
           {ordering && <CartButton />}

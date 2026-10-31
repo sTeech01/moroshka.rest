@@ -20,7 +20,10 @@ export function CartButton() {
   return (
     <Link
       href="/cart"
-      className="inline-flex h-11 min-w-11 items-center justify-center gap-2 rounded-soft bg-berry px-3 text-sm font-bold text-night transition-colors duration-300 hover:bg-berry-hover"
+      // Пустая корзина — контурная кнопка рядом с «Забронировать стол»; с товарами — оранжевая, с суммой
+      className={`inline-flex h-11 min-w-11 items-center justify-center gap-2 rounded-soft px-3 text-sm font-bold transition-colors duration-300 ${
+        count ? "bg-berry text-night hover:bg-berry-hover" : "bg-snow/[0.06] text-berry ring-1 ring-snow/25 ring-inset hover:ring-berry/60"
+      }`}
       aria-label={count ? `Корзина: ${count} шт. на ${formatPrice(cartTotal(lines))}` : "Корзина"}
     >
       <BagIcon />
