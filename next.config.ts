@@ -52,6 +52,9 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.iiko.services" },
       { protocol: "https", hostname: "**.iiko.it" },
       { protocol: "https", hostname: "**.syrve.online" },
+      // Фото акций из группы ВКонтакте (src/lib/vk-promos.ts)
+      { protocol: "https", hostname: "**.userapi.com" },
+      { protocol: "https", hostname: "**.vkuserphoto.ru" },
     ],
   },
   // Фото, фоны и видео из public/ — кэш в браузере на неделю, потом ещё месяц показываем
