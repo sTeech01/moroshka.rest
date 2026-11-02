@@ -106,7 +106,7 @@ body {
 }
 /*
  * Фон всего тёмного сайта: «Бесшовный узор северной природы» (design/img — горы, ели, олени, морошка
- * тонкой линией), поверх — градиент: темнее сверху и снизу экрана, мягкие пятна мха и тёплого света.
+ * тонкой линией) под плотной тёмной подложкой, поверх — градиент: темнее сверху и снизу экрана, мягкие пятна мха и тёплого света.
  * Отдельный фиксированный слой за контентом — без перерисовки при прокрутке. Разделы со своим фоном
  * (первый экран, сцены главной, бизнес-ланч) и светлые (.theme-paper) его перекрывают.
  */
@@ -121,12 +121,14 @@ body::before {
     radial-gradient(48vw 40vh at 8% 18%, rgb(42 66 52 / 0.22) 0%, rgb(42 66 52 / 0) 70%),
     radial-gradient(44vw 42vh at 96% 62%, rgb(54 62 38 / 0.2) 0%, rgb(54 62 38 / 0) 72%),
     radial-gradient(34vw 28vh at 72% 6%, rgb(242 160 58 / 0.06) 0%, rgb(242 160 58 / 0) 70%),
+    /* Подложка: узор лишь угадывается и не спорит с текстом */
+    linear-gradient(rgb(13 23 18 / 0.64), rgb(13 23 18 / 0.64)),
     url("/images/pattern-north.webp") center top / 724px auto repeat,
     #0f1d16;
 }
 @media (max-width: 639px) {
   body::before {
-    background-size: auto, auto, auto, auto, 560px auto, auto;
+    background-size: auto, auto, auto, auto, auto, 560px auto, auto;
   }
 }
 
@@ -242,7 +244,7 @@ p {
   background:
     radial-gradient(70% 90% at 0% 0%, rgb(74 104 76 / 0.3) 0%, rgb(74 104 76 / 0) 65%),
     radial-gradient(60% 70% at 100% 100%, rgb(242 160 58 / 0.09) 0%, rgb(242 160 58 / 0) 70%),
-    linear-gradient(160deg, rgb(29 48 39 / 0.78) 0%, rgb(22 37 30 / 0.84) 55%, rgb(19 32 26 / 0.9) 100%),
+    linear-gradient(160deg, rgb(29 48 39 / 0.9) 0%, rgb(22 37 30 / 0.93) 55%, rgb(19 32 26 / 0.95) 100%),
     url("/images/pattern-north.webp") left top / 724px auto repeat,
     #16251e;
 }
