@@ -5,8 +5,10 @@ import { Suspense } from "react";
 import { CmsContent } from "@/components/cms-content";
 import { formatEventDate } from "@/components/event-card";
 import { PhotoLightbox } from "@/components/photo-lightbox";
-import { getEvent, getEvents } from "@/lib/content";
+import { VkStories } from "@/components/vk-stories";
+import { getEvent, getEvents, getSettings } from "@/lib/content";
 import { splitEventStory } from "@/lib/event-story";
+import { getVkNovelties, mentioning } from "@/lib/vk-posts";
 
 export async function generateStaticParams() {
   const events = await getEvents();
@@ -68,10 +70,13 @@ function Actions({ className = "" }: { className?: string }) {
  * и кнопки ещё раз. Фото открываются во весь экран.
  */
 async function EventContent({ params }: { params: PageProps<"/events/[slug]">["params"] }) {
-  const event = await getEvent((await params).slug);
+  const [event, settings] = await Promise.all([getEvent((await params).slug), getSettings()]);
   if (!event) notFound();
   const story = splitEventStory(event.content);
   const cover = event.cover;
+  // Посты-новинки из ВК, где упомянуто меню события: названия карточек и всё «в кавычках» из заголовка и кратко
+  const names = [...story.features.map((f) => f.title), ...`${event.title} ${event.summary ?? ""}`.matchAll(/«([^»]+)»/g).map((m) => m[1])];
+  const dishes = mentioning(await getVkNovelties(settings.vk), names);
 
   return (
     <article className="pb-16 lg:pb-24">
@@ -118,6 +123,12 @@ async function EventContent({ params }: { params: PageProps<"/events/[slug]">["p
               <p className="mt-4 max-w-[85%] text-[17px] sm:max-w-[68%] leading-relaxed text-soft">{f.text}</p>
             </div>
           ))}
+        </section>
+      )}
+
+      {dishes.length > 0 && (
+        <section className="container-site mt-16 lg:mt-24">
+          <VkStories posts={dishes} eyebrow="Из нашей группы ВКонтакте" title="Блюда новых меню" />
         </section>
       )}
 

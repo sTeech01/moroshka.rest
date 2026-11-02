@@ -8,11 +8,13 @@ import { RecordShowcase } from "@/components/record-showcase";
 import { HomePromos } from "@/components/promo-banners";
 import { ScrollStage, StageScene } from "@/components/scroll-stage";
 import { ContactsShowcase } from "@/components/contacts-showcase";
+import { VkStories } from "@/components/vk-stories";
 import { features } from "@/config/site";
 import { getDelivery, getHome, getPage, getPromos, getSettings } from "@/lib/content";
 import { orderSection } from "@/lib/delivery";
 import { formatPrice, formatWeight } from "@/lib/format";
 import { getHallMenu, getMenu } from "@/lib/menu/get-menu";
+import { getVkNovelties } from "@/lib/vk-posts";
 import type { Dish } from "@/lib/menu/types";
 
 // Фирменные блюда кухни — для блока на главной, пока нет онлайн-заказов (ищутся в меню зала по названию)
@@ -28,6 +30,8 @@ export default async function HomePage() {
     getPage("about"),
     getDelivery(),
   ]);
+  // Новинки меню из группы ВК (#новинка_морошка) — лента «Новое в меню» после предложений
+  const novelties = await getVkNovelties(settings.vk);
   // Заказ на сайте: доставка и/или самовывоз (настраивается в админке); сейчас — только самовывоз
   const ordering = features.onlineOrders && (delivery.enabled || delivery.pickupEnabled);
 
@@ -68,6 +72,14 @@ export default async function HomePage() {
         {promos.length > 0 && (
           <StageScene label="Предложения ресторана">
             <HomePromos promos={promos} />
+          </StageScene>
+        )}
+
+        {novelties.length > 0 && (
+          <StageScene label="Новое в меню">
+            <div className="container-site">
+              <VkStories posts={novelties} eyebrow="Из нашей группы ВКонтакте" title="Новое в меню" />
+            </div>
           </StageScene>
         )}
 

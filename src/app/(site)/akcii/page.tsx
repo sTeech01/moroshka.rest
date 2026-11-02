@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getSettings } from "@/lib/content";
-import { getVkPromos, type VkPromo } from "@/lib/vk-promos";
+import { getVkPromos, type VkPost } from "@/lib/vk-posts";
 
 export const metadata: Metadata = {
   title: "Акции",
@@ -13,7 +13,7 @@ const TZ = "Asia/Yekaterinburg";
 const dayMonth = (iso: string) => new Date(iso).toLocaleDateString("ru-RU", { day: "numeric", month: "long", timeZone: TZ });
 
 /**
- * Акции — посты из группы ресторана ВКонтакте с хэштегом #акция_морошка (src/lib/vk-promos.ts).
+ * Акции — посты из группы ресторана ВКонтакте с хэштегом #акция_морошка (src/lib/vk-posts.ts).
  * Сотрудники публикуют акцию в ВК, сайт подхватывает её сам; полный пост — по ссылке на ВК.
  */
 export default async function PromosPage() {
@@ -56,7 +56,7 @@ export default async function PromosPage() {
   );
 }
 
-function PromoCard({ promo, priority }: { promo: VkPromo; priority: boolean }) {
+function PromoCard({ promo, priority }: { promo: VkPost; priority: boolean }) {
   const photo = promo.photos[0];
   return (
     // Без фото — фирменный фон с золотой гравюрой морошки (как у карточек события), чтобы карточка не была пустой

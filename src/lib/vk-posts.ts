@@ -2,10 +2,14 @@ import "server-only";
 import { cacheLife, cacheTag } from "next/cache";
 
 /**
- * Акции из группы ресторана ВКонтакте (раздел /akcii).
- * Сотрудники публикуют пост в группе с хэштегом #акция_морошка — сайт сам забирает такие посты
- * (wall.get) и показывает их: текст, фото, дату и ссылку на пост. Хэштег сняли или пост удалили —
- * акция пропадает с сайта. Если в тексте есть срок («до 30 ноября», «до 30.11»), после него акция скрывается.
+ * Посты из группы ресторана ВКонтакте на сайте. Сотрудники публикуют пост в группе с хэштегом —
+ * сайт сам забирает такие посты (wall.get): текст, фото, дату и ссылку на пост.
+ *   #акция_морошка   — спецпредложения → раздел «Акции» (/akcii);
+ *   #новинка_морошка — блюда и новинки меню → лента «Новое в меню» на главной, а если в посте упомянуто
+ *                      меню события («Крабье лето») — ещё и на странице этого события. Новинка уходит
+ *                      через 60 дней: цена у таких постов напечатана прямо на фото и может устареть.
+ * Хэштег сняли или пост удалили — пост пропадает с сайта. Если в тексте есть срок («до 30 ноября»,
+ * «до 30.11»), после него пост скрывается. Контакты в конце поста (телефон, адрес, сайт) убираются.
  *
  * Настройки (.env):
  *   VK_SERVICE_TOKEN — сервисный ключ доступа приложения ВК (vk.com/apps?act=manage → приложение → Ключи доступа).
@@ -14,26 +18,29 @@ import { cacheLife, cacheTag } from "next/cache";
  * Посты обновляются раз в 10 минут; мгновенно — через Callback API ВК (src/app/api/vk-callback/route.ts).
  */
 
-export const VK_PROMOS_TAG = "vk-promos";
+export const VK_POSTS_TAG = "vk-posts";
 export const PROMO_HASHTAG = "#акция_морошка";
+export const NOVELTY_HASHTAG = "#новинка_морошка";
+/** Сколько дней новинка держится на сайте */
+const NOVELTY_DAYS = 60;
 
-export type VkPromo = {
+export type VkPost = {
   id: string;
   url: string;
   /** Дата публикации, ISO */
   date: string;
-  /** Срок акции из текста, ISO (конец дня по Губкинскому), если указан */
+  /** Срок из текста, ISO (конец дня по Губкинскому), если указан */
   until: string | null;
   /** Первая строка текста — заголовок карточки */
   title: string;
-  /** Остальной текст без хэштегов */
+  /** Остальной текст без хэштегов и контактов */
   text: string;
   photos: { url: string; width: number; height: number }[];
 };
 
 type VkSize = { url: string; width: number; height: number; type?: string };
 type VkAttachment = { type: string; photo?: { sizes: VkSize[]; orig_photo?: VkSize } };
-type VkPost = {
+type RawPost = {
   id: number;
   owner_id: number;
   date: number;
@@ -41,7 +48,7 @@ type VkPost = {
   is_pinned?: number;
   marked_as_ads?: number;
   attachments?: VkAttachment[];
-  copy_history?: VkPost[];
+  copy_history?: RawPost[];
 };
 
 const API = process.env.VK_API_URL ?? "https://api.vk.com/method";
@@ -79,9 +86,15 @@ export function parseUntil(text: string, posted: Date): string | null {
   return (end(y) < posted ? end(y + 1) : end(y)).toISOString();
 }
 
-/** Ссылки ВК «[club123|Морошка]», «[id1|Иван]» → «Морошка», «Иван»; хэштеги убираем */
+/** Строки с контактами в конце поста — на сайте они лишние: телефон, адрес, ссылка на сайт */
+const CONTACT_LINE = /^[\s📞☎📍🌐👉➡️]*(?:\+7[\s(\d]|8\s?\(?9\d\d|(?:г\.\s*Губкинский,?\s*)?мкр\.?\s*\d|(?:https?:\/\/)?moroshka\.rest)/iu;
+
+/** Ссылки ВК «[club123|Морошка]», «[id1|Иван]» → «Морошка», «Иван»; хэштеги и контакты убираем */
 const cleanText = (text: string) =>
   text
+    .split("\n")
+    .filter((line) => !CONTACT_LINE.test(line))
+    .join("\n")
     .replace(/\[(?:club|public|id)\d+\|([^\]]+)\]/g, "$1")
     .replace(/(^|\s)#[\p{L}\d_@]+/gu, "$1")
     .replace(/[ \t]+\n/g, "\n")
@@ -91,9 +104,10 @@ const cleanText = (text: string) =>
 const biggest = (p: NonNullable<VkAttachment["photo"]>) =>
   p.orig_photo ?? p.sizes.reduce((a, b) => (b.width * b.height > a.width * a.height ? b : a));
 
-/** Посты стены → акции с хэштегом, без просроченных; закреплённый пост — первым, дальше свежие */
-export function toPromos(posts: VkPost[], now = new Date()): VkPromo[] {
-  const tag = PROMO_HASHTAG.toLowerCase();
+/** Посты стены с хэштегом, без просроченных; закреплённый пост — первым, дальше свежие */
+export function pickPosts(posts: RawPost[], hashtag: string, now = new Date(), maxAgeDays?: number): VkPost[] {
+  const tag = hashtag.toLowerCase();
+  const oldest = maxAgeDays ? now.getTime() - maxAgeDays * 86_400_000 : 0;
   return posts
     .filter((p) => !p.marked_as_ads && p.text.toLowerCase().includes(tag))
     .sort((a, b) => (b.is_pinned ?? 0) - (a.is_pinned ?? 0) || b.date - a.date)
@@ -117,14 +131,14 @@ export function toPromos(posts: VkPost[], now = new Date()): VkPromo[] {
         photos,
       };
     })
-    .filter((p) => (p.title || p.photos.length) && (!p.until || new Date(p.until) > now));
+    .filter((p) => (p.title || p.photos.length) && (!p.until || new Date(p.until) > now) && new Date(p.date).getTime() >= oldest);
 }
 
-/** Акции из ВК. Нет ключа или ВК не ответил — пустой список (раздел покажет «акций пока нет») */
-export async function getVkPromos(groupLink: string | null): Promise<VkPromo[]> {
+/** Последние 100 постов группы. Нет ключа или ВК не ответил — пустой список (разделы покажут «пока нет») */
+async function getWall(groupLink: string | null): Promise<RawPost[]> {
   "use cache";
   cacheLife({ stale: 300, revalidate: 600, expire: 86400 });
-  cacheTag(VK_PROMOS_TAG);
+  cacheTag(VK_POSTS_TAG);
 
   const token = process.env.VK_SERVICE_TOKEN;
   const domain = process.env.VK_WALL_DOMAIN || vkDomain(groupLink);
@@ -133,11 +147,33 @@ export async function getVkPromos(groupLink: string | null): Promise<VkPromo[]> 
   try {
     const body = new URLSearchParams({ domain, count: "100", filter: "owner", access_token: token, v: "5.199" });
     const res = await fetch(`${API}/wall.get`, { method: "POST", body });
-    const data = (await res.json()) as { response?: { items: VkPost[] }; error?: { error_code: number; error_msg: string } };
+    const data = (await res.json()) as { response?: { items: RawPost[] }; error?: { error_code: number; error_msg: string } };
     if (!data.response) throw new Error(data.error ? `${data.error.error_code} ${data.error.error_msg}` : String(res.status));
-    return toPromos(data.response.items);
+    return data.response.items;
   } catch (error) {
-    console.error("[vk-promos] wall.get", error);
+    console.error("[vk-posts] wall.get", error);
     return [];
   }
+}
+
+/** Акции (#акция_морошка) — раздел /akcii */
+export async function getVkPromos(groupLink: string | null): Promise<VkPost[]> {
+  "use cache";
+  cacheLife({ stale: 300, revalidate: 600, expire: 86400 });
+  cacheTag(VK_POSTS_TAG);
+  return pickPosts(await getWall(groupLink), PROMO_HASHTAG);
+}
+
+/** Новинки меню (#новинка_морошка) за последние 60 дней — главная и страницы событий */
+export async function getVkNovelties(groupLink: string | null): Promise<VkPost[]> {
+  "use cache";
+  cacheLife({ stale: 300, revalidate: 600, expire: 86400 });
+  cacheTag(VK_POSTS_TAG);
+  return pickPosts(await getWall(groupLink), NOVELTY_HASHTAG, new Date(), NOVELTY_DAYS);
+}
+
+/** Посты, где упомянуто одно из названий — например, меню события («Крабье лето») */
+export function mentioning(posts: VkPost[], names: string[]): VkPost[] {
+  const needles = names.map((n) => n.toLowerCase().trim()).filter((n) => n.length > 2);
+  return posts.filter((p) => needles.some((n) => `${p.title}\n${p.text}`.toLowerCase().includes(n)));
 }
