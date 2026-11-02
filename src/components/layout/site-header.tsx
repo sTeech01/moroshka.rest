@@ -35,7 +35,7 @@ export async function SiteHeader() {
           <a
             href={`tel:${tel}`}
             aria-label={`Позвонить: ${settings.phone}`}
-            className="flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap hover:text-berry sm:text-sm"
+            className="flex items-center gap-2 text-[13px] whitespace-nowrap hover:text-berry sm:text-sm"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="hidden shrink-0 text-berry sm:block" aria-hidden>
               <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />

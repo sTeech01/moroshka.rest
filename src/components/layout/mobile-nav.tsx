@@ -32,7 +32,7 @@ export function MobileNav({ phone, items }: { phone: string; items: NavItem[] })
               {item.label}
             </Link>
           ))}
-          <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="mt-8 px-3 text-lg font-semibold">
+          <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="mt-8 px-3 text-lg">
             {phone}
           </a>
           <Link href="/#booking" className="btn btn-berry mt-4">

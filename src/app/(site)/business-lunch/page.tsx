@@ -40,7 +40,7 @@ export default async function BusinessLunchPage() {
               <Link href="/#booking" className="btn btn-berry">
                 Забронировать стол
               </Link>
-              <a href={`tel:${tel}`} className="btn gap-2.5 text-snow ring-1 ring-snow/25 ring-inset hover:ring-berry/70">
+              <a href={`tel:${tel}`} className="btn gap-2.5 font-normal text-snow ring-1 ring-snow/25 ring-inset hover:ring-berry/70">
                 {settings.phone}
               </a>
             </div>

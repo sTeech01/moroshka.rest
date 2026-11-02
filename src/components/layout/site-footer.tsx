@@ -23,7 +23,7 @@ export async function SiteFooter() {
         <div className="space-y-1.5 text-[15px]">
           <div className="eyebrow mb-2.5 text-lichen">Контакты</div>
           <p>{settings.address}</p>
-          <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="block font-semibold hover:text-berry">
+          <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="block hover:text-berry">
             {settings.phone}
           </a>
           <div className="flex gap-4 pt-1">

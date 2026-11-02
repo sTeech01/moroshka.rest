@@ -73,7 +73,7 @@ export default async function BanquetsPage() {
                 Оставьте заявку или позвоните:{" "}
                 <a
                   href={`tel:${phone.replace(/[^\d+]/g, "")}`}
-                  className="font-semibold text-text hover:text-berry"
+                  className="text-text hover:text-berry"
                 >
                   {phone}
                 </a>

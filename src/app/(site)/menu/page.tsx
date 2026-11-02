@@ -48,7 +48,7 @@ export default async function MenuPage() {
         ) : (
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">
             Блюда можно взять с собой — закажите по телефону{" "}
-            <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="font-semibold whitespace-nowrap text-text hover:text-berry">
+            <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="whitespace-nowrap text-text hover:text-berry">
               {settings.phone}
             </a>{" "}
             и заберите в ресторане.

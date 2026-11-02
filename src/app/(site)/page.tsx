@@ -155,7 +155,7 @@ export default async function HomePage() {
               </div>
               <p className="mt-5 text-[17px] font-light text-soft lg:text-lg">
                 Или позвоните:{" "}
-                <a href={`tel:${tel}`} className="ml-1 font-medium whitespace-nowrap text-snow transition-colors hover:text-berry">
+                <a href={`tel:${tel}`} className="ml-1 whitespace-nowrap text-snow transition-colors hover:text-berry">
                   {settings.phone}
                 </a>
               </p>

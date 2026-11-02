@@ -28,7 +28,7 @@ async function OrderInfo({ searchParams }: { searchParams: PageProps<"/order/[id
       )}
       <p className="mt-6 leading-relaxed text-muted">
         Администратор свяжется с вами для подтверждения. Если есть вопросы — звоните{" "}
-        <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="font-semibold text-text hover:text-berry">
+        <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`} className="text-text hover:text-berry">
           {settings.phone}
         </a>
         .
