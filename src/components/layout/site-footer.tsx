@@ -11,8 +11,10 @@ export async function SiteFooter() {
   const [settings, delivery] = await Promise.all([getSettings(), getDelivery()]);
   const year = new Date().getFullYear();
 
+  // Фон — северное сияние (globals.css → .footer-aurora); data-bg — грузится, когда до подвала близко
+
   return (
-    <footer className="surface-stone rounded-t-panel text-snow">
+    <footer data-bg className="footer-aurora text-snow">
       <div className="container-site grid grid-cols-2 gap-x-6 gap-y-8 pt-10 pb-8 lg:grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,1fr))] lg:gap-x-10 lg:pt-12 lg:pb-10">
         <div className="col-span-2 lg:col-span-1">
           <Logo width={160} />

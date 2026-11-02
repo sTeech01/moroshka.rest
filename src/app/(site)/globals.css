@@ -835,6 +835,14 @@ body:has(main > .theme-paper:not([style*="display: none"]))::before {
   }
 }
 /* Заявка на банкет: тёмно-зелёный ботанический фон с золотым сиянием и морошкой справа */
+/* Подвал сайта: «Северное сияние над лесными холмами» — холмы с оленями прижаты к низу, сияние сверху.
+   Затемнено, сверху — плавный переход из фона страницы */
+.footer-aurora {
+  background:
+    linear-gradient(180deg, rgb(10 17 13 / 0.75) 0%, rgb(10 17 13 / 0.35) 45%, rgb(10 17 13 / 0.45) 100%),
+    url("/images/footer-aurora.webp") center bottom / cover no-repeat,
+    #0c1610;
+}
 .banquet-request {
   background:
     url("/images/banquet-request-bg.webp") center / cover no-repeat,
