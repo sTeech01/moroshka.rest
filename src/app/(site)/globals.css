@@ -840,7 +840,7 @@ body:has(main > .theme-paper:not([style*="display: none"]))::before {
 .footer-aurora {
   background:
     linear-gradient(180deg, rgb(10 17 13 / 0.75) 0%, rgb(10 17 13 / 0.35) 45%, rgb(10 17 13 / 0.45) 100%),
-    url("/images/footer-aurora-2.webp") center bottom / cover no-repeat,
+    url("/images/footer-aurora-3.webp") center bottom / cover no-repeat,
     #0c1610;
 }
 .banquet-request {
