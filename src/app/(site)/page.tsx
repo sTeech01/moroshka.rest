@@ -68,7 +68,7 @@ export default async function HomePage() {
       />
 
       {/* Сцена: фон с морошкой закреплён на весь экран, по прокрутке сменяются предложения → кухня и бар → блюда */}
-      <ScrollStage bg="hall">
+      <ScrollStage bg="none">
         {promos.length > 0 && (
           <StageScene label="Предложения ресторана">
             <HomePromos promos={promos} />
@@ -123,7 +123,7 @@ export default async function HomePage() {
       </ScrollStage>
 
       {/* Вторая сцена — на фоне стены ресторана из мха и камня: рекорд → бронь → как нас найти */}
-      <ScrollStage bg="hall">
+      <ScrollStage bg="none">
         {/* Рекорд России — регалия ресторана, как у других «Мишлен» */}
         {record?.kind === "highlight" && (
           <StageScene id="record">

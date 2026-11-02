@@ -40,8 +40,8 @@ export default async function BanquetsPage() {
         phone={phone}
       />
 
-      {/* Под первым экраном — общий фон: размытое фото VIP-зала (.stage-bg-vip) */}
-      <div data-bg className="stage-bg-vip">
+      {/* Под первым экраном — общий фон сайта (северный узор), как на «О ресторане» */}
+      <div>
         {/* Галерея — карусель на всю ширину экрана, фото открываются во весь экран */}
         {gallery.length > 0 && (
           <section

@@ -3,11 +3,19 @@ import { StageFit } from "./stage-fit";
 /**
  * «Сцена» на главной: фон закреплён на весь экран (sticky), а поверх него при прокрутке
  * сменяются блоки — каждый проявляется снизу и уходит вверх.
- * Фоны: «berries» — тёмный ботанический с морошкой, «hall» — зал ресторана.
+ * Фоны: «berries» — тёмный ботанический с морошкой, «hall» — зал ресторана, «none» — общий фон сайта.
  * Анимация — чистый CSS, привязанный к прокрутке (animation-timeline), стили .stage-* в globals.css.
  * Без поддержки в браузере или при «уменьшении движения» блоки просто видны, фон всё так же закреплён.
  */
-export function ScrollStage({ children, bg = "berries" }: { children: React.ReactNode; bg?: "berries" | "hall" }) {
+export function ScrollStage({ children, bg = "berries" }: { children: React.ReactNode; bg?: "berries" | "hall" | "none" }) {
+  // «none» — без своей картинки: под сценой общий фон сайта (северный узор, body::before)
+  if (bg === "none")
+    return (
+      <div className="relative isolate">
+        {children}
+        <StageFit />
+      </div>
+    );
   return (
     <div className="relative isolate">
       {/* Слой на всю высоту сцены, в нём фон высотой в экран «прилипает» к окну и кончается ровно с концом сцены
