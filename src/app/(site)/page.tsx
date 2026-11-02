@@ -113,7 +113,8 @@ export default async function HomePage() {
           </div>
         </StageScene>
 
-        <StageScene className="stage-last">
+        {/* Гаснет, как и остальные блоки; следующая сцена (рекорд) наезжает на него — без пустого экрана */}
+        <StageScene className="stage-handoff">
           {ordering ? (
             <DeliveryDishes menu={menu} featuredIds={home.featuredDishes} section={orderSection(delivery)} />
           ) : (
