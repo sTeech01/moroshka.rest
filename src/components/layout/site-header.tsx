@@ -42,7 +42,7 @@ export async function SiteHeader() {
             </svg>
             {settings.phone}
           </a>
-          <Link href="/#booking" className="btn btn-berry btn-sm hidden xl:inline-flex">
+          <Link href="/#booking" className="btn btn-berry btn-sm hidden whitespace-nowrap xl:inline-flex">
             Забронировать стол
           </Link>
           {ordering && <CartButton />}

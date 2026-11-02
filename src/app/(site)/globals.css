@@ -105,9 +105,10 @@ body {
   color: var(--text);
 }
 /*
- * Фактура всего тёмного сайта: размытые пятна мха и тёплого света + зерно. Отдельный
- * фиксированный слой за контентом — без blur-фильтров и без перерисовки при прокрутке.
- * Светлые разделы (.theme-paper) перекрывают его своим фоном.
+ * Фон всего тёмного сайта: «Бесшовный узор северной природы» (design/img — горы, ели, олени, морошка
+ * тонкой линией), поверх — градиент: темнее сверху и снизу экрана, мягкие пятна мха и тёплого света.
+ * Отдельный фиксированный слой за контентом — без перерисовки при прокрутке. Разделы со своим фоном
+ * (первый экран, сцены главной, бизнес-ланч) и светлые (.theme-paper) его перекрывают.
  */
 body::before {
   content: "";
@@ -116,11 +117,17 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    var(--grain-light),
-    radial-gradient(48vw 40vh at 8% 18%, rgb(42 66 52 / 0.24) 0%, rgb(42 66 52 / 0) 70%),
+    linear-gradient(180deg, rgb(10 18 14 / 0.6) 0%, rgb(10 18 14 / 0.12) 32%, rgb(10 18 14 / 0.12) 62%, rgb(10 18 14 / 0.65) 100%),
+    radial-gradient(48vw 40vh at 8% 18%, rgb(42 66 52 / 0.22) 0%, rgb(42 66 52 / 0) 70%),
     radial-gradient(44vw 42vh at 96% 62%, rgb(54 62 38 / 0.2) 0%, rgb(54 62 38 / 0) 72%),
-    radial-gradient(30vw 26vh at 70% 4%, rgb(242 160 58 / 0.03) 0%, rgb(242 160 58 / 0) 70%);
-  background-size: 220px, auto, auto, auto;
+    radial-gradient(34vw 28vh at 72% 6%, rgb(242 160 58 / 0.06) 0%, rgb(242 160 58 / 0) 70%),
+    url("/images/pattern-north.webp") center top / 724px auto repeat,
+    #0f1d16;
+}
+@media (max-width: 639px) {
+  body::before {
+    background-size: auto, auto, auto, auto, 560px auto, auto;
+  }
 }
 
 /*
@@ -230,13 +237,14 @@ p {
  * Поверхности секций — чтобы страницы не были одинаковыми:
  * мох (зелёная глубина), камень (тёмный влажный), смола (полупрозрачный слой поверх фото/фона).
  */
+/* Зелёные карточки (пустые состояния, «как заказать», мобильное меню): тот же северный узор, приглушённый градиентом */
 .surface-moss {
   background:
-    var(--grain-light),
-    radial-gradient(70% 90% at 0% 0%, rgb(74 104 76 / 0.32) 0%, rgb(74 104 76 / 0) 65%),
-    radial-gradient(60% 70% at 100% 100%, rgb(242 160 58 / 0.08) 0%, rgb(242 160 58 / 0) 70%),
-    linear-gradient(160deg, #1d3027 0%, #16251e 55%, #13201a 100%);
-  background-size: 220px, auto, auto, auto;
+    radial-gradient(70% 90% at 0% 0%, rgb(74 104 76 / 0.3) 0%, rgb(74 104 76 / 0) 65%),
+    radial-gradient(60% 70% at 100% 100%, rgb(242 160 58 / 0.09) 0%, rgb(242 160 58 / 0) 70%),
+    linear-gradient(160deg, rgb(29 48 39 / 0.78) 0%, rgb(22 37 30 / 0.84) 55%, rgb(19 32 26 / 0.9) 100%),
+    url("/images/pattern-north.webp") left top / 724px auto repeat,
+    #16251e;
 }
 .surface-stone {
   background:
