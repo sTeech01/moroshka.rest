@@ -42,7 +42,7 @@ export default async function PromosPage() {
           ))}
         </div>
       ) : (
-        <div className="surface-moss mt-10 max-w-2xl rounded-panel px-7 py-10 sm:px-10 lg:mt-12">
+        <div className="surface-botanical mt-10 max-w-3xl rounded-panel px-7 py-10 sm:px-10 sm:py-12 lg:mt-12">
           <h2 className="h-display text-3xl">Сейчас акций нет</h2>
           <p className="mt-3 text-soft">Загляните позже — или подпишитесь на группу, чтобы узнавать о новых акциях первыми.</p>
           {settings.vk && (
