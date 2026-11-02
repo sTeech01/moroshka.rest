@@ -16,8 +16,8 @@ export function CartView() {
     return (
       <div className="card-soft px-6 py-14 text-center">
         <p className="h-display text-3xl">Корзина пуста</p>
-        <p className="mt-2 text-muted">Загляните в меню — там северная кухня с доставкой по Губкинскому</p>
-        <Link href="/delivery" className="btn btn-berry mt-8">
+        <p className="mt-2 text-muted">Загляните в меню: блюда с кнопкой «+» можно заказать с собой</p>
+        <Link href="/menu" className="btn btn-berry mt-8">
           Перейти в меню
         </Link>
       </div>
@@ -70,7 +70,7 @@ export function CartView() {
         <Link href="/checkout" className="btn btn-berry h-14">
           Оформить заказ
         </Link>
-        <Link href="/delivery" className="text-center text-sm font-semibold text-muted hover:text-text">
+        <Link href="/menu" className="text-center text-sm font-semibold text-muted hover:text-text">
           ← Продолжить выбор
         </Link>
       </aside>

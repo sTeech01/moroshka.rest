@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [menu, events] = await Promise.all([getMenu(), getEvents()]);
   const url = (path: string) => `${siteConfig.url}${path}`;
 
-  const pages = ["", "/menu", "/bar-menu", "/akcii", "/banquets", "/business-lunch", "/about", ...(features.onlineOrders ? ["/delivery"] : []), "/contacts"].map(
+  const pages = ["", "/menu", "/bar-menu", "/akcii", "/banquets", "/business-lunch", "/about", "/contacts"].map(
     (p) => ({
       url: url(p),
       changeFrequency: "weekly" as const,

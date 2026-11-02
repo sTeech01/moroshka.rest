@@ -57,7 +57,7 @@ export async function SiteFooter() {
         {/* Телефон: разделы строкой с переносами на всю ширину, а не столбиком из шести строк */}
         <nav className="col-span-2 flex flex-wrap gap-x-5 gap-y-1.5 text-[15px] lg:col-span-1 lg:flex-col lg:gap-1.5">
           <div className="eyebrow mb-1 w-full text-lichen lg:mb-1">Разделы</div>
-          {getNavigation(delivery).map((item) => (
+          {getNavigation().map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-berry">
               {item.label}
             </Link>

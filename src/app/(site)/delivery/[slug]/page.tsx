@@ -8,7 +8,7 @@ import { DishOptions } from "@/components/menu/dish-options";
 import { siteConfig } from "@/config/site";
 import { formatPrice, formatWeight } from "@/lib/format";
 import { getDelivery, getSettings } from "@/lib/content";
-import { orderSection, PICKUP_LEAD_MINUTES } from "@/lib/delivery";
+import { PICKUP_LEAD_MINUTES } from "@/lib/delivery";
 import { getDishBySlug, getMenu } from "@/lib/menu/get-menu";
 
 export async function generateStaticParams() {
@@ -61,7 +61,6 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
   const { slug } = await params;
   const [dish, menu, delivery, settings] = await Promise.all([getDishBySlug(slug), getMenu(), getDelivery(), getSettings()]);
   if (!dish) notFound();
-  const section = orderSection(delivery);
 
   const category = menu.categories.find((c) => c.id === dish.categoryId);
   const size = dish.sizes.find((s) => s.isDefault) ?? dish.sizes[0];
@@ -81,12 +80,10 @@ async function Dish({ params }: { params: PageProps<"/delivery/[slug]">["params"
       <nav aria-label="Навигация" className="flex items-center gap-3 text-sm text-muted">
         <BackButton fallback="/menu" />
         <Link href="/menu" className="hover:text-text">Меню</Link>
-        <span aria-hidden>·</span>
-        <Link href="/delivery" className="hover:text-text">{section.label}</Link>
         {category && (
           <>
             <span aria-hidden>·</span>
-            <Link href={`/delivery#${category.slug}`} className="hover:text-text">{category.name}</Link>
+            <Link href={`/menu#${category.slug}`} className="hover:text-text">{category.name}</Link>
           </>
         )}
       </nav>

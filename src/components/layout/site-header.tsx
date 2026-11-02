@@ -10,7 +10,7 @@ import { MobileNav } from "./mobile-nav";
 export async function SiteHeader() {
   const [settings, delivery] = await Promise.all([getSettings(), getDelivery()]);
   const tel = settings.phone.replace(/[^\d+]/g, "");
-  const navigation = getNavigation(delivery);
+  const navigation = getNavigation();
   const ordering = features.onlineOrders && (delivery.enabled || delivery.pickupEnabled);
 
   return (

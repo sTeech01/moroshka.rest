@@ -45,7 +45,7 @@ export default function OrderPage({ searchParams }: PageProps<"/order/[id]">) {
         <Suspense fallback={<div className="skeleton mx-auto h-40 rounded-card" />}>
           <OrderInfo searchParams={searchParams} />
         </Suspense>
-        <Link href="/delivery" className="btn btn-line mt-10">
+        <Link href="/menu" className="btn btn-line mt-10">
           Вернуться в меню
         </Link>
       </div>

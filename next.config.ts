@@ -84,6 +84,8 @@ const nextConfig: NextConfig = {
       { source: "/menu/:slug", destination: "/delivery/:slug", permanent: true },
       // Адрес соглашения зафиксирован в его тексте — короткий вариант ведёт туда же
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      // Раздела «Самовывоз» больше нет: заказывают из основного меню. Страницы блюд /delivery/:slug остаются
+      { source: "/delivery", destination: "/menu", permanent: false },
       // Раздела «Афиша» больше нет (страницы отдельных событий остались) — не permanent, если вернут
       { source: "/events", destination: "/", permanent: false },
       ...ordersOff,

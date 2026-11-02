@@ -25,12 +25,13 @@ export const features = {
 
 export type NavItem = { href: string; label: string };
 
-/** Пункты меню сайта. Раздел заказа — «Доставка» или «Самовывоз» по настройкам из админки */
-export function getNavigation(delivery: { enabled: boolean; pickupEnabled: boolean }): NavItem[] {
-  const ordering = features.onlineOrders && (delivery.enabled || delivery.pickupEnabled);
+/**
+ * Пункты меню сайта. Отдельного раздела «Самовывоз» нет (решение заказчика 02.11.2026):
+ * заказывают из основного меню — у блюд, которые можно взять с собой, кнопка «+».
+ */
+export function getNavigation(): NavItem[] {
   return [
     { href: "/menu", label: "Меню" },
-    ...(ordering ? [{ href: "/delivery", label: delivery.enabled ? "Доставка" : "Самовывоз" }] : []),
     { href: "/akcii", label: "Акции" },
     { href: "/banquets", label: "Банкеты" },
     { href: "/about", label: "О ресторане" },

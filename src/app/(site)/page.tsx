@@ -260,7 +260,7 @@ function DeliveryDishes({
           <p className="eyebrow text-berry">{section.homeEyebrow}</p>
           <h2 className="h-display mt-5 text-4xl lg:text-[56px]">{section.homeTitle}</h2>
         </div>
-        <Link href="/delivery" className="text-sm font-semibold tracking-wide text-berry transition-colors hover:text-berry-hover">
+        <Link href="/menu" className="text-sm font-semibold tracking-wide text-berry transition-colors hover:text-berry-hover">
           {section.homeLink}
         </Link>
       </div>
